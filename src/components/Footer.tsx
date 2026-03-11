@@ -45,8 +45,8 @@ export default function Footer() {
           <ul className="space-y-3 text-[#9ca3af] text-sm">
             <li>Beverly, MA (North Shore)</li>
             <li>
-              <a href="tel:+19785551234" className="hover:text-[#c9a84c] transition-colors">
-                (978) 555-1234
+              <a href="tel:+17816325193" className="hover:text-[#c9a84c] transition-colors">
+                (781) 632-5193
               </a>
             </li>
             <li>

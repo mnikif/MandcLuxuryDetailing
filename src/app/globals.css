@@ -42,14 +42,52 @@ body {
   color: #0a0a0a;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
+/* Custom scrollbar — desktop only */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #111111; }
+  ::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 3px; }
 }
-::-webkit-scrollbar-track {
-  background: #111111;
+
+/* Gold tap highlight instead of default blue on mobile */
+* {
+  -webkit-tap-highlight-color: rgba(201, 168, 76, 0.15);
 }
-::-webkit-scrollbar-thumb {
-  background: #c9a84c;
-  border-radius: 3px;
+
+/* Prevent font inflation on iOS rotation */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Services grid — mobile: horizontal scroll, desktop: centered wrap */
+.services-grid {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1.25rem;
+  padding: 0 1.5rem 0.5rem;
+  margin: 0 -1.5rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.services-grid::-webkit-scrollbar { display: none; }
+.services-grid .service-card {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  width: 75vw;
+  max-width: 260px;
+}
+@media (min-width: 640px) {
+  .services-grid {
+    overflow-x: visible;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+  .services-grid .service-card {
+    flex-shrink: 1;
+    width: 220px;
+    max-width: 220px;
+  }
 }

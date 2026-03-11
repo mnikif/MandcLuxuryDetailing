@@ -2,21 +2,8 @@ import Link from "next/link";
 
 const packages = [
   {
-    name: "Exterior Refresh",
-    price: "Starting at $75",
-    duration: "1–2 hrs",
-    features: [
-      "Hand wash & dry",
-      "Wheel & tire cleaning",
-      "Window clean (exterior)",
-      "Tire dressing",
-      "Spot clay bar treatment",
-    ],
-    popular: false,
-  },
-  {
-    name: "Full Interior",
-    price: "Starting at $100",
+    name: "Interior Detail",
+    price: "Starting at $140",
     duration: "2–3 hrs",
     features: [
       "Deep vacuum (seats, floors, trunk)",
@@ -24,63 +11,45 @@ const packages = [
       "Door panel cleaning",
       "Window clean (interior)",
       "Steam clean (high-touch areas)",
+      "Leather conditioning",
       "Air freshener",
     ],
     popular: false,
   },
   {
+    name: "Exterior Detail",
+    price: "Starting at $70",
+    duration: "1–2 hrs",
+    features: [
+      "Hand wash & dry",
+      "Wheel & tire cleaning",
+      "Window clean (exterior)",
+      "Tire dressing",
+      "Clay bar treatment",
+    ],
+    popular: false,
+  },
+  {
     name: "Full Detail",
-    price: "Starting at $175",
+    price: "Starting at $180",
     duration: "3–5 hrs",
     features: [
-      "Everything in Exterior Refresh",
-      "Everything in Full Interior",
-      "Clay bar treatment",
-      "Paint sealant / wax",
+      "Everything in Interior Detail",
+      "Everything in Exterior Detail",
       "Leather conditioning",
       "Engine bay wipe-down",
     ],
     popular: true,
   },
   {
-    name: "Paint Correction",
-    price: "Starting at $300",
-    duration: "5–8 hrs",
+    name: "Exterior Wax",
+    price: "+$50 add-on",
+    duration: "30–45 min",
     features: [
-      "Single or multi-stage machine polish",
-      "Swirl & scratch removal",
-      "Oxidation correction",
-      "Paint sealant application",
-      "Before & after photos",
-      "Custom quote by vehicle",
-    ],
-    popular: false,
-  },
-  {
-    name: "Ceramic Coating",
-    price: "Starting at $500",
-    duration: "Full day",
-    features: [
-      "Surface decontamination",
-      "Paint correction prep",
-      "Professional ceramic coating application",
-      "2–5 year protection",
-      "Hydrophobic finish",
-      "Certificate of application",
-    ],
-    popular: false,
-  },
-  {
-    name: "Add-Ons",
-    price: "Varies",
-    duration: "Varies",
-    features: [
-      "Odor elimination — $50",
-      "Pet hair removal — $40+",
-      "Headlight restoration — $60",
-      "Engine bay detail — $75",
-      "Trunk detail — $40",
-      "Convertible top treatment — $60",
+      "Applied after Exterior or Full Detail",
+      "Protective wax coat",
+      "Enhanced gloss & shine",
+      "Paint protection layer",
     ],
     popular: false,
   },
@@ -102,14 +71,27 @@ export default function Services() {
       </section>
 
       {/* Packages */}
-      <section className="py-16 px-6 bg-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="py-16 bg-[#0a0a0a]">
+        {/* Mobile: horizontal snap scroll. Desktop: 3-col grid */}
+        <div className="max-w-7xl mx-auto">
+          {/* Scroll hint on mobile */}
+          <p className="md:hidden text-[#9ca3af] text-xs tracking-widest uppercase text-center mb-4">
+            ← swipe to see all packages →
+          </p>
+          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-5
+                          overflow-x-auto md:overflow-visible
+                          snap-x snap-mandatory md:snap-none
+                          scroll-smooth
+                          px-6 md:px-6
+                          pb-4 md:pb-0
+                          [-webkit-overflow-scrolling:touch]
+                          [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {packages.map((pkg) => (
             <div
               key={pkg.name}
-              className={`relative bg-[#111111] border p-8 flex flex-col transition-all duration-300 hover:border-[#c9a84c]/40 ${
-                pkg.popular ? "border-[#c9a84c]" : "border-[#2a2a2a]"
-              }`}
+              className={`relative bg-[#111111] border p-7 flex flex-col transition-all duration-300 hover:border-[#c9a84c]/40
+                          snap-start flex-shrink-0 w-[82vw] max-w-[320px] md:w-auto md:max-w-none
+                          ${pkg.popular ? "border-[#c9a84c]" : "border-[#2a2a2a]"}`}
             >
               {pkg.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#c9a84c] text-black text-[10px] tracking-widest uppercase px-4 py-1 font-semibold">
@@ -146,6 +128,7 @@ export default function Services() {
               </Link>
             </div>
           ))}
+          </div>
         </div>
       </section>
 
@@ -153,7 +136,7 @@ export default function Services() {
       <section className="py-12 px-6 bg-[#111111] border-y border-[#2a2a2a]">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-[#9ca3af] text-sm leading-relaxed">
-            <span className="text-[#c9a84c] font-medium">Pricing note:</span> All prices are starting rates. Final pricing depends on vehicle size, condition, and location. Trucks, SUVs, and heavily soiled vehicles may incur additional charges. Contact us for a custom quote.
+            <span className="text-[#c9a84c] font-medium">Pricing note:</span> All prices are starting rates. Final pricing depends on vehicle size and condition. Trucks, SUVs, and heavily soiled vehicles may incur additional charges. Contact us for a custom quote.
           </p>
         </div>
       </section>
