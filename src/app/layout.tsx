@@ -1,50 +1,54 @@
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Cormorant, Barlow, DM_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const cormorant = Cormorant({
+  variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["300", "400", "600", "700"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const barlow = Barlow({
+  variable: "--font-barlow",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
   display: "swap",
 });
 
+const dmMono = DM_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  style: ["normal"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "M&C Luxury Detailing | Mobile Car Detailing - Beverly, MA",
+  title: "M&C Luxury Detailing | Mobile Car Detailing — Danvers, MA",
   description:
-    "Premium mobile car detailing in Beverly, MA and the North Shore. We come to you — showroom-quality results at your door.",
+    "Premium mobile car detailing in Danvers, MA and the North Shore. We come to you — showroom-quality results at your door.",
   keywords:
-    "car detailing Beverly MA, mobile detailing North Shore, luxury car detailing Massachusetts, auto detailing Salem Danvers Peabody",
+    "car detailing Danvers MA, mobile detailing North Shore, luxury car detailing Massachusetts, auto detailing Salem Danvers Peabody",
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0a0a0a",
+  themeColor: "#060606",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body className="bg-[#0a0a0a] text-white font-[family-name:var(--font-inter)] antialiased">
+    <html lang="en" className={`${cormorant.variable} ${barlow.variable} ${dmMono.variable}`}>
+      <body style={{ backgroundColor: "#060606", color: "#f2ede4" }}>
         <Navbar />
-        {/* pb-[calc(56px+env(safe-area-inset-bottom))] reserves space for sticky mobile CTA */}
-        <main className="pb-[56px] md:pb-0">{children}</main>
-        <div className="pb-[56px] md:pb-0">
+        <main className="pb-[72px] md:pb-0">{children}</main>
+        <div className="pb-[72px] md:pb-0">
           <Footer />
         </div>
         <StickyMobileCTA />

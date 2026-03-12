@@ -1,86 +1,93 @@
 import Link from "next/link";
 
+const navLinks = [
+  { href: "/",         label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/gallery",  label: "Gallery" },
+  { href: "/about",    label: "About" },
+  { href: "/contact",  label: "Book Now" },
+];
+
 export default function Footer() {
   return (
-    <footer className="bg-[#050505] border-t border-[#2a2a2a] py-16 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-        {/* Brand */}
-        <div>
-          <div className="mb-4">
-            <span className="text-[#c9a84c] font-[family-name:var(--font-playfair)] text-2xl font-bold tracking-widest uppercase block">
-              M&amp;C
-            </span>
-            <span className="text-white text-xs tracking-[0.3em] uppercase font-light">
-              Luxury Detailing
-            </span>
+    <footer style={{ background: "#030303", borderTop: "1px solid #1c1c1c" }}>
+
+      {/* Main footer grid */}
+      <div style={{ width: "100%", maxWidth: "56rem", margin: "0 auto", padding: "3.5rem 1.25rem" }}>
+        <div className="grid grid-cols-1 sm:grid-cols-3" style={{ gap: "2.5rem" }}>
+
+          {/* Brand */}
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+            <div style={{ marginBottom: "1.25rem", textAlign: "center" }}>
+              <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "2rem", color: "#c9a84c", lineHeight: 1, letterSpacing: "0.05em" }}>
+                M&amp;C
+              </div>
+              <div style={{ fontSize: "0.48rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", color: "#2a2a2a", marginTop: "2px", textAlign: "center" }}>
+                Luxury Detailing
+              </div>
+            </div>
+            <p style={{ color: "#3a3a3a", fontSize: "0.8rem", lineHeight: 1.7, textAlign: "center" }}>
+              Premium mobile detailing. We come to you — Danvers, MA and the entire North Shore.
+            </p>
+            <div style={{ display: "flex", justifyContent: "center", gap: "1.25rem", marginTop: "1.5rem" }}>
+              <a href="https://instagram.com/mcluxurydetailing" target="_blank" rel="noopener noreferrer" className="hover:text-[#c9a84c]" style={{ color: "#3a3a3a", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", transition: "color 0.2s" }}>
+                Instagram
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61577181187495" target="_blank" rel="noopener noreferrer" className="hover:text-[#c9a84c]" style={{ color: "#3a3a3a", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", transition: "color 0.2s" }}>
+                Facebook
+              </a>
+            </div>
           </div>
-          <p className="text-[#9ca3af] text-sm leading-relaxed max-w-xs">
-            Premium mobile detailing that comes to you. Serving Beverly, MA and the entire North Shore.
-          </p>
-        </div>
 
-        {/* Navigation */}
-        <div>
-          <h4 className="text-[#c9a84c] text-xs tracking-[0.3em] uppercase mb-5 font-medium">Navigation</h4>
-          <ul className="space-y-3">
-            {[
-              { href: "/", label: "Home" },
-              { href: "/services", label: "Services" },
-              { href: "/gallery", label: "Gallery" },
-              { href: "/about", label: "About" },
-              { href: "/contact", label: "Contact & Book" },
-            ].map(({ href, label }) => (
-              <li key={href}>
-                <Link href={href} className="text-[#9ca3af] text-sm hover:text-[#c9a84c] transition-colors tracking-wide">
-                  {label}
-                </Link>
+          {/* Nav */}
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+            <h4 style={{ color: "#c9a84c", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1.25rem", textAlign: "center" }}>
+              Navigate
+            </h4>
+            <ul style={{ display: "flex", flexDirection: "column", gap: "0.75rem", alignItems: "center" }}>
+              {navLinks.map(({ href, label }) => (
+                <li key={href}>
+                  <Link href={href} className="hover:text-[#c9a84c] transition-colors" style={{ color: "#3a3a3a", fontSize: "0.82rem", display: "block", textAlign: "center" }}>
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+            <h4 style={{ color: "#c9a84c", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1.25rem", textAlign: "center" }}>
+              Contact
+            </h4>
+            <ul style={{ display: "flex", flexDirection: "column", gap: "0.75rem", alignItems: "center" }}>
+              <li>
+                <a href="tel:+17816325193" className="font-[family-name:var(--font-cormorant)] italic font-bold hover:text-[#c9a84c] transition-colors" style={{ color: "#f2ede4", fontSize: "1.4rem", lineHeight: 1, display: "block", textAlign: "center" }}>
+                  (781) 632-5193
+                </a>
               </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Contact */}
-        <div>
-          <h4 className="text-[#c9a84c] text-xs tracking-[0.3em] uppercase mb-5 font-medium">Contact</h4>
-          <ul className="space-y-3 text-[#9ca3af] text-sm">
-            <li>Beverly, MA (North Shore)</li>
-            <li>
-              <a href="tel:+17816325193" className="hover:text-[#c9a84c] transition-colors">
-                (781) 632-5193
-              </a>
-            </li>
-            <li>
-              <a href="mailto:info@mandcluxurydetailing.com" className="hover:text-[#c9a84c] transition-colors">
-                info@mandcluxurydetailing.com
-              </a>
-            </li>
-          </ul>
-          <div className="flex gap-4 mt-6">
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#9ca3af] hover:text-[#c9a84c] transition-colors text-xs tracking-widest uppercase"
-            >
-              Instagram
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#9ca3af] hover:text-[#c9a84c] transition-colors text-xs tracking-widest uppercase"
-            >
-              Facebook
-            </a>
+              <li>
+                <a href="mailto:mandcluxurydetailing@gmail.com" className="hover:text-[#c9a84c] transition-colors break-all" style={{ color: "#3a3a3a", fontSize: "0.78rem", textAlign: "center" }}>
+                  mandcluxurydetailing@gmail.com
+                </a>
+              </li>
+              <li style={{ color: "#3a3a3a", fontSize: "0.78rem", textAlign: "center" }}>Danvers, MA — North Shore</li>
+            </ul>
+            <Link href="/contact" className="btn-gold" style={{ height: "40px", padding: "0 1.5rem", display: "inline-flex", alignItems: "center", justifyContent: "center", marginTop: "1.5rem", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
+              Book a Detail
+            </Link>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-[#1a1a1a] flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-[#9ca3af] text-xs tracking-wide">
+      {/* Bottom bar */}
+      <div style={{ width: "100%", maxWidth: "56rem", margin: "0 auto", padding: "1.25rem 1.25rem", borderTop: "1px solid #111", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.5rem", textAlign: "center" }} className="sm:flex-row sm:justify-between">
+        <p style={{ color: "#222", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
           © {new Date().getFullYear()} M&amp;C Luxury Detailing. All rights reserved.
         </p>
-        <p className="text-[#9ca3af] text-xs tracking-wide">Beverly, MA · North Shore · Mobile Service</p>
+        <p style={{ color: "#222", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
+          Danvers, MA · North Shore · Mobile Service
+        </p>
       </div>
     </footer>
   );
