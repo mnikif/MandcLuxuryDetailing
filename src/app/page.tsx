@@ -1,17 +1,10 @@
 import Link from "next/link";
 
 const services = [
-  { num: "01", title: "Interior Detail", desc: "Deep vacuum, steam clean, leather conditioning, and odor elimination.", price: "From $139", duration: "2–3 hrs" },
-  { num: "02", title: "Exterior Detail", desc: "Hand wash, clay bar, polish, and sealant for a mirror finish that lasts.", price: "From $69", duration: "1–2 hrs" },
-  { num: "03", title: "Full Detail", desc: "Our complete inside-and-out transformation — interior and exterior done right.", price: "From $179", duration: "3–5 hrs" },
+  { num: "01", title: "Interior Detail", desc: "Deep vacuum, steam clean, leather conditioning, and odor elimination.", price: "From $169", duration: "2–3 hrs" },
+  { num: "02", title: "Exterior Detail", desc: "Hand wash, clay bar, polish, and sealant for a mirror finish that lasts.", price: "From $99", duration: "1–2 hrs" },
+  { num: "03", title: "Full Detail", desc: "Our complete inside-and-out transformation — interior and exterior done right.", price: "From $229", duration: "3–5 hrs" },
   { num: "04", title: "Exterior Wax", desc: "Add-on protective wax coat for enhanced shine and paint protection.", price: "+$50", duration: "30–45 min" },
-];
-
-const stats = [
-  { value: "50+", label: "Cars Detailed" },
-  { value: "5★", label: "Avg Rating" },
-  { value: "100%", label: "Mobile" },
-  { value: "1+", label: "Yrs in Business" },
 ];
 
 const testimonials = [
@@ -126,21 +119,14 @@ export default function Home() {
         <div style={{ height: "1px", background: "linear-gradient(90deg, transparent, rgba(201,168,76,0.27), transparent)" }} />
       </div>
 
-      {/* ── STATS ── */}
-      <section style={{ background: "#060606", padding: "3.5rem 0" }}>
-        <div style={wrap}>
-          <div className="grid grid-cols-2 md:grid-cols-4">
-            {stats.map((s, i) => (
-              <div key={s.label} style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "1.5rem 0", borderRight: i < stats.length - 1 ? "1px solid #1c1c1c" : "none", borderBottom: i < 2 ? "1px solid #1c1c1c" : "none" }}>
-                <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(2.2rem,7vw,3.5rem)", color: "#c9a84c", lineHeight: 1, marginBottom: "0.4rem" }}>
-                  {s.value}
-                </div>
-                <div style={{ color: "#5a5a5a", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase" }}>
-                  {s.label}
-                </div>
-              </div>
-            ))}
-          </div>
+      {/* ── ETHOS LINE ── */}
+      <section style={{ background: "#060606", padding: "3.5rem 0", borderTop: "1px solid #1c1c1c" }}>
+        <div style={{ ...wrap, display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <div style={{ width: "3rem", height: "1px", background: "linear-gradient(90deg, transparent, #c9a84c, transparent)", marginBottom: "1.75rem" }} />
+          <p className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(1.6rem,5vw,2.8rem)", color: "#c9a84c", textAlign: "center", lineHeight: 1.2, letterSpacing: "0.01em" }}>
+            Every Car Treated As Our Own
+          </p>
+          <div style={{ width: "3rem", height: "1px", background: "linear-gradient(90deg, transparent, #c9a84c, transparent)", marginTop: "1.75rem" }} />
         </div>
       </section>
 

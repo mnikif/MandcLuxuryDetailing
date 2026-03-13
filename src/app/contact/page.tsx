@@ -101,7 +101,7 @@ export default function Contact() {
             </a>
           </div>
           <p style={{ color: "#3a3a3a", fontSize: "0.7rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", marginTop: "1rem", textAlign: "center" }}>
-            or fill out the form below and we&apos;ll respond within 24 hours
+            or fill out the form below and we&apos;ll respond within 1–2 hours
           </p>
         </div>
       </section>
@@ -120,7 +120,7 @@ export default function Contact() {
                     Request Received!
                   </h3>
                   <p style={{ color: "#5a5a5a", fontSize: "0.88rem", lineHeight: 1.7, maxWidth: "24rem", textAlign: "center" }}>
-                    Thanks for reaching out. We&apos;ll get back to you within 24 hours to confirm your booking and details.
+                    Thanks for reaching out. We&apos;ll get back to you within 1–2 hours to confirm your booking and details.
                   </p>
                 </div>
               ) : (
@@ -178,7 +178,7 @@ export default function Contact() {
                     <p style={{ color: "#e57373", fontSize: "0.72rem", textAlign: "center", fontFamily: "var(--font-mono)" }}>{error}</p>
                   )}
                   <p style={{ color: "#2a2a2a", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
-                    We respond within 24 hours to confirm availability and pricing.
+                    We respond within 1–2 hours to confirm availability and pricing.
                   </p>
                 </form>
               )}

@@ -4,7 +4,7 @@ const packages = [
   {
     num: "01",
     name: "Interior Detail",
-    price: "Starting at $139",
+    price: "Starting at $169",
     duration: "2–3 hrs",
     popular: false,
     features: [
@@ -20,7 +20,7 @@ const packages = [
   {
     num: "02",
     name: "Exterior Detail",
-    price: "Starting at $69",
+    price: "Starting at $99",
     duration: "1–2 hrs",
     popular: false,
     features: [
@@ -34,7 +34,7 @@ const packages = [
   {
     num: "03",
     name: "Full Detail",
-    price: "Starting at $179",
+    price: "Starting at $229",
     duration: "3–5 hrs",
     popular: true,
     features: [

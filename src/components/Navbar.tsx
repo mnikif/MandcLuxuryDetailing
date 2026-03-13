@@ -7,6 +7,7 @@ const links = [
   { href: "/",         label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/gallery",  label: "Gallery" },
+  { href: "/reviews",  label: "Reviews" },
   { href: "/about",    label: "About" },
   { href: "/contact",  label: "Book Now" },
 ];
@@ -110,16 +111,17 @@ export default function Navbar() {
             </a>
 
             {/* Mobile hamburger */}
-            <button
-              className="md:hidden"
-              onClick={() => setMenuOpen(m => !m)}
-              aria-label={menuOpen ? "Close menu" : "Open menu"}
-              style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", width: "44px", height: "44px", background: "none", border: "none", cursor: "pointer", padding: 0, gap: "5px" }}
-            >
-              <span style={{ display: "block", width: "22px", height: "1.5px", background: "#c9a84c", transition: "transform 0.25s, opacity 0.25s", transform: menuOpen ? "rotate(45deg) translateY(6.5px)" : "none" }} />
-              <span style={{ display: "block", width: "22px", height: "1.5px", background: "#c9a84c", transition: "opacity 0.25s", opacity: menuOpen ? 0 : 1 }} />
-              <span style={{ display: "block", width: "22px", height: "1.5px", background: "#c9a84c", transition: "transform 0.25s, opacity 0.25s", transform: menuOpen ? "rotate(-45deg) translateY(-6.5px)" : "none" }} />
-            </button>
+            <div className="md:hidden">
+              <button
+                onClick={() => setMenuOpen(m => !m)}
+                aria-label={menuOpen ? "Close menu" : "Open menu"}
+                style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", width: "44px", height: "44px", background: "none", border: "none", cursor: "pointer", padding: 0, gap: "5px" }}
+              >
+                <span style={{ display: "block", width: "22px", height: "1.5px", background: "#c9a84c", transition: "transform 0.25s, opacity 0.25s", transform: menuOpen ? "rotate(45deg) translateY(6.5px)" : "none" }} />
+                <span style={{ display: "block", width: "22px", height: "1.5px", background: "#c9a84c", transition: "opacity 0.25s", opacity: menuOpen ? 0 : 1 }} />
+                <span style={{ display: "block", width: "22px", height: "1.5px", background: "#c9a84c", transition: "transform 0.25s, opacity 0.25s", transform: menuOpen ? "rotate(-45deg) translateY(-6.5px)" : "none" }} />
+              </button>
+            </div>
           </div>
         </nav>
       </header>

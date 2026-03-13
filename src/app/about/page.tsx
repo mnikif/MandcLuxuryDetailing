@@ -57,7 +57,7 @@ export default function About() {
             </h2>
             <div style={{ display: "flex", flexDirection: "column", gap: "1rem", color: "#5a5a5a", fontSize: "0.9rem", lineHeight: 1.8, maxWidth: "36rem", margin: "0 auto", textAlign: "center" }}>
               <p>
-                M&amp;C Luxury Detailing started the way most good things do — A highschool student from Danvers who cared too much about clean cars and figured he could do it better than anyone else.
+                M&amp;C Luxury Detailing started the way most good things do — A high school student from Danvers who cared too much about clean cars and figured he could do it better than anyone else.
               </p>
               <p>
                 Matt grew up on the North Shore, detailing cars out of driveways on weekends. What started as a side hustle turned into something real when clients kept coming back — and kept sending their friends.
