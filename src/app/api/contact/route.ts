@@ -9,7 +9,7 @@ export async function POST(req: Request) {
   const { name, email, phone, service, vehicle, location, preferredDate, message } = await req.json();
 
   const { error } = await resend.emails.send({
-    from: "M&C Luxury Detailing <noreply@mandcluxurydetailing.com>",
+    from: "M&C Luxury Detailing <onboarding@resend.dev>",
     to: "mandcluxurydetailing@gmail.com",
     replyTo: email,
     subject: `New Booking Request — ${name}`,
