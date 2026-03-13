@@ -172,3 +172,8 @@ body {
 .sticky-cta-bar {
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
+
+/* ─── Responsive border-left (desktop only) ─── */
+@media (min-width: 768px) {
+  .md-border-l { border-left: 1px solid #1c1c1c; }
+}

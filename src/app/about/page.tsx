@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata = {
   title: "About | M&C Luxury Detailing",
@@ -56,7 +57,7 @@ export default function About() {
             </h2>
             <div style={{ display: "flex", flexDirection: "column", gap: "1rem", color: "#5a5a5a", fontSize: "0.9rem", lineHeight: 1.8, maxWidth: "36rem", margin: "0 auto", textAlign: "center" }}>
               <p>
-                M&amp;C Luxury Detailing started the way most good things do — a guy from Danvers who cared too much about clean cars and figured he could do it better than anyone else.
+                M&amp;C Luxury Detailing started the way most good things do — A highschool student from Danvers who cared too much about clean cars and figured he could do it better than anyone else.
               </p>
               <p>
                 Matt grew up on the North Shore, detailing cars out of driveways on weekends. What started as a side hustle turned into something real when clients kept coming back — and kept sending their friends.
@@ -85,18 +86,9 @@ export default function About() {
               </p>
             </div>
 
-            {/* Featured review */}
-            <div style={{ background: "#0a0a0a", border: "1px solid #1c1c1c", padding: "1.75rem", position: "relative", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-              <div style={{ fontSize: "4rem", fontFamily: "var(--font-cormorant)", fontStyle: "italic", color: "#c9a84c", opacity: 0.15, lineHeight: 0.8, position: "absolute", top: "0.75rem", left: "1.25rem" }}>&ldquo;</div>
-              <div style={{ display: "flex", justifyContent: "center", gap: "2px", marginBottom: "0.75rem", position: "relative", zIndex: 10 }}>
-                {[...Array(5)].map((_, i) => <span key={i} style={{ color: "#c9a84c", fontSize: "0.7rem" }}>★</span>)}
-              </div>
-              <p className="font-[family-name:var(--font-cormorant)] italic" style={{ color: "#a8a8a8", fontSize: "1rem", lineHeight: 1.55, marginBottom: "1rem", position: "relative", zIndex: 10, textAlign: "center" }}>
-                &ldquo;The results went beyond what we hoped for. We couldn&apos;t be happier with the service.&rdquo;
-              </p>
-              <div style={{ color: "#3a3a3a", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
-                — Janet G., Danvers, MA
-              </div>
+            {/* About photo */}
+            <div style={{ position: "relative", border: "1px solid #1c1c1c", overflow: "hidden", aspectRatio: "3/4" }}>
+              <Image src="/Matt.PNG" alt="Matt — Founder of M&C Luxury Detailing" fill quality={100} style={{ objectFit: "cover", objectPosition: "top" }} />
             </div>
           </div>
         </div>

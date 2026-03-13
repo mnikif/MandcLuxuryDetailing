@@ -49,15 +49,29 @@ export default function Contact() {
     vehicle: "", message: "", location: "", preferredDate: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [focused, setFocused] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+    setLoading(false);
+    if (res.ok) {
+      setSubmitted(true);
+    } else {
+      setError("Something went wrong. Please call us directly at (781) 632-5193.");
+    }
   };
 
   const fieldStyle = (name: string): React.CSSProperties => ({
@@ -97,8 +111,81 @@ export default function Contact() {
         <div style={wrap}>
           <div className="grid grid-cols-1 lg:grid-cols-3" style={{ gap: "2.5rem", textAlign: "left" }}>
 
-            {/* Contact info sidebar */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "2rem", textAlign: "center" }}>
+            {/* Form — first in DOM (appears first on mobile), right side on desktop */}
+            <div className="lg:col-start-2 lg:col-span-2 lg:row-start-1">
+              {submitted ? (
+                <div style={{ border: "1px solid rgba(201,168,76,0.3)", background: "#0a0a0a", padding: "3rem 2rem", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                  <div className="gold-rule" style={{ width: "3rem", margin: "0 auto 1.5rem" }} />
+                  <h3 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "2rem", color: "#f2ede4", marginBottom: "0.75rem", textAlign: "center" }}>
+                    Request Received!
+                  </h3>
+                  <p style={{ color: "#5a5a5a", fontSize: "0.88rem", lineHeight: 1.7, maxWidth: "24rem", textAlign: "center" }}>
+                    Thanks for reaching out. We&apos;ll get back to you within 24 hours to confirm your booking and details.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+                  <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "1rem" }}>
+                    <div>
+                      <label style={labelStyle}>Name <span style={{ color: "#c9a84c" }}>*</span></label>
+                      <input type="text" name="name" required placeholder="John Smith" value={formData.name} onChange={handleChange} onFocus={() => setFocused("name")} onBlur={() => setFocused(null)} style={fieldStyle("name")} />
+                    </div>
+                    <div>
+                      <label style={labelStyle}>Phone <span style={{ color: "#c9a84c" }}>*</span></label>
+                      <input type="tel" name="phone" required placeholder="(978) 000-0000" value={formData.phone} onChange={handleChange} onFocus={() => setFocused("phone")} onBlur={() => setFocused(null)} style={fieldStyle("phone")} />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label style={labelStyle}>Email <span style={{ color: "#c9a84c" }}>*</span></label>
+                    <input type="email" name="email" required placeholder="john@example.com" value={formData.email} onChange={handleChange} onFocus={() => setFocused("email")} onBlur={() => setFocused(null)} style={fieldStyle("email")} />
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "1rem" }}>
+                    <div>
+                      <label style={labelStyle}>Service</label>
+                      <select name="service" value={formData.service} onChange={handleChange} onFocus={() => setFocused("service")} onBlur={() => setFocused(null)} style={{ ...fieldStyle("service"), cursor: "pointer" }}>
+                        <option value="" style={{ background: "#0a0a0a" }}>Select a service...</option>
+                        {services.map((s) => <option key={s} value={s} style={{ background: "#0a0a0a" }}>{s}</option>)}
+                      </select>
+                    </div>
+                    <div>
+                      <label style={labelStyle}>Vehicle (Year, Make, Model)</label>
+                      <input type="text" name="vehicle" placeholder="2022 BMW M3" value={formData.vehicle} onChange={handleChange} onFocus={() => setFocused("vehicle")} onBlur={() => setFocused(null)} style={fieldStyle("vehicle")} />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "1rem" }}>
+                    <div>
+                      <label style={labelStyle}>Location / City</label>
+                      <input type="text" name="location" placeholder="Danvers, MA" value={formData.location} onChange={handleChange} onFocus={() => setFocused("location")} onBlur={() => setFocused(null)} style={fieldStyle("location")} />
+                    </div>
+                    <div>
+                      <label style={labelStyle}>Preferred Date</label>
+                      <input type="date" name="preferredDate" value={formData.preferredDate} onChange={handleChange} onFocus={() => setFocused("date")} onBlur={() => setFocused(null)} style={{ ...fieldStyle("date"), colorScheme: "dark" }} />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label style={labelStyle}>Additional Notes</label>
+                    <textarea name="message" rows={5} placeholder="Tell us about your vehicle's condition, any concerns, or questions..." value={formData.message} onChange={handleChange} onFocus={() => setFocused("message")} onBlur={() => setFocused(null)} style={{ ...fieldStyle("message"), resize: "none" }} />
+                  </div>
+
+                  <button type="submit" disabled={loading} className="btn-gold" style={{ width: "100%", height: "56px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.68rem", fontFamily: "var(--font-mono)", opacity: loading ? 0.7 : 1, cursor: loading ? "not-allowed" : "pointer" }}>
+                    {loading ? "Sending..." : "Submit Booking Request"}
+                  </button>
+                  {error && (
+                    <p style={{ color: "#e57373", fontSize: "0.72rem", textAlign: "center", fontFamily: "var(--font-mono)" }}>{error}</p>
+                  )}
+                  <p style={{ color: "#2a2a2a", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
+                    We respond within 24 hours to confirm availability and pricing.
+                  </p>
+                </form>
+              )}
+            </div>
+
+            {/* Contact info sidebar — second on mobile, left side on desktop */}
+            <div className="lg:col-start-1 lg:row-start-1" style={{ display: "flex", flexDirection: "column", gap: "2rem", textAlign: "center" }}>
               <div>
                 <h3 style={{ color: "#c9a84c", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1.25rem", textAlign: "center" }}>
                   Contact
@@ -158,76 +245,6 @@ export default function Contact() {
                   Facebook
                 </a>
               </div>
-            </div>
-
-            {/* Form */}
-            <div className="lg:col-span-2">
-              {submitted ? (
-                <div style={{ border: "1px solid rgba(201,168,76,0.3)", background: "#0a0a0a", padding: "3rem 2rem", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                  <div className="gold-rule" style={{ width: "3rem", margin: "0 auto 1.5rem" }} />
-                  <h3 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "2rem", color: "#f2ede4", marginBottom: "0.75rem", textAlign: "center" }}>
-                    Request Received!
-                  </h3>
-                  <p style={{ color: "#5a5a5a", fontSize: "0.88rem", lineHeight: 1.7, maxWidth: "24rem", textAlign: "center" }}>
-                    Thanks for reaching out. We&apos;ll get back to you within 24 hours to confirm your booking and details.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
-                  <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "1rem" }}>
-                    <div>
-                      <label style={labelStyle}>Name <span style={{ color: "#c9a84c" }}>*</span></label>
-                      <input type="text" name="name" required placeholder="John Smith" value={formData.name} onChange={handleChange} onFocus={() => setFocused("name")} onBlur={() => setFocused(null)} style={fieldStyle("name")} />
-                    </div>
-                    <div>
-                      <label style={labelStyle}>Phone <span style={{ color: "#c9a84c" }}>*</span></label>
-                      <input type="tel" name="phone" required placeholder="(978) 000-0000" value={formData.phone} onChange={handleChange} onFocus={() => setFocused("phone")} onBlur={() => setFocused(null)} style={fieldStyle("phone")} />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label style={labelStyle}>Email <span style={{ color: "#c9a84c" }}>*</span></label>
-                    <input type="email" name="email" required placeholder="john@example.com" value={formData.email} onChange={handleChange} onFocus={() => setFocused("email")} onBlur={() => setFocused(null)} style={fieldStyle("email")} />
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "1rem" }}>
-                    <div>
-                      <label style={labelStyle}>Service</label>
-                      <select name="service" value={formData.service} onChange={handleChange} onFocus={() => setFocused("service")} onBlur={() => setFocused(null)} style={{ ...fieldStyle("service"), cursor: "pointer" }}>
-                        <option value="" style={{ background: "#0a0a0a" }}>Select a service...</option>
-                        {services.map((s) => <option key={s} value={s} style={{ background: "#0a0a0a" }}>{s}</option>)}
-                      </select>
-                    </div>
-                    <div>
-                      <label style={labelStyle}>Vehicle (Year, Make, Model)</label>
-                      <input type="text" name="vehicle" placeholder="2022 BMW M3" value={formData.vehicle} onChange={handleChange} onFocus={() => setFocused("vehicle")} onBlur={() => setFocused(null)} style={fieldStyle("vehicle")} />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "1rem" }}>
-                    <div>
-                      <label style={labelStyle}>Location / City</label>
-                      <input type="text" name="location" placeholder="Danvers, MA" value={formData.location} onChange={handleChange} onFocus={() => setFocused("location")} onBlur={() => setFocused(null)} style={fieldStyle("location")} />
-                    </div>
-                    <div>
-                      <label style={labelStyle}>Preferred Date</label>
-                      <input type="date" name="preferredDate" value={formData.preferredDate} onChange={handleChange} onFocus={() => setFocused("date")} onBlur={() => setFocused(null)} style={{ ...fieldStyle("date"), colorScheme: "dark" }} />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label style={labelStyle}>Additional Notes</label>
-                    <textarea name="message" rows={5} placeholder="Tell us about your vehicle's condition, any concerns, or questions..." value={formData.message} onChange={handleChange} onFocus={() => setFocused("message")} onBlur={() => setFocused(null)} style={{ ...fieldStyle("message"), resize: "none" }} />
-                  </div>
-
-                  <button type="submit" className="btn-gold" style={{ width: "100%", height: "56px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.68rem", fontFamily: "var(--font-mono)" }}>
-                    Submit Booking Request
-                  </button>
-                  <p style={{ color: "#2a2a2a", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
-                    We respond within 24 hours to confirm availability and pricing.
-                  </p>
-                </form>
-              )}
             </div>
           </div>
         </div>

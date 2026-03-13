@@ -53,16 +53,16 @@ export default function Home() {
       {/* ── HERO ── */}
       <section className="hero-bg relative overflow-hidden" style={{ minHeight: "100svh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
 
-        {/* Ghost watermark */}
-        <div aria-hidden="true" style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none", overflow: "hidden" }}>
-          <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(14rem,45vw,52rem)", color: "#c9a84c", opacity: 0.022, lineHeight: 1, letterSpacing: "-0.05em", userSelect: "none" }}>MC</span>
-        </div>
-
         {/* Gold glow */}
         <div aria-hidden="true" style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 60% 50% at 50% 60%, rgba(201,168,76,0.055) 0%, transparent 70%)" }} />
 
         {/* Content */}
         <div style={{ ...wrap, position: "relative", zIndex: 10, paddingTop: "7rem", paddingBottom: "5rem", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+
+          {/* Ghost watermark — inside content div so it centers with the actual content */}
+          <div aria-hidden="true" style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none", overflow: "hidden" }}>
+            <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(14rem,45vw,52rem)", color: "#c9a84c", opacity: 0.022, lineHeight: 1, letterSpacing: "-0.05em", userSelect: "none", display: "block", textAlign: "center" }}>MC</span>
+          </div>
 
           {/* Badge */}
           <div className="anim-up d0" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", border: "1px solid rgba(201,168,76,0.3)", padding: "0.375rem 1rem", marginBottom: "2rem", fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.22em", color: "#c9a84c", textTransform: "uppercase" }}>
@@ -216,7 +216,7 @@ export default function Home() {
               { n: "II",  title: "Professional", desc: "Matt uses professional-grade products and techniques — not store-shelf stuff." },
               { n: "III", title: "Guaranteed",   desc: "Not satisfied? We'll come back and make it right. Your satisfaction is the standard." },
             ].map((item, i) => (
-              <div key={item.title} style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", padding: "2rem 1.5rem", borderTop: "1px solid #1c1c1c", borderLeft: i > 0 ? "1px solid #1c1c1c" : "none" }}>
+              <div key={item.title} className={i > 0 ? "md-border-l" : ""} style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", padding: "2rem 1.5rem", borderTop: "1px solid #1c1c1c" }}>
                 <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "3rem", color: "#c9a84c", opacity: 0.2, lineHeight: 1, marginBottom: "1rem" }}>
                   {item.n}
                 </div>

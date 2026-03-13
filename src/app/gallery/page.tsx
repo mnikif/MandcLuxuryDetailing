@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const wrap: React.CSSProperties = {
   width: "100%",
   maxWidth: "56rem",
@@ -11,16 +13,19 @@ export const metadata = {
   description: "Before and after photos from M&C Luxury Detailing — mobile car detailing in Danvers, MA.",
 };
 
-const items = [
-  { id: 1, label: "Black BMW 3-Series",     category: "Full Detail",      catColor: "#c9a84c" },
-  { id: 2, label: "White Mercedes E-Class", category: "Exterior Detail",  catColor: "#7eb8f7" },
-  { id: 3, label: "Grey Audi A4",           category: "Interior Detail",  catColor: "#6ee7b7" },
-  { id: 4, label: "Navy Porsche 911",       category: "Full Detail",      catColor: "#c9a84c" },
-  { id: 5, label: "Red Corvette C7",        category: "Exterior Detail",  catColor: "#7eb8f7" },
-  { id: 6, label: "Black RAM 1500",         category: "Interior Detail",  catColor: "#6ee7b7" },
-  { id: 7, label: "Silver Tesla Model 3",   category: "Full Detail",      catColor: "#c9a84c" },
-  { id: 8, label: "White Mercedes G-Wagon", category: "Exterior Detail",  catColor: "#7eb8f7" },
-  { id: 9, label: "Blue BMW M4",            category: "Full Detail",      catColor: "#c9a84c" },
+const pairs = [
+  { label: "Honda Civic", before: "/civic before.jpg", after: "/civic after.jpg" },
+  { label: "Honda Pilot", before: "/honda before.jpg", after: "/honda after.jpg" },
+  { label: "Toyota RAV4", before: "/rav4 before.jpg",  after: "/rav4 after.jpg"  },
+];
+
+const singles: { src: string; label: string; video?: boolean }[] = [
+  { src: "/camaro soap.jpg", label: "Camaro — Soap Stage" },
+  { src: "/red car shine.jpg", label: "Old School Shine" },
+  { src: "/washing.mp4", label: "Hand Wash", video: true },
+  { src: "/mirror.MOV", label: "Mirror Level Shine", video: true },
+  { src: "/working.jpg", label: "Detail in Progress" },
+  { src: "/dodge.jpg", label: "Wash and Wax Shine" },
 ];
 
 export default function Gallery() {
@@ -42,49 +47,51 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* ── Grid ── */}
-      <section style={{ background: "#060606", padding: "3rem 0 5rem" }}>
+      {/* ── Before / After Pairs ── */}
+      <section style={{ background: "#060606", padding: "3rem 0 2rem" }}>
         <div style={wrap}>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ gap: "1px", background: "#1c1c1c" }}>
-            {items.map((item) => (
-              <div key={item.id} style={{ background: "#060606" }}>
-
-                {/* Before / After panels */}
+            {pairs.map((pair) => (
+              <div key={pair.label} style={{ background: "#060606" }}>
                 <div className="grid grid-cols-2" style={{ gap: "1px", background: "#1c1c1c" }}>
-                  <div style={{ position: "relative", aspectRatio: "4/3", background: "#080808", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-                    <span style={{ position: "absolute", top: "0.5rem", left: "0.5rem", color: "#3a3a3a", fontSize: "0.48rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase" }}>Before</span>
-                    <span style={{ color: "#1c1c1c", fontSize: "2.5rem" }}>◻</span>
-                    <span style={{ color: "#1c1c1c", fontSize: "0.48rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", marginTop: "0.5rem", textAlign: "center" }}>Coming soon</span>
+                  <div style={{ position: "relative", aspectRatio: "4/3", background: "#080808" }}>
+                    <span style={{ position: "absolute", top: "0.5rem", left: "0.5rem", zIndex: 10, color: "#f2ede4", fontSize: "0.48rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", background: "rgba(0,0,0,0.6)", padding: "2px 6px" }}>Before</span>
+                    <Image src={pair.before} alt={`${pair.label} before`} fill quality={100} style={{ objectFit: "cover" }} />
                   </div>
-                  <div style={{ position: "relative", aspectRatio: "4/3", background: "#0a0a0a", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-                    <span style={{ position: "absolute", top: "0.5rem", right: "0.5rem", color: "#c9a84c", fontSize: "0.48rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", opacity: 0.6 }}>After</span>
-                    <span style={{ color: "rgba(201,168,76,0.12)", fontSize: "2.5rem" }}>◼</span>
-                    <span style={{ color: "#2a2a2a", fontSize: "0.48rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", marginTop: "0.5rem", textAlign: "center" }}>Coming soon</span>
+                  <div style={{ position: "relative", aspectRatio: "4/3", background: "#0a0a0a" }}>
+                    <span style={{ position: "absolute", top: "0.5rem", right: "0.5rem", zIndex: 10, color: "#c9a84c", fontSize: "0.48rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", background: "rgba(0,0,0,0.6)", padding: "2px 6px" }}>After</span>
+                    <Image src={pair.after} alt={`${pair.label} after`} fill quality={100} style={{ objectFit: "cover" }} />
                   </div>
                 </div>
-
-                {/* Card footer */}
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0.75rem 1rem", borderTop: "1px solid #1c1c1c" }}>
-                  <span style={{ color: "#a8a8a8", fontSize: "0.78rem", textAlign: "center" }}>{item.label}</span>
-                  <span style={{ color: item.catColor, fontSize: "0.48rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", border: `1px solid ${item.catColor}30`, background: `${item.catColor}08`, padding: "0.25rem 0.6rem", whiteSpace: "nowrap" }}>
-                    {item.category}
-                  </span>
+                <div style={{ padding: "0.75rem 1rem", borderTop: "1px solid #1c1c1c" }}>
+                  <span style={{ color: "#a8a8a8", fontSize: "0.78rem" }}>{pair.label}</span>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Photo upload note */}
-          <div style={{ marginTop: "3rem", textAlign: "center", padding: "2rem", border: "1px solid #1c1c1c", background: "#0a0a0a" }}>
-            <div className="gold-rule" style={{ width: "3rem", margin: "0 auto 1.25rem" }} />
-            <p style={{ color: "#a8a8a8", fontSize: "0.84rem", marginBottom: "0.5rem", textAlign: "center" }}>Adding Your Photos</p>
-            <p style={{ color: "#3a3a3a", fontSize: "0.78rem", lineHeight: 1.7, textAlign: "center" }}>
-              Drop before/after images into{" "}
-              <code style={{ color: "#c9a84c", fontSize: "0.72rem", background: "#060606", padding: "1px 6px" }}>/public/gallery/</code>{" "}
-              and replace the placeholder divs with{" "}
-              <code style={{ color: "#c9a84c", fontSize: "0.72rem", background: "#060606", padding: "1px 6px" }}>{"<Image />"}</code>{" "}
-              components.
-            </p>
+      {/* ── Single Photos ── */}
+      <section style={{ background: "#060606", padding: "2rem 0 5rem" }}>
+        <div style={wrap}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ gap: "1px", background: "#1c1c1c" }}>
+            {singles.map((photo) => (
+              <div key={photo.src} style={{ background: "#060606" }}>
+                <div style={{ position: "relative", aspectRatio: "4/3", background: "#080808", overflow: "hidden" }}>
+                  {photo.video ? (
+                    <video autoPlay loop muted playsInline style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}>
+                      <source src={photo.src} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <Image src={photo.src} alt={photo.label} fill quality={100} style={{ objectFit: "cover" }} />
+                  )}
+                </div>
+                <div style={{ padding: "0.75rem 1rem", borderTop: "1px solid #1c1c1c" }}>
+                  <span style={{ color: "#a8a8a8", fontSize: "0.78rem" }}>{photo.label}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

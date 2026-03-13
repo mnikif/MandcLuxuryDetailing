@@ -32,6 +32,7 @@ function FacebookIcon({ size = 16 }: { size?: number }) {
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -40,68 +41,145 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => { setMenuOpen(false); }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+
   return (
-    <header
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-400"
-      style={{
-        background:     scrolled ? "rgba(6,6,6,0.96)" : "transparent",
-        backdropFilter: scrolled ? "blur(16px) saturate(1.2)" : "none",
-        borderBottom:   scrolled ? "1px solid #1c1c1c" : "1px solid transparent",
-      }}
-    >
-      {/* 3-column grid: logo | center links | right actions
-          Matches the same maxWidth:"56rem" margin:"0 auto" as all page content */}
-      <nav style={{
-        width: "100%",
-        maxWidth: "56rem",
-        margin: "0 auto",
-        padding: "0 1.25rem",
-        height: "4rem",
-        display: "grid",
-        gridTemplateColumns: "1fr auto 1fr",
-        alignItems: "center",
-      }}>
+    <>
+      <header
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-400"
+        style={{
+          background:     scrolled || menuOpen ? "rgba(6,6,6,0.98)" : "transparent",
+          backdropFilter: scrolled || menuOpen ? "blur(16px) saturate(1.2)" : "none",
+          borderBottom:   scrolled || menuOpen ? "1px solid #1c1c1c" : "1px solid transparent",
+        }}
+      >
+        <nav style={{
+          width: "100%",
+          maxWidth: "56rem",
+          margin: "0 auto",
+          padding: "0 1.25rem",
+          height: "4rem",
+          display: "grid",
+          gridTemplateColumns: "1fr auto 1fr",
+          alignItems: "center",
+        }}>
 
-        {/* Col 1 — Logo (left-aligned within its cell) */}
-        <Link href="/" style={{ display: "flex", flexDirection: "column", lineHeight: 1, textDecoration: "none", justifySelf: "start" }}>
-          <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.5rem", color: "#c9a84c", lineHeight: 1 }}>
-            M&amp;C
-          </span>
-          <span style={{ fontSize: "0.48rem", letterSpacing: "0.35em", textTransform: "uppercase", color: "#3a3a3a", fontFamily: "var(--font-mono)", lineHeight: 1.2, marginTop: "1px" }}>
-            Luxury Detailing
-          </span>
-        </Link>
+          {/* Logo */}
+          <Link href="/" style={{ display: "flex", flexDirection: "column", lineHeight: 1, textDecoration: "none", justifySelf: "start" }}>
+            <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.5rem", color: "#c9a84c", lineHeight: 1 }}>
+              M&amp;C
+            </span>
+            <span style={{ fontSize: "0.48rem", letterSpacing: "0.35em", textTransform: "uppercase", color: "#3a3a3a", fontFamily: "var(--font-mono)", lineHeight: 1.2, marginTop: "1px" }}>
+              Luxury Detailing
+            </span>
+          </Link>
 
-        {/* Col 2 — Nav links, perfectly centered (desktop only, hidden on mobile) */}
-        <ul className="hidden md:flex" style={{ alignItems: "center", gap: "1.75rem", listStyle: "none", margin: 0, padding: 0, justifyContent: "center" }}>
-          {links.filter(l => l.label !== "Book Now").map(({ href, label }) => {
+          {/* Desktop nav links */}
+          <ul className="hidden md:flex" style={{ alignItems: "center", gap: "1.75rem", listStyle: "none", margin: 0, padding: 0, justifyContent: "center" }}>
+            {links.filter(l => l.label !== "Book Now").map(({ href, label }) => {
+              const active = pathname === href;
+              return (
+                <li key={href}>
+                  <Link href={href} className="hover:text-[#f2ede4]" style={{ fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", color: active ? "#c9a84c" : "#5a5a5a", transition: "color 0.2s", textDecoration: "none" }}>
+                    {label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+
+          {/* Mobile center placeholder */}
+          <div className="md:hidden" />
+
+          {/* Right actions */}
+          <div style={{ display: "flex", alignItems: "center", gap: "0.875rem", justifySelf: "end" }}>
+            {/* Desktop only */}
+            <Link href="/contact" className="btn-gold hidden md:inline-flex" style={{ height: "36px", padding: "0 1.25rem", alignItems: "center", justifyContent: "center", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em" }}>
+              Book Now
+            </Link>
+            <a href={IG_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hidden md:flex" style={{ color: "#c9a84c", opacity: 0.7, transition: "opacity 0.2s", alignItems: "center" }} onMouseEnter={e => (e.currentTarget.style.opacity = "1")} onMouseLeave={e => (e.currentTarget.style.opacity = "0.7")}>
+              <InstagramIcon size={18} />
+            </a>
+            <a href={FB_URL} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hidden md:flex" style={{ color: "#c9a84c", opacity: 0.7, transition: "opacity 0.2s", alignItems: "center" }} onMouseEnter={e => (e.currentTarget.style.opacity = "1")} onMouseLeave={e => (e.currentTarget.style.opacity = "0.7")}>
+              <FacebookIcon size={18} />
+            </a>
+
+            {/* Mobile hamburger */}
+            <button
+              className="md:hidden"
+              onClick={() => setMenuOpen(m => !m)}
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", width: "44px", height: "44px", background: "none", border: "none", cursor: "pointer", padding: 0, gap: "5px" }}
+            >
+              <span style={{ display: "block", width: "22px", height: "1.5px", background: "#c9a84c", transition: "transform 0.25s, opacity 0.25s", transform: menuOpen ? "rotate(45deg) translateY(6.5px)" : "none" }} />
+              <span style={{ display: "block", width: "22px", height: "1.5px", background: "#c9a84c", transition: "opacity 0.25s", opacity: menuOpen ? 0 : 1 }} />
+              <span style={{ display: "block", width: "22px", height: "1.5px", background: "#c9a84c", transition: "transform 0.25s, opacity 0.25s", transform: menuOpen ? "rotate(-45deg) translateY(-6.5px)" : "none" }} />
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      {/* Mobile full-screen drawer */}
+      <div
+        className="md:hidden fixed inset-0 z-40 flex flex-col"
+        style={{
+          background: "#060606",
+          transform: menuOpen ? "translateX(0)" : "translateX(100%)",
+          transition: "transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)",
+          paddingTop: "4rem",
+        }}
+      >
+        {/* Nav links */}
+        <nav style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 2rem" }}>
+          {links.map(({ href, label }) => {
             const active = pathname === href;
+            const isBook = label === "Book Now";
             return (
-              <li key={href}>
-                <Link href={href} className="hover:text-[#f2ede4]" style={{ fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", color: active ? "#c9a84c" : "#5a5a5a", transition: "color 0.2s", textDecoration: "none" }}>
-                  {label}
-                </Link>
-              </li>
+              <Link
+                key={href}
+                href={href}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  padding: "1.25rem 0",
+                  borderBottom: "1px solid #111",
+                  fontFamily: "var(--font-cormorant)",
+                  fontStyle: "italic",
+                  fontWeight: 700,
+                  fontSize: "clamp(1.8rem, 8vw, 2.4rem)",
+                  color: isBook ? "#c9a84c" : (active ? "#c9a84c" : "#f2ede4"),
+                  textDecoration: "none",
+                  letterSpacing: "-0.01em",
+                }}
+              >
+                {label}
+                <span style={{ fontSize: "1rem", color: "#3a3a3a", fontFamily: "var(--font-mono)", fontStyle: "normal" }}>→</span>
+              </Link>
             );
           })}
-        </ul>
+        </nav>
 
-        {/* Col 2 placeholder on mobile so col 3 stays right */}
-        <div className="md:hidden" />
-
-        {/* Col 3 — Book Now + icons (right-aligned within its cell) */}
-        <div style={{ display: "flex", alignItems: "center", gap: "0.875rem", justifySelf: "end" }}>
-          <Link href="/contact" className="btn-gold" style={{ height: "36px", padding: "0 1.25rem", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em" }}>
-            Book Now
-          </Link>
-          <a href={IG_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ color: "#c9a84c", opacity: 0.7, transition: "opacity 0.2s", display: "flex", alignItems: "center" }} onMouseEnter={e => (e.currentTarget.style.opacity = "1")} onMouseLeave={e => (e.currentTarget.style.opacity = "0.7")}>
-            <InstagramIcon size={18} />
+        {/* Drawer footer */}
+        <div style={{ padding: "1.5rem 2rem", borderTop: "1px solid #1c1c1c", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <a href="tel:+17816325193" style={{ color: "#3a3a3a", fontSize: "0.65rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
+            (781) 632-5193
           </a>
-          <a href={FB_URL} target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ color: "#c9a84c", opacity: 0.7, transition: "opacity 0.2s", display: "flex", alignItems: "center" }} onMouseEnter={e => (e.currentTarget.style.opacity = "1")} onMouseLeave={e => (e.currentTarget.style.opacity = "0.7")}>
-            <FacebookIcon size={18} />
-          </a>
+          <div style={{ display: "flex", gap: "1rem" }}>
+            <a href={IG_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ color: "#c9a84c", opacity: 0.7 }}>
+              <InstagramIcon size={20} />
+            </a>
+            <a href={FB_URL} target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ color: "#c9a84c", opacity: 0.7 }}>
+              <FacebookIcon size={20} />
+            </a>
+          </div>
         </div>
-      </nav>
-    </header>
+      </div>
+    </>
   );
 }
