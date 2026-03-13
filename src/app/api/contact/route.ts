@@ -1,6 +1,9 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+
 export async function POST(req: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   const { name, email, phone, service, vehicle, location, preferredDate, message } = await req.json();
