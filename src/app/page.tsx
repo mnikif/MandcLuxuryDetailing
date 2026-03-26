@@ -182,6 +182,52 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Q&A ── */}
+      <section style={{ background: "#060606", borderTop: "1px solid #1c1c1c", padding: "5rem 0" }}>
+        <div style={wrap}>
+          <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
+            <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem" }}>
+              Common Questions
+            </p>
+            <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(2rem,6vw,3.2rem)", color: "#f2ede4", lineHeight: 1 }}>
+              What You&apos;re Wondering
+            </h2>
+            <div className="gold-rule" style={{ width: "4rem", margin: "1.25rem auto 0" }} />
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            {[
+              {
+                q: "How much does a full car detail typically cost?",
+                a: "A professional full detail — interior and exterior combined — typically runs anywhere from $229 to $300 depending on vehicle size and condition. At M&C, a full detail starts at $229 and covers everything: deep interior steam clean, hand wash, clay bar, polish, sealant, leather conditioning, and more. You're paying for professional-grade products and trained hands, not just a rinse.",
+              },
+              {
+                q: "Is it worth paying for car detailing?",
+                a: "Absolutely. Regular detailing protects your paint from oxidation, UV damage, and contaminants that cause permanent wear over time. It also preserves interior materials — leather cracks, fabric stains, and plastics fade without proper care. Beyond protection, a clean car simply feels better to drive, holds its resale value, and makes an impression. The cost of a detail is a fraction of what neglect will cost you at trade-in.",
+              },
+              {
+                q: "What is the best homemade solution to wash a car?",
+                a: "There isn't one. Dish soap strips your paint's protective wax and sealant. Household cleaners are too harsh for automotive finishes. Homemade solutions might get the dirt off but they accelerate paint degradation and leave your car worse off in the long run. A proper hand wash uses pH-balanced car shampoo, a two-bucket method, and microfiber — tools and products designed specifically not to damage your finish.",
+              },
+              {
+                q: "What does car detailing include?",
+                a: "Detailing goes far beyond a car wash. A full detail typically includes a thorough hand wash and dry, clay bar treatment to remove bonded contaminants, wheel and tire cleaning, interior vacuuming, dashboard and console wipe-down, steam cleaning of high-touch surfaces, leather conditioning, window cleaning inside and out, and an air freshener. At M&C we cover all of it — no corners cut.",
+              },
+            ].map((item, i) => (
+              <div key={i} style={{ borderTop: "1px solid #1c1c1c", padding: "2rem 0", display: "flex", flexDirection: "column", gap: "0.875rem" }}>
+                <h3 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(1.1rem,3vw,1.4rem)", color: "#c9a84c", lineHeight: 1.3, textAlign: "left" }}>
+                  {item.q}
+                </h3>
+                <p style={{ color: "#5a5a5a", fontSize: "0.88rem", lineHeight: 1.8, textAlign: "left" }}>
+                  {item.a}
+                </p>
+              </div>
+            ))}
+            <div style={{ borderTop: "1px solid #1c1c1c" }} />
+          </div>
+        </div>
+      </section>
+
       {/* ── WHY MC ── */}
       <section style={{ background: "#060606", borderTop: "1px solid #1c1c1c", padding: "5rem 0" }}>
         <div style={wrap}>

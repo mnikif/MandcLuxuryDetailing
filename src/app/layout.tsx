@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     "Premium mobile car detailing in Danvers, MA and the North Shore. We come to you — showroom-quality results at your door.",
   keywords:
     "car detailing Danvers MA, mobile detailing North Shore, luxury car detailing Massachusetts, auto detailing Salem Danvers Peabody",
+  verification: {
+    google: "JpoHpAOWAGNRSYUWadjT0rm-ncb0BrFjYF4BIxErfYE",
+  },
 };
 
 export const viewport: Viewport = {

@@ -4,12 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const links = [
-  { href: "/",         label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/gallery",  label: "Gallery" },
-  { href: "/reviews",  label: "Reviews" },
-  { href: "/about",    label: "About" },
-  { href: "/contact",  label: "Book Now" },
+  { href: "/",             label: "Home" },
+  { href: "/services",     label: "Services" },
+  { href: "/maintenance",  label: "Membership" },
+  { href: "/gallery",      label: "Gallery" },
+  { href: "/reviews",      label: "Reviews" },
+  { href: "/about",        label: "About" },
+  { href: "/contact",      label: "Book Now" },
 ];
 
 const IG_URL = "https://instagram.com/mcluxurydetailing";
@@ -65,13 +66,13 @@ export default function Navbar() {
           margin: "0 auto",
           padding: "0 1.25rem",
           height: "4rem",
-          display: "grid",
-          gridTemplateColumns: "1fr auto 1fr",
+          display: "flex",
           alignItems: "center",
+          position: "relative",
         }}>
 
           {/* Logo */}
-          <Link href="/" style={{ display: "flex", flexDirection: "column", lineHeight: 1, textDecoration: "none", justifySelf: "start" }}>
+          <Link href="/" style={{ display: "flex", flexDirection: "column", lineHeight: 1, textDecoration: "none", marginRight: "auto" }}>
             <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.5rem", color: "#c9a84c", lineHeight: 1 }}>
               M&amp;C
             </span>
@@ -80,8 +81,8 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop nav links */}
-          <ul className="hidden md:flex" style={{ alignItems: "center", gap: "1.75rem", listStyle: "none", margin: 0, padding: 0, justifyContent: "center" }}>
+          {/* Desktop nav links — absolutely centered */}
+          <ul className="hidden md:flex" style={{ position: "absolute", left: "50%", transform: "translateX(-50%)", alignItems: "center", gap: "1.75rem", listStyle: "none", margin: 0, padding: 0 }}>
             {links.filter(l => l.label !== "Book Now").map(({ href, label }) => {
               const active = pathname === href;
               return (
@@ -94,11 +95,11 @@ export default function Navbar() {
             })}
           </ul>
 
-          {/* Mobile center placeholder */}
-          <div className="md:hidden" />
+          {/* Mobile spacer */}
+          <div className="md:hidden" style={{ flex: 1 }} />
 
           {/* Right actions */}
-          <div style={{ display: "flex", alignItems: "center", gap: "0.875rem", justifySelf: "end" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.875rem", marginLeft: "auto" }}>
             {/* Desktop only */}
             <Link href="/contact" className="btn-gold hidden md:inline-flex" style={{ height: "36px", padding: "0 1.25rem", alignItems: "center", justifyContent: "center", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em" }}>
               Book Now
