@@ -92,7 +92,7 @@ export default function About() {
 
             {/* About photo */}
             <div style={{ position: "relative", border: "1px solid #1c1c1c", overflow: "hidden", aspectRatio: "3/4" }}>
-              <Image src="/Matt.PNG" alt="Matt — Founder of M&C Luxury Detailing" fill quality={100} style={{ objectFit: "cover", objectPosition: "top" }} />
+              <Image src="/Matt.PNG" alt="Matt, founder of M&C Luxury Detailing, mobile car detailing professional serving Danvers and North Shore Massachusetts" fill quality={100} style={{ objectFit: "cover", objectPosition: "top" }} />
             </div>
           </div>
         </div>

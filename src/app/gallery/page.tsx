@@ -8,24 +8,29 @@ const wrap: React.CSSProperties = {
   textAlign: "center",
 };
 
-export const metadata = {
-  title: "Gallery | M&C Luxury Detailing",
-  description: "Before and after photos from M&C Luxury Detailing — mobile car detailing in Danvers, MA.",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Before & After Gallery — Mobile Car Detailing North Shore MA",
+  description: "Real before and after photos from M&C Luxury Detailing. Professional mobile car detailing results in Danvers, Beverly, Salem, and across the North Shore of Massachusetts.",
+  alternates: {
+    canonical: "https://www.mandcluxurydetailing.com/gallery",
+  },
 };
 
 const pairs = [
-  { label: "Honda Civic", before: "/civic before.jpg", after: "/civic after.jpg" },
-  { label: "Honda Pilot", before: "/honda before.jpg", after: "/honda after.jpg" },
-  { label: "Toyota RAV4", before: "/rav4 before.jpg",  after: "/rav4 after.jpg"  },
+  { label: "Honda Civic full detail before and after - North Shore MA mobile detailing by M&C Luxury Detailing", before: "/civic before.jpg", after: "/civic after.jpg" },
+  { label: "Honda Pilot interior and exterior detail before and after - Danvers MA mobile detailing by M&C Luxury Detailing", before: "/honda before.jpg", after: "/honda after.jpg" },
+  { label: "Toyota RAV4 full detail before and after - Beverly MA mobile detailing by M&C Luxury Detailing", before: "/rav4 before.jpg",  after: "/rav4 after.jpg"  },
 ];
 
 const singles: { src: string; label: string; video?: boolean }[] = [
-  { src: "/camaro soap.jpg", label: "Camaro — Soap Stage" },
-  { src: "/red car shine.jpg", label: "Old School Shine" },
-  { src: "/washing.mp4", label: "Hand Wash", video: true },
-  { src: "/mirror.MOV", label: "Mirror Level Shine", video: true },
-  { src: "/working.jpg", label: "Detail in Progress" },
-  { src: "/dodge.jpg", label: "Wash and Wax Shine" },
+  { src: "/camaro soap.jpg", label: "Camaro exterior detail soap stage - hand wash mobile detailing North Shore Massachusetts" },
+  { src: "/red car shine.jpg", label: "Classic car exterior detail mirror shine - M&C Luxury Detailing North Shore MA" },
+  { src: "/washing.mp4", label: "Professional hand wash mobile car detailing service - M&C Luxury Detailing Danvers MA", video: true },
+  { src: "/mirror.MOV", label: "Mirror finish exterior detail result - mobile car detailing North Shore Massachusetts", video: true },
+  { src: "/working.jpg", label: "M&C Luxury Detailing professional mobile detailer at work - North Shore MA" },
+  { src: "/dodge.jpg", label: "Dodge exterior wash and wax detail finish - mobile detailing Beverly Danvers Salem MA" },
 ];
 
 export default function Gallery() {
