@@ -29,11 +29,17 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "M&C Luxury Detailing | Mobile Car Detailing — Danvers, MA",
-  description:
-    "Premium mobile car detailing in Danvers, MA and the North Shore. We come to you — showroom-quality results at your door.",
-  keywords:
-    "car detailing Danvers MA, mobile detailing North Shore, luxury car detailing Massachusetts, auto detailing Salem Danvers Peabody",
+  metadataBase: new URL('https://www.mandcluxurydetailing.com'),
+  title: {
+    template: '%s | M&C Luxury Detailing',
+    default: 'Mobile Car Detailing in Danvers, MA | M&C Luxury Detailing',
+  },
+  description: 'Professional mobile car detailing serving Danvers, Beverly, Salem, Marblehead, and the North Shore of Massachusetts. Book online — we come to you.',
+  openGraph: {
+    siteName: 'M&C Luxury Detailing',
+    locale: 'en_US',
+    type: 'website',
+  },
   verification: {
     google: "JpoHpAOWAGNRSYUWadjT0rm-ncb0BrFjYF4BIxErfYE",
   },

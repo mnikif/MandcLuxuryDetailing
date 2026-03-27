@@ -1,9 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 
-export const metadata = {
-  title: "About | M&C Luxury Detailing",
-  description: "Meet Matt — the founder of M&C Luxury Detailing in Danvers, MA.",
+export const metadata: Metadata = {
+  title: 'About Matt — Local Mobile Detailer | M&C Luxury Detailing',
+  description: 'Matt founded M&C Luxury Detailing in Danvers, MA. A North Shore local with a perfectionist standard for every vehicle he touches.',
+  alternates: {
+    canonical: 'https://www.mandcluxurydetailing.com/about',
+  },
 };
 
 const values = [

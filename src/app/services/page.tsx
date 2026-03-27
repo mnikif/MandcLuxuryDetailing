@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: 'Car Detailing Services & Pricing in North Shore MA',
+  description: 'Interior detailing from $169, exterior from $99, full detail from $229. Mobile car detailing serving all of North Shore Massachusetts. No hidden fees.',
+  alternates: {
+    canonical: 'https://www.mandcluxurydetailing.com/services',
+  },
+};
 
 const packages = [
   {

@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: 'Mobile Car Detailing in Danvers, MA | M&C Luxury Detailing',
+  description: "North Shore MA's top-rated mobile car detailing service. Interior, exterior, and full detail packages starting at $99. We come to you in Beverly, Danvers, Salem, Peabody, Marblehead & more.",
+  alternates: {
+    canonical: 'https://www.mandcluxurydetailing.com',
+  },
+};
 
 const services = [
   { num: "01", title: "Interior Detail", desc: "Deep vacuum, steam clean, leather conditioning, and odor elimination.", price: "From $169", duration: "2–3 hrs" },
