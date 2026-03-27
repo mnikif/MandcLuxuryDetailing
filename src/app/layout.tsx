@@ -36,9 +36,26 @@ export const metadata: Metadata = {
   },
   description: 'Professional mobile car detailing serving Danvers, Beverly, Salem, Marblehead, and the North Shore of Massachusetts. Book online — we come to you.',
   openGraph: {
+    title: 'Mobile Car Detailing — North Shore MA | M&C Luxury Detailing',
+    description: 'Professional mobile detailing in Beverly, Danvers, Salem & the entire North Shore. Book online.',
+    url: 'https://www.mandcluxurydetailing.com',
     siteName: 'M&C Luxury Detailing',
+    images: [
+      {
+        url: 'https://www.mandcluxurydetailing.com/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'M&C Luxury Detailing — Mobile Car Detailing North Shore MA',
+      },
+    ],
     locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mobile Car Detailing — North Shore MA',
+    description: 'Professional mobile detailing. We come to you.',
+    images: ['https://www.mandcluxurydetailing.com/og-image.jpg'],
   },
   verification: {
     google: "JpoHpAOWAGNRSYUWadjT0rm-ncb0BrFjYF4BIxErfYE",
