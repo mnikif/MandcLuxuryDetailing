@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import { Analytics } from "@vercel/analytics/react";
+import PostHogProvider from "@/components/PostHogProvider";
 
 const cormorant = Cormorant({
   variable: "--font-cormorant",
@@ -72,12 +74,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${cormorant.variable} ${barlow.variable} ${dmMono.variable}`}>
       <body style={{ backgroundColor: "#060606", color: "#f2ede4" }}>
-        <Navbar />
-        <main className="pb-[72px] md:pb-0">{children}</main>
-        <div className="pb-[72px] md:pb-0">
-          <Footer />
-        </div>
-        <StickyMobileCTA />
+        <PostHogProvider>
+          <Navbar />
+          <main className="pb-[72px] md:pb-0">{children}</main>
+          <div className="pb-[72px] md:pb-0">
+            <Footer />
+          </div>
+          <StickyMobileCTA />
+        </PostHogProvider>
+        <Analytics />
       </body>
     </html>
   );
