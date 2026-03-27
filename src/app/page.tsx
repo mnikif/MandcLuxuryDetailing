@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -52,6 +53,125 @@ const wrap: React.CSSProperties = {
 export default function Home() {
   return (
     <>
+      <Script
+        id="local-business-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "M&C Luxury Detailing",
+            "image": "https://www.mandcluxurydetailing.com/Matt.PNG",
+            "@id": "https://www.mandcluxurydetailing.com",
+            "url": "https://www.mandcluxurydetailing.com",
+            "telephone": "+17816325193",
+            "email": "mandcluxurydetailing@gmail.com",
+            "priceRange": "$$",
+            "description": "Professional mobile car detailing serving Danvers, Beverly, Salem, Peabody, Marblehead, Manchester, and the entire North Shore of Massachusetts.",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Danvers",
+              "addressLocality": "Danvers",
+              "addressRegion": "MA",
+              "postalCode": "01923",
+              "addressCountry": "US"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 42.5751,
+              "longitude": -70.9495
+            },
+            "areaServed": [
+              {"@type": "City", "name": "Beverly"},
+              {"@type": "City", "name": "Danvers"},
+              {"@type": "City", "name": "Salem"},
+              {"@type": "City", "name": "Peabody"},
+              {"@type": "City", "name": "Marblehead"},
+              {"@type": "City", "name": "Manchester-by-the-Sea"},
+              {"@type": "City", "name": "Gloucester"},
+              {"@type": "City", "name": "Swampscott"},
+              {"@type": "City", "name": "Hamilton"},
+              {"@type": "City", "name": "Wenham"},
+              {"@type": "City", "name": "Lynn"}
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Car Detailing Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Interior Car Detail",
+                    "description": "Deep vacuum, steam clean, leather conditioning, and odor elimination."
+                  },
+                  "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "price": "169",
+                    "priceCurrency": "USD",
+                    "minPrice": "169"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Exterior Car Detail",
+                    "description": "Hand wash, clay bar, polish, and sealant for a mirror finish."
+                  },
+                  "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "price": "99",
+                    "priceCurrency": "USD",
+                    "minPrice": "99"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Full Car Detail",
+                    "description": "Complete interior and exterior detailing package."
+                  },
+                  "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "price": "229",
+                    "priceCurrency": "USD",
+                    "minPrice": "229"
+                  }
+                }
+              ]
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "reviewCount": "4"
+            },
+            "review": [
+              {
+                "@type": "Review",
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5"
+                },
+                "author": {"@type": "Person", "name": "Janet Gargan"},
+                "reviewBody": "The results went beyond what we hoped for, and we couldn't be happier with the service."
+              },
+              {
+                "@type": "Review",
+                "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+                "author": {"@type": "Person", "name": "Deanna LeClerc"},
+                "reviewBody": "My car looks brand new."
+              }
+            ],
+            "sameAs": [
+              "https://instagram.com/mcluxurydetailing",
+              "https://www.facebook.com/profile.php?id=61577181187495"
+            ]
+          })
+        }}
+      />
+
       {/* ── HERO ── */}
       <section className="hero-bg relative overflow-hidden" style={{ minHeight: "100svh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
 
