@@ -24,7 +24,9 @@ const pairs = [
   { label: "Toyota RAV4 full detail before and after - Beverly MA mobile detailing by M&C Luxury Detailing", before: "/rav4 before.jpg",  after: "/rav4 after.jpg"  },
 ];
 
-const singles: { src: string; label: string; video?: boolean }[] = [
+const singles: { src: string; label: string; video?: boolean; objectPosition?: string }[] = [
+  { src: "/Before After Left.jpeg", label: "Interior driver seat transformation before and after - mobile car detailing North Shore MA by M&C Luxury Detailing", objectPosition: "center 20%" },
+  { src: "/Before After Right.jpeg", label: "Interior passenger seat transformation before and after - mobile car detailing North Shore MA by M&C Luxury Detailing", objectPosition: "center 20%" },
   { src: "/camaro soap.jpg", label: "Camaro exterior detail soap stage - hand wash mobile detailing North Shore Massachusetts" },
   { src: "/red car shine.jpg", label: "Classic car exterior detail mirror shine - M&C Luxury Detailing North Shore MA" },
   { src: "/washing.mp4", label: "Professional hand wash mobile car detailing service - M&C Luxury Detailing Danvers MA", video: true },
@@ -89,7 +91,7 @@ export default function Gallery() {
                       <source src={photo.src} type="video/mp4" />
                     </video>
                   ) : (
-                    <Image src={photo.src} alt={photo.label} fill quality={100} style={{ objectFit: "cover" }} />
+                    <Image src={photo.src} alt={photo.label} fill quality={100} style={{ objectFit: "cover", objectPosition: photo.objectPosition ?? "center" }} />
                   )}
                 </div>
                 <div style={{ padding: "0.75rem 1rem", borderTop: "1px solid #1c1c1c" }}>

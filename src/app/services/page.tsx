@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: 'Car Detailing Services & Pricing in North Shore MA',
@@ -16,6 +17,10 @@ const packages = [
     price: "Starting at $169",
     duration: "2–3 hrs",
     popular: false,
+    image: "/Interior Example.JPG",
+    imagePos: "center top",
+    image2: null,
+    image2Pos: null,
     features: [
       "Deep vacuum — seats, floors, trunk",
       "Dashboard & console wipe-down",
@@ -32,6 +37,10 @@ const packages = [
     price: "Starting at $99",
     duration: "1–2 hrs",
     popular: false,
+    image: "/red car shine.jpg",
+    imagePos: "center 50%",
+    image2: null,
+    image2Pos: null,
     features: [
       "Hand wash & dry",
       "Wheel & tire cleaning",
@@ -46,6 +55,10 @@ const packages = [
     price: "Starting at $229",
     duration: "3–5 hrs",
     popular: true,
+    image: "/camaro soap.jpg",
+    imagePos: "center 42%",
+    image2: "/rav4 after.jpg",
+    image2Pos: "center 38%",
     features: [
       "Everything in Interior Detail",
       "Everything in Exterior Detail",
@@ -59,6 +72,10 @@ const packages = [
     price: "+$50 add-on",
     duration: "30–45 min",
     popular: false,
+    image: "/Car Collection.jpg",
+    imagePos: "center 50%",
+    image2: null,
+    image2Pos: null,
     features: [
       "Applied after Exterior or Full Detail",
       "Protective wax coat",
@@ -100,49 +117,75 @@ export default function Services() {
         <div style={wrap}>
           <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "1px", background: "#1c1c1c" }}>
             {packages.map((pkg) => (
-              <div key={pkg.num} style={{ position: "relative", background: "#060606", padding: "2rem", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+              <div key={pkg.num} style={{ position: "relative", background: "#060606", display: "flex", flexDirection: "column" }}>
 
-                {pkg.popular && (
-                  <div style={{ position: "absolute", top: 0, right: 0, background: "#c9a84c", color: "#000", fontSize: "0.5rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", padding: "0.3rem 0.8rem", fontWeight: 700 }}>
-                    Most Popular
+                {/* Image */}
+                {pkg.image2 ? (
+                  <div style={{ position: "relative", height: "220px", display: "flex" }}>
+                    <div style={{ position: "relative", flex: 1, overflow: "hidden" }}>
+                      <Image src={pkg.image} alt={`${pkg.name} wash`} fill style={{ objectFit: "cover", objectPosition: pkg.imagePos }} sizes="14rem" />
+                      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 50%, rgba(6,6,6,0.6) 100%)" }} />
+                    </div>
+                    <div style={{ width: "1px", background: "rgba(201,168,76,0.35)", flexShrink: 0, zIndex: 2 }} />
+                    <div style={{ position: "relative", flex: 1, overflow: "hidden" }}>
+                      <Image src={pkg.image2} alt={`${pkg.name} interior`} fill style={{ objectFit: "cover", objectPosition: pkg.image2Pos ?? "center" }} sizes="14rem" />
+                      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 50%, rgba(6,6,6,0.6) 100%)" }} />
+                    </div>
+                    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 55%, #060606 100%)", zIndex: 1 }} />
+                    <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ position: "absolute", bottom: "0.75rem", left: "1.25rem", fontSize: "4rem", color: "#c9a84c", opacity: 0.5, lineHeight: 1, userSelect: "none", zIndex: 2 }}>
+                      {pkg.num}
+                    </div>
+                    <div style={{ position: "absolute", top: "0.75rem", right: 0, background: "#c9a84c", color: "#000", fontSize: "0.5rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", padding: "0.3rem 0.8rem", fontWeight: 700, zIndex: 2 }}>
+                      Most Popular
+                    </div>
+                  </div>
+                ) : (
+                  <div style={{ position: "relative", height: "280px", overflow: "hidden" }}>
+                    <Image src={pkg.image} alt={pkg.name} fill style={{ objectFit: "cover", objectPosition: pkg.imagePos }} sizes="(max-width: 640px) 100vw, 28rem" />
+                    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 55%, #060606 100%)" }} />
+                    <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ position: "absolute", bottom: "0.75rem", left: "1.25rem", fontSize: "4rem", color: "#c9a84c", opacity: 0.3, lineHeight: 1, userSelect: "none" }}>
+                      {pkg.num}
+                    </div>
                   </div>
                 )}
 
-                <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "3rem", color: "#c9a84c", opacity: pkg.popular ? 0.35 : 0.15, lineHeight: 1, marginBottom: "0.5rem", textAlign: "center" }}>
-                  {pkg.num}
+                {/* Content */}
+                <div style={{ padding: "1.5rem 2rem 2rem", display: "flex", flexDirection: "column", flex: 1, alignItems: "center", textAlign: "center" }}>
+                  <h3 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.5rem", color: "#f2ede4", lineHeight: 1, marginBottom: "0.4rem", textAlign: "center" }}>
+                    {pkg.name}
+                  </h3>
+
+                  <div style={{ display: "flex", alignItems: "baseline", justifyContent: "center", gap: "0.75rem", marginBottom: "1.25rem" }}>
+                    <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.2rem", color: "#c9a84c" }}>
+                      {pkg.price}
+                    </span>
+                    <span style={{ color: "#3a3a3a", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em" }}>
+                      {pkg.duration}
+                    </span>
+                  </div>
+
+                  <div style={{ height: "1px", background: "#1c1c1c", width: "100%", marginBottom: "1.25rem" }} />
+
+                  <ul style={{ flex: 1, width: "100%", marginBottom: "1.5rem", display: "flex", flexDirection: "column", gap: "0.625rem" }}>
+                    {pkg.features.map((f) => (
+                      <li key={f} style={{ display: "flex", alignItems: "flex-start", justifyContent: "center", gap: "0.75rem", color: "#5a5a5a", fontSize: "0.82rem", lineHeight: 1.5, textAlign: "center" }}>
+                        <span style={{ color: "#c9a84c", flexShrink: 0, marginTop: "1px", fontSize: "0.6rem" }}>✦</span>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Link
+                    href="/contact"
+                    className={pkg.popular ? "btn-gold" : "btn-ghost"}
+                    style={{ width: "100%", height: "48px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.62rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em", textTransform: "uppercase", ...(pkg.popular ? {} : { border: "1px solid #282828", color: "#a8a8a8" }) }}
+                  >
+                    Book Now
+                  </Link>
+                  <p style={{ color: "#c9a84c", fontSize: "0.55rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textAlign: "center", marginTop: "0.5rem" }}>
+                    ★★★★★ <span style={{ color: "#3a3a3a" }}>on Google</span>
+                  </p>
                 </div>
-
-                <h3 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.5rem", color: "#f2ede4", lineHeight: 1, marginBottom: "0.4rem", textAlign: "center" }}>
-                  {pkg.name}
-                </h3>
-
-                <div style={{ display: "flex", alignItems: "baseline", justifyContent: "center", gap: "0.75rem", marginBottom: "1.25rem" }}>
-                  <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.2rem", color: "#c9a84c" }}>
-                    {pkg.price}
-                  </span>
-                  <span style={{ color: "#3a3a3a", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em" }}>
-                    {pkg.duration}
-                  </span>
-                </div>
-
-                <div style={{ height: "1px", background: "#1c1c1c", width: "100%", marginBottom: "1.25rem" }} />
-
-                <ul style={{ flex: 1, width: "100%", marginBottom: "1.5rem", display: "flex", flexDirection: "column", gap: "0.625rem" }}>
-                  {pkg.features.map((f) => (
-                    <li key={f} style={{ display: "flex", alignItems: "flex-start", justifyContent: "center", gap: "0.75rem", color: "#5a5a5a", fontSize: "0.82rem", lineHeight: 1.5, textAlign: "center" }}>
-                      <span style={{ color: "#c9a84c", flexShrink: 0, marginTop: "1px", fontSize: "0.6rem" }}>✦</span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-
-                <Link
-                  href="/contact"
-                  className={pkg.popular ? "btn-gold" : ""}
-                  style={{ width: "100%", height: "48px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.62rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em", textTransform: "uppercase", ...(pkg.popular ? {} : { border: "1px solid #282828", color: "#a8a8a8" }) }}
-                >
-                  Book Now
-                </Link>
               </div>
             ))}
           </div>

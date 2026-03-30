@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: 'Customer Reviews — Mobile Car Detailing North Shore MA',
@@ -58,6 +59,68 @@ const wrap: React.CSSProperties = {
 export default function Reviews() {
   return (
     <>
+      <Script
+        id="reviews-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "M&C Luxury Detailing",
+            "url": "https://www.mandcluxurydetailing.com",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "bestRating": "5",
+              "reviewCount": "7"
+            },
+            "review": [
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Janet Gargan" },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "Thank you so much for your hard work, Matt. My son was thrilled with how clean his car looked after your outstanding detailing job. As an umpire, his equipment makes for a dirty car, but you made it spotless inside and out, even with all the gear. The results went beyond what we hoped for, and we couldn't be happier with the service."
+              },
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Deanna LeClerc" },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "Matt was great to work with — he got back to me almost immediately. His price is super reasonable especially for the results I got, my car looks brand new."
+              },
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "John Stalker" },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "Quick to respond, very personable, appointment booked amazingly fast. The work was great, the price was fair. Won't hesitate to have them come back."
+              },
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Vic P." },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "Was on time and did an amazing job. My car is spotless and probably the cleanest I have ever seen it. Highly recommend! The best part is he comes right to you!"
+              },
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Michael Blankenship" },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "For a young kid to come out on one of the hottest days of the week being 80+ degrees and to vacuum and clean my Jeep Wrangler inside with all of my service dogs, pet hair everywhere and do the phenomenal job that he did is remarkable. I highly recommend getting your car cleaned by him, especially because his rates are so reasonable."
+              },
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Lauren Covello" },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "Matthew did such a great job on my car! I have two dogs so there was a lot of dog fur in my car and he got it all — it is spotless now! Great detail for a great price, I'd highly recommend using M&C Luxury Detailing!!"
+              },
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Stephanie Hueter" },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "Not only very professional but an exceptional job done. Incredible attention to detail and every nook and cranny was cleaned. Will be a repeat customer."
+              }
+            ]
+          })
+        }}
+      />
       {/* ── Hero ── */}
       <section className="hero-bg" style={{ paddingTop: "7rem", paddingBottom: "4rem", borderBottom: "1px solid #1c1c1c" }}>
         <div style={wrap}>

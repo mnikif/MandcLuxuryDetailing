@@ -45,8 +45,7 @@ const labelStyle: React.CSSProperties = {
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: "", email: "", phone: "", service: "",
-    vehicle: "", message: "", location: "", preferredDate: "",
+    name: "", phone: "", service: "", vehicle: "", message: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -93,7 +92,7 @@ export default function Contact() {
           <div className="gold-rule" style={{ width: "4rem", margin: "0 auto 1.75rem" }} />
 
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <a href="tel:+17816325193" className="btn-gold" style={{ height: "58px", padding: "0 2rem", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "0.75rem", fontSize: "0.7rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
+            <a href="tel:+17816325193" className="btn-gold btn-ghost" style={{ height: "58px", padding: "0 2rem", display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "0.75rem", fontSize: "0.7rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
                 <path fillRule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clipRule="evenodd" />
               </svg>
@@ -137,33 +136,16 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label style={labelStyle}>Email <span style={{ color: "#c9a84c" }}>*</span></label>
-                    <input type="email" name="email" required placeholder="john@example.com" value={formData.email} onChange={handleChange} onFocus={() => setFocused("email")} onBlur={() => setFocused(null)} style={fieldStyle("email")} />
+                    <label style={labelStyle}>Service</label>
+                    <select name="service" value={formData.service} onChange={handleChange} onFocus={() => setFocused("service")} onBlur={() => setFocused(null)} style={{ ...fieldStyle("service"), cursor: "pointer" }}>
+                      <option value="" style={{ background: "#0a0a0a" }}>Select a service...</option>
+                      {services.map((s) => <option key={s} value={s} style={{ background: "#0a0a0a" }}>{s}</option>)}
+                    </select>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "1rem" }}>
-                    <div>
-                      <label style={labelStyle}>Service</label>
-                      <select name="service" value={formData.service} onChange={handleChange} onFocus={() => setFocused("service")} onBlur={() => setFocused(null)} style={{ ...fieldStyle("service"), cursor: "pointer" }}>
-                        <option value="" style={{ background: "#0a0a0a" }}>Select a service...</option>
-                        {services.map((s) => <option key={s} value={s} style={{ background: "#0a0a0a" }}>{s}</option>)}
-                      </select>
-                    </div>
-                    <div>
-                      <label style={labelStyle}>Vehicle (Year, Make, Model)</label>
-                      <input type="text" name="vehicle" placeholder="2022 BMW M3" value={formData.vehicle} onChange={handleChange} onFocus={() => setFocused("vehicle")} onBlur={() => setFocused(null)} style={fieldStyle("vehicle")} />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "1rem" }}>
-                    <div>
-                      <label style={labelStyle}>Location / City</label>
-                      <input type="text" name="location" placeholder="Danvers, MA" value={formData.location} onChange={handleChange} onFocus={() => setFocused("location")} onBlur={() => setFocused(null)} style={fieldStyle("location")} />
-                    </div>
-                    <div>
-                      <label style={labelStyle}>Preferred Date</label>
-                      <input type="date" name="preferredDate" value={formData.preferredDate} onChange={handleChange} onFocus={() => setFocused("date")} onBlur={() => setFocused(null)} style={{ ...fieldStyle("date"), colorScheme: "dark" }} />
-                    </div>
+                  <div>
+                    <label style={labelStyle}>Vehicle (Year, Make, Model)</label>
+                    <input type="text" name="vehicle" placeholder="2022 BMW M3" value={formData.vehicle} onChange={handleChange} onFocus={() => setFocused("vehicle")} onBlur={() => setFocused(null)} style={fieldStyle("vehicle")} />
                   </div>
 
                   <div>
@@ -216,8 +198,8 @@ export default function Contact() {
                 </h3>
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                   {[
-                    { day: "Mon – Fri", hours: "8am – 6pm" },
-                    { day: "Saturday",  hours: "8am – 5pm" },
+                    { day: "Mon – Fri", hours: "10am – 6pm" },
+                    { day: "Saturday",  hours: "10am – 5pm" },
                     { day: "Sunday",    hours: "By appointment" },
                   ].map((h) => (
                     <div key={h.day} style={{ display: "flex", justifyContent: "center", gap: "1rem", borderBottom: "1px solid #111", paddingBottom: "0.5rem" }}>

@@ -80,7 +80,15 @@ body {
   text-transform: uppercase;
   transition: opacity 0.2s, transform 0.15s;
 }
-.btn-gold:active { opacity: 0.85; transform: scale(0.98); }
+.btn-gold:hover  { transform: scale(0.96); }
+.btn-gold:active { opacity: 0.85; transform: scale(0.97); }
+
+/* ─── Ghost / outline buttons ─── */
+.btn-ghost {
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-ghost:hover  { transform: scale(0.96); }
+.btn-ghost:active { transform: scale(0.94); }
 
 /* ─── Staggered entrance animations ─── */
 @keyframes fadeUp {
@@ -176,4 +184,15 @@ body {
 /* ─── Responsive border-left (desktop only) ─── */
 @media (min-width: 768px) {
   .md-border-l { border-left: 1px solid #1c1c1c; }
+}
+
+/* ─── Scroll reveal ─── */
+.sr {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.sr.sr-in {
+  opacity: 1;
+  transform: translateY(0);
 }

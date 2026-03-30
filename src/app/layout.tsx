@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { Analytics } from "@vercel/analytics/react";
 import PostHogProvider from "@/components/PostHogProvider";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const cormorant = Cormorant({
   variable: "--font-cormorant",
@@ -76,6 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body style={{ backgroundColor: "#060606", color: "#f2ede4" }}>
         <PostHogProvider>
           <Navbar />
+          <ScrollReveal />
           <main className="pb-[72px] md:pb-0">{children}</main>
           <div className="pb-[72px] md:pb-0">
             <Footer />

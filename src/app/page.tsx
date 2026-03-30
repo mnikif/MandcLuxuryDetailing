@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: 'Mobile Car Detailing in Danvers, MA | M&C Luxury Detailing',
@@ -210,11 +211,14 @@ export default function Home() {
             <Link href="/contact" className="btn-gold" style={{ width: "100%", height: "58px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.7rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em" }}>
               Book Now — It&apos;s Free to Quote
             </Link>
+            <p style={{ color: "#c9a84c", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textAlign: "center", marginTop: "-0.25rem" }}>
+              ★★★★★ <span style={{ color: "#3a3a3a" }}>on Google</span>
+            </p>
             <div style={{ width: "100%", display: "flex", gap: "0.75rem" }}>
-              <a href="tel:+17816325193" style={{ flex: 1, height: "52px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(201,168,76,0.35)", color: "#c9a84c", fontSize: "0.7rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
+              <a href="tel:+17816325193" className="btn-ghost" style={{ flex: 1, height: "52px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(201,168,76,0.35)", color: "#c9a84c", fontSize: "0.7rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
                 📞 (781) 632-5193
               </a>
-              <Link href="/gallery" style={{ flex: 1, height: "52px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid #282828", color: "#a8a8a8", fontSize: "0.7rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+              <Link href="/gallery" className="btn-ghost" style={{ flex: 1, height: "52px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid #282828", color: "#a8a8a8", fontSize: "0.7rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
                 Our Work
               </Link>
             </div>
@@ -256,6 +260,14 @@ export default function Home() {
             Every Car Treated As Our Own
           </p>
           <div style={{ width: "3rem", height: "1px", background: "linear-gradient(90deg, transparent, #c9a84c, transparent)", marginTop: "1.75rem" }} />
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1px", background: "#1c1c1c", marginTop: "2.5rem", width: "100%" }}>
+            <div style={{ position: "relative", aspectRatio: "4/3", overflow: "hidden" }}>
+              <Image src="/Working Inside.JPG" alt="Working inside a car" fill style={{ objectFit: "cover" }} sizes="(max-width: 768px) 50vw, 28rem" />
+            </div>
+            <div style={{ position: "relative", aspectRatio: "4/3", overflow: "hidden" }}>
+              <Image src="/Working Outside.jpg" alt="Working outside on a car" fill style={{ objectFit: "cover" }} sizes="(max-width: 768px) 50vw, 28rem" />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -470,7 +482,7 @@ export default function Home() {
             <Link href="/contact" className="btn-gold" style={{ width: "100%", height: "54px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.68rem", fontFamily: "var(--font-mono)" }}>
               Get a Free Quote
             </Link>
-            <a href="tel:+17816325193" style={{ width: "100%", height: "54px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid #282828", color: "#a8a8a8", fontSize: "0.68rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            <a href="tel:+17816325193" className="btn-ghost" style={{ width: "100%", height: "54px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid #282828", color: "#a8a8a8", fontSize: "0.68rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
               Call Now
             </a>
           </div>
