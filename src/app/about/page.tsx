@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: 'About Matt — Mobile Car Detailer in Danvers, MA | M&C Luxury Detailing',
+  title: 'About Matt — Mobile Car Detailer in Danvers, MA',
   description: 'Matt is the founder of M&C Luxury Detailing, a mobile car detailing business based in Danvers, MA. Serving Beverly, Salem, Peabody & all of North Shore Massachusetts.',
   alternates: {
     canonical: 'https://www.mandcluxurydetailing.com/about',

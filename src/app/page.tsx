@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: 'Mobile Car Detailing in Danvers, MA | M&C Luxury Detailing',
+  title: 'Mobile Car Detailing in Danvers, MA',
   description: "North Shore MA's top-rated mobile car detailing service. Interior, exterior, and full detail packages starting at $99. We come to you in Beverly, Danvers, Salem, Peabody, Marblehead & more.",
   alternates: {
     canonical: 'https://www.mandcluxurydetailing.com',

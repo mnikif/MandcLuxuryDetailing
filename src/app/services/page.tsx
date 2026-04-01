@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: 'Car Detailing Services & Packages in Danvers, MA | M&C Luxury Detailing',
+  title: 'Car Detailing Services & Pricing — Danvers, MA',
   description: 'Mobile car detailing packages in Danvers, Beverly & Salem MA. Bronze, Silver & Gold tiers for interior, exterior & full detail — starting at $89. Serving all of North Shore Massachusetts.',
   alternates: {
     canonical: 'https://www.mandcluxurydetailing.com/services',

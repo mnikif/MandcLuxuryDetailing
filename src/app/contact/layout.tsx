@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Book Mobile Car Detailing in Danvers, MA | M&C Luxury Detailing",
+  title: "Book a Mobile Car Detail — Danvers, MA",
   description:
     "Book a mobile car detail in Danvers, Beverly, Salem or anywhere on the North Shore. Fast response, free quotes. Call (781) 632-5193 or submit our quick form.",
   alternates: {

@@ -10,7 +10,7 @@ const wrap: React.CSSProperties = {
 };
 
 export const metadata: Metadata = {
-  title: "Before & After Gallery — Mobile Car Detailing North Shore MA",
+  title: "Before & After Photos — Mobile Car Detailing Danvers, MA",
   description: "Real before and after photos from M&C Luxury Detailing. Professional mobile car detailing results in Danvers, Beverly, Salem, and across the North Shore of Massachusetts.",
   alternates: {
     canonical: "https://www.mandcluxurydetailing.com/gallery",
