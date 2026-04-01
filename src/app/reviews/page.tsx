@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Script from "next/script";
 
 export const metadata: Metadata = {
   title: 'Customer Reviews — Mobile Car Detailing North Shore MA',
@@ -59,8 +58,7 @@ const wrap: React.CSSProperties = {
 export default function Reviews() {
   return (
     <>
-      <Script
-        id="reviews-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -72,7 +70,7 @@ export default function Reviews() {
               "@type": "AggregateRating",
               "ratingValue": "5",
               "bestRating": "5",
-              "reviewCount": "7"
+              "reviewCount": 7
             },
             "review": [
               {
@@ -122,6 +120,7 @@ export default function Reviews() {
         }}
       />
       {/* ── Hero ── */}
+
       <section className="hero-bg" style={{ paddingTop: "7rem", paddingBottom: "4rem", borderBottom: "1px solid #1c1c1c" }}>
         <div style={wrap}>
           <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "1rem", textAlign: "center" }}>

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Recurring Car Detailing Plans — North Shore MA | M&C Luxury Detailing",
@@ -13,8 +12,7 @@ export const metadata: Metadata = {
 export default function MembershipLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <Script
-        id="membership-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({

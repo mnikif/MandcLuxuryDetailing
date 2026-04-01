@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -78,24 +77,27 @@ const wrap: React.CSSProperties = {
 export default function Home() {
   return (
     <>
-      <Script
-        id="local-business-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "LocalBusiness",
+            "@type": "AutoWash",
             "name": "M&C Luxury Detailing",
-            "image": "https://www.mandcluxurydetailing.com/Matt.PNG",
+            "image": [
+              "https://www.mandcluxurydetailing.com/Matt.PNG",
+              "https://www.mandcluxurydetailing.com/Interior%20Example.JPG",
+              "https://www.mandcluxurydetailing.com/red%20car%20shine.jpg",
+              "https://www.mandcluxurydetailing.com/camaro%20soap.jpg"
+            ],
             "@id": "https://www.mandcluxurydetailing.com",
             "url": "https://www.mandcluxurydetailing.com",
             "telephone": "+17816325193",
             "email": "mandcluxurydetailing@gmail.com",
             "priceRange": "$$",
-            "description": "Professional mobile car detailing serving Danvers, Beverly, Salem, Peabody, Marblehead, Manchester, and the entire North Shore of Massachusetts.",
+            "description": "Professional mobile car detailing serving Danvers, Beverly, Salem, Peabody, Marblehead, Manchester, and the entire North Shore of Massachusetts. Interior, exterior, and full detail packages starting at $89.",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "Danvers",
               "addressLocality": "Danvers",
               "addressRegion": "MA",
               "postalCode": "01923",
@@ -106,6 +108,20 @@ export default function Home() {
               "latitude": 42.5751,
               "longitude": -70.9495
             },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+                "opens": "10:00",
+                "closes": "18:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Saturday"],
+                "opens": "10:00",
+                "closes": "17:00"
+              }
+            ],
             "areaServed": [
               {"@type": "City", "name": "Beverly"},
               {"@type": "City", "name": "Danvers"},
@@ -121,72 +137,74 @@ export default function Home() {
             ],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
-              "name": "Car Detailing Services",
+              "name": "Mobile Car Detailing Packages",
               "itemListElement": [
                 {
                   "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Interior Car Detail",
-                    "description": "Deep vacuum, steam clean, leather conditioning, and odor elimination."
-                  },
-                  "priceSpecification": {
-                    "@type": "PriceSpecification",
-                    "price": "169",
-                    "priceCurrency": "USD",
-                    "minPrice": "169"
-                  }
+                  "itemOffered": {"@type": "Service", "name": "Interior Detail", "description": "Deep vacuum, steam clean, leather conditioning, and odor elimination."},
+                  "priceSpecification": {"@type": "PriceSpecification", "price": "129", "priceCurrency": "USD", "minPrice": "129"}
                 },
                 {
                   "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Exterior Car Detail",
-                    "description": "Hand wash, clay bar, polish, and sealant for a mirror finish."
-                  },
-                  "priceSpecification": {
-                    "@type": "PriceSpecification",
-                    "price": "99",
-                    "priceCurrency": "USD",
-                    "minPrice": "99"
-                  }
+                  "itemOffered": {"@type": "Service", "name": "Exterior Detail", "description": "Hand wash, clay bar, trim restoration, tire dressing, and wax protection."},
+                  "priceSpecification": {"@type": "PriceSpecification", "price": "89", "priceCurrency": "USD", "minPrice": "89"}
                 },
                 {
                   "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Full Car Detail",
-                    "description": "Complete interior and exterior detailing package."
-                  },
-                  "priceSpecification": {
-                    "@type": "PriceSpecification",
-                    "price": "229",
-                    "priceCurrency": "USD",
-                    "minPrice": "229"
-                  }
+                  "itemOffered": {"@type": "Service", "name": "Full Detail", "description": "Complete interior and exterior detailing — inside and out."},
+                  "priceSpecification": {"@type": "PriceSpecification", "price": "189", "priceCurrency": "USD", "minPrice": "189"}
                 }
               ]
             },
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": "5",
-              "reviewCount": "4"
+              "reviewCount": 7,
+              "bestRating": "5",
+              "worstRating": "1"
             },
             "review": [
               {
                 "@type": "Review",
-                "reviewRating": {
-                  "@type": "Rating",
-                  "ratingValue": "5"
-                },
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
                 "author": {"@type": "Person", "name": "Janet Gargan"},
                 "reviewBody": "The results went beyond what we hoped for, and we couldn't be happier with the service."
               },
               {
                 "@type": "Review",
-                "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
                 "author": {"@type": "Person", "name": "Deanna LeClerc"},
-                "reviewBody": "My car looks brand new."
+                "reviewBody": "Matt was great to work with. His price is super reasonable especially for the results I got, my car looks brand new."
+              },
+              {
+                "@type": "Review",
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "author": {"@type": "Person", "name": "John Stalker"},
+                "reviewBody": "Quick to respond, very personable. The work was great, the price was fair. Won't hesitate to have them come back."
+              },
+              {
+                "@type": "Review",
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "author": {"@type": "Person", "name": "Vic P."},
+                "reviewBody": "Was on time and did an amazing job. My car is spotless. Highly recommend! The best part is he comes right to you!"
+              },
+              {
+                "@type": "Review",
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "author": {"@type": "Person", "name": "Michael Blankenship"},
+                "reviewBody": "Phenomenal job on my Jeep Wrangler. Hard-working and his rates are so reasonable. I highly recommend getting your car cleaned by him."
+              },
+              {
+                "@type": "Review",
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "author": {"@type": "Person", "name": "Lauren Covello"},
+                "reviewBody": "Matthew did such a great job on my car! I have two dogs so there was a lot of dog fur and he got it all — it is spotless now!"
+              },
+              {
+                "@type": "Review",
+                "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+                "author": {"@type": "Person", "name": "Stephanie Hueter"},
+                "reviewBody": "Not only very professional but an exceptional job done. Incredible attention to detail and every nook and cranny was cleaned."
               }
             ],
             "sameAs": [

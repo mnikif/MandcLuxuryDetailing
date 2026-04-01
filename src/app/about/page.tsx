@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -34,8 +33,7 @@ const wrap: React.CSSProperties = {
 export default function About() {
   return (
     <>
-      <Script
-        id="about-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({

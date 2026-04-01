@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import Image from "next/image";
 
 const wrap: React.CSSProperties = {
@@ -38,8 +37,7 @@ const singles: { src: string; label: string; video?: boolean; objectPosition?: s
 export default function Gallery() {
   return (
     <>
-      <Script
-        id="gallery-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({

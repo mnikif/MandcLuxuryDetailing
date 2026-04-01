@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -292,8 +291,7 @@ function TierGrid({ tiers }: { tiers: PackageTier[] }) {
 export default function Services() {
   return (
     <>
-      <Script
-        id="services-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
