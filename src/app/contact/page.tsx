@@ -2,11 +2,9 @@
 import { useState } from "react";
 
 const services = [
-  "Interior Detail",
-  "Exterior Detail",
+  "Interior",
+  "Exterior",
   "Full Detail",
-  "Exterior Wax (Add-on)",
-  "Not Sure — Need a Quote",
 ];
 
 const wrap: React.CSSProperties = {
@@ -150,7 +148,7 @@ export default function Contact() {
 
                   <div>
                     <label style={labelStyle}>Additional Notes</label>
-                    <textarea name="message" rows={5} placeholder="Tell us about your vehicle's condition, any concerns, or questions..." value={formData.message} onChange={handleChange} onFocus={() => setFocused("message")} onBlur={() => setFocused(null)} style={{ ...fieldStyle("message"), resize: "none" }} />
+                    <textarea name="message" rows={5} placeholder="Tell us about your car's condition and we'll help you choose the right package level for your car." value={formData.message} onChange={handleChange} onFocus={() => setFocused("message")} onBlur={() => setFocused(null)} style={{ ...fieldStyle("message"), resize: "none" }} />
                   </div>
 
                   <button type="submit" disabled={loading} className="btn-gold" style={{ width: "100%", height: "56px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.68rem", fontFamily: "var(--font-mono)", opacity: loading ? 0.7 : 1, cursor: loading ? "not-allowed" : "pointer" }}>

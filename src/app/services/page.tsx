@@ -1,89 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: 'Car Detailing Services & Pricing in North Shore MA',
-  description: 'Interior detailing from $169, exterior from $99, full detail from $229. Mobile car detailing serving all of North Shore Massachusetts. No hidden fees.',
+  title: 'Car Detailing Packages & Pricing | North Shore MA',
+  description: 'Bronze, Silver & Gold interior, exterior, and full detail packages. Mobile car detailing serving North Shore Massachusetts. Transparent tiered pricing, no surprises.',
   alternates: {
     canonical: 'https://www.mandcluxurydetailing.com/services',
   },
 };
-
-const packages = [
-  {
-    num: "01",
-    name: "Interior Detail",
-    price: "Starting at $169",
-    duration: "2–3 hrs",
-    popular: false,
-    image: "/Interior Example.JPG",
-    imagePos: "center top",
-    image2: null,
-    image2Pos: null,
-    features: [
-      "Deep vacuum — seats, floors, trunk",
-      "Dashboard & console wipe-down",
-      "Door panel cleaning",
-      "Window clean (interior)",
-      "Steam clean (high-touch areas)",
-      "Leather conditioning",
-      "Air freshener",
-    ],
-  },
-  {
-    num: "02",
-    name: "Exterior Detail",
-    price: "Starting at $99",
-    duration: "1–2 hrs",
-    popular: false,
-    image: "/red car shine.jpg",
-    imagePos: "center 50%",
-    image2: null,
-    image2Pos: null,
-    features: [
-      "Hand wash & dry",
-      "Wheel & tire cleaning",
-      "Window clean (exterior)",
-      "Tire dressing",
-      "Clay bar treatment",
-    ],
-  },
-  {
-    num: "03",
-    name: "Full Detail",
-    price: "Starting at $229",
-    duration: "3–5 hrs",
-    popular: true,
-    image: "/camaro soap.jpg",
-    imagePos: "center 42%",
-    image2: "/rav4 after.jpg",
-    image2Pos: "center 38%",
-    features: [
-      "Everything in Interior Detail",
-      "Everything in Exterior Detail",
-      "Leather conditioning",
-      "Engine bay wipe-down",
-    ],
-  },
-  {
-    num: "04",
-    name: "Exterior Wax",
-    price: "+$50 add-on",
-    duration: "30–45 min",
-    popular: false,
-    image: "/Car Collection.jpg",
-    imagePos: "center 50%",
-    image2: null,
-    image2Pos: null,
-    features: [
-      "Applied after Exterior or Full Detail",
-      "Protective wax coat",
-      "Enhanced gloss & shine",
-      "Paint protection layer",
-    ],
-  },
-];
 
 const wrap: React.CSSProperties = {
   width: "100%",
@@ -92,6 +16,277 @@ const wrap: React.CSSProperties = {
   padding: "0 1.25rem",
   textAlign: "center",
 };
+
+type PackageTier = {
+  tier: "Bronze" | "Silver" | "Gold";
+  price: string;
+  duration: string;
+  popular: boolean;
+  features: string[];
+};
+
+const tierAccentBar: Record<string, string> = {
+  Bronze: "rgba(201,168,76,0.25)",
+  Silver: "rgba(201,168,76,0.55)",
+  Gold: "#c9a84c",
+};
+
+const tierLabelColor: Record<string, string> = {
+  Bronze: "rgba(201,168,76,0.4)",
+  Silver: "rgba(201,168,76,0.7)",
+  Gold: "#c9a84c",
+};
+
+const tierBulletColor: Record<string, string> = {
+  Bronze: "rgba(201,168,76,0.4)",
+  Silver: "rgba(201,168,76,0.65)",
+  Gold: "#c9a84c",
+};
+
+const interiorTiers: PackageTier[] = [
+  {
+    tier: "Bronze",
+    price: "Starting at $129",
+    duration: "1–2 hrs",
+    popular: false,
+    features: [
+      "Full vacuum — seats, floors, trunk",
+      "Dashboard & console wipe-down",
+      "Door panel wipe",
+      "Interior window cleaning",
+      "Air freshener",
+    ],
+  },
+  {
+    tier: "Silver",
+    price: "Starting at $169",
+    duration: "2–3 hrs",
+    popular: true,
+    features: [
+      "Everything in Bronze",
+      "Steam clean — high-touch surfaces",
+      "Leather & vinyl conditioning",
+      "Center console deep clean",
+      "Cup holder & vent cleaning",
+    ],
+  },
+  {
+    tier: "Gold",
+    price: "Starting at $219",
+    duration: "5–6 hrs",
+    popular: false,
+    features: [
+      "Everything in Silver",
+      "Carpet & floor mat shampoo",
+      "Seat shampoo or deep leather clean",
+      "Headliner wipe-down",
+      "Trunk detail & deodorize",
+    ],
+  },
+];
+
+const exteriorTiers: PackageTier[] = [
+  {
+    tier: "Bronze",
+    price: "Starting at $89",
+    duration: "1 hr",
+    popular: false,
+    features: [
+      "Hand wash & dry",
+      "Wheel & tire scrub",
+      "Tire dressing",
+      "Exterior window cleaning",
+    ],
+  },
+  {
+    tier: "Silver",
+    price: "Starting at $129",
+    duration: "1.5–2 hrs",
+    popular: true,
+    features: [
+      "Everything in Bronze",
+      "Clay bar treatment",
+      "Trim dressing & restoration",
+      "Door jamb wipe",
+      "Exterior wax protectant",
+    ],
+  },
+  {
+    tier: "Gold",
+    price: "Starting at $169",
+    duration: "2–2.5 hrs",
+    popular: false,
+    features: [
+      "Everything in Silver",
+      "Engine bay wipe-down",
+      "Wheel well cleaning",
+      "Exterior wax protectant",
+    ],
+  },
+];
+
+const fullTiers: PackageTier[] = [
+  {
+    tier: "Bronze",
+    price: "Starting at $189",
+    duration: "2.5–3.5 hrs",
+    popular: false,
+    features: [
+      "Interior Bronze package included",
+      "Exterior Bronze package included",
+      "Full vacuum, wipe-down & windows",
+      "Hand wash, wheels & tire dressing",
+    ],
+  },
+  {
+    tier: "Silver",
+    price: "Starting at $269",
+    duration: "3.5–5 hrs",
+    popular: true,
+    features: [
+      "Interior Silver package included",
+      "Exterior Silver package included",
+      "Steam clean & leather conditioning",
+      "Clay bar & trim restoration",
+      "Exterior wax protectant",
+    ],
+  },
+  {
+    tier: "Gold",
+    price: "Starting at $359",
+    duration: "5–7 hrs",
+    popular: false,
+    features: [
+      "Interior Gold package included",
+      "Exterior Gold package included",
+      "Carpet & seat shampoo",
+      "Engine bay wipe-down",
+      "Exterior wax protectant",
+    ],
+  },
+];
+
+function SectionHeader({ eyebrow, heading, desc }: { eyebrow: string; heading: string; desc?: string }) {
+  return (
+    <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+      <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem" }}>
+        {eyebrow}
+      </p>
+      <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(2rem,6vw,3rem)", color: "#f2ede4", lineHeight: 1, marginBottom: "1rem" }}>
+        {heading}
+      </h2>
+      <div className="gold-rule" style={{ width: "4rem", margin: "0 auto" }} />
+      {desc && (
+        <p style={{ color: "#5a5a5a", fontSize: "0.85rem", lineHeight: 1.7, maxWidth: "32rem", margin: "1.25rem auto 0" }}>
+          {desc}
+        </p>
+      )}
+    </div>
+  );
+}
+
+function TierGrid({ tiers }: { tiers: PackageTier[] }) {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-3" style={{ gap: "1px", background: "#1c1c1c" }}>
+      {tiers.map((pkg) => (
+        <div
+          key={pkg.tier}
+          style={{
+            position: "relative",
+            background: pkg.tier === "Gold" ? "#090909" : "#060606",
+            display: "flex",
+            flexDirection: "column",
+            ...(pkg.tier === "Gold" ? { boxShadow: "inset 0 0 80px rgba(201,168,76,0.03)" } : {}),
+          }}
+        >
+          {/* Top accent bar */}
+          <div style={{ height: "3px", background: tierAccentBar[pkg.tier], flexShrink: 0 }} />
+
+          {/* Popular badge */}
+          {pkg.popular && (
+            <div style={{
+              position: "absolute",
+              top: "3px",
+              right: 0,
+              background: "#c9a84c",
+              color: "#000",
+              fontSize: "0.48rem",
+              fontFamily: "var(--font-mono)",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              padding: "0.25rem 0.7rem",
+              fontWeight: 700,
+            }}>
+              Most Popular
+            </div>
+          )}
+
+          {/* Content */}
+          <div style={{ padding: "2rem 1.75rem 2rem", display: "flex", flexDirection: "column", flex: 1, alignItems: "center", textAlign: "center" }}>
+
+            {/* Tier label */}
+            <p style={{
+              color: tierLabelColor[pkg.tier],
+              fontSize: "0.55rem",
+              fontFamily: "var(--font-mono)",
+              letterSpacing: "0.35em",
+              textTransform: "uppercase",
+              marginBottom: "1rem",
+            }}>
+              {pkg.tier}
+            </p>
+
+            {/* Price */}
+            <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.5rem", color: "#f2ede4", lineHeight: 1, marginBottom: "0.3rem" }}>
+              {pkg.price}
+            </div>
+            <div style={{ color: "#3a3a3a", fontSize: "0.57rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "1.5rem" }}>
+              {pkg.duration}
+            </div>
+
+            <div style={{ height: "1px", background: "#1c1c1c", width: "100%", marginBottom: "1.5rem" }} />
+
+            {/* Features */}
+            <ul style={{ flex: 1, width: "100%", marginBottom: "1.75rem", display: "flex", flexDirection: "column", gap: "0.65rem" }}>
+              {pkg.features.map((f) => (
+                <li key={f} style={{ display: "flex", alignItems: "flex-start", justifyContent: "center", gap: "0.625rem", color: "#5a5a5a", fontSize: "0.8rem", lineHeight: 1.5, textAlign: "center" }}>
+                  <span style={{ color: tierBulletColor[pkg.tier], flexShrink: 0, marginTop: "2px", fontSize: "0.5rem" }}>✦</span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+
+            {/* Book button */}
+            <Link
+              href="/contact"
+              className={pkg.tier === "Gold" ? "btn-gold" : "btn-ghost"}
+              style={{
+                width: "100%",
+                height: "44px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "0.6rem",
+                fontFamily: "var(--font-mono)",
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                ...(pkg.tier !== "Gold" ? { border: "1px solid #282828", color: "#a8a8a8" } : {}),
+              }}
+            >
+              Book Now
+            </Link>
+
+            {pkg.popular && (
+              <p style={{ color: "#c9a84c", fontSize: "0.52rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textAlign: "center", marginTop: "0.625rem" }}>
+                ★★★★★ <span style={{ color: "#3a3a3a" }}>on Google</span>
+              </p>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default function Services() {
   return (
@@ -103,91 +298,145 @@ export default function Services() {
             What We Offer
           </p>
           <h1 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(3rem,10vw,6rem)", color: "#f2ede4", lineHeight: 0.95, marginBottom: "1.25rem", textAlign: "center" }}>
-            Services &amp; Pricing
+            Services &amp; Packages
           </h1>
           <div className="gold-rule" style={{ width: "4rem", margin: "0 auto 1.5rem" }} />
-          <p style={{ color: "#5a5a5a", fontSize: "0.95rem", lineHeight: 1.7, maxWidth: "32rem", margin: "0 auto", textAlign: "center" }}>
-            Transparent pricing, no surprises. All services are mobile — we come to your location across the North Shore.
+          <p style={{ color: "#5a5a5a", fontSize: "0.95rem", lineHeight: 1.7, maxWidth: "36rem", margin: "0 auto 2rem", textAlign: "center" }}>
+            Every detail, three tiers. Choose the level of care that fits your vehicle and budget — Bronze, Silver, or Gold.
           </p>
+
+          {/* Quick nav */}
+          <div style={{ display: "flex", justifyContent: "center", gap: "2rem", flexWrap: "wrap" }}>
+            {[
+              { label: "Interior", href: "#interior" },
+              { label: "Exterior", href: "#exterior" },
+              { label: "Full Detail", href: "#full" },
+              { label: "Add-Ons", href: "#addons" },
+            ].map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                style={{
+                  color: "#c9a84c",
+                  fontSize: "0.6rem",
+                  fontFamily: "var(--font-mono)",
+                  letterSpacing: "0.22em",
+                  textTransform: "uppercase",
+                  paddingBottom: "2px",
+                  borderBottom: "1px solid rgba(201,168,76,0.3)",
+                }}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ── Packages ── */}
-      <section style={{ background: "#060606", padding: "4rem 0" }}>
+      {/* ── Interior ── */}
+      <section
+        id="interior"
+        className="section-grid"
+        style={{ background: "#060606", padding: "5rem 0", borderBottom: "1px solid #1c1c1c", scrollMarginTop: "5rem" }}
+      >
         <div style={wrap}>
-          <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "1px", background: "#1c1c1c" }}>
-            {packages.map((pkg) => (
-              <div key={pkg.num} style={{ position: "relative", background: "#060606", display: "flex", flexDirection: "column" }}>
+          <SectionHeader
+            eyebrow="Interior Detail"
+            heading="Interior Packages"
+            desc="Deep, thorough interior care at every level — from a solid clean to a full-on transformation."
+          />
+          <TierGrid tiers={interiorTiers} />
+        </div>
+      </section>
 
-                {/* Image */}
-                {pkg.image2 ? (
-                  <div style={{ position: "relative", height: "220px", display: "flex" }}>
-                    <div style={{ position: "relative", flex: 1, overflow: "hidden" }}>
-                      <Image src={pkg.image} alt={`${pkg.name} wash`} fill style={{ objectFit: "cover", objectPosition: pkg.imagePos }} sizes="14rem" />
-                      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 50%, rgba(6,6,6,0.6) 100%)" }} />
-                    </div>
-                    <div style={{ width: "1px", background: "rgba(201,168,76,0.35)", flexShrink: 0, zIndex: 2 }} />
-                    <div style={{ position: "relative", flex: 1, overflow: "hidden" }}>
-                      <Image src={pkg.image2} alt={`${pkg.name} interior`} fill style={{ objectFit: "cover", objectPosition: pkg.image2Pos ?? "center" }} sizes="14rem" />
-                      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 50%, rgba(6,6,6,0.6) 100%)" }} />
-                    </div>
-                    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 55%, #060606 100%)", zIndex: 1 }} />
-                    <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ position: "absolute", bottom: "0.75rem", left: "1.25rem", fontSize: "4rem", color: "#c9a84c", opacity: 0.5, lineHeight: 1, userSelect: "none", zIndex: 2 }}>
-                      {pkg.num}
-                    </div>
-                    <div style={{ position: "absolute", top: "0.75rem", right: 0, background: "#c9a84c", color: "#000", fontSize: "0.5rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", padding: "0.3rem 0.8rem", fontWeight: 700, zIndex: 2 }}>
-                      Most Popular
-                    </div>
-                  </div>
-                ) : (
-                  <div style={{ position: "relative", height: "280px", overflow: "hidden" }}>
-                    <Image src={pkg.image} alt={pkg.name} fill style={{ objectFit: "cover", objectPosition: pkg.imagePos }} sizes="(max-width: 640px) 100vw, 28rem" />
-                    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 55%, #060606 100%)" }} />
-                    <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ position: "absolute", bottom: "0.75rem", left: "1.25rem", fontSize: "4rem", color: "#c9a84c", opacity: 0.3, lineHeight: 1, userSelect: "none" }}>
-                      {pkg.num}
-                    </div>
-                  </div>
-                )}
+      {/* ── Exterior ── */}
+      <section
+        id="exterior"
+        style={{ background: "#0a0a0a", padding: "5rem 0", borderBottom: "1px solid #1c1c1c", scrollMarginTop: "5rem" }}
+      >
+        <div style={wrap}>
+          <SectionHeader
+            eyebrow="Exterior Detail"
+            heading="Exterior Packages"
+            desc="From a hand wash and shine to full clay bar, trim restoration, and wax protection."
+          />
+          <TierGrid tiers={exteriorTiers} />
+        </div>
+      </section>
 
-                {/* Content */}
-                <div style={{ padding: "1.5rem 2rem 2rem", display: "flex", flexDirection: "column", flex: 1, alignItems: "center", textAlign: "center" }}>
-                  <h3 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.5rem", color: "#f2ede4", lineHeight: 1, marginBottom: "0.4rem", textAlign: "center" }}>
-                    {pkg.name}
-                  </h3>
+      {/* ── Full Detail ── */}
+      <section
+        id="full"
+        className="section-grid"
+        style={{ background: "#060606", padding: "5rem 0", borderBottom: "1px solid #1c1c1c", scrollMarginTop: "5rem" }}
+      >
+        <div style={wrap}>
+          <SectionHeader
+            eyebrow="Full Detail"
+            heading="Full Detail Packages"
+            desc="The complete inside-and-out treatment. Three tiers, one appointment."
+          />
+          <TierGrid tiers={fullTiers} />
+        </div>
+      </section>
 
-                  <div style={{ display: "flex", alignItems: "baseline", justifyContent: "center", gap: "0.75rem", marginBottom: "1.25rem" }}>
-                    <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.2rem", color: "#c9a84c" }}>
-                      {pkg.price}
-                    </span>
-                    <span style={{ color: "#3a3a3a", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em" }}>
-                      {pkg.duration}
-                    </span>
-                  </div>
+      {/* ── Add-Ons ── */}
+      <section
+        id="addons"
+        style={{ background: "#0a0a0a", padding: "5rem 0", borderBottom: "1px solid #1c1c1c", scrollMarginTop: "5rem" }}
+      >
+        <div style={wrap}>
+          <SectionHeader
+            eyebrow="Enhancements"
+            heading="Add-Ons"
+            desc="Targeted treatments to pair with any interior or full detail package."
+          />
 
-                  <div style={{ height: "1px", background: "#1c1c1c", width: "100%", marginBottom: "1.25rem" }} />
+          <div style={{ maxWidth: "28rem", margin: "0 auto" }}>
+            <div style={{ background: "#060606", border: "1px solid #1c1c1c", display: "flex", flexDirection: "column", alignItems: "center" }}>
 
-                  <ul style={{ flex: 1, width: "100%", marginBottom: "1.5rem", display: "flex", flexDirection: "column", gap: "0.625rem" }}>
-                    {pkg.features.map((f) => (
-                      <li key={f} style={{ display: "flex", alignItems: "flex-start", justifyContent: "center", gap: "0.75rem", color: "#5a5a5a", fontSize: "0.82rem", lineHeight: 1.5, textAlign: "center" }}>
-                        <span style={{ color: "#c9a84c", flexShrink: 0, marginTop: "1px", fontSize: "0.6rem" }}>✦</span>
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
+              {/* Gold top bar */}
+              <div style={{ height: "3px", width: "100%", background: "linear-gradient(90deg, transparent, #c9a84c, transparent)" }} />
 
-                  <Link
-                    href="/contact"
-                    className={pkg.popular ? "btn-gold" : "btn-ghost"}
-                    style={{ width: "100%", height: "48px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.62rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em", textTransform: "uppercase", ...(pkg.popular ? {} : { border: "1px solid #282828", color: "#a8a8a8" }) }}
-                  >
-                    Book Now
-                  </Link>
-                  <p style={{ color: "#c9a84c", fontSize: "0.55rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textAlign: "center", marginTop: "0.5rem" }}>
-                    ★★★★★ <span style={{ color: "#3a3a3a" }}>on Google</span>
-                  </p>
+              <div style={{ padding: "2.5rem 2.25rem", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", width: "100%" }}>
+                <p style={{ color: "#c9a84c", fontSize: "0.55rem", fontFamily: "var(--font-mono)", letterSpacing: "0.35em", textTransform: "uppercase", marginBottom: "0.875rem" }}>
+                  Add-On Service
+                </p>
+
+                <h3 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.9rem", color: "#f2ede4", lineHeight: 1, marginBottom: "0.75rem" }}>
+                  Pet Hair Removal
+                </h3>
+
+                <div style={{ display: "flex", alignItems: "baseline", justifyContent: "center", gap: "0.75rem", marginBottom: "1.5rem" }}>
+                  <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.5rem", color: "#c9a84c" }}>+$50</span>
+                  <span style={{ color: "#3a3a3a", fontSize: "0.57rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase" }}>30–60 min</span>
                 </div>
+
+                <div style={{ height: "1px", background: "#1c1c1c", width: "100%", marginBottom: "1.5rem" }} />
+
+                <ul style={{ display: "flex", flexDirection: "column", gap: "0.65rem", marginBottom: "2rem", width: "100%" }}>
+                  {[
+                    "Thorough pet hair extraction",
+                    "Specialized tools for embedded fur",
+                    "Seats, carpets & trunk area",
+                    "Pairs with any interior or full package",
+                  ].map((f) => (
+                    <li key={f} style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.625rem", color: "#5a5a5a", fontSize: "0.82rem", lineHeight: 1.5 }}>
+                      <span style={{ color: "#c9a84c", fontSize: "0.5rem", flexShrink: 0 }}>✦</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+
+                <Link
+                  href="/contact"
+                  className="btn-gold"
+                  style={{ width: "100%", height: "44px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.62rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em", textTransform: "uppercase" }}
+                >
+                  Book Now
+                </Link>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
@@ -196,7 +445,7 @@ export default function Services() {
       <section className="section-grid" style={{ borderTop: "1px solid #1c1c1c", padding: "2.5rem 0" }}>
         <div style={wrap}>
           <p style={{ color: "#5a5a5a", fontSize: "0.84rem", lineHeight: 1.7, textAlign: "center" }}>
-            <span style={{ color: "#c9a84c" }}>Pricing note:</span> All prices are starting rates. Final pricing depends on vehicle size and condition. Trucks, SUVs, and heavily soiled vehicles may incur additional charges.{" "}
+            <span style={{ color: "#c9a84c" }}>Pricing note:</span> All prices are starting rates for standard sedans. Final pricing depends on vehicle size and condition. SUVs, trucks, and heavily soiled vehicles may incur additional charges.{" "}
             <Link href="/contact" style={{ color: "#c9a84c", textDecoration: "underline", textUnderlineOffset: "3px" }}>Contact us</Link> for a custom quote.
           </p>
         </div>

@@ -11,11 +11,35 @@ export const metadata: Metadata = {
   },
 };
 
-const services = [
-  { num: "01", title: "Interior Detail", desc: "Deep vacuum, steam clean, leather conditioning, and odor elimination.", price: "From $169", duration: "2–3 hrs" },
-  { num: "02", title: "Exterior Detail", desc: "Hand wash, clay bar, polish, and sealant for a mirror finish that lasts.", price: "From $99", duration: "1–2 hrs" },
-  { num: "03", title: "Full Detail", desc: "Our complete inside-and-out transformation — interior and exterior done right.", price: "From $229", duration: "3–5 hrs" },
-  { num: "04", title: "Exterior Wax", desc: "Add-on protective wax coat for enhanced shine and paint protection.", price: "+$50", duration: "30–45 min" },
+const packageCategories = [
+  {
+    num: "01",
+    title: "Interior Packages",
+    desc: "From a thorough vacuum and wipe-down to a full shampoo and leather treatment. Three tiers of interior care.",
+    tiers: "Bronze · Silver · Gold",
+    href: "/services#interior",
+  },
+  {
+    num: "02",
+    title: "Exterior Packages",
+    desc: "Hand wash and tire dressing to clay bar, trim restoration, and wax protection. Choose your level.",
+    tiers: "Bronze · Silver · Gold",
+    href: "/services#exterior",
+  },
+  {
+    num: "03",
+    title: "Full Detail Packages",
+    desc: "Our complete inside-and-out transformation — interior and exterior combined at three tiers.",
+    tiers: "Bronze · Silver · Gold",
+    href: "/services#full",
+  },
+  {
+    num: "04",
+    title: "Add-Ons",
+    desc: "Targeted enhancements to pair with any interior or full detail package.",
+    tiers: "Pet Hair Removal",
+    href: "/services#addons",
+  },
 ];
 
 const testimonials = [
@@ -288,7 +312,7 @@ export default function Home() {
 
           {/* Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "1px", background: "#1c1c1c" }}>
-            {services.map((s) => (
+            {packageCategories.map((s) => (
               <div key={s.num} style={{ background: "#060606", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", padding: "2.5rem 1.5rem" }}>
                 <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "2.2rem", color: "#c9a84c", opacity: 0.2, lineHeight: 1, marginBottom: "0.75rem" }}>
                   {s.num}
@@ -296,16 +320,19 @@ export default function Home() {
                 <h3 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.4rem", color: "#f2ede4", marginBottom: "0.5rem", textAlign: "center" }}>
                   {s.title}
                 </h3>
-                <p style={{ color: "#5a5a5a", fontSize: "0.82rem", lineHeight: 1.65, marginBottom: "1.5rem", textAlign: "center" }}>
+                <p style={{ color: "#5a5a5a", fontSize: "0.82rem", lineHeight: 1.65, marginBottom: "1.25rem", textAlign: "center" }}>
                   {s.desc}
                 </p>
                 <div style={{ marginTop: "auto", textAlign: "center" }}>
-                  <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.5rem", color: "#c9a84c", lineHeight: 1, marginBottom: "0.25rem" }}>
-                    {s.price}
+                  <div style={{ color: "#c9a84c", fontSize: "0.55rem", fontFamily: "var(--font-mono)", letterSpacing: "0.22em", textTransform: "uppercase", marginBottom: "1rem" }}>
+                    {s.tiers}
                   </div>
-                  <div style={{ color: "#3a3a3a", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-                    {s.duration}
-                  </div>
+                  <Link
+                    href={s.href}
+                    style={{ color: "#a8a8a8", fontSize: "0.62rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", paddingBottom: "2px", borderBottom: "1px solid #282828" }}
+                  >
+                    View Packages →
+                  </Link>
                 </div>
               </div>
             ))}
@@ -340,7 +367,7 @@ export default function Home() {
             {[
               {
                 q: "How much does a full car detail typically cost?",
-                a: "A professional full detail — interior and exterior combined — typically runs anywhere from $229 to $300 depending on vehicle size and condition. At M&C, a full detail starts at $229 and covers everything: deep interior steam clean, hand wash, clay bar, polish, sealant, leather conditioning, and more. You're paying for professional-grade products and trained hands, not just a rinse.",
+                a: "A professional full detail — interior and exterior combined — typically runs anywhere from $189 to $400+ depending on the level of service and vehicle condition. At M&C, we offer three tiers: Bronze starting at $189 for a solid inside-and-out clean, Silver at $269 adding steam clean, leather conditioning, clay bar, and wax protection, and Gold at $359 for our most thorough treatment including carpet shampoo and engine bay wipe-down. You're paying for professional-grade products and trained hands, not just a rinse.",
               },
               {
                 q: "Is it worth paying for car detailing?",
