@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Recurring Car Detailing Plans — Danvers, MA",
-  description:
-    "Monthly and bi-weekly mobile detailing memberships in Danvers, MA. Keep your car looking freshly detailed year-round. Serving Beverly, Salem, Peabody & all of North Shore Massachusetts.",
+  description: "Bi-weekly, monthly & bi-monthly mobile detailing plans in Danvers, MA. Always-clean car, zero effort. Save vs. one-time pricing across North Shore Massachusetts.",
   alternates: {
     canonical: "https://www.mandcluxurydetailing.com/membership",
   },

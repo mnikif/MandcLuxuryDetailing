@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: 'Mobile Car Detailing in Danvers, MA',
-  description: "North Shore MA's top-rated mobile car detailing service. Interior, exterior, and full detail packages starting at $99. We come to you in Beverly, Danvers, Salem, Peabody, Marblehead & more.",
+  description: "Mobile car detailing in Danvers, MA — we come to you. Packages from $89. Serving Beverly, Salem, Peabody & all of North Shore Massachusetts. Free quotes.",
   alternates: {
     canonical: 'https://www.mandcluxurydetailing.com',
   },
