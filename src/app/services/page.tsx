@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: 'Car Detailing Packages & Pricing | North Shore MA',
-  description: 'Bronze, Silver & Gold interior, exterior, and full detail packages. Mobile car detailing serving North Shore Massachusetts. Transparent tiered pricing, no surprises.',
+  title: 'Car Detailing Services & Packages in Danvers, MA | M&C Luxury Detailing',
+  description: 'Mobile car detailing packages in Danvers, Beverly & Salem MA. Bronze, Silver & Gold tiers for interior, exterior & full detail — starting at $89. Serving all of North Shore Massachusetts.',
   alternates: {
     canonical: 'https://www.mandcluxurydetailing.com/services',
   },
@@ -291,6 +292,84 @@ function TierGrid({ tiers }: { tiers: PackageTier[] }) {
 export default function Services() {
   return (
     <>
+      <Script
+        id="services-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "M&C Luxury Detailing",
+            "url": "https://www.mandcluxurydetailing.com/services",
+            "telephone": "+17816325193",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Danvers",
+              "addressRegion": "MA",
+              "postalCode": "01923",
+              "addressCountry": "US",
+            },
+            "areaServed": ["Beverly", "Danvers", "Salem", "Peabody", "Gloucester", "Marblehead", "Manchester-by-the-Sea", "Swampscott", "Hamilton", "Wenham", "Lynn"],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Mobile Car Detailing Packages",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": { "@type": "Service", "name": "Interior Detail — Bronze", "description": "Full vacuum, dashboard wipe-down, door panels, interior windows, air freshener." },
+                  "priceSpecification": { "@type": "PriceSpecification", "price": "129", "priceCurrency": "USD", "minPrice": "129" },
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": { "@type": "Service", "name": "Interior Detail — Silver", "description": "Bronze package plus steam clean, leather conditioning, center console and vent deep clean." },
+                  "priceSpecification": { "@type": "PriceSpecification", "price": "169", "priceCurrency": "USD", "minPrice": "169" },
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": { "@type": "Service", "name": "Interior Detail — Gold", "description": "Silver package plus carpet shampoo, seat shampoo, headliner wipe-down, trunk detail." },
+                  "priceSpecification": { "@type": "PriceSpecification", "price": "219", "priceCurrency": "USD", "minPrice": "219" },
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": { "@type": "Service", "name": "Exterior Detail — Bronze", "description": "Hand wash, wheel and tire scrub, tire dressing, exterior window cleaning." },
+                  "priceSpecification": { "@type": "PriceSpecification", "price": "89", "priceCurrency": "USD", "minPrice": "89" },
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": { "@type": "Service", "name": "Exterior Detail — Silver", "description": "Bronze package plus clay bar, trim dressing, door jamb wipe, exterior wax protectant." },
+                  "priceSpecification": { "@type": "PriceSpecification", "price": "129", "priceCurrency": "USD", "minPrice": "129" },
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": { "@type": "Service", "name": "Exterior Detail — Gold", "description": "Silver package plus engine bay wipe-down, wheel well cleaning, exterior wax protectant." },
+                  "priceSpecification": { "@type": "PriceSpecification", "price": "169", "priceCurrency": "USD", "minPrice": "169" },
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": { "@type": "Service", "name": "Full Detail — Bronze", "description": "Interior Bronze and Exterior Bronze combined — full vacuum, wipe-down, hand wash, wheels." },
+                  "priceSpecification": { "@type": "PriceSpecification", "price": "189", "priceCurrency": "USD", "minPrice": "189" },
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": { "@type": "Service", "name": "Full Detail — Silver", "description": "Interior Silver and Exterior Silver combined with steam clean, conditioning, clay bar, and wax." },
+                  "priceSpecification": { "@type": "PriceSpecification", "price": "269", "priceCurrency": "USD", "minPrice": "269" },
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": { "@type": "Service", "name": "Full Detail — Gold", "description": "Interior Gold and Exterior Gold combined with carpet shampoo, engine bay, and wax protectant." },
+                  "priceSpecification": { "@type": "PriceSpecification", "price": "359", "priceCurrency": "USD", "minPrice": "359" },
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": { "@type": "Service", "name": "Pet Hair Removal", "description": "Thorough pet hair extraction from seats, carpets, and trunk using specialized tools." },
+                  "priceSpecification": { "@type": "PriceSpecification", "price": "50", "priceCurrency": "USD", "minPrice": "50" },
+                },
+              ],
+            },
+          }),
+        }}
+      />
+
       {/* ── Hero ── */}
       <section className="hero-bg" style={{ paddingTop: "7rem", paddingBottom: "4rem", borderBottom: "1px solid #1c1c1c" }}>
         <div style={wrap}>

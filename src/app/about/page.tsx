@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: 'About Matt — Local Mobile Detailer | M&C Luxury Detailing',
-  description: 'Matt founded M&C Luxury Detailing in Danvers, MA. A North Shore local with a perfectionist standard for every vehicle he touches.',
+  title: 'About Matt — Mobile Car Detailer in Danvers, MA | M&C Luxury Detailing',
+  description: 'Matt is the founder of M&C Luxury Detailing, a mobile car detailing business based in Danvers, MA. Serving Beverly, Salem, Peabody & all of North Shore Massachusetts.',
   alternates: {
     canonical: 'https://www.mandcluxurydetailing.com/about',
   },
@@ -33,6 +34,34 @@ const wrap: React.CSSProperties = {
 export default function About() {
   return (
     <>
+      <Script
+        id="about-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Matt",
+            "jobTitle": "Founder & Lead Detailer",
+            "worksFor": {
+              "@type": "LocalBusiness",
+              "name": "M&C Luxury Detailing",
+              "url": "https://www.mandcluxurydetailing.com",
+              "telephone": "+17816325193",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Danvers",
+                "addressRegion": "MA",
+                "postalCode": "01923",
+                "addressCountry": "US",
+              },
+              "description": "Mobile car detailing business serving Danvers, Beverly, Salem, Peabody, Gloucester, Marblehead and all of North Shore Massachusetts.",
+            },
+            "knowsAbout": ["Car Detailing", "Auto Detailing", "Mobile Detailing", "Interior Detailing", "Exterior Detailing"],
+          }),
+        }}
+      />
+
       {/* ── Hero ── */}
       <section className="hero-bg" style={{ paddingTop: "7rem", paddingBottom: "4rem", borderBottom: "1px solid #1c1c1c" }}>
         <div style={wrap}>

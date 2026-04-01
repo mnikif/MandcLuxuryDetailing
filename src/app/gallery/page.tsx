@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import Script from "next/script";
 import Image from "next/image";
 
 const wrap: React.CSSProperties = {
@@ -7,8 +9,6 @@ const wrap: React.CSSProperties = {
   padding: "0 1.25rem",
   textAlign: "center",
 };
-
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Before & After Gallery — Mobile Car Detailing North Shore MA",
@@ -38,6 +38,34 @@ const singles: { src: string; label: string; video?: boolean; objectPosition?: s
 export default function Gallery() {
   return (
     <>
+      <Script
+        id="gallery-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "M&C Luxury Detailing",
+            "url": "https://www.mandcluxurydetailing.com/gallery",
+            "telephone": "+17816325193",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Danvers",
+              "addressRegion": "MA",
+              "postalCode": "01923",
+              "addressCountry": "US",
+            },
+            "image": [
+              "https://www.mandcluxurydetailing.com/civic%20after.jpg",
+              "https://www.mandcluxurydetailing.com/honda%20after.jpg",
+              "https://www.mandcluxurydetailing.com/rav4%20after.jpg",
+              "https://www.mandcluxurydetailing.com/red%20car%20shine.jpg",
+            ],
+            "description": "Before and after gallery of professional mobile car detailing results by M&C Luxury Detailing — serving Danvers, Beverly, Salem, and all of North Shore Massachusetts.",
+          }),
+        }}
+      />
+
       {/* ── Hero ── */}
       <section className="hero-bg" style={{ paddingTop: "7rem", paddingBottom: "4rem", borderBottom: "1px solid #1c1c1c" }}>
         <div style={wrap}>
