@@ -46,7 +46,7 @@ const tierBulletColor: Record<string, string> = {
 const interiorTiers: PackageTier[] = [
   {
     tier: "Bronze",
-    price: "Starting at $129",
+    price: "$129",
     duration: "1–2 hrs",
     popular: false,
     features: [
@@ -59,7 +59,7 @@ const interiorTiers: PackageTier[] = [
   },
   {
     tier: "Silver",
-    price: "Starting at $169",
+    price: "$169",
     duration: "2–3 hrs",
     popular: true,
     features: [
@@ -72,7 +72,7 @@ const interiorTiers: PackageTier[] = [
   },
   {
     tier: "Gold",
-    price: "Starting at $219",
+    price: "$219",
     duration: "5–6 hrs",
     popular: false,
     features: [
@@ -88,7 +88,7 @@ const interiorTiers: PackageTier[] = [
 const exteriorTiers: PackageTier[] = [
   {
     tier: "Bronze",
-    price: "Starting at $89",
+    price: "$89",
     duration: "1 hr",
     popular: false,
     features: [
@@ -100,7 +100,7 @@ const exteriorTiers: PackageTier[] = [
   },
   {
     tier: "Silver",
-    price: "Starting at $129",
+    price: "$129",
     duration: "1.5–2 hrs",
     popular: true,
     features: [
@@ -113,7 +113,7 @@ const exteriorTiers: PackageTier[] = [
   },
   {
     tier: "Gold",
-    price: "Starting at $169",
+    price: "$169",
     duration: "2–2.5 hrs",
     popular: false,
     features: [
@@ -128,7 +128,7 @@ const exteriorTiers: PackageTier[] = [
 const fullTiers: PackageTier[] = [
   {
     tier: "Bronze",
-    price: "Starting at $189",
+    price: "$189",
     duration: "2.5–3.5 hrs",
     popular: false,
     features: [
@@ -140,7 +140,7 @@ const fullTiers: PackageTier[] = [
   },
   {
     tier: "Silver",
-    price: "Starting at $269",
+    price: "$269",
     duration: "3.5–5 hrs",
     popular: true,
     features: [
@@ -153,7 +153,7 @@ const fullTiers: PackageTier[] = [
   },
   {
     tier: "Gold",
-    price: "Starting at $359",
+    price: "$359",
     duration: "5–7 hrs",
     popular: false,
     features: [
@@ -231,13 +231,13 @@ function TierGrid({ tiers }: { tiers: PackageTier[] }) {
               fontFamily: "var(--font-mono)",
               letterSpacing: "0.35em",
               textTransform: "uppercase",
-              marginBottom: "1rem",
+              marginBottom: "0.4rem",
             }}>
               {pkg.tier}
             </p>
 
             {/* Price */}
-            <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.5rem", color: "#f2ede4", lineHeight: 1, marginBottom: "0.3rem" }}>
+            <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "2.2rem", color: "#f2ede4", lineHeight: 1, marginBottom: "0.3rem", marginTop: "-5px" }}>
               {pkg.price}
             </div>
             <div style={{ color: "#3a3a3a", fontSize: "0.57rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "1.5rem" }}>

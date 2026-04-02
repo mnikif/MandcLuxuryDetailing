@@ -18,20 +18,20 @@ export const metadata: Metadata = {
 };
 
 const pairs = [
-  { label: "Honda Civic full detail before and after - North Shore MA mobile detailing by M&C Luxury Detailing", before: "/civic before.jpg", after: "/civic after.jpg" },
-  { label: "Honda Pilot interior and exterior detail before and after - Danvers MA mobile detailing by M&C Luxury Detailing", before: "/honda before.jpg", after: "/honda after.jpg" },
-  { label: "Toyota RAV4 full detail before and after - Beverly MA mobile detailing by M&C Luxury Detailing", before: "/rav4 before.jpg",  after: "/rav4 after.jpg"  },
+  { label: "Honda Civic full detail", before: "/civic before.jpg", after: "/civic after.jpg" },
+  { label: "Honda Pilot interior and exterior detail", before: "/honda before.jpg", after: "/honda after.jpg" },
+  { label: "Toyota RAV4 full detail", before: "/rav4 before.jpg",  after: "/rav4 after.jpg"  },
 ];
 
 const singles: { src: string; label: string; video?: boolean; objectPosition?: string }[] = [
-  { src: "/Before After Left.jpeg", label: "Interior driver seat transformation before and after - mobile car detailing North Shore MA by M&C Luxury Detailing", objectPosition: "center 20%" },
-  { src: "/Before After Right.jpeg", label: "Interior passenger seat transformation before and after - mobile car detailing North Shore MA by M&C Luxury Detailing", objectPosition: "center 20%" },
-  { src: "/camaro soap.jpg", label: "Camaro exterior detail soap stage - hand wash mobile detailing North Shore Massachusetts" },
-  { src: "/red car shine.jpg", label: "Classic car exterior detail mirror shine - M&C Luxury Detailing North Shore MA" },
-  { src: "/washing.mp4", label: "Professional hand wash mobile car detailing service - M&C Luxury Detailing Danvers MA", video: true },
-  { src: "/mirror.MOV", label: "Mirror finish exterior detail result - mobile car detailing North Shore Massachusetts", video: true },
-  { src: "/working.jpg", label: "M&C Luxury Detailing professional mobile detailer at work - North Shore MA" },
-  { src: "/dodge.jpg", label: "Dodge exterior wash and wax detail finish - mobile detailing Beverly Danvers Salem MA" },
+  { src: "/Before After Left.jpeg", label: "Driver seat before and after interior detail", objectPosition: "center 20%" },
+  { src: "/Before After Right.jpeg", label: "Passenger seat before and after interior detail", objectPosition: "center 20%" },
+  { src: "/camaro soap.jpg", label: "Camaro during exterior hand wash" },
+  { src: "/red car shine.jpg", label: "Classic car exterior after full detail" },
+  { src: "/washing.mp4", label: "Hand wash in progress", video: true },
+  { src: "/mirror.MOV", label: "Mirror finish after exterior detail", video: true },
+  { src: "/working.jpg", label: "Detailer working on vehicle exterior" },
+  { src: "/dodge.jpg", label: "Dodge after wash and wax" },
 ];
 
 export default function Gallery() {

@@ -216,13 +216,29 @@ export default function Home() {
       />
 
       {/* ── HERO ── */}
-      <section className="hero-bg relative overflow-hidden" style={{ minHeight: "100svh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+      <section className="relative overflow-hidden" style={{ minHeight: "100svh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+
+        {/* Background video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/red car shine.jpg"
+          aria-hidden="true"
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", zIndex: 0 }}
+        >
+          <source src="/mirror.MOV" type="video/mp4" />
+        </video>
+
+        {/* Dark overlay */}
+        <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.78) 100%)", zIndex: 1 }} />
 
         {/* Gold glow */}
-        <div aria-hidden="true" style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 60% 50% at 50% 60%, rgba(201,168,76,0.055) 0%, transparent 70%)" }} />
+        <div aria-hidden="true" style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 60% 50% at 50% 60%, rgba(201,168,76,0.04) 0%, transparent 70%)", zIndex: 2 }} />
 
         {/* Content */}
-        <div style={{ ...wrap, position: "relative", zIndex: 10, paddingTop: "7rem", paddingBottom: "5rem", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+        <div style={{ ...wrap, position: "relative", zIndex: 10, paddingTop: "7rem", paddingBottom: "5rem", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", width: "100%" }}>
 
           {/* Ghost watermark — inside content div so it centers with the actual content */}
           <div aria-hidden="true" style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none", overflow: "hidden" }}>
@@ -273,7 +289,7 @@ export default function Home() {
         </div>
 
         {/* Scroll cue */}
-        <div style={{ position: "absolute", bottom: "2rem", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: "0.375rem" }}>
+        <div style={{ position: "absolute", bottom: "2rem", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: "0.375rem", zIndex: 10 }}>
           <span style={{ color: "#3a3a3a", fontSize: "0.55rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase" }}>scroll</span>
           <div style={{ width: "1px", height: "2rem", background: "linear-gradient(to bottom, rgba(201,168,76,0.6), transparent)" }} />
         </div>

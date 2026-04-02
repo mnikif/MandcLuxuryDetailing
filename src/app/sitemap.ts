@@ -1,6 +1,27 @@
 import { MetadataRoute } from 'next'
 
+const cities = [
+  "beverly",
+  "salem",
+  "danvers",
+  "peabody",
+  "gloucester",
+  "manchester",
+  "marblehead",
+  "swampscott",
+  "hamilton",
+  "wenham",
+  "lynn",
+]
+
 export default function sitemap(): MetadataRoute.Sitemap {
+  const cityPages: MetadataRoute.Sitemap = cities.map((slug) => ({
+    url: `https://www.mandcluxurydetailing.com/locations/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }))
+
   return [
     {
       url: 'https://www.mandcluxurydetailing.com',
@@ -20,6 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    ...cityPages,
     {
       url: 'https://www.mandcluxurydetailing.com/gallery',
       lastModified: new Date(),
