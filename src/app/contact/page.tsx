@@ -42,7 +42,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    email: "",
+
     service: "",
     vehicle: "",
     location: "",
@@ -218,11 +218,6 @@ export default function Contact() {
                   <p style={{ color: "#5a5a5a", fontSize: "0.88rem", lineHeight: 1.7, maxWidth: "24rem", textAlign: "center" }}>
                     Your appointment is confirmed. Check your email for details — we&apos;ll reach out before arrival to confirm your location.
                   </p>
-                  {formData.email && (
-                    <p style={{ color: "#3a3a3a", fontSize: "0.7rem", fontFamily: "var(--font-mono)", marginTop: "1rem", textAlign: "center" }}>
-                      Confirmation sent to {formData.email}
-                    </p>
-                  )}
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
@@ -257,21 +252,6 @@ export default function Contact() {
                         style={fieldStyle("phone")}
                       />
                     </div>
-                  </div>
-
-                  {/* Email */}
-                  <div>
-                    <label style={labelStyle}>Email <span style={{ color: "#3a3a3a", fontFamily: "var(--font-mono)", fontSize: "0.52rem", letterSpacing: "0.1em" }}>(for confirmation)</span></label>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="john@example.com"
-                      value={formData.email}
-                      onChange={handleChange}
-                      onFocus={() => setFocused("email")}
-                      onBlur={() => setFocused(null)}
-                      style={fieldStyle("email")}
-                    />
                   </div>
 
                   {/* Service */}
