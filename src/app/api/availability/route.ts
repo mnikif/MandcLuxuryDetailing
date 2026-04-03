@@ -4,7 +4,8 @@ import { NextResponse } from "next/server";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const SLOTS_PER_DAY = 2;
+const WEEKDAY_CAPACITY = 2;
+const WEEKEND_CAPACITY = 1;
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
@@ -52,10 +53,11 @@ export async function GET(req: Request) {
       continue;
     }
 
+    const capacity = dayOfWeek === 6 ? WEEKEND_CAPACITY : WEEKDAY_CAPACITY;
     const count = bookingCounts[dateStr] ?? 0;
-    if (count >= SLOTS_PER_DAY) {
+    if (count >= capacity) {
       availability[dateStr] = "full";
-    } else if (count === SLOTS_PER_DAY - 1) {
+    } else if (count === capacity - 1 && capacity > 1) {
       availability[dateStr] = "limited";
     } else {
       availability[dateStr] = "available";

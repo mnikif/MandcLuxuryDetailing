@@ -5,7 +5,8 @@ import { NextResponse } from "next/server";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const ALL_SLOTS = ["10:00 AM", "2:00 PM"];
+const WEEKDAY_SLOTS = ["10:00 AM", "2:30 PM"];
+const WEEKEND_SLOTS = ["10:00 AM"];
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
@@ -15,6 +16,8 @@ export async function GET(req: Request) {
   const dayOfWeek = new Date(date + "T00:00:00").getDay();
   if (dayOfWeek === 0) return NextResponse.json({ slots: [] });
 
+  const allSlots = dayOfWeek === 6 ? WEEKEND_SLOTS : WEEKDAY_SLOTS;
+
   const supabase = getSupabaseAdmin();
   const { data: bookings } = await supabase
     .from("bookings")
@@ -23,7 +26,7 @@ export async function GET(req: Request) {
     .eq("status", "confirmed");
 
   const booked = new Set((bookings ?? []).map((b: { time_slot: string }) => b.time_slot));
-  const available = ALL_SLOTS.filter((s) => !booked.has(s));
+  const available = allSlots.filter((s) => !booked.has(s));
 
   return NextResponse.json({ slots: available });
 }
