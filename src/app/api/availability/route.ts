@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const WEEKDAY_CAPACITY = 2;
+const WEEKDAY_CAPACITY = 1;
 const WEEKEND_CAPACITY = 1;
 
 export async function GET(req: Request) {

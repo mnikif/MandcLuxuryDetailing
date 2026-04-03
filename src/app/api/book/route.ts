@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const WEEKDAY_SLOTS = ["10:00 AM", "2:30 PM"];
+const WEEKDAY_SLOTS = ["2:30 PM"];
 const WEEKEND_SLOTS = ["10:00 AM"];
 
 export async function GET(req: Request) {
