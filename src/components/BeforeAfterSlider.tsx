@@ -45,12 +45,12 @@ export default function BeforeAfterSlider({ before, after, label }: Props) {
       >
         {/* Before image — full width underneath */}
         <div style={{ position: "absolute", inset: 0 }}>
-          <Image src={before} alt="Before" fill sizes="(max-width:768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+          <Image src={before} alt="Before" fill sizes="(max-width:768px) 100vw, 50vw" style={{ objectFit: "cover", pointerEvents: "none" }} draggable={false} />
         </div>
 
         {/* After image — clipped to right of handle */}
         <div style={{ position: "absolute", inset: 0, clipPath: `inset(0 0 0 ${pos}%)` }}>
-          <Image src={after} alt="After" fill sizes="(max-width:768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+          <Image src={after} alt="After" fill sizes="(max-width:768px) 100vw, 50vw" style={{ objectFit: "cover", pointerEvents: "none" }} draggable={false} />
         </div>
 
         {/* Divider line */}
