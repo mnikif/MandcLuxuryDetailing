@@ -180,6 +180,7 @@ export async function POST(req: Request) {
     const msg = calErr instanceof Error ? calErr.message : String(calErr);
     const keyPreview = (process.env.GOOGLE_PRIVATE_KEY ?? "").slice(0, 60);
     console.error(JSON.stringify({ cal: "err", msg, env_email: process.env.GOOGLE_CLIENT_EMAIL ?? "MISSING", env_id: process.env.GOOGLE_CALENDAR_ID ?? "MISSING", key_preview: keyPreview }));
+    return NextResponse.json({ success: true, calError: msg, keyPreview });
   }
 
   return NextResponse.json({ success: true });
