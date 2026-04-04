@@ -83,7 +83,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "AutoWash",
+            "@type": "AutomotiveBusiness",
             "name": "M&C Luxury Detailing",
             "image": [
               "https://www.mandcluxurydetailing.com/Matt.PNG",
