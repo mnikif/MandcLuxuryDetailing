@@ -39,7 +39,7 @@ export default function BeforeAfterSlider({ before, after, label }: Props) {
     <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
       <div
         ref={containerRef}
-        style={{ position: "relative", width: "100%", aspectRatio: "4/3", overflow: "hidden", cursor: "ew-resize", userSelect: "none" }}
+        style={{ position: "relative", width: "100%", aspectRatio: "16/10", overflow: "hidden", cursor: "ew-resize", userSelect: "none" }}
         onMouseDown={(e) => { onMouseDown(); updatePos(e.clientX); }}
         onTouchStart={(e) => { onTouchStart(e); updatePos(e.touches[0].clientX); }}
       >

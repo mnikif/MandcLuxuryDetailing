@@ -480,7 +480,8 @@ export default function Home() {
             <div className="gold-rule" style={{ width: "4rem", margin: "0 auto" }} />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "1.5rem" }}>
+          {/* Sliders */}
+          <div className="grid grid-cols-1 sm:grid-cols-3" style={{ gap: "1rem", marginBottom: "1rem" }}>
             <BeforeAfterSlider
               before="/civic before.jpg"
               after="/civic after.jpg"
@@ -496,11 +497,24 @@ export default function Home() {
               after="/rav4 after.jpg"
               label="RAV4 — Full Detail"
             />
-            <BeforeAfterSlider
-              before="/Before After Left.jpeg"
-              after="/Before After Right.jpeg"
-              label="Exterior Detail"
-            />
+          </div>
+
+          {/* Static before/after shots */}
+          <div className="grid grid-cols-1 sm:grid-cols-3" style={{ gap: "1rem" }}>
+            {[
+              { src: "/Before After Left.jpeg", label: "Exterior — Before" },
+              { src: "/Before After Right.jpeg", label: "Exterior — After" },
+              { src: "/before after.jpeg", label: "Before & After" },
+            ].map(({ src, label }) => (
+              <div key={src} style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+                <div style={{ position: "relative", width: "100%", aspectRatio: "4/3", overflow: "hidden" }}>
+                  <Image src={src} alt={label} fill sizes="(max-width:768px) 100vw, 33vw" style={{ objectFit: "cover" }} />
+                </div>
+                <p style={{ color: "#3a3a3a", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", textAlign: "center" }}>
+                  {label}
+                </p>
+              </div>
+            ))}
           </div>
 
           <div style={{ textAlign: "center", marginTop: "3rem" }}>
