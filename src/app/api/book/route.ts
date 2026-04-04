@@ -135,9 +135,6 @@ export async function POST(req: Request) {
 
   // Add to Google Calendar
   try {
-    console.log("CAL_EMAIL:", process.env.GOOGLE_CLIENT_EMAIL ?? "MISSING");
-    console.log("CAL_KEY_SET:", !!process.env.GOOGLE_PRIVATE_KEY);
-    console.log("CAL_ID:", process.env.GOOGLE_CALENDAR_ID ?? "MISSING");
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: process.env.GOOGLE_CLIENT_EMAIL,
@@ -174,13 +171,10 @@ export async function POST(req: Request) {
         end: { dateTime: endDate.toISOString(), timeZone: "America/New_York" },
       },
     });
-    console.log("CAL_EVENT_ID:", calResult.data.id, "CAL_LINK:", calResult.data.htmlLink);
+    console.log(JSON.stringify({ cal: "ok", id: calResult.data.id, link: calResult.data.htmlLink }));
   } catch (calErr: unknown) {
-    console.error("CAL_ERR_FULL:", String(calErr));
-    if (calErr instanceof Error) {
-      console.error("CAL_ERR_MSG:", calErr.message);
-      console.error("CAL_ERR_STACK:", calErr.stack?.slice(0, 300));
-    }
+    const msg = calErr instanceof Error ? calErr.message : String(calErr);
+    console.error(JSON.stringify({ cal: "err", msg, env_email: process.env.GOOGLE_CLIENT_EMAIL ?? "MISSING", env_key: !!process.env.GOOGLE_PRIVATE_KEY, env_id: process.env.GOOGLE_CALENDAR_ID ?? "MISSING" }));
   }
 
   return NextResponse.json({ success: true });
