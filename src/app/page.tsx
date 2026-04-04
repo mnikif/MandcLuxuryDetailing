@@ -385,6 +385,51 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── FAQ SCHEMA ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How much does a full car detail typically cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A professional full detail — interior and exterior combined — typically runs anywhere from $189 to $400+ depending on the level of service and vehicle condition. At M&C, we offer three tiers: Bronze starting at $189 for a solid inside-and-out clean, Silver at $269 adding steam clean, leather conditioning, clay bar, and wax protection, and Gold at $359 for our most thorough treatment including carpet shampoo and engine bay wipe-down.",
+                },
+              },
+              {
+                "@type": "Question",
+                "name": "Is it worth paying for car detailing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Absolutely. Regular detailing protects your paint from oxidation, UV damage, and contaminants that cause permanent wear over time. It also preserves interior materials — leather cracks, fabric stains, and plastics fade without proper care. Beyond protection, a clean car simply feels better to drive, holds its resale value, and makes an impression. The cost of a detail is a fraction of what neglect will cost you at trade-in.",
+                },
+              },
+              {
+                "@type": "Question",
+                "name": "What is the best homemade solution to wash a car?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "There isn't one. Dish soap strips your paint's protective wax and sealant. Household cleaners are too harsh for automotive finishes. Homemade solutions might get the dirt off but they accelerate paint degradation and leave your car worse off in the long run. A proper hand wash uses pH-balanced car shampoo, a two-bucket method, and microfiber — tools and products designed specifically not to damage your finish.",
+                },
+              },
+              {
+                "@type": "Question",
+                "name": "What does car detailing include?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Detailing goes far beyond a car wash. A full detail typically includes a thorough hand wash and dry, clay bar treatment to remove bonded contaminants, wheel and tire cleaning, interior vacuuming, dashboard and console wipe-down, steam cleaning of high-touch surfaces, leather conditioning, window cleaning inside and out, and an air freshener. At M&C we cover all of it — no corners cut.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
+
       {/* ── Q&A ── */}
       <section style={{ background: "#060606", borderTop: "1px solid #1c1c1c", padding: "5rem 0" }}>
         <div style={wrap}>
