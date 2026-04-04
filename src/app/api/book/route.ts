@@ -171,9 +171,11 @@ export async function POST(req: Request) {
         end: { dateTime: endDate.toISOString(), timeZone: "America/New_York" },
       },
     });
-  } catch (calErr) {
-    console.error("Google Calendar error:", calErr);
-    // Don't fail the booking if calendar sync fails
+  } catch (calErr: unknown) {
+    const msg = calErr instanceof Error ? calErr.message : String(calErr);
+    const status = (calErr as { status?: number })?.status;
+    const data = (calErr as { errors?: unknown })?.errors;
+    console.error("Google Calendar error:", msg, "status:", status, "details:", JSON.stringify(data));
   }
 
   return NextResponse.json({ success: true });
