@@ -157,7 +157,7 @@ export async function POST(req: Request) {
     const startDate = new Date(`${date}T${String(hour).padStart(2, "0")}:${String(rawMin).padStart(2, "0")}:00`);
     const endDate = new Date(startDate.getTime() + 3 * 60 * 60 * 1000); // 3-hour block
 
-    await calendar.events.insert({
+    const calResult = await calendar.events.insert({
       calendarId: process.env.GOOGLE_CALENDAR_ID,
       requestBody: {
         summary: `Detail — ${name}`,
@@ -174,6 +174,7 @@ export async function POST(req: Request) {
         end: { dateTime: endDate.toISOString(), timeZone: "America/New_York" },
       },
     });
+    console.log("CAL_EVENT_ID:", calResult.data.id, "CAL_LINK:", calResult.data.htmlLink);
   } catch (calErr: unknown) {
     console.error("CAL_ERR_FULL:", String(calErr));
     if (calErr instanceof Error) {
