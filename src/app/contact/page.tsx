@@ -470,15 +470,15 @@ export default function Contact() {
                     {loading ? "Booking..." : "Confirm Booking"}
                   </button>
 
+                  <p style={{ color: "#5a5a5a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
+                    ⚡ We confirm within 1–2 hours — your slot is held instantly.
+                  </p>
+
                   {error && (
                     <p style={{ color: "#e57373", fontSize: "0.75rem", textAlign: "center", fontFamily: "var(--font-mono)" }}>
                       {error}
                     </p>
                   )}
-
-                  <p style={{ color: "#2a2a2a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
-                    Your slot is reserved instantly. We&apos;ll confirm within 1–2 hours.
-  </p>
                 </form>
               )}
             </div>
