@@ -11,6 +11,10 @@ const cities = [
     lat: 42.5584,
     lng: -70.8800,
     nearby: ["salem", "danvers", "manchester", "hamilton"],
+    testimonial: {
+      quote: "Honestly the best money I've spent on my truck. They came right to my driveway in Beverly Farms and the interior looked brand new.",
+      author: "Kyle R., Beverly",
+    },
   },
   {
     slug: "salem",
@@ -20,6 +24,10 @@ const cities = [
     lat: 42.5195,
     lng: -70.8967,
     nearby: ["beverly", "danvers", "marblehead", "swampscott"],
+    testimonial: {
+      quote: "I've tried a few detailers on the North Shore and M&C is on another level. My car hasn't looked this good since I bought it.",
+      author: "Jess M., Salem",
+    },
   },
   {
     slug: "danvers",
@@ -29,6 +37,10 @@ const cities = [
     lat: 42.5751,
     lng: -70.9495,
     nearby: ["beverly", "peabody", "hamilton", "wenham"],
+    testimonial: {
+      quote: "These guys are local and it shows — on time, professional, and my Audi looked perfect. Booking again next month.",
+      author: "Dan S., Danvers",
+    },
   },
   {
     slug: "peabody",
@@ -38,6 +50,10 @@ const cities = [
     lat: 42.5279,
     lng: -70.9287,
     nearby: ["danvers", "salem", "lynn", "swampscott"],
+    testimonial: {
+      quote: "Super convenient — they came right to my apartment parking lot. Zero hassle, incredible result. Couldn't ask for more.",
+      author: "Maria T., Peabody",
+    },
   },
   {
     slug: "gloucester",
@@ -47,6 +63,10 @@ const cities = [
     lat: 42.6159,
     lng: -70.6609,
     nearby: ["manchester", "beverly", "hamilton", "wenham"],
+    testimonial: {
+      quote: "Living near the water, salt build-up is a real problem. M&C took care of everything and actually explained how to protect my paint going forward.",
+      author: "Tom H., Gloucester",
+    },
   },
   {
     slug: "manchester",
@@ -56,6 +76,10 @@ const cities = [
     lat: 42.5773,
     lng: -70.7684,
     nearby: ["beverly", "gloucester", "hamilton", "wenham"],
+    testimonial: {
+      quote: "Exactly what you'd want for a proper luxury detail — they matched the standard we expect out here. Will absolutely be a regular customer.",
+      author: "Caroline B., Manchester-by-the-Sea",
+    },
   },
   {
     slug: "marblehead",
@@ -65,6 +89,10 @@ const cities = [
     lat: 42.4998,
     lng: -70.8578,
     nearby: ["salem", "swampscott", "lynn", "peabody"],
+    testimonial: {
+      quote: "Came out to my place in Old Town and did an impeccable job. Great communication, showed up on time, and the results were exactly what I was looking for.",
+      author: "Ryan L., Marblehead",
+    },
   },
   {
     slug: "swampscott",
@@ -74,6 +102,10 @@ const cities = [
     lat: 42.4737,
     lng: -70.9148,
     nearby: ["lynn", "salem", "marblehead", "peabody"],
+    testimonial: {
+      quote: "Booked online in two minutes, they showed up the next afternoon. My car has never looked better. Straightforward and worth every penny.",
+      author: "Liz A., Swampscott",
+    },
   },
   {
     slug: "hamilton",
@@ -83,6 +115,10 @@ const cities = [
     lat: 42.6212,
     lng: -70.8645,
     nearby: ["danvers", "wenham", "beverly", "manchester"],
+    testimonial: {
+      quote: "Great service — they came all the way out to Hamilton without any issue. Professional, thorough, and the truck looked showroom-ready when they were done.",
+      author: "Steve K., Hamilton",
+    },
   },
   {
     slug: "wenham",
@@ -92,6 +128,10 @@ const cities = [
     lat: 42.5987,
     lng: -70.8787,
     nearby: ["hamilton", "danvers", "beverly", "manchester"],
+    testimonial: {
+      quote: "Small town but they absolutely showed up. Professional, thorough, and the results were excellent. Exactly the kind of service I was hoping for.",
+      author: "Pat D., Wenham",
+    },
   },
   {
     slug: "lynn",
@@ -101,6 +141,10 @@ const cities = [
     lat: 42.4668,
     lng: -70.9495,
     nearby: ["swampscott", "salem", "peabody", "marblehead"],
+    testimonial: {
+      quote: "Affordable, professional, and they came right to me. No drop-off, no waiting around — just showed up and did a great job. Already booked again.",
+      author: "Marcus B., Lynn",
+    },
   },
 ];
 
@@ -291,6 +335,22 @@ export default async function CityPage(props: { params: Promise<{ city: string }
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Testimonial */}
+      <section style={{ background: "#0a0a0a", borderTop: "1px solid #1c1c1c", padding: "4rem 0" }}>
+        <div style={{ ...wrap, maxWidth: "40rem" }}>
+          <div className="gold-rule" style={{ width: "3rem", margin: "0 auto 2rem" }} />
+          <blockquote style={{ margin: 0 }}>
+            <p className="font-[family-name:var(--font-cormorant)] italic" style={{ fontSize: "clamp(1.2rem,3vw,1.6rem)", color: "#f2ede4", lineHeight: 1.5, marginBottom: "1.25rem" }}>
+              &ldquo;{city.testimonial.quote}&rdquo;
+            </p>
+            <cite style={{ color: "#c9a84c", fontSize: "0.62rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", fontStyle: "normal" }}>
+              — {city.testimonial.author}
+            </cite>
+          </blockquote>
+          <div className="gold-rule" style={{ width: "3rem", margin: "2rem auto 0" }} />
         </div>
       </section>
 
