@@ -72,7 +72,7 @@ export default function About() {
       {/* ── Hero ── */}
       <section className="hero-bg" style={{ paddingTop: "7rem", paddingBottom: "4rem", borderBottom: "1px solid #1c1c1c" }}>
         <div style={wrap}>
-          <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "1rem", textAlign: "center" }}>
+          <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "1rem", textAlign: "center" }}>
             Mobile Car Detailing · North Shore MA
           </p>
           <h1 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(3rem,10vw,6rem)", color: "#f2ede4", lineHeight: 0.95, marginBottom: "1.25rem", textAlign: "center" }}>
@@ -88,7 +88,7 @@ export default function About() {
 
           {/* Story text */}
           <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-            <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "1rem", textAlign: "center" }}>
+            <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "1rem", textAlign: "center" }}>
               The Founder
             </p>
             <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(1.6rem,4vw,2.4rem)", color: "#f2ede4", lineHeight: 1.1, marginBottom: "1.75rem", textAlign: "center" }}>
@@ -120,7 +120,7 @@ export default function About() {
                 <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.5rem", color: "#c9a84c" }}>M</span>
               </div>
               <div style={{ color: "#f2ede4", fontSize: "0.9rem", fontWeight: 500, marginBottom: "0.25rem" }}>Matt</div>
-              <div style={{ color: "#c9a84c", fontSize: "0.55rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1rem" }}>Founder</div>
+              <div style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1rem" }}>Founder</div>
               <p style={{ color: "#5a5a5a", fontSize: "0.82rem", lineHeight: 1.65, textAlign: "center" }}>
                 Handles interior and exterior detailing with an obsessive eye for detail. A perfectionist about every panel — if there&apos;s a swirl mark, he&apos;ll find it and fix it.
               </p>
@@ -138,7 +138,7 @@ export default function About() {
       <section className="section-grid" style={{ borderTop: "1px solid #1c1c1c", padding: "5rem 0" }}>
         <div style={wrap}>
           <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-            <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem", textAlign: "center" }}>
+            <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem", textAlign: "center" }}>
               Why Choose Us
             </p>
             <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(1.8rem,5vw,3rem)", color: "#f2ede4", lineHeight: 1, textAlign: "center" }}>
@@ -166,7 +166,7 @@ export default function About() {
       {/* ── Service Area ── */}
       <section style={{ background: "#060606", borderTop: "1px solid #1c1c1c", padding: "4rem 0" }}>
         <div style={wrap}>
-          <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem", textAlign: "center" }}>
+          <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem", textAlign: "center" }}>
             Coverage
           </p>
           <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(1.8rem,5vw,3rem)", color: "#f2ede4", lineHeight: 1, marginBottom: "2.5rem", textAlign: "center" }}>
@@ -174,7 +174,7 @@ export default function About() {
           </h2>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.625rem" }}>
             {cities.map((city) => (
-              <Link key={city.slug} href={`/locations/${city.slug}`} className="hover:border-[#c9a84c]/40 hover:text-[#c9a84c]" style={{ border: "1px solid #1c1c1c", color: "#5a5a5a", fontSize: "0.65rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.5rem 0.875rem", transition: "all 0.2s", textAlign: "center" }}>
+              <Link key={city.slug} href={`/locations/${city.slug}`} className="hover:border-[#c9a84c]/40 hover:text-[#c9a84c]" style={{ border: "1px solid #1c1c1c", color: "#5a5a5a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.5rem 0.875rem", transition: "all 0.2s", textAlign: "center" }}>
                 {city.name}
               </Link>
             ))}
@@ -196,10 +196,10 @@ export default function About() {
             Ready to Experience the Difference?
           </h2>
           <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", alignItems: "center", maxWidth: "22rem", margin: "0 auto" }} className="sm:flex-row">
-            <Link href="/contact" className="btn-gold" style={{ width: "100%", height: "52px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontFamily: "var(--font-mono)" }}>
+            <Link href="/contact" className="btn-gold" style={{ width: "100%", height: "52px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)" }}>
               Book a Detail
             </Link>
-            <a href="tel:+17816325193" style={{ width: "100%", height: "52px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid #282828", color: "#a8a8a8", fontSize: "0.65rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            <a href="tel:+17816325193" style={{ width: "100%", height: "52px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid #282828", color: "#a8a8a8", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
               Call (781) 632-5193
             </a>
           </div>

@@ -45,12 +45,12 @@ export default function BeforeAfterSlider({ before, after, label }: Props) {
       >
         {/* Before image — full width underneath */}
         <div style={{ position: "absolute", inset: 0 }}>
-          <Image src={before} alt="Before" fill sizes="(max-width:768px) 100vw, 50vw" style={{ objectFit: "cover", pointerEvents: "none" }} draggable={false} />
+          <Image src={before} alt={label ? `Before — ${label}` : "Car before professional detailing — M&C Luxury Detailing North Shore MA"} fill sizes="(max-width:768px) 100vw, 50vw" style={{ objectFit: "cover", pointerEvents: "none" }} draggable={false} />
         </div>
 
         {/* After image — clipped to right of handle */}
         <div style={{ position: "absolute", inset: 0, clipPath: `inset(0 0 0 ${pos}%)` }}>
-          <Image src={after} alt="After" fill sizes="(max-width:768px) 100vw, 50vw" style={{ objectFit: "cover", pointerEvents: "none" }} draggable={false} />
+          <Image src={after} alt={label ? `After — ${label}` : "Car after professional detailing — M&C Luxury Detailing North Shore MA"} fill sizes="(max-width:768px) 100vw, 50vw" style={{ objectFit: "cover", pointerEvents: "none" }} draggable={false} />
         </div>
 
         {/* Divider line */}
@@ -73,16 +73,16 @@ export default function BeforeAfterSlider({ before, after, label }: Props) {
         </div>
 
         {/* Before / After labels */}
-        <div style={{ position: "absolute", bottom: "0.75rem", left: "0.75rem", background: "rgba(6,6,6,0.75)", color: "#f2ede4", fontSize: "0.55rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", padding: "0.3rem 0.6rem", opacity: pos > 15 ? 1 : 0, transition: "opacity 0.2s" }}>
+        <div style={{ position: "absolute", bottom: "0.75rem", left: "0.75rem", background: "rgba(6,6,6,0.75)", color: "#f2ede4", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", padding: "0.3rem 0.6rem", opacity: pos > 15 ? 1 : 0, transition: "opacity 0.2s" }}>
           Before
         </div>
-        <div style={{ position: "absolute", bottom: "0.75rem", right: "0.75rem", background: "rgba(201,168,76,0.85)", color: "#060606", fontSize: "0.55rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", padding: "0.3rem 0.6rem", opacity: pos < 85 ? 1 : 0, transition: "opacity 0.2s" }}>
+        <div style={{ position: "absolute", bottom: "0.75rem", right: "0.75rem", background: "rgba(201,168,76,0.85)", color: "#060606", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", padding: "0.3rem 0.6rem", opacity: pos < 85 ? 1 : 0, transition: "opacity 0.2s" }}>
           After
         </div>
       </div>
 
       {label && (
-        <p style={{ color: "#3a3a3a", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", textAlign: "center" }}>
+        <p style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", textAlign: "center" }}>
           {label}
         </p>
       )}

@@ -169,7 +169,7 @@ const fullTiers: PackageTier[] = [
 function SectionHeader({ eyebrow, heading, desc }: { eyebrow: string; heading: string; desc?: string }) {
   return (
     <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-      <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem" }}>
+      <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem" }}>
         {eyebrow}
       </p>
       <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(2rem,6vw,3rem)", color: "#f2ede4", lineHeight: 1, marginBottom: "1rem" }}>
@@ -210,7 +210,7 @@ function TierGrid({ tiers }: { tiers: PackageTier[] }) {
               right: 0,
               background: "#c9a84c",
               color: "#000",
-              fontSize: "0.48rem",
+              fontSize: "0.75rem",
               fontFamily: "var(--font-mono)",
               letterSpacing: "0.2em",
               textTransform: "uppercase",
@@ -227,7 +227,7 @@ function TierGrid({ tiers }: { tiers: PackageTier[] }) {
             {/* Tier label */}
             <p style={{
               color: tierLabelColor[pkg.tier],
-              fontSize: "0.55rem",
+              fontSize: "0.75rem",
               fontFamily: "var(--font-mono)",
               letterSpacing: "0.35em",
               textTransform: "uppercase",
@@ -240,7 +240,7 @@ function TierGrid({ tiers }: { tiers: PackageTier[] }) {
             <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "2.2rem", color: "#f2ede4", lineHeight: 1, marginBottom: "0.3rem", marginTop: "-5px" }}>
               {pkg.price}
             </div>
-            <div style={{ color: "#3a3a3a", fontSize: "0.57rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "1.5rem" }}>
+            <div style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "1.5rem" }}>
               {pkg.duration}
             </div>
 
@@ -250,7 +250,7 @@ function TierGrid({ tiers }: { tiers: PackageTier[] }) {
             <ul style={{ flex: 1, width: "100%", marginBottom: "1.75rem", display: "flex", flexDirection: "column", gap: "0.65rem" }}>
               {pkg.features.map((f) => (
                 <li key={f} style={{ display: "flex", alignItems: "flex-start", justifyContent: "center", gap: "0.625rem", color: "#5a5a5a", fontSize: "0.8rem", lineHeight: 1.5, textAlign: "center" }}>
-                  <span style={{ color: tierBulletColor[pkg.tier], flexShrink: 0, marginTop: "2px", fontSize: "0.5rem" }}>✦</span>
+                  <span style={{ color: tierBulletColor[pkg.tier], flexShrink: 0, marginTop: "2px", fontSize: "0.75rem" }}>✦</span>
                   {f}
                 </li>
               ))}
@@ -266,7 +266,7 @@ function TierGrid({ tiers }: { tiers: PackageTier[] }) {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontSize: "0.6rem",
+                fontSize: "0.75rem",
                 fontFamily: "var(--font-mono)",
                 letterSpacing: "0.18em",
                 textTransform: "uppercase",
@@ -277,7 +277,7 @@ function TierGrid({ tiers }: { tiers: PackageTier[] }) {
             </Link>
 
             {pkg.popular && (
-              <p style={{ color: "#c9a84c", fontSize: "0.52rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textAlign: "center", marginTop: "0.625rem" }}>
+              <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textAlign: "center", marginTop: "0.625rem" }}>
                 ★★★★★ <span style={{ color: "#3a3a3a" }}>on Google</span>
               </p>
             )}
@@ -371,7 +371,7 @@ export default function Services() {
       {/* ── Hero ── */}
       <section className="hero-bg" style={{ paddingTop: "7rem", paddingBottom: "4rem", borderBottom: "1px solid #1c1c1c" }}>
         <div style={wrap}>
-          <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "1rem", textAlign: "center" }}>
+          <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "1rem", textAlign: "center" }}>
             What We Offer
           </p>
           <h1 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(3rem,10vw,6rem)", color: "#f2ede4", lineHeight: 0.95, marginBottom: "1.25rem", textAlign: "center" }}>
@@ -395,7 +395,7 @@ export default function Services() {
                 href={link.href}
                 style={{
                   color: "#c9a84c",
-                  fontSize: "0.6rem",
+                  fontSize: "0.75rem",
                   fontFamily: "var(--font-mono)",
                   letterSpacing: "0.22em",
                   textTransform: "uppercase",
@@ -476,7 +476,7 @@ export default function Services() {
               <div style={{ height: "3px", width: "100%", background: "linear-gradient(90deg, transparent, #c9a84c, transparent)" }} />
 
               <div style={{ padding: "2.5rem 2.25rem", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", width: "100%" }}>
-                <p style={{ color: "#c9a84c", fontSize: "0.55rem", fontFamily: "var(--font-mono)", letterSpacing: "0.35em", textTransform: "uppercase", marginBottom: "0.875rem" }}>
+                <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.35em", textTransform: "uppercase", marginBottom: "0.875rem" }}>
                   Add-On Service
                 </p>
 
@@ -486,7 +486,7 @@ export default function Services() {
 
                 <div style={{ display: "flex", alignItems: "baseline", justifyContent: "center", gap: "0.75rem", marginBottom: "1.5rem" }}>
                   <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.5rem", color: "#c9a84c" }}>+$50</span>
-                  <span style={{ color: "#3a3a3a", fontSize: "0.57rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase" }}>30–60 min</span>
+                  <span style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase" }}>30–60 min</span>
                 </div>
 
                 <div style={{ height: "1px", background: "#1c1c1c", width: "100%", marginBottom: "1.5rem" }} />
@@ -499,7 +499,7 @@ export default function Services() {
                     "Pairs with any interior or full package",
                   ].map((f) => (
                     <li key={f} style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.625rem", color: "#5a5a5a", fontSize: "0.82rem", lineHeight: 1.5 }}>
-                      <span style={{ color: "#c9a84c", fontSize: "0.5rem", flexShrink: 0 }}>✦</span>
+                      <span style={{ color: "#c9a84c", fontSize: "0.75rem", flexShrink: 0 }}>✦</span>
                       {f}
                     </li>
                   ))}
@@ -508,7 +508,7 @@ export default function Services() {
                 <Link
                   href="/contact"
                   className="btn-gold"
-                  style={{ width: "100%", height: "44px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.62rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em", textTransform: "uppercase" }}
+                  style={{ width: "100%", height: "44px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em", textTransform: "uppercase" }}
                 >
                   Book Now
                 </Link>
@@ -538,7 +538,7 @@ export default function Services() {
             Reach out and we&apos;ll recommend the right service for your vehicle and budget.
           </p>
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <Link href="/contact" className="btn-gold" style={{ height: "52px", padding: "0 2.5rem", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontFamily: "var(--font-mono)" }}>
+            <Link href="/contact" className="btn-gold" style={{ height: "52px", padding: "0 2.5rem", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)" }}>
               Get a Free Quote
             </Link>
           </div>

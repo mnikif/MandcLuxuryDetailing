@@ -75,7 +75,7 @@ export default function Navbar() {
             <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.5rem", color: "#c9a84c", lineHeight: 1 }}>
               M&amp;C
             </span>
-            <span style={{ fontSize: "0.48rem", letterSpacing: "0.35em", textTransform: "uppercase", color: "#3a3a3a", fontFamily: "var(--font-mono)", lineHeight: 1.2, marginTop: "1px" }}>
+            <span style={{ fontSize: "0.75rem", letterSpacing: "0.35em", textTransform: "uppercase", color: "#3a3a3a", fontFamily: "var(--font-mono)", lineHeight: 1.2, marginTop: "1px" }}>
               Luxury Detailing
             </span>
           </Link>
@@ -86,7 +86,7 @@ export default function Navbar() {
               const active = pathname === href;
               return (
                 <li key={href}>
-                  <Link href={href} className="hover:text-[#f2ede4]" style={{ fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", color: active ? "#c9a84c" : "#5a5a5a", transition: "color 0.2s", textDecoration: "none" }}>
+                  <Link href={href} className="hover:text-[#f2ede4]" style={{ fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", color: active ? "#c9a84c" : "#5a5a5a", transition: "color 0.2s", textDecoration: "none" }}>
                     {label}
                   </Link>
                 </li>
@@ -100,7 +100,7 @@ export default function Navbar() {
           {/* Right actions */}
           <div style={{ display: "flex", alignItems: "center", gap: "0.875rem", marginLeft: "auto" }}>
             {/* Desktop only */}
-            <Link href="/contact" className="btn-gold hidden md:inline-flex" style={{ height: "36px", padding: "0 1.25rem", alignItems: "center", justifyContent: "center", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em" }}>
+            <Link href="/contact" className="btn-gold hidden md:inline-flex" style={{ height: "36px", padding: "0 1.25rem", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em" }}>
               Book Now
             </Link>
             <a href={IG_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hidden md:flex" style={{ color: "#c9a84c", opacity: 0.7, transition: "opacity 0.2s", alignItems: "center" }} onMouseEnter={e => (e.currentTarget.style.opacity = "1")} onMouseLeave={e => (e.currentTarget.style.opacity = "0.7")}>
@@ -169,7 +169,7 @@ export default function Navbar() {
 
         {/* Drawer footer */}
         <div style={{ padding: "1.5rem 2rem", borderTop: "1px solid #1c1c1c", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <a href="tel:+17816325193" style={{ color: "#3a3a3a", fontSize: "0.65rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
+          <a href="tel:+17816325193" style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
             (781) 632-5193
           </a>
           <div style={{ display: "flex", gap: "1rem" }}>

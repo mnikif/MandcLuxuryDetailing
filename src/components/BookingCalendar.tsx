@@ -154,7 +154,7 @@ export default function BookingCalendar({ value, onChange }: BookingCalendarProp
                 key={d}
                 style={{
                   textAlign: "center",
-                  fontSize: "0.52rem",
+                  fontSize: "0.75rem",
                   fontFamily: "var(--font-mono)",
                   letterSpacing: "0.12em",
                   color: "#3a3a3a",
@@ -289,7 +289,7 @@ export default function BookingCalendar({ value, onChange }: BookingCalendarProp
                 <span
                   style={{
                     color: "#3a3a3a",
-                    fontSize: "0.52rem",
+                    fontSize: "0.75rem",
                     fontFamily: "var(--font-mono)",
                     letterSpacing: "0.1em",
                     textTransform: "uppercase",
@@ -313,7 +313,7 @@ export default function BookingCalendar({ value, onChange }: BookingCalendarProp
                 justifyContent: "center",
               }}
             >
-              <span style={{ color: "#c9a84c", fontSize: "0.62rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em" }}>
+              <span style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em" }}>
                 Loading...
               </span>
             </div>

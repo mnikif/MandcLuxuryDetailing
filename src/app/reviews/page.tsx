@@ -123,7 +123,7 @@ export default function Reviews() {
 
       <section className="hero-bg" style={{ paddingTop: "7rem", paddingBottom: "4rem", borderBottom: "1px solid #1c1c1c" }}>
         <div style={wrap}>
-          <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "1rem", textAlign: "center" }}>
+          <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "1rem", textAlign: "center" }}>
             Google Reviews
           </p>
           <h1 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(3rem,10vw,6rem)", color: "#f2ede4", lineHeight: 0.95, marginBottom: "1.25rem", textAlign: "center" }}>
@@ -141,7 +141,7 @@ export default function Reviews() {
                 <span key={i} style={{ color: "#c9a84c", fontSize: "1.5rem" }}>★</span>
               ))}
             </div>
-            <span style={{ color: "#5a5a5a", fontSize: "0.7rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+            <span style={{ color: "#5a5a5a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase" }}>
               5.0 · Google Reviews
             </span>
           </div>
@@ -184,7 +184,7 @@ export default function Reviews() {
                 </p>
                 <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
                   <div style={{ width: "1.25rem", height: "1px", background: "rgba(201,168,76,0.4)" }} />
-                  <span style={{ color: "#5a5a5a", fontSize: "0.65rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em" }}>
+                  <span style={{ color: "#5a5a5a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em" }}>
                     {t.name}
                   </span>
                 </div>
@@ -197,7 +197,7 @@ export default function Reviews() {
       {/* ── Leave a review CTA ── */}
       <section style={{ background: "#060606", borderTop: "1px solid #1c1c1c", padding: "4rem 0" }}>
         <div style={{ ...wrap, textAlign: "center" }}>
-          <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "1rem" }}>
+          <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "1rem" }}>
             Happy with your detail?
           </p>
           <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(1.8rem,5vw,3rem)", color: "#f2ede4", lineHeight: 1, marginBottom: "1rem" }}>
@@ -207,7 +207,7 @@ export default function Reviews() {
             Your feedback helps us grow and helps other customers find us. We appreciate every review.
           </p>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem" }}>
-            <a href="https://g.page/r/CeR9EOzzrWfLEAE/review" target="_blank" rel="noopener noreferrer" className="btn-gold" style={{ height: "52px", padding: "0 2.5rem", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontFamily: "var(--font-mono)" }}>
+            <a href="https://g.page/r/CeR9EOzzrWfLEAE/review" target="_blank" rel="noopener noreferrer" className="btn-gold" style={{ height: "52px", padding: "0 2.5rem", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)" }}>
               Leave a Google Review
             </a>
           </div>

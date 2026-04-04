@@ -37,7 +37,7 @@ export default function Footer() {
               <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "2rem", color: "#c9a84c", lineHeight: 1, letterSpacing: "0.05em" }}>
                 M&amp;C
               </div>
-              <div style={{ fontSize: "0.48rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", color: "#2a2a2a", marginTop: "2px", textAlign: "center" }}>
+              <div style={{ fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", color: "#2a2a2a", marginTop: "2px", textAlign: "center" }}>
                 Luxury Detailing
               </div>
             </div>
@@ -45,13 +45,13 @@ export default function Footer() {
               Premium mobile detailing. We come to you — Danvers, MA and the entire North Shore.
             </p>
             <div style={{ display: "flex", justifyContent: "center", gap: "1.25rem", marginTop: "1.5rem", flexWrap: "wrap" }}>
-              <a href="https://instagram.com/mcluxurydetailing" target="_blank" rel="noopener noreferrer" className="hover:text-[#c9a84c]" style={{ color: "#3a3a3a", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", transition: "color 0.2s" }}>
+              <a href="https://instagram.com/mcluxurydetailing" target="_blank" rel="noopener noreferrer" className="hover:text-[#c9a84c]" style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", transition: "color 0.2s" }}>
                 Instagram
               </a>
-              <a href="https://www.facebook.com/profile.php?id=61577181187495" target="_blank" rel="noopener noreferrer" className="hover:text-[#c9a84c]" style={{ color: "#3a3a3a", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", transition: "color 0.2s" }}>
+              <a href="https://www.facebook.com/profile.php?id=61577181187495" target="_blank" rel="noopener noreferrer" className="hover:text-[#c9a84c]" style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", transition: "color 0.2s" }}>
                 Facebook
               </a>
-              <a href="https://www.google.com/maps/place/M%26C+Luxury+Detailing/@42.4614735,-70.8795505,15z" target="_blank" rel="noopener noreferrer" className="hover:text-[#c9a84c]" style={{ color: "#3a3a3a", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", transition: "color 0.2s" }}>
+              <a href="https://www.google.com/maps/place/M%26C+Luxury+Detailing/@42.4614735,-70.8795505,15z" target="_blank" rel="noopener noreferrer" className="hover:text-[#c9a84c]" style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", transition: "color 0.2s" }}>
                 Google
               </a>
             </div>
@@ -59,7 +59,7 @@ export default function Footer() {
 
           {/* Nav */}
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-            <h4 style={{ color: "#c9a84c", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1.25rem", textAlign: "center" }}>
+            <h4 style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1.25rem", textAlign: "center" }}>
               Navigate
             </h4>
             <ul style={{ display: "flex", flexDirection: "column", gap: "0.75rem", alignItems: "center" }}>
@@ -75,7 +75,7 @@ export default function Footer() {
 
           {/* Service Areas */}
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-            <h4 style={{ color: "#c9a84c", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1.25rem", textAlign: "center" }}>
+            <h4 style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1.25rem", textAlign: "center" }}>
               Service Areas
             </h4>
             <ul style={{ display: "flex", flexDirection: "column", gap: "0.6rem", alignItems: "center" }}>
@@ -91,7 +91,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-            <h4 style={{ color: "#c9a84c", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1.25rem", textAlign: "center" }}>
+            <h4 style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1.25rem", textAlign: "center" }}>
               Contact
             </h4>
             <ul style={{ display: "flex", flexDirection: "column", gap: "0.75rem", alignItems: "center" }}>
@@ -107,7 +107,7 @@ export default function Footer() {
               </li>
               <li style={{ color: "#3a3a3a", fontSize: "0.78rem", textAlign: "center" }}>Danvers, MA — North Shore</li>
             </ul>
-            <Link href="/contact" className="btn-gold" style={{ height: "40px", padding: "0 1.5rem", display: "inline-flex", alignItems: "center", justifyContent: "center", marginTop: "1.5rem", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
+            <Link href="/contact" className="btn-gold" style={{ height: "40px", padding: "0 1.5rem", display: "inline-flex", alignItems: "center", justifyContent: "center", marginTop: "1.5rem", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
               Book a Detail
             </Link>
           </div>
@@ -116,17 +116,17 @@ export default function Footer() {
 
       {/* SMS consent */}
       <div style={{ width: "100%", maxWidth: "56rem", margin: "0 auto", padding: "0.75rem 1.25rem", borderTop: "1px solid #0d0d0d", textAlign: "center" }}>
-        <p style={{ color: "#1e1e1e", fontSize: "0.56rem", fontFamily: "var(--font-mono)", letterSpacing: "0.08em", lineHeight: 1.8 }}>
+        <p style={{ color: "#1e1e1e", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.08em", lineHeight: 1.8 }}>
           By providing your phone number, you agree to receive a one-time text message from M&amp;C Luxury Detailing requesting a review following your service appointment. Message and data rates may apply.
         </p>
       </div>
 
       {/* Bottom bar */}
       <div style={{ width: "100%", maxWidth: "56rem", margin: "0 auto", padding: "1.25rem 1.25rem", borderTop: "1px solid #111", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "0.5rem", textAlign: "center" }} className="sm:flex-row sm:justify-between">
-        <p style={{ color: "#222", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
+        <p style={{ color: "#222", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
           © {new Date().getFullYear()} M&amp;C Luxury Detailing. All rights reserved.
         </p>
-        <p style={{ color: "#222", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
+        <p style={{ color: "#222", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
           Danvers, MA · North Shore · Mobile Service
         </p>
       </div>

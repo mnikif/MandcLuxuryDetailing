@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M&C Luxury Detailing — Business Card Front</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600;1,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Space Mono', monospace;
+  }
+
+  .card {
+    width: 3.5in;
+    height: 2in;
+    background: #060606;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #1c1c1c;
+    /* drop shadow for screen preview */
+    box-shadow: 0 8px 40px rgba(0,0,0,0.8), 0 0 0 0.5px #222;
+  }
+
+  /* ── Left: Logo section ── */
+  .logo-section {
+    width: 38%;
+    height: 100%;
+    background: #060606;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .logo-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 40% 50%, rgba(201,168,76,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .logo-section img {
+    width: 88%;
+    height: 88%;
+    object-fit: contain;
+    object-position: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Vertical divider ── */
+  .divider {
+    width: 1px;
+    height: 68%;
+    background: linear-gradient(to bottom,
+      transparent 0%,
+      #c9a84c 25%,
+      #c9a84c 75%,
+      transparent 100%
+    );
+    align-self: center;
+    flex-shrink: 0;
+    opacity: 0.7;
+  }
+
+  /* ── Right: Info section ── */
+  .info-section {
+    flex: 1;
+    padding: 0 0.18in 0 0.16in;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .brand-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.055in;
+  }
+
+  .brand-line1 {
+    font-size: 17.5pt;
+    color: #f2ede4;
+    display: block;
+  }
+
+  .brand-line2 {
+    font-size: 17.5pt;
+    color: #c9a84c;
+    display: block;
+  }
+
+  .gold-rule {
+    width: 0.38in;
+    height: 1px;
+    background: linear-gradient(to right, #c9a84c, transparent);
+    margin-bottom: 0.055in;
+  }
+
+  .tagline {
+    font-size: 5pt;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #5a5a5a;
+    margin-bottom: 0.07in;
+    line-height: 1.4;
+  }
+
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.028in;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.055in;
+    font-size: 5.2pt;
+    color: #a8a8a8;
+    letter-spacing: 0.04em;
+    line-height: 1;
+  }
+
+  .contact-item .dot {
+    color: #c9a84c;
+    font-size: 4.5pt;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .contact-item.highlight {
+    color: #c9a84c;
+  }
+
+  /* Corner accent */
+  .corner-tl,
+  .corner-br {
+    position: absolute;
+    width: 0.1in;
+    height: 0.1in;
+  }
+
+  .corner-tl {
+    top: 0.08in;
+    right: 0.08in;
+    border-top: 1px solid rgba(201,168,76,0.3);
+    border-right: 1px solid rgba(201,168,76,0.3);
+  }
+
+  .corner-br {
+    bottom: 0.08in;
+    right: 0.08in;
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+    border-right: 1px solid rgba(201,168,76,0.3);
+  }
+
+  @media print {
+    body {
+      background: none;
+      min-height: auto;
+    }
+    .card {
+      box-shadow: none;
+      border: none;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <!-- Logo -->
+  <div class="logo-section">
+    <img src="./MANDCLOGO.png" alt="M&C Luxury Detailing Logo">
+  </div>
+
+  <!-- Divider -->
+  <div class="divider"></div>
+
+  <!-- Info -->
+  <div class="info-section">
+    <div class="brand-name">
+      <span class="brand-line1">M&C Luxury</span>
+      <span class="brand-line2">Detailing</span>
+    </div>
+
+    <div class="gold-rule"></div>
+
+    <div class="tagline">Mobile Car Detailing · North Shore, MA</div>
+
+    <div class="contact-list">
+      <div class="contact-item">
+        <span class="dot">✦</span>
+        (781) 632-5193
+      </div>
+      <div class="contact-item">
+        <span class="dot">✦</span>
+        mandcluxurydetailing@gmail.com
+      </div>
+      <div class="contact-item highlight">
+        <span class="dot">✦</span>
+        www.mandcluxurydetailing.com
+      </div>
+    </div>
+  </div>
+
+  <!-- Corner accents -->
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+
+</div>
+</body>
+</html>

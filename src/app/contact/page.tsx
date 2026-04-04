@@ -32,7 +32,7 @@ const inputStyle: React.CSSProperties = {
 const labelStyle: React.CSSProperties = {
   display: "block",
   color: "#3a3a3a",
-  fontSize: "0.58rem",
+  fontSize: "0.75rem",
   fontFamily: "var(--font-mono)",
   letterSpacing: "0.22em",
   textTransform: "uppercase",
@@ -140,7 +140,7 @@ export default function Contact() {
           <p
             style={{
               color: "#c9a84c",
-              fontSize: "0.6rem",
+              fontSize: "0.75rem",
               fontFamily: "var(--font-mono)",
               letterSpacing: "0.3em",
               textTransform: "uppercase",
@@ -175,7 +175,7 @@ export default function Contact() {
                 alignItems: "center",
                 justifyContent: "center",
                 gap: "0.75rem",
-                fontSize: "0.7rem",
+                fontSize: "0.75rem",
                 fontFamily: "var(--font-mono)",
                 letterSpacing: "0.15em",
               }}
@@ -193,7 +193,7 @@ export default function Contact() {
           <p
             style={{
               color: "#3a3a3a",
-              fontSize: "0.7rem",
+              fontSize: "0.75rem",
               fontFamily: "var(--font-mono)",
               letterSpacing: "0.1em",
               marginTop: "1rem",
@@ -208,7 +208,7 @@ export default function Contact() {
       {/* ── Map ── */}
       <section style={{ background: "#060606", borderTop: "1px solid #1c1c1c", padding: "3.5rem 0" }}>
         <div style={wrap}>
-          <p style={{ color: "#c9a84c", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1rem", textAlign: "center" }}>
+          <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1rem", textAlign: "center" }}>
             Find Us on Google
           </p>
           <iframe
@@ -227,7 +227,7 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[#c9a84c] transition-colors"
-              style={{ color: "#3a3a3a", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase" }}
+              style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase" }}
             >
               View on Google Maps →
             </a>
@@ -366,7 +366,7 @@ export default function Contact() {
 
                   {/* Service Location */}
                   <div>
-                    <label style={labelStyle}>Service Location <span style={{ color: "#3a3a3a", fontFamily: "var(--font-mono)", fontSize: "0.52rem", letterSpacing: "0.1em" }}>(address or city)</span></label>
+                    <label style={labelStyle}>Service Location <span style={{ color: "#3a3a3a", fontFamily: "var(--font-mono)", fontSize: "0.75rem", letterSpacing: "0.1em" }}>(address or city)</span></label>
                     <input
                       type="text"
                       name="location"
@@ -390,7 +390,7 @@ export default function Contact() {
                     <div>
                       <label style={labelStyle}>Time Slot <span style={{ color: "#c9a84c" }}>*</span></label>
                       {loadingSlots ? (
-                        <p style={{ color: "#3a3a3a", fontSize: "0.7rem", fontFamily: "var(--font-mono)", padding: "0.875rem 0" }}>
+                        <p style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", padding: "0.875rem 0" }}>
                           Checking availability...
                         </p>
                       ) : availableSlots.length === 0 ? (
@@ -461,7 +461,7 @@ export default function Contact() {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      fontSize: "0.68rem",
+                      fontSize: "0.75rem",
                       fontFamily: "var(--font-mono)",
                       opacity: loading ? 0.7 : 1,
                       cursor: loading ? "not-allowed" : "pointer",
@@ -471,12 +471,12 @@ export default function Contact() {
                   </button>
 
                   {error && (
-                    <p style={{ color: "#e57373", fontSize: "0.72rem", textAlign: "center", fontFamily: "var(--font-mono)" }}>
+                    <p style={{ color: "#e57373", fontSize: "0.75rem", textAlign: "center", fontFamily: "var(--font-mono)" }}>
                       {error}
                     </p>
                   )}
 
-                  <p style={{ color: "#2a2a2a", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
+                  <p style={{ color: "#2a2a2a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
                     Your slot is reserved instantly. We&apos;ll confirm within 1–2 hours.
   </p>
                 </form>
@@ -486,12 +486,12 @@ export default function Contact() {
             {/* Sidebar */}
             <div className="lg:col-start-1 lg:row-start-1" style={{ display: "flex", flexDirection: "column", gap: "2rem", textAlign: "center" }}>
               <div>
-                <h3 style={{ color: "#c9a84c", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1.25rem", textAlign: "center" }}>
+                <h3 style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1.25rem", textAlign: "center" }}>
                   Contact
                 </h3>
                 <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                   <div style={{ textAlign: "center" }}>
-                    <div style={{ color: "#3a3a3a", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "0.35rem" }}>Phone</div>
+                    <div style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "0.35rem" }}>Phone</div>
                     <a
                       href="tel:+17816325193"
                       className="font-[family-name:var(--font-cormorant)] italic font-bold hover:text-[#c9a84c] transition-colors"
@@ -501,7 +501,7 @@ export default function Contact() {
                     </a>
                   </div>
                   <div style={{ textAlign: "center" }}>
-                    <div style={{ color: "#3a3a3a", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "0.35rem" }}>Email</div>
+                    <div style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "0.35rem" }}>Email</div>
                     <a
                       href="mailto:mandcluxurydetailing@gmail.com"
                       className="hover:text-[#c9a84c] transition-colors"
@@ -511,14 +511,14 @@ export default function Contact() {
                     </a>
                   </div>
                   <div style={{ textAlign: "center" }}>
-                    <div style={{ color: "#3a3a3a", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "0.35rem" }}>Based In</div>
+                    <div style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "0.35rem" }}>Based In</div>
                     <div style={{ color: "#5a5a5a", fontSize: "0.82rem" }}>Danvers, MA</div>
                   </div>
                 </div>
               </div>
 
               <div>
-                <h3 style={{ color: "#c9a84c", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1.25rem", textAlign: "center" }}>
+                <h3 style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1.25rem", textAlign: "center" }}>
                   Hours
                 </h3>
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
@@ -536,7 +536,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <h3 style={{ color: "#c9a84c", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1rem", textAlign: "center" }}>
+                <h3 style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1rem", textAlign: "center" }}>
                   Area
                 </h3>
                 <p style={{ color: "#3a3a3a", fontSize: "0.8rem", lineHeight: 1.7, textAlign: "center" }}>
@@ -550,7 +550,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#c9a84c] transition-colors"
-                  style={{ color: "#3a3a3a", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid #1c1c1c", padding: "0.5rem 0.875rem" }}
+                  style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid #1c1c1c", padding: "0.5rem 0.875rem" }}
                 >
                   Instagram
                 </a>
@@ -559,7 +559,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#c9a84c] transition-colors"
-                  style={{ color: "#3a3a3a", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid #1c1c1c", padding: "0.5rem 0.875rem" }}
+                  style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid #1c1c1c", padding: "0.5rem 0.875rem" }}
                 >
                   Facebook
                 </a>

@@ -244,7 +244,7 @@ export default async function CityPage(props: { params: Promise<{ city: string }
       {/* Hero */}
       <section className="hero-bg" style={{ paddingTop: "7rem", paddingBottom: "4.5rem", borderBottom: "1px solid #1c1c1c" }}>
         <div style={wrap}>
-          <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "1rem" }}>
+          <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "1rem" }}>
             Mobile Detailing · North Shore MA
           </p>
           <h1 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(3rem,10vw,6rem)", color: "#f2ede4", lineHeight: 0.92, marginBottom: "0.2em" }}>
@@ -258,10 +258,10 @@ export default async function CityPage(props: { params: Promise<{ city: string }
             {city.blurb}
           </p>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.75rem", maxWidth: "22rem", margin: "0 auto" }}>
-            <Link href="/contact" className="btn-gold" style={{ width: "100%", height: "54px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.68rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em" }}>
+            <Link href="/contact" className="btn-gold" style={{ width: "100%", height: "54px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em" }}>
               Book Now — Free Quote
             </Link>
-            <a href="tel:+17816325193" className="btn-ghost" style={{ width: "100%", height: "48px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(201,168,76,0.3)", color: "#c9a84c", fontSize: "0.68rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
+            <a href="tel:+17816325193" className="btn-ghost" style={{ width: "100%", height: "48px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(201,168,76,0.3)", color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
               (781) 632-5193
             </a>
           </div>
@@ -272,7 +272,7 @@ export default async function CityPage(props: { params: Promise<{ city: string }
       <section className="section-grid" style={{ borderTop: "1px solid #1c1c1c", padding: "5rem 0" }}>
         <div style={wrap}>
           <div style={{ marginBottom: "3rem" }}>
-            <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem" }}>
+            <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem" }}>
               What We Offer
             </p>
             <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(1.8rem,5vw,3rem)", color: "#f2ede4", lineHeight: 1, marginBottom: "1rem" }}>
@@ -298,7 +298,7 @@ export default async function CityPage(props: { params: Promise<{ city: string }
               </div>
             ))}
           </div>
-          <Link href="/services" style={{ color: "#c9a84c", fontSize: "0.62rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em", textTransform: "uppercase", paddingBottom: "2px", borderBottom: "1px solid rgba(201,168,76,0.35)" }}>
+          <Link href="/services" style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em", textTransform: "uppercase", paddingBottom: "2px", borderBottom: "1px solid rgba(201,168,76,0.35)" }}>
             View Full Pricing &amp; Packages →
           </Link>
         </div>
@@ -308,7 +308,7 @@ export default async function CityPage(props: { params: Promise<{ city: string }
       <section style={{ background: "#060606", borderTop: "1px solid #1c1c1c", padding: "5rem 0" }}>
         <div style={wrap}>
           <div style={{ marginBottom: "3rem" }}>
-            <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem" }}>
+            <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem" }}>
               Why Choose Us
             </p>
             <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(1.8rem,5vw,3rem)", color: "#f2ede4", lineHeight: 1, marginBottom: "1rem" }}>
@@ -346,7 +346,7 @@ export default async function CityPage(props: { params: Promise<{ city: string }
             <p className="font-[family-name:var(--font-cormorant)] italic" style={{ fontSize: "clamp(1.2rem,3vw,1.6rem)", color: "#f2ede4", lineHeight: 1.5, marginBottom: "1.25rem" }}>
               &ldquo;{city.testimonial.quote}&rdquo;
             </p>
-            <cite style={{ color: "#c9a84c", fontSize: "0.62rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", fontStyle: "normal" }}>
+            <cite style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", fontStyle: "normal" }}>
               — {city.testimonial.author}
             </cite>
           </blockquote>
@@ -357,7 +357,7 @@ export default async function CityPage(props: { params: Promise<{ city: string }
       {/* Nearby */}
       <section style={{ background: "#0a0a0a", borderTop: "1px solid #1c1c1c", padding: "3rem 0" }}>
         <div style={wrap}>
-          <p style={{ color: "#3a3a3a", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
+          <p style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
             Also Serving
           </p>
           <div style={{ display: "flex", justifyContent: "center", gap: "1.5rem", flexWrap: "wrap" }}>
@@ -376,7 +376,7 @@ export default async function CityPage(props: { params: Promise<{ city: string }
       {/* CTA */}
       <section style={{ background: "#060606", borderTop: "1px solid #1c1c1c", padding: "5rem 0" }}>
         <div style={{ ...wrap, textAlign: "center" }}>
-          <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "1rem" }}>
+          <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "1rem" }}>
             Get Started Today
           </p>
           <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(2rem,7vw,4.5rem)", color: "#f2ede4", lineHeight: 0.95, marginBottom: "0.15em" }}>
@@ -389,10 +389,10 @@ export default async function CityPage(props: { params: Promise<{ city: string }
             Serving {city.name} and all of North Shore Massachusetts. Book online — free quote, fast response.
           </p>
           <div className="flex flex-col sm:flex-row gap-3" style={{ alignItems: "center", justifyContent: "center", maxWidth: "22rem", margin: "0 auto" }}>
-            <Link href="/contact" className="btn-gold" style={{ width: "100%", height: "54px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.68rem", fontFamily: "var(--font-mono)" }}>
+            <Link href="/contact" className="btn-gold" style={{ width: "100%", height: "54px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)" }}>
               Get a Free Quote
             </Link>
-            <a href="tel:+17816325193" className="btn-ghost" style={{ width: "100%", height: "54px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid #282828", color: "#a8a8a8", fontSize: "0.68rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            <a href="tel:+17816325193" className="btn-ghost" style={{ width: "100%", height: "54px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid #282828", color: "#a8a8a8", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
               Call Now
             </a>
           </div>

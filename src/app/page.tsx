@@ -247,7 +247,7 @@ export default function Home() {
           </div>
 
           {/* Badge */}
-          <div className="anim-up d0" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", border: "1px solid rgba(201,168,76,0.3)", padding: "0.375rem 1rem", marginBottom: "2rem", fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.22em", color: "#c9a84c", textTransform: "uppercase" }}>
+          <div className="anim-up d0" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", border: "1px solid rgba(201,168,76,0.3)", padding: "0.375rem 1rem", marginBottom: "2rem", fontFamily: "var(--font-mono)", fontSize: "0.75rem", letterSpacing: "0.22em", color: "#c9a84c", textTransform: "uppercase" }}>
             <span style={{ display: "inline-block", width: "0.25rem", height: "0.25rem", borderRadius: "9999px", background: "#c9a84c", animation: "pulse 2s infinite" }} />
             Northshore Massachusetts &nbsp;·&nbsp; Mobile Service
           </div>
@@ -267,31 +267,31 @@ export default function Home() {
 
           {/* CTAs */}
           <div className="anim-up d4" style={{ width: "100%", maxWidth: "22rem", display: "flex", flexDirection: "column", gap: "0.75rem", alignItems: "center", margin: "0 auto" }}>
-            <Link href="/contact" className="btn-gold" style={{ width: "100%", height: "58px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.7rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em" }}>
+            <Link href="/contact" className="btn-gold" style={{ width: "100%", height: "58px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em" }}>
               Book Now — It&apos;s Free to Quote
             </Link>
-            <p style={{ color: "#c9a84c", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textAlign: "center", marginTop: "-0.25rem" }}>
+            <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textAlign: "center", marginTop: "-0.25rem" }}>
               ★★★★★ <span style={{ color: "#3a3a3a" }}>on Google</span>
             </p>
             <div style={{ width: "100%", display: "flex", gap: "0.75rem" }}>
-              <a href="tel:+17816325193" className="btn-ghost" style={{ flex: 1, height: "52px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(201,168,76,0.35)", color: "#c9a84c", fontSize: "0.7rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
+              <a href="tel:+17816325193" className="btn-ghost" style={{ flex: 1, height: "52px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(201,168,76,0.35)", color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
                 📞 (781) 632-5193
               </a>
-              <Link href="/gallery" className="btn-ghost" style={{ flex: 1, height: "52px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid #282828", color: "#a8a8a8", fontSize: "0.7rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+              <Link href="/gallery" className="btn-ghost" style={{ flex: 1, height: "52px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid #282828", color: "#a8a8a8", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
                 Our Work
               </Link>
             </div>
           </div>
 
           {/* Areas */}
-          <p className="anim-up d5" style={{ marginTop: "2rem", color: "#3a3a3a", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", textAlign: "center" }}>
+          <p className="anim-up d5" style={{ marginTop: "2rem", color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", textAlign: "center" }}>
             Beverly · Danvers · Salem · Peabody · Gloucester &amp; more
           </p>
         </div>
 
         {/* Scroll cue */}
         <div style={{ position: "absolute", bottom: "2rem", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: "0.375rem", zIndex: 10 }}>
-          <span style={{ color: "#3a3a3a", fontSize: "0.55rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase" }}>scroll</span>
+          <span style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase" }}>scroll</span>
           <div style={{ width: "1px", height: "2rem", background: "linear-gradient(to bottom, rgba(201,168,76,0.6), transparent)" }} />
         </div>
       </section>
@@ -302,7 +302,7 @@ export default function Home() {
         <div className="marquee-wrap" style={{ padding: "0.875rem 0" }}>
           <div className="marquee-track" aria-hidden="true">
             {[...areas, ...areas].map((a, i) => (
-              <span key={i} style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.3em", textTransform: "uppercase", color: "#c9a84c", padding: "0 2rem", whiteSpace: "nowrap", opacity: 0.7 }}>
+              <span key={i} style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", letterSpacing: "0.3em", textTransform: "uppercase", color: "#c9a84c", padding: "0 2rem", whiteSpace: "nowrap", opacity: 0.7 }}>
                 {a}<span style={{ marginLeft: "2rem", opacity: 0.35 }}>✦</span>
               </span>
             ))}
@@ -336,7 +336,7 @@ export default function Home() {
 
           {/* Header */}
           <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
-            <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem" }}>
+            <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem" }}>
               What We Offer
             </p>
             <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(2rem,6vw,3.2rem)", color: "#f2ede4", lineHeight: 1, marginBottom: "1rem" }}>
@@ -359,12 +359,12 @@ export default function Home() {
                   {s.desc}
                 </p>
                 <div style={{ marginTop: "auto", textAlign: "center" }}>
-                  <div style={{ color: "#c9a84c", fontSize: "0.55rem", fontFamily: "var(--font-mono)", letterSpacing: "0.22em", textTransform: "uppercase", marginBottom: "1rem" }}>
+                  <div style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.22em", textTransform: "uppercase", marginBottom: "1rem" }}>
                     {s.tiers}
                   </div>
                   <Link
                     href={s.href}
-                    style={{ color: "#a8a8a8", fontSize: "0.62rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", paddingBottom: "2px", borderBottom: "1px solid #282828" }}
+                    style={{ color: "#a8a8a8", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", paddingBottom: "2px", borderBottom: "1px solid #282828" }}
                   >
                     View Packages →
                   </Link>
@@ -375,10 +375,10 @@ export default function Home() {
 
           {/* CTAs */}
           <div style={{ marginTop: "2.5rem", display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem", textAlign: "center" }}>
-            <Link href="/contact" className="btn-gold" style={{ height: "52px", padding: "0 2.5rem", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: "0.68rem", fontFamily: "var(--font-mono)" }}>
+            <Link href="/contact" className="btn-gold" style={{ height: "52px", padding: "0 2.5rem", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)" }}>
               Book a Service
             </Link>
-            <Link href="/services" style={{ color: "#c9a84c", fontSize: "0.65rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", paddingBottom: "2px", borderBottom: "1px solid rgba(201,168,76,0.4)" }}>
+            <Link href="/services" style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", paddingBottom: "2px", borderBottom: "1px solid rgba(201,168,76,0.4)" }}>
               Full Pricing &amp; Details →
             </Link>
           </div>
@@ -434,7 +434,7 @@ export default function Home() {
       <section style={{ background: "#060606", borderTop: "1px solid #1c1c1c", padding: "5rem 0" }}>
         <div style={wrap}>
           <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
-            <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem" }}>
+            <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem" }}>
               Common Questions
             </p>
             <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(2rem,6vw,3.2rem)", color: "#f2ede4", lineHeight: 1 }}>
@@ -481,7 +481,7 @@ export default function Home() {
         <div style={wrap}>
 
           <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
-            <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem" }}>
+            <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem" }}>
               Why Choose Us
             </p>
             <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(2rem,6vw,3.2rem)", color: "#f2ede4", lineHeight: 1 }}>
@@ -516,7 +516,7 @@ export default function Home() {
       <section style={{ borderTop: "1px solid #1c1c1c", padding: "5rem 0" }}>
         <div style={wrap}>
           <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-            <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem" }}>
+            <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem" }}>
               Service Area
             </p>
             <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(2rem,6vw,3.2rem)", color: "#f2ede4", lineHeight: 1, marginBottom: "1rem" }}>
@@ -544,7 +544,7 @@ export default function Home() {
               <Link
                 key={city.slug}
                 href={`/locations/${city.slug}`}
-                style={{ background: "#060606", display: "flex", alignItems: "center", justifyContent: "center", padding: "1.25rem 1rem", color: "#5a5a5a", fontSize: "0.7rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", transition: "color 0.2s, background 0.2s", textAlign: "center" }}
+                style={{ background: "#060606", display: "flex", alignItems: "center", justifyContent: "center", padding: "1.25rem 1rem", color: "#5a5a5a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", transition: "color 0.2s, background 0.2s", textAlign: "center" }}
                 className="hover:text-[#c9a84c] hover:bg-[#0a0a0a]"
               >
                 {city.name}
@@ -558,7 +558,7 @@ export default function Home() {
       <section style={{ background: "#060606", borderTop: "1px solid #1c1c1c", padding: "5rem 0" }}>
         <div className="section-grid">
           <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-            <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "1rem" }}>
+            <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "1rem" }}>
               The Work
             </p>
             <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(2.5rem,7vw,4.5rem)", color: "#f2ede4", lineHeight: 0.95, marginBottom: "1.25rem" }}>
@@ -597,7 +597,7 @@ export default function Home() {
                 <div style={{ position: "relative", width: "100%", aspectRatio: "4/3", overflow: "hidden" }}>
                   <Image src={src} alt={label} fill sizes="(max-width:768px) 100vw, 33vw" style={{ objectFit: "cover", objectPosition: "center 20%" }} />
                 </div>
-                <p style={{ color: "#3a3a3a", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", textAlign: "center" }}>
+                <p style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", textAlign: "center" }}>
                   {label}
                 </p>
               </div>
@@ -605,7 +605,7 @@ export default function Home() {
           </div>
 
           <div style={{ textAlign: "center", marginTop: "3rem" }}>
-            <Link href="/gallery" className="btn-gold btn-ghost" style={{ display: "inline-flex", alignItems: "center", height: "52px", padding: "0 2rem", fontSize: "0.65rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
+            <Link href="/gallery" className="btn-gold btn-ghost" style={{ display: "inline-flex", alignItems: "center", height: "52px", padding: "0 2rem", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
               View Full Gallery
             </Link>
           </div>
@@ -617,7 +617,7 @@ export default function Home() {
         <div style={wrap}>
 
           <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
-            <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem" }}>
+            <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem" }}>
               Client Reviews
             </p>
             <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(2rem,6vw,3.2rem)", color: "#f2ede4", lineHeight: 1 }}>
@@ -648,12 +648,12 @@ export default function Home() {
             {testimonials.slice(1).map((t) => (
               <div key={t.name} style={{ background: "#060606", border: "1px solid #1c1c1c", padding: "1.5rem", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
                 <div style={{ display: "flex", justifyContent: "center", gap: "0.125rem", marginBottom: "0.75rem" }}>
-                  {[...Array(5)].map((_, i) => <span key={i} style={{ color: "#c9a84c", fontSize: "0.7rem" }}>★</span>)}
+                  {[...Array(5)].map((_, i) => <span key={i} style={{ color: "#c9a84c", fontSize: "0.75rem" }}>★</span>)}
                 </div>
                 <p className="font-[family-name:var(--font-cormorant)] italic" style={{ color: "#a8a8a8", fontSize: "1rem", lineHeight: 1.55, marginBottom: "1rem", textAlign: "center" }}>
                   &ldquo;{t.short}&rdquo;
                 </p>
-                <div style={{ color: "#3a3a3a", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
+                <div style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
                   — {t.name}
                 </div>
               </div>
@@ -666,7 +666,7 @@ export default function Home() {
       <section style={{ background: "#060606", borderTop: "1px solid #1c1c1c", padding: "5rem 0" }}>
         <div style={{ ...wrap, textAlign: "center" }}>
 
-          <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "1rem", textAlign: "center" }}>
+          <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "1rem", textAlign: "center" }}>
             Get Started Today
           </p>
 
@@ -686,10 +686,10 @@ export default function Home() {
           </a>
 
           <div className="flex flex-col sm:flex-row gap-3" style={{ alignItems: "center", justifyContent: "center", maxWidth: "22rem", margin: "0 auto" }}>
-            <Link href="/contact" className="btn-gold" style={{ width: "100%", height: "54px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.68rem", fontFamily: "var(--font-mono)" }}>
+            <Link href="/contact" className="btn-gold" style={{ width: "100%", height: "54px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)" }}>
               Get a Free Quote
             </Link>
-            <a href="tel:+17816325193" className="btn-ghost" style={{ width: "100%", height: "54px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid #282828", color: "#a8a8a8", fontSize: "0.68rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            <a href="tel:+17816325193" className="btn-ghost" style={{ width: "100%", height: "54px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid #282828", color: "#a8a8a8", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
               Call Now
             </a>
           </div>
