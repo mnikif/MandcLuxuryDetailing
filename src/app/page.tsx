@@ -321,10 +321,10 @@ export default function Home() {
           <div style={{ width: "3rem", height: "1px", background: "linear-gradient(90deg, transparent, #c9a84c, transparent)", marginTop: "1.75rem" }} />
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1px", background: "#1c1c1c", marginTop: "2.5rem", width: "100%" }}>
             <div style={{ position: "relative", aspectRatio: "4/3", overflow: "hidden" }}>
-              <Image src="/Working Inside.JPG" alt="Working inside a car" fill style={{ objectFit: "cover" }} sizes="(max-width: 768px) 50vw, 28rem" />
+              <Image src="/Working Inside.JPG" alt="Matt detailing a car interior in Danvers, MA — steam cleaning and vacuuming" fill style={{ objectFit: "cover" }} sizes="(max-width: 768px) 50vw, 28rem" />
             </div>
             <div style={{ position: "relative", aspectRatio: "4/3", overflow: "hidden" }}>
-              <Image src="/Working Outside.jpg" alt="Working outside on a car" fill style={{ objectFit: "cover" }} sizes="(max-width: 768px) 50vw, 28rem" />
+              <Image src="/Working Outside.jpg" alt="Mobile car detailing exterior wash on the North Shore of Massachusetts" fill style={{ objectFit: "cover" }} sizes="(max-width: 768px) 50vw, 28rem" />
             </div>
           </div>
         </div>
@@ -507,6 +507,48 @@ export default function Home() {
                   {item.desc}
                 </p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SERVICE AREA ── */}
+      <section style={{ borderTop: "1px solid #1c1c1c", padding: "5rem 0" }}>
+        <div style={wrap}>
+          <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+            <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem" }}>
+              Service Area
+            </p>
+            <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(2rem,6vw,3.2rem)", color: "#f2ede4", lineHeight: 1, marginBottom: "1rem" }}>
+              Mobile Car Detailing Near You
+            </h2>
+            <div className="gold-rule" style={{ width: "4rem", margin: "0 auto 1.5rem" }} />
+            <p style={{ color: "#5a5a5a", fontSize: "0.9rem", lineHeight: 1.75, maxWidth: "34rem", margin: "0 auto" }}>
+              Looking for mobile detailing near you on the North Shore of Massachusetts? We serve Beverly, Salem, Danvers, Peabody, Gloucester, Manchester-by-the-Sea, Marblehead, Swampscott, Hamilton, Wenham, and Lynn — fully equipped, arriving at your driveway.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4" style={{ gap: "1px", background: "#1c1c1c" }}>
+            {[
+              { name: "Beverly", slug: "beverly" },
+              { name: "Salem", slug: "salem" },
+              { name: "Danvers", slug: "danvers" },
+              { name: "Peabody", slug: "peabody" },
+              { name: "Gloucester", slug: "gloucester" },
+              { name: "Manchester", slug: "manchester" },
+              { name: "Marblehead", slug: "marblehead" },
+              { name: "Swampscott", slug: "swampscott" },
+              { name: "Hamilton", slug: "hamilton" },
+              { name: "Wenham", slug: "wenham" },
+              { name: "Lynn", slug: "lynn" },
+            ].map((city) => (
+              <Link
+                key={city.slug}
+                href={`/locations/${city.slug}`}
+                style={{ background: "#060606", display: "flex", alignItems: "center", justifyContent: "center", padding: "1.25rem 1rem", color: "#5a5a5a", fontSize: "0.7rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", transition: "color 0.2s, background 0.2s", textAlign: "center" }}
+                className="hover:text-[#c9a84c] hover:bg-[#0a0a0a]"
+              >
+                {city.name}
+              </Link>
             ))}
           </div>
         </div>
