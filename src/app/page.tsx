@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 
 export const metadata: Metadata = {
   title: 'Mobile Car Detailing in Danvers, MA',
@@ -462,6 +463,50 @@ export default function Home() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── RESULTS ── */}
+      <section style={{ background: "#060606", borderTop: "1px solid #1c1c1c", padding: "5rem 0" }}>
+        <div className="section-grid">
+          <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+            <p style={{ color: "#c9a84c", fontSize: "0.6rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "1rem" }}>
+              The Work
+            </p>
+            <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(2.5rem,7vw,4.5rem)", color: "#f2ede4", lineHeight: 0.95, marginBottom: "1.25rem" }}>
+              Before &amp; After
+            </h2>
+            <div className="gold-rule" style={{ width: "4rem", margin: "0 auto" }} />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "1.5rem" }}>
+            <BeforeAfterSlider
+              before="/civic before.jpg"
+              after="/civic after.jpg"
+              label="Civic — Full Detail"
+            />
+            <BeforeAfterSlider
+              before="/honda before.jpg"
+              after="/honda after.jpg"
+              label="Honda — Interior Detail"
+            />
+            <BeforeAfterSlider
+              before="/rav4 before.jpg"
+              after="/rav4 after.jpg"
+              label="RAV4 — Full Detail"
+            />
+            <BeforeAfterSlider
+              before="/Before After Left.jpeg"
+              after="/Before After Right.jpeg"
+              label="Exterior Detail"
+            />
+          </div>
+
+          <div style={{ textAlign: "center", marginTop: "3rem" }}>
+            <Link href="/gallery" className="btn-gold btn-ghost" style={{ display: "inline-flex", alignItems: "center", height: "52px", padding: "0 2rem", fontSize: "0.65rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
+              View Full Gallery
+            </Link>
           </div>
         </div>
       </section>
