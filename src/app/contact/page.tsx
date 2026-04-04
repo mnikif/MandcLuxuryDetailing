@@ -215,7 +215,7 @@ export default function Contact() {
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92979!2d-71.2091866!3d42.4615079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aeb9edce49f8db%3A0xcb67adf3ec107de4!2sM%26C%20Luxury%20Detailing!5e0!3m2!1sen!2sus"
             width="100%"
             height="320"
-            style={{ border: "1px solid #1c1c1c", display: "block", filter: "grayscale(1) invert(0.9) contrast(0.85)" }}
+            style={{ border: "1px solid #1c1c1c", display: "block" }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
