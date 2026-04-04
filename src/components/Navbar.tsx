@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 const links = [
   { href: "/",             label: "Home" },
   { href: "/services",     label: "Services" },
-  { href: "/membership",   label: "Membership" },
   { href: "/gallery",      label: "Gallery" },
   { href: "/reviews",      label: "Reviews" },
   { href: "/about",        label: "About" },
@@ -55,9 +54,9 @@ export default function Navbar() {
       <header
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-400"
         style={{
-          background:     scrolled || menuOpen ? "rgba(6,6,6,0.98)" : "transparent",
-          backdropFilter: scrolled || menuOpen ? "blur(16px) saturate(1.2)" : "none",
-          borderBottom:   scrolled || menuOpen ? "1px solid #1c1c1c" : "1px solid transparent",
+          background:     "rgba(6,6,6,0.98)",
+          backdropFilter: "blur(16px) saturate(1.2)",
+          borderBottom:   "1px solid #1c1c1c",
         }}
       >
         <nav style={{

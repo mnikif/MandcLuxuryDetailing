@@ -35,13 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
-    {
-      url: 'https://www.mandcluxurydetailing.com/membership',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    ...cityPages,
+...cityPages,
     {
       url: 'https://www.mandcluxurydetailing.com/gallery',
       lastModified: new Date(),

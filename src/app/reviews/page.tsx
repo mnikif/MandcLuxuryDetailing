@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: '5-Star Reviews — Mobile Car Detailing Danvers, MA',
+  title: { absolute: 'Customer Reviews — Mobile Car Detailing North Shore MA | M&C' },
   description: '7 five-star reviews from real North Shore MA car owners. See why Danvers, Beverly & Salem drivers trust M&C Luxury Detailing with their vehicles.',
   alternates: {
     canonical: 'https://www.mandcluxurydetailing.com/reviews',

@@ -1,6 +1,7 @@
 import { getSupabaseAdmin } from "@/lib/supabase";
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
+import { google } from "googleapis";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -130,6 +131,49 @@ export async function POST(req: Request) {
         </div>
       `,
     });
+  }
+
+  // Add to Google Calendar
+  try {
+    const auth = new google.auth.GoogleAuth({
+      credentials: {
+        client_email: process.env.GOOGLE_CLIENT_EMAIL,
+        private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+      },
+      scopes: ["https://www.googleapis.com/auth/calendar"],
+    });
+    const calendar = google.calendar({ version: "v3", auth });
+
+    // Parse date + time slot into start/end datetimes
+    const [time, period] = timeSlot.split(" ");
+    const [rawHour, rawMin] = time.split(":").map(Number);
+    let hour = rawHour;
+    if (period === "PM" && rawHour !== 12) hour += 12;
+    if (period === "AM" && rawHour === 12) hour = 0;
+
+    const startDate = new Date(`${date}T${String(hour).padStart(2, "0")}:${String(rawMin).padStart(2, "0")}:00`);
+    const endDate = new Date(startDate.getTime() + 3 * 60 * 60 * 1000); // 3-hour block
+
+    await calendar.events.insert({
+      calendarId: process.env.GOOGLE_CALENDAR_ID,
+      requestBody: {
+        summary: `Detail — ${name}`,
+        description: [
+          `Service: ${service || "Not specified"}`,
+          `Vehicle: ${vehicle || "Not specified"}`,
+          `Location: ${location || "Not specified"}`,
+          `Phone: ${phone}`,
+          email ? `Email: ${email}` : null,
+          notes ? `Notes: ${notes}` : null,
+        ].filter(Boolean).join("\n"),
+        location: location || undefined,
+        start: { dateTime: startDate.toISOString(), timeZone: "America/New_York" },
+        end: { dateTime: endDate.toISOString(), timeZone: "America/New_York" },
+      },
+    });
+  } catch (calErr) {
+    console.error("Google Calendar error:", calErr);
+    // Don't fail the booking if calendar sync fails
   }
 
   return NextResponse.json({ success: true });

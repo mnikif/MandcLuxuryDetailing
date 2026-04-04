@@ -71,9 +71,39 @@ export const viewport: Viewport = {
   themeColor: "#060606",
 };
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "M&C Luxury Detailing",
+  "description": "Mobile car detailing serving the North Shore of Massachusetts",
+  "telephone": "+17816325193",
+  "email": "mandcluxurydetailing@gmail.com",
+  "url": "https://www.mandcluxurydetailing.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Danvers",
+    "addressRegion": "MA",
+    "postalCode": "01923",
+    "addressCountry": "US"
+  },
+  "areaServed": ["Beverly", "Danvers", "Salem", "Peabody", "Gloucester", "Marblehead", "Manchester-by-the-Sea"],
+  "priceRange": "$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "7"
+  }
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${cormorant.variable} ${barlow.variable} ${dmMono.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+      </head>
       <body style={{ backgroundColor: "#060606", color: "#f2ede4" }}>
         <PostHogProvider>
           <Navbar />

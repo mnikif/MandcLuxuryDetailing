@@ -1,11 +1,26 @@
 import Link from "next/link";
 
 const navLinks = [
-  { href: "/",         label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/gallery",  label: "Gallery" },
-  { href: "/about",    label: "About" },
-  { href: "/contact",  label: "Book Now" },
+  { href: "/",           label: "Home" },
+  { href: "/services",   label: "Services" },
+  { href: "/locations",  label: "Locations" },
+  { href: "/gallery",    label: "Gallery" },
+  { href: "/about",      label: "About" },
+  { href: "/contact",    label: "Book Now" },
+];
+
+const cityLinks = [
+  { slug: "beverly",    name: "Beverly" },
+  { slug: "salem",      name: "Salem" },
+  { slug: "danvers",    name: "Danvers" },
+  { slug: "peabody",    name: "Peabody" },
+  { slug: "gloucester", name: "Gloucester" },
+  { slug: "manchester", name: "Manchester" },
+  { slug: "marblehead", name: "Marblehead" },
+  { slug: "swampscott", name: "Swampscott" },
+  { slug: "hamilton",   name: "Hamilton" },
+  { slug: "wenham",     name: "Wenham" },
+  { slug: "lynn",       name: "Lynn" },
 ];
 
 export default function Footer() {
@@ -14,7 +29,7 @@ export default function Footer() {
 
       {/* Main footer grid */}
       <div style={{ width: "100%", maxWidth: "56rem", margin: "0 auto", padding: "3.5rem 1.25rem" }}>
-        <div className="grid grid-cols-1 sm:grid-cols-3" style={{ gap: "2.5rem" }}>
+        <div className="grid grid-cols-1 sm:grid-cols-4" style={{ gap: "2.5rem" }}>
 
           {/* Brand */}
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
@@ -55,6 +70,22 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Service Areas */}
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+            <h4 style={{ color: "#c9a84c", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1.25rem", textAlign: "center" }}>
+              Service Areas
+            </h4>
+            <ul style={{ display: "flex", flexDirection: "column", gap: "0.6rem", alignItems: "center" }}>
+              {cityLinks.map(({ slug, name }) => (
+                <li key={slug}>
+                  <Link href={`/locations/${slug}`} className="hover:text-[#c9a84c] transition-colors" style={{ color: "#3a3a3a", fontSize: "0.78rem", display: "block", textAlign: "center" }}>
+                    {name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Contact */}
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
             <h4 style={{ color: "#c9a84c", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1.25rem", textAlign: "center" }}>
@@ -78,6 +109,13 @@ export default function Footer() {
             </Link>
           </div>
         </div>
+      </div>
+
+      {/* SMS consent */}
+      <div style={{ width: "100%", maxWidth: "56rem", margin: "0 auto", padding: "0.75rem 1.25rem", borderTop: "1px solid #0d0d0d", textAlign: "center" }}>
+        <p style={{ color: "#1e1e1e", fontSize: "0.56rem", fontFamily: "var(--font-mono)", letterSpacing: "0.08em", lineHeight: 1.8 }}>
+          By providing your phone number, you agree to receive a one-time text message from M&amp;C Luxury Detailing requesting a review following your service appointment. Message and data rates may apply.
+        </p>
       </div>
 
       {/* Bottom bar */}

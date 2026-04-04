@@ -2,7 +2,9 @@
 import { useState, useEffect } from "react";
 import BookingCalendar from "@/components/BookingCalendar";
 
-const SERVICES = ["Interior Detail", "Exterior Detail", "Full Detail", "Pet Hair Removal (add-on)"];
+const SERVICES = ["Interior Detail", "Exterior Detail", "Full Detail"];
+const LEVELS = ["Bronze", "Silver", "Gold"];
+const ADDONS = ["Pet Hair Removal"];
 
 const wrap: React.CSSProperties = {
   width: "100%",
@@ -39,11 +41,12 @@ const labelStyle: React.CSSProperties = {
 };
 
 export default function Contact() {
+  const [selectedService, setSelectedService] = useState("");
+  const [selectedLevel, setSelectedLevel] = useState("");
+  const [selectedAddons, setSelectedAddons] = useState<string[]>([]);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-
-    service: "",
     vehicle: "",
     location: "",
     notes: "",
@@ -81,6 +84,14 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!selectedService) {
+      setError("Please select a service.");
+      return;
+    }
+    if (!selectedLevel) {
+      setError("Please select a service level.");
+      return;
+    }
     if (!selectedDate) {
       setError("Please select a date.");
       return;
@@ -92,10 +103,15 @@ export default function Contact() {
     setLoading(true);
     setError(null);
 
+    const serviceString = [
+      `${selectedService} — ${selectedLevel}`,
+      ...(selectedAddons.length ? [`Add-ons: ${selectedAddons.join(", ")}`] : []),
+    ].join(" | ");
+
     const res = await fetch("/api/book", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...formData, date: selectedDate, timeSlot: selectedSlot }),
+      body: JSON.stringify({ ...formData, service: serviceString, date: selectedDate, timeSlot: selectedSlot }),
     });
 
     setLoading(false);
@@ -254,22 +270,53 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* Service */}
-                  <div>
-                    <label style={labelStyle}>Service</label>
-                    <select
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      onFocus={() => setFocused("service")}
-                      onBlur={() => setFocused(null)}
-                      style={{ ...fieldStyle("service"), cursor: "pointer" }}
-                    >
-                      <option value="" style={{ background: "#0a0a0a" }}>Select a service...</option>
-                      {SERVICES.map((s) => (
-                        <option key={s} value={s} style={{ background: "#0a0a0a" }}>{s}</option>
-                      ))}
-                    </select>
+                  {/* Service / Level / Add-ons dropdowns */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3" style={{ gap: "1rem" }}>
+                    <div>
+                      <label style={labelStyle}>Service</label>
+                      <select
+                        value={selectedService}
+                        onChange={(e) => setSelectedService(e.target.value)}
+                        onFocus={() => setFocused("service")}
+                        onBlur={() => setFocused(null)}
+                        style={{ ...fieldStyle("service"), cursor: "pointer" }}
+                      >
+                        <option value="" style={{ background: "#0a0a0a" }}>Select a service...</option>
+                        {SERVICES.map((s) => (
+                          <option key={s} value={s} style={{ background: "#0a0a0a" }}>{s}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div>
+                      <label style={labelStyle}>Level</label>
+                      <select
+                        value={selectedLevel}
+                        onChange={(e) => setSelectedLevel(e.target.value)}
+                        onFocus={() => setFocused("level")}
+                        onBlur={() => setFocused(null)}
+                        style={{ ...fieldStyle("level"), cursor: "pointer" }}
+                      >
+                        <option value="" style={{ background: "#0a0a0a" }}>Select a level...</option>
+                        {LEVELS.map((l) => (
+                          <option key={l} value={l} style={{ background: "#0a0a0a" }}>{l}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div>
+                      <label style={labelStyle}>Add-ons</label>
+                      <select
+                        value={selectedAddons[0] ?? ""}
+                        onChange={(e) => setSelectedAddons(e.target.value ? [e.target.value] : [])}
+                        onFocus={() => setFocused("addons")}
+                        onBlur={() => setFocused(null)}
+                        style={{ ...fieldStyle("addons"), cursor: "pointer" }}
+                      >
+                        <option value="" style={{ background: "#0a0a0a" }}>None</option>
+                        {ADDONS.map((a) => (
+                          <option key={a} value={a} style={{ background: "#0a0a0a" }}>{a}</option>
+                        ))}
+                      </select>
+                    </div>
                   </div>
 
                   {/* Vehicle */}
@@ -304,7 +351,7 @@ export default function Contact() {
 
                   {/* Date picker */}
                   <div>
-                    <label style={labelStyle}>Preferred Date <span style={{ color: "#c9a84c" }}>*</span></label>
+                    <label style={labelStyle}>Book a Date <span style={{ color: "#c9a84c" }}>*</span></label>
                     <BookingCalendar value={selectedDate} onChange={setSelectedDate} />
                   </div>
 
@@ -365,7 +412,7 @@ export default function Contact() {
                     <textarea
                       name="notes"
                       rows={4}
-                      placeholder="Tell us about your car's condition and we'll help you choose the right package level."
+                      placeholder="Any additional details, special requests, or concerns about your vehicle..."
                       value={formData.notes}
                       onChange={handleChange}
                       onFocus={() => setFocused("notes")}
