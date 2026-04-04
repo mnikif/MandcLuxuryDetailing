@@ -155,8 +155,10 @@ export async function POST(req: Request) {
     if (period === "PM" && rawHour !== 12) hour += 12;
     if (period === "AM" && rawHour === 12) hour = 0;
 
-    const startDate = new Date(`${date}T${String(hour).padStart(2, "0")}:${String(rawMin).padStart(2, "0")}:00`);
-    const endDate = new Date(startDate.getTime() + 3 * 60 * 60 * 1000); // 3-hour block
+    const pad = (n: number) => String(n).padStart(2, "0");
+    const endHour = hour + 3;
+    const startStr = `${date}T${pad(hour)}:${pad(rawMin)}:00`;
+    const endStr = `${date}T${pad(endHour)}:${pad(rawMin)}:00`;
 
     const calResult = await calendar.events.insert({
       calendarId: process.env.GOOGLE_CALENDAR_ID,
@@ -171,8 +173,8 @@ export async function POST(req: Request) {
           notes ? `Notes: ${notes}` : null,
         ].filter(Boolean).join("\n"),
         location: location || undefined,
-        start: { dateTime: startDate.toISOString(), timeZone: "America/New_York" },
-        end: { dateTime: endDate.toISOString(), timeZone: "America/New_York" },
+        start: { dateTime: startStr, timeZone: "America/New_York" },
+        end: { dateTime: endStr, timeZone: "America/New_York" },
       },
     });
     console.log(JSON.stringify({ cal: "ok", id: calResult.data.id, link: calResult.data.htmlLink }));
@@ -180,7 +182,6 @@ export async function POST(req: Request) {
     const msg = calErr instanceof Error ? calErr.message : String(calErr);
     const keyPreview = (process.env.GOOGLE_PRIVATE_KEY ?? "").slice(0, 60);
     console.error(JSON.stringify({ cal: "err", msg, env_email: process.env.GOOGLE_CLIENT_EMAIL ?? "MISSING", env_id: process.env.GOOGLE_CALENDAR_ID ?? "MISSING", key_preview: keyPreview }));
-    return NextResponse.json({ success: true, calError: msg, keyPreview });
   }
 
   return NextResponse.json({ success: true });
