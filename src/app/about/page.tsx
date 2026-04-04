@@ -111,24 +111,26 @@ export default function About() {
             </div>
           </div>
 
-          {/* Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "1.25rem", maxWidth: "36rem", margin: "0 auto" }}>
-
-            {/* Matt card */}
-            <div style={{ background: "#0a0a0a", border: "1px solid #1c1c1c", padding: "1.75rem", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-              <div style={{ width: "48px", height: "48px", background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.2)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "1rem" }}>
-                <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.5rem", color: "#c9a84c" }}>M</span>
-              </div>
-              <div style={{ color: "#f2ede4", fontSize: "0.9rem", fontWeight: 500, marginBottom: "0.25rem" }}>Matt</div>
-              <div style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1rem" }}>Founder</div>
-              <p style={{ color: "#5a5a5a", fontSize: "0.82rem", lineHeight: 1.65, textAlign: "center" }}>
-                Handles interior and exterior detailing with an obsessive eye for detail. A perfectionist about every panel — if there&apos;s a swirl mark, he&apos;ll find it and fix it.
+          {/* Founder photo with pull quote */}
+          <div style={{ position: "relative", maxWidth: "42rem", margin: "0 auto", border: "1px solid #1c1c1c", overflow: "hidden", aspectRatio: "3/4" }}>
+            <Image
+              src="/Matt.PNG"
+              alt="Matt, founder of M&C Luxury Detailing, mobile car detailing professional serving Danvers and North Shore Massachusetts"
+              fill
+              quality={100}
+              style={{ objectFit: "cover", objectPosition: "top" }}
+            />
+            {/* Gradient overlay */}
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(6,6,6,0.92) 0%, rgba(6,6,6,0.4) 45%, transparent 75%)" }} />
+            {/* Pull quote */}
+            <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "2.5rem 2rem" }}>
+              <div style={{ width: "2.5rem", height: "1px", background: "#c9a84c", marginBottom: "1rem" }} />
+              <p className="font-[family-name:var(--font-cormorant)] italic" style={{ fontSize: "clamp(1.1rem,3vw,1.5rem)", color: "#f2ede4", lineHeight: 1.45, marginBottom: "1rem" }}>
+                &ldquo;Every car still gets treated like my own.&rdquo;
               </p>
-            </div>
-
-            {/* About photo */}
-            <div style={{ position: "relative", border: "1px solid #1c1c1c", overflow: "hidden", aspectRatio: "3/4" }}>
-              <Image src="/Matt.PNG" alt="Matt, founder of M&C Luxury Detailing, mobile car detailing professional serving Danvers and North Shore Massachusetts" fill quality={100} style={{ objectFit: "cover", objectPosition: "top" }} />
+              <span style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+                Matt — Founder, M&amp;C Luxury Detailing
+              </span>
             </div>
           </div>
         </div>
