@@ -44,12 +44,15 @@ export default function Footer() {
             <p style={{ color: "#3a3a3a", fontSize: "0.8rem", lineHeight: 1.7, textAlign: "center" }}>
               Premium mobile detailing. We come to you — Danvers, MA and the entire North Shore.
             </p>
-            <div style={{ display: "flex", justifyContent: "center", gap: "1.25rem", marginTop: "1.5rem" }}>
+            <div style={{ display: "flex", justifyContent: "center", gap: "1.25rem", marginTop: "1.5rem", flexWrap: "wrap" }}>
               <a href="https://instagram.com/mcluxurydetailing" target="_blank" rel="noopener noreferrer" className="hover:text-[#c9a84c]" style={{ color: "#3a3a3a", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", transition: "color 0.2s" }}>
                 Instagram
               </a>
               <a href="https://www.facebook.com/profile.php?id=61577181187495" target="_blank" rel="noopener noreferrer" className="hover:text-[#c9a84c]" style={{ color: "#3a3a3a", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", transition: "color 0.2s" }}>
                 Facebook
+              </a>
+              <a href="https://www.google.com/maps/place/M%26C+Luxury+Detailing/@42.4614735,-70.8795505,15z" target="_blank" rel="noopener noreferrer" className="hover:text-[#c9a84c]" style={{ color: "#3a3a3a", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", transition: "color 0.2s" }}>
+                Google
               </a>
             </div>
           </div>

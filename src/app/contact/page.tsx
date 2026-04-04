@@ -205,6 +205,36 @@ export default function Contact() {
         </div>
       </section>
 
+      {/* ── Map ── */}
+      <section style={{ background: "#060606", borderTop: "1px solid #1c1c1c", padding: "3.5rem 0" }}>
+        <div style={wrap}>
+          <p style={{ color: "#c9a84c", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1rem", textAlign: "center" }}>
+            Find Us on Google
+          </p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92979!2d-71.2091866!3d42.4615079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aeb9edce49f8db%3A0xcb67adf3ec107de4!2sM%26C%20Luxury%20Detailing!5e0!3m2!1sen!2sus"
+            width="100%"
+            height="320"
+            style={{ border: "1px solid #1c1c1c", display: "block", filter: "grayscale(1) invert(0.9) contrast(0.85)" }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="M&C Luxury Detailing on Google Maps"
+          />
+          <div style={{ textAlign: "center", marginTop: "1rem" }}>
+            <a
+              href="https://www.google.com/maps/place/M%26C+Luxury+Detailing/@42.4614735,-70.8795505,15z"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#c9a84c] transition-colors"
+              style={{ color: "#3a3a3a", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase" }}
+            >
+              View on Google Maps →
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ── Main content ── */}
       <section style={{ background: "#060606", padding: "3.5rem 0 5rem" }}>
         <div style={wrap}>
