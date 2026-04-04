@@ -261,7 +261,7 @@ export default function Home() {
           </h1>
 
           {/* Subtext */}
-          <p className="anim-up d3" style={{ color: "#7a7a7a", fontSize: "clamp(0.95rem,2.2vw,1.1rem)", lineHeight: 1.7, marginBottom: "2.5rem", maxWidth: "32rem", textAlign: "center" }}>
+          <p className="anim-up d3" style={{ color: "#c8c2b8", fontSize: "clamp(0.95rem,2.2vw,1.1rem)", lineHeight: 1.7, marginBottom: "2.5rem", maxWidth: "32rem", textAlign: "center" }}>
             Premium mobile detailing that comes to you — showroom-quality results right in your driveway.
           </p>
 
@@ -277,11 +277,11 @@ export default function Home() {
             <Link href="/contact" className="btn-gold" style={{ width: "100%", height: "58px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em" }}>
               Book Now — It&apos;s Free to Quote
             </Link>
-            <p style={{ color: "#5a5a5a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textAlign: "center", marginTop: "-0.35rem" }}>
+            <p style={{ color: "#a8a8a8", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textAlign: "center", marginTop: "-0.35rem" }}>
               ⚡ Response within 1–2 hours
             </p>
             <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textAlign: "center", marginTop: "-0.25rem" }}>
-              ★★★★★ <span style={{ color: "#3a3a3a" }}>on Google</span>
+              ★★★★★ <span style={{ color: "#a8a8a8" }}>on Google</span>
             </p>
             <div style={{ width: "100%", display: "flex", gap: "0.75rem" }}>
               <a href="tel:+17816325193" className="btn-ghost" style={{ flex: 1, height: "52px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(201,168,76,0.35)", color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
@@ -302,13 +302,13 @@ export default function Home() {
             ].map((b) => (
               <div key={b.label} style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
                 <span style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)" }}>{b.icon}</span>
-                <span style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textTransform: "uppercase" }}>{b.label}</span>
+                <span style={{ color: "#a8a8a8", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textTransform: "uppercase" }}>{b.label}</span>
               </div>
             ))}
           </div>
 
           {/* Areas */}
-          <p className="anim-up d6" style={{ marginTop: "1.5rem", color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", textAlign: "center" }}>
+          <p className="anim-up d6" style={{ marginTop: "1.5rem", color: "#6a6a6a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", textAlign: "center" }}>
             Beverly · Danvers · Salem · Peabody · Gloucester &amp; more
           </p>
         </div>
