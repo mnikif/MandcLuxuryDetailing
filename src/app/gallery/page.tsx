@@ -29,7 +29,7 @@ const singles: { src: string; label: string; video?: boolean; objectPosition?: s
   { src: "/camaro soap.jpg", label: "Camaro during exterior hand wash" },
   { src: "/red car shine.jpg", label: "Classic car exterior after full detail" },
   { src: "/washing.mp4", label: "Hand wash in progress", video: true },
-  { src: "/mirror.MOV", label: "Mirror finish after exterior detail", video: true },
+  { src: "/mirror.mp4", label: "Mirror finish after exterior detail", video: true },
   { src: "/working.jpg", label: "Detailer working on vehicle exterior" },
   { src: "/dodge.jpg", label: "Dodge after wash and wax" },
 ];

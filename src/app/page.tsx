@@ -229,7 +229,7 @@ export default function Home() {
           aria-hidden="true"
           style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", zIndex: 0 }}
         >
-          <source src="/mirror.MOV" type="video/mp4" />
+          <source src="/mirror.mp4" type="video/mp4" />
         </video>
 
         {/* Dark overlay */}
