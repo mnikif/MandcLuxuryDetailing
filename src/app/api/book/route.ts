@@ -135,6 +135,9 @@ export async function POST(req: Request) {
 
   // Add to Google Calendar
   try {
+    console.log("CAL_EMAIL:", process.env.GOOGLE_CLIENT_EMAIL ?? "MISSING");
+    console.log("CAL_KEY_SET:", !!process.env.GOOGLE_PRIVATE_KEY);
+    console.log("CAL_ID:", process.env.GOOGLE_CALENDAR_ID ?? "MISSING");
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: process.env.GOOGLE_CLIENT_EMAIL,
@@ -172,10 +175,11 @@ export async function POST(req: Request) {
       },
     });
   } catch (calErr: unknown) {
-    const msg = calErr instanceof Error ? calErr.message : String(calErr);
-    const status = (calErr as { status?: number })?.status;
-    const data = (calErr as { errors?: unknown })?.errors;
-    console.error("Google Calendar error:", msg, "status:", status, "details:", JSON.stringify(data));
+    console.error("CAL_ERR_FULL:", String(calErr));
+    if (calErr instanceof Error) {
+      console.error("CAL_ERR_MSG:", calErr.message);
+      console.error("CAL_ERR_STACK:", calErr.stack?.slice(0, 300));
+    }
   }
 
   return NextResponse.json({ success: true });
