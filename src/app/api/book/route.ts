@@ -135,10 +135,14 @@ export async function POST(req: Request) {
 
   // Add to Google Calendar
   try {
+    const rawKey = process.env.GOOGLE_PRIVATE_KEY ?? "";
+    // Handle both literal \n and actual newlines from Vercel env vars
+    const privateKey = rawKey.includes("\\n") ? rawKey.replace(/\\n/g, "\n") : rawKey;
     const auth = new google.auth.GoogleAuth({
       credentials: {
+        type: "service_account",
         client_email: process.env.GOOGLE_CLIENT_EMAIL,
-        private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+        private_key: privateKey,
       },
       scopes: ["https://www.googleapis.com/auth/calendar"],
     });
@@ -174,7 +178,8 @@ export async function POST(req: Request) {
     console.log(JSON.stringify({ cal: "ok", id: calResult.data.id, link: calResult.data.htmlLink }));
   } catch (calErr: unknown) {
     const msg = calErr instanceof Error ? calErr.message : String(calErr);
-    console.error(JSON.stringify({ cal: "err", msg, env_email: process.env.GOOGLE_CLIENT_EMAIL ?? "MISSING", env_key: !!process.env.GOOGLE_PRIVATE_KEY, env_id: process.env.GOOGLE_CALENDAR_ID ?? "MISSING" }));
+    const keyPreview = (process.env.GOOGLE_PRIVATE_KEY ?? "").slice(0, 60);
+    console.error(JSON.stringify({ cal: "err", msg, env_email: process.env.GOOGLE_CLIENT_EMAIL ?? "MISSING", env_id: process.env.GOOGLE_CALENDAR_ID ?? "MISSING", key_preview: keyPreview }));
   }
 
   return NextResponse.json({ success: true });
