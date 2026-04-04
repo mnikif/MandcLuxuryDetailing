@@ -293,8 +293,22 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Trust badges */}
+          <div className="anim-up d5" style={{ marginTop: "1.75rem", display: "flex", justifyContent: "center", gap: "1.5rem", flexWrap: "wrap" }}>
+            {[
+              { icon: "✓", label: "Satisfaction Guaranteed" },
+              { icon: "✓", label: "We'll Come Back & Fix It" },
+              { icon: "✓", label: "No Drop-Off Needed" },
+            ].map((b) => (
+              <div key={b.label} style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
+                <span style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)" }}>{b.icon}</span>
+                <span style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textTransform: "uppercase" }}>{b.label}</span>
+              </div>
+            ))}
+          </div>
+
           {/* Areas */}
-          <p className="anim-up d5" style={{ marginTop: "2rem", color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", textAlign: "center" }}>
+          <p className="anim-up d6" style={{ marginTop: "1.5rem", color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", textAlign: "center" }}>
             Beverly · Danvers · Salem · Peabody · Gloucester &amp; more
           </p>
         </div>
