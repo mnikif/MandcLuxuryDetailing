@@ -258,7 +258,7 @@ export default function Home() {
             {/* Left: CTAs */}
             <div className="anim-up d4" style={{ flex: "0 0 auto", width: "22rem", display: "flex", flexDirection: "column", gap: "0.75rem", alignItems: "flex-start" }}>
               {/* Availability badge */}
-              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.25)", borderRadius: "2px", padding: "0.4rem 0.875rem" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.25)", borderRadius: "2px", padding: "0.4rem 0.875rem", alignSelf: "center" }}>
                 <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#c9a84c", display: "inline-block", flexShrink: 0, animation: "pulse 2s infinite" }} />
                 <span style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
                   Slots Fill Fast — Book Early
@@ -267,10 +267,10 @@ export default function Home() {
               <Link href="/contact" className="btn-gold" style={{ width: "100%", height: "58px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em" }}>
                 Book Now — It&apos;s Free to Quote
               </Link>
-              <p style={{ color: "#a8a8a8", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", marginTop: "-0.35rem" }}>
+              <p style={{ color: "#a8a8a8", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", marginTop: "-0.35rem", alignSelf: "center" }}>
                 ⚡ Response within 1–2 hours
               </p>
-              <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", marginTop: "-0.25rem" }}>
+              <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", marginTop: "-0.25rem", alignSelf: "center" }}>
                 ★★★★★ <span style={{ color: "#a8a8a8" }}>on Google</span>
               </p>
               <div style={{ width: "100%", display: "flex", gap: "0.75rem" }}>
