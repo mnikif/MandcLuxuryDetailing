@@ -217,14 +217,43 @@ export default function Home() {
       />
 
       {/* ── HERO ── */}
-      <section className="hero-split" style={{ minHeight: "100svh", display: "flex" }}>
+      <section className="hero-section" style={{ position: "relative", overflow: "hidden" }}>
 
-        {/* LEFT — black text panel */}
-        <div className="hero-text-panel" style={{ flex: "0 0 55%", background: "#000", display: "flex", flexDirection: "column", justifyContent: "center", padding: "7rem 3.5rem 5rem 3.5rem", position: "relative", overflow: "hidden" }}>
+        {/* Video — fills full section, visible on right side through the diagonal cut */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/Working Outside.jpg"
+          aria-label="Matt detailing a car"
+          className="hero-video-bg"
+        >
+          <source src="/washing.mp4" type="video/mp4" />
+        </video>
+
+        {/* Solid black panel — diagonal right edge via clip-path */}
+        <div aria-hidden="true" className="hero-diagonal-bg" />
+
+        {/* Gold accent line along the diagonal */}
+        <svg aria-hidden="true" className="hero-diagonal-svg">
+          <defs>
+            <linearGradient id="goldLine" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#c9a84c" stopOpacity="0" />
+              <stop offset="25%" stopColor="#c9a84c" stopOpacity="0.6" />
+              <stop offset="75%" stopColor="#c9a84c" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="#c9a84c" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+          <line x1="57%" y1="0" x2="46%" y2="100%" stroke="url(#goldLine)" strokeWidth="1.5" />
+        </svg>
+
+        {/* Text content — sits above the black panel */}
+        <div className="hero-content" style={{ position: "relative", zIndex: 3, display: "flex", flexDirection: "column", justifyContent: "center" }}>
 
           {/* Ghost watermark */}
-          <div aria-hidden="true" style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none", overflow: "hidden" }}>
-            <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(14rem,30vw,40rem)", color: "#c9a84c", opacity: 0.025, lineHeight: 1, letterSpacing: "-0.05em", userSelect: "none", display: "block", textAlign: "center" }}>MC</span>
+          <div aria-hidden="true" style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "flex-start", pointerEvents: "none", overflow: "hidden" }}>
+            <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(14rem,26vw,36rem)", color: "#c9a84c", opacity: 0.025, lineHeight: 1, letterSpacing: "-0.05em", userSelect: "none" }}>MC</span>
           </div>
 
           {/* Badge */}
@@ -234,21 +263,20 @@ export default function Home() {
           </div>
 
           {/* Headline */}
-          <h1 className="anim-up d1 font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(3rem,8vw,7rem)", lineHeight: 0.92, color: "#f2ede4", marginBottom: "0.1em" }}>
+          <h1 className="anim-up d1 font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(3rem,7.5vw,6.5rem)", lineHeight: 0.92, color: "#f2ede4", marginBottom: "0.1em" }}>
             Your Car
           </h1>
-          <h1 className="anim-up d2 font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(3rem,8vw,7rem)", lineHeight: 0.92, color: "#c9a84c", marginBottom: "1.2rem" }}>
+          <h1 className="anim-up d2 font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(3rem,7.5vw,6.5rem)", lineHeight: 0.92, color: "#c9a84c", marginBottom: "1.2rem" }}>
             Deserves More.
           </h1>
 
           {/* Subtext */}
-          <p className="anim-up d3" style={{ color: "#c8c2b8", fontSize: "clamp(0.9rem,1.4vw,1.05rem)", lineHeight: 1.7, marginBottom: "2.5rem", maxWidth: "28rem" }}>
+          <p className="anim-up d3" style={{ color: "#c8c2b8", fontSize: "clamp(0.9rem,1.3vw,1.05rem)", lineHeight: 1.7, marginBottom: "2.5rem", maxWidth: "26rem" }}>
             Premium mobile detailing that comes to you — showroom-quality results right in your driveway.
           </p>
 
           {/* CTAs */}
           <div className="anim-up d4" style={{ display: "flex", flexDirection: "column", gap: "0.75rem", maxWidth: "22rem" }}>
-            {/* Availability badge */}
             <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.25)", borderRadius: "2px", padding: "0.4rem 0.875rem", width: "fit-content" }}>
               <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#c9a84c", display: "inline-block", flexShrink: 0, animation: "pulse 2s infinite" }} />
               <span style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
@@ -295,21 +323,9 @@ export default function Home() {
           </p>
         </div>
 
-        {/* RIGHT — video panel */}
-        <div className="hero-video-panel" style={{ flex: "0 0 45%", position: "relative", overflow: "hidden" }}>
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster="/Working Outside.jpg"
-            aria-label="Matt detailing a car"
-            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
-          >
-            <source src="/washing.mp4" type="video/mp4" />
-          </video>
-          {/* Subtle left-edge fade into the black panel */}
-          <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(0,0,0,0.35) 0%, transparent 30%)", pointerEvents: "none" }} />
+        {/* Mobile-only image — shown below text on small screens */}
+        <div className="hero-mobile-visual" aria-hidden="true">
+          <Image src="/Working Outside.jpg" alt="" fill style={{ objectFit: "cover", objectPosition: "center" }} />
         </div>
       </section>
 
