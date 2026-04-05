@@ -217,73 +217,54 @@ export default function Home() {
       />
 
       {/* ── HERO ── */}
-      <section className="relative overflow-hidden" style={{ minHeight: "100svh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+      <section className="hero-split" style={{ minHeight: "100svh", display: "flex" }}>
 
-        {/* Background video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="/red car shine.jpg"
-          aria-hidden="true"
-          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", zIndex: 0 }}
-        >
-          <source src="/mirror.mp4" type="video/mp4" />
-        </video>
+        {/* LEFT — black text panel */}
+        <div className="hero-text-panel" style={{ flex: "0 0 55%", background: "#000", display: "flex", flexDirection: "column", justifyContent: "center", padding: "7rem 3.5rem 5rem 3.5rem", position: "relative", overflow: "hidden" }}>
 
-        {/* Dark overlay */}
-        <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.78) 100%)", zIndex: 1 }} />
-
-        {/* Gold glow */}
-        <div aria-hidden="true" style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(ellipse 60% 50% at 50% 60%, rgba(201,168,76,0.04) 0%, transparent 70%)", zIndex: 2 }} />
-
-        {/* Content */}
-        <div style={{ ...wrap, position: "relative", zIndex: 10, paddingTop: "7rem", paddingBottom: "5rem", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", width: "100%" }}>
-
-          {/* Ghost watermark — inside content div so it centers with the actual content */}
+          {/* Ghost watermark */}
           <div aria-hidden="true" style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none", overflow: "hidden" }}>
-            <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(14rem,45vw,52rem)", color: "#c9a84c", opacity: 0.022, lineHeight: 1, letterSpacing: "-0.05em", userSelect: "none", display: "block", textAlign: "center" }}>MC</span>
+            <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(14rem,30vw,40rem)", color: "#c9a84c", opacity: 0.025, lineHeight: 1, letterSpacing: "-0.05em", userSelect: "none", display: "block", textAlign: "center" }}>MC</span>
           </div>
 
           {/* Badge */}
-          <div className="anim-up d0" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", border: "1px solid rgba(201,168,76,0.3)", padding: "0.375rem 1rem", marginBottom: "2rem", fontFamily: "var(--font-mono)", fontSize: "0.75rem", letterSpacing: "0.22em", color: "#c9a84c", textTransform: "uppercase" }}>
+          <div className="anim-up d0" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", border: "1px solid rgba(201,168,76,0.3)", padding: "0.375rem 1rem", marginBottom: "2rem", fontFamily: "var(--font-mono)", fontSize: "0.75rem", letterSpacing: "0.22em", color: "#c9a84c", textTransform: "uppercase", width: "fit-content" }}>
             <span style={{ display: "inline-block", width: "0.25rem", height: "0.25rem", borderRadius: "9999px", background: "#c9a84c", animation: "pulse 2s infinite" }} />
             Northshore Massachusetts &nbsp;·&nbsp; Mobile Service
           </div>
 
           {/* Headline */}
-          <h1 className="anim-up d1 font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(3.5rem,14vw,9rem)", lineHeight: 0.92, color: "#f2ede4", marginBottom: "0.1em", textAlign: "center", width: "100%" }}>
+          <h1 className="anim-up d1 font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(3rem,8vw,7rem)", lineHeight: 0.92, color: "#f2ede4", marginBottom: "0.1em" }}>
             Your Car
           </h1>
-          <h1 className="anim-up d2 font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(3.5rem,14vw,9rem)", lineHeight: 0.92, color: "#c9a84c", marginBottom: "1.2rem", textAlign: "center", width: "100%" }}>
+          <h1 className="anim-up d2 font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(3rem,8vw,7rem)", lineHeight: 0.92, color: "#c9a84c", marginBottom: "1.2rem" }}>
             Deserves More.
           </h1>
 
           {/* Subtext */}
-          <p className="anim-up d3" style={{ color: "#c8c2b8", fontSize: "clamp(0.95rem,2.2vw,1.1rem)", lineHeight: 1.7, marginBottom: "2.5rem", maxWidth: "32rem", textAlign: "center" }}>
+          <p className="anim-up d3" style={{ color: "#c8c2b8", fontSize: "clamp(0.9rem,1.4vw,1.05rem)", lineHeight: 1.7, marginBottom: "2.5rem", maxWidth: "28rem" }}>
             Premium mobile detailing that comes to you — showroom-quality results right in your driveway.
           </p>
 
           {/* CTAs */}
-          <div className="anim-up d4" style={{ width: "100%", maxWidth: "22rem", display: "flex", flexDirection: "column", gap: "0.75rem", alignItems: "center", margin: "0 auto" }}>
+          <div className="anim-up d4" style={{ display: "flex", flexDirection: "column", gap: "0.75rem", maxWidth: "22rem" }}>
             {/* Availability badge */}
-            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.25)", borderRadius: "2px", padding: "0.4rem 0.875rem" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.25)", borderRadius: "2px", padding: "0.4rem 0.875rem", width: "fit-content" }}>
               <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#c9a84c", display: "inline-block", flexShrink: 0, animation: "pulse 2s infinite" }} />
               <span style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
                 Slots Fill Fast — Book Early
               </span>
             </div>
-            <Link href="/contact" className="btn-gold" style={{ width: "100%", height: "58px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em" }}>
+            <Link href="/contact" className="btn-gold" style={{ width: "100%", maxWidth: "22rem", height: "58px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em" }}>
               Book Now — It&apos;s Free to Quote
             </Link>
-            <p style={{ color: "#a8a8a8", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textAlign: "center", marginTop: "-0.35rem" }}>
+            <p style={{ color: "#a8a8a8", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", marginTop: "-0.35rem" }}>
               ⚡ Response within 1–2 hours
             </p>
-            <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textAlign: "center", marginTop: "-0.25rem" }}>
+            <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", marginTop: "-0.25rem" }}>
               ★★★★★ <span style={{ color: "#a8a8a8" }}>on Google</span>
             </p>
-            <div style={{ width: "100%", display: "flex", gap: "0.75rem" }}>
+            <div style={{ display: "flex", gap: "0.75rem", maxWidth: "22rem" }}>
               <a href="tel:+17816325193" className="btn-ghost" style={{ flex: 1, height: "52px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(201,168,76,0.35)", color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }} aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 (781) 632-5193
@@ -295,7 +276,7 @@ export default function Home() {
           </div>
 
           {/* Trust badges */}
-          <div className="anim-up d5" style={{ marginTop: "1.75rem", display: "flex", justifyContent: "center", gap: "1.5rem", flexWrap: "wrap" }}>
+          <div className="anim-up d5" style={{ marginTop: "1.75rem", display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
             {[
               { icon: "✓", label: "Satisfaction Guaranteed" },
               { icon: "✓", label: "We'll Come Back & Fix It" },
@@ -309,15 +290,26 @@ export default function Home() {
           </div>
 
           {/* Areas */}
-          <p className="anim-up d6" style={{ marginTop: "1.5rem", color: "#6a6a6a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", textAlign: "center" }}>
+          <p className="anim-up d6" style={{ marginTop: "1.5rem", color: "#6a6a6a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase" }}>
             Beverly · Danvers · Salem · Peabody · Gloucester &amp; more
           </p>
         </div>
 
-        {/* Scroll cue */}
-        <div style={{ position: "absolute", bottom: "2rem", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: "0.375rem", zIndex: 10 }}>
-          <span style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase" }}>scroll</span>
-          <div style={{ width: "1px", height: "2rem", background: "linear-gradient(to bottom, rgba(201,168,76,0.6), transparent)" }} />
+        {/* RIGHT — video panel */}
+        <div className="hero-video-panel" style={{ flex: "0 0 45%", position: "relative", overflow: "hidden" }}>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/Working Outside.jpg"
+            aria-label="Matt detailing a car"
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
+          >
+            <source src="/washing.mp4" type="video/mp4" />
+          </video>
+          {/* Subtle left-edge fade into the black panel */}
+          <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(0,0,0,0.35) 0%, transparent 30%)", pointerEvents: "none" }} />
         </div>
       </section>
 
