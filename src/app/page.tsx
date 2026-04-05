@@ -267,10 +267,7 @@ export default function Home() {
               <Link href="/contact" className="btn-gold" style={{ width: "100%", height: "58px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em" }}>
                 Book Now — It&apos;s Free to Quote
               </Link>
-              <p style={{ color: "#a8a8a8", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", marginTop: "-0.35rem", alignSelf: "center" }}>
-                ⚡ Response within 1–2 hours
-              </p>
-              <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", marginTop: "-0.25rem", alignSelf: "center" }}>
+              <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", marginTop: "-0.35rem", alignSelf: "center" }}>
                 ★★★★★ <span style={{ color: "#a8a8a8" }}>on Google</span>
               </p>
               <div style={{ width: "100%", display: "flex", gap: "0.75rem" }}>
