@@ -191,6 +191,11 @@ body {
   .md-border-l { border-left: 1px solid #1c1c1c; }
 }
 
+/* ─── Hero video card — hide on mobile ─── */
+@media (max-width: 767px) {
+  .hero-video-card-wrap { display: none; }
+}
+
 
 /* ─── Scroll reveal ─── */
 .sr {

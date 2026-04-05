@@ -252,35 +252,59 @@ export default function Home() {
             Premium mobile detailing that comes to you — showroom-quality results right in your driveway.
           </p>
 
-          {/* CTAs */}
-          <div style={{ maxWidth: "32rem", width: "100%", display: "flex", alignItems: "flex-start" }}>
-          <div className="anim-up d4" style={{ width: "100%", maxWidth: "22rem", display: "flex", flexDirection: "column", gap: "0.75rem", alignItems: "flex-start" }}>
-            {/* Availability badge */}
-            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.25)", borderRadius: "2px", padding: "0.4rem 0.875rem" }}>
-              <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#c9a84c", display: "inline-block", flexShrink: 0, animation: "pulse 2s infinite" }} />
-              <span style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-                Slots Fill Fast — Book Early
-              </span>
-            </div>
-            <Link href="/contact" className="btn-gold" style={{ width: "100%", height: "58px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em" }}>
-              Book Now — It&apos;s Free to Quote
-            </Link>
-            <p style={{ color: "#a8a8a8", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", marginTop: "-0.35rem" }}>
-              ⚡ Response within 1–2 hours
-            </p>
-            <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", marginTop: "-0.25rem" }}>
-              ★★★★★ <span style={{ color: "#a8a8a8" }}>on Google</span>
-            </p>
-            <div style={{ width: "100%", display: "flex", gap: "0.75rem" }}>
-              <a href="tel:+17816325193" className="btn-ghost" style={{ flex: 1, height: "52px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(201,168,76,0.35)", color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }} aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                (781) 632-5193
-              </a>
-              <Link href="/gallery" className="btn-ghost" style={{ flex: 1, height: "52px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid #282828", color: "#a8a8a8", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
-                Our Work
+          {/* CTAs + video row */}
+          <div style={{ width: "100%", display: "flex", alignItems: "flex-start", gap: "1.5rem", paddingLeft: "max(0px, calc(50% - 16rem))" }}>
+
+            {/* Left: CTAs */}
+            <div className="anim-up d4" style={{ flex: "0 0 auto", width: "22rem", display: "flex", flexDirection: "column", gap: "0.75rem", alignItems: "flex-start" }}>
+              {/* Availability badge */}
+              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.25)", borderRadius: "2px", padding: "0.4rem 0.875rem" }}>
+                <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#c9a84c", display: "inline-block", flexShrink: 0, animation: "pulse 2s infinite" }} />
+                <span style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+                  Slots Fill Fast — Book Early
+                </span>
+              </div>
+              <Link href="/contact" className="btn-gold" style={{ width: "100%", height: "58px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em" }}>
+                Book Now — It&apos;s Free to Quote
               </Link>
+              <p style={{ color: "#a8a8a8", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", marginTop: "-0.35rem" }}>
+                ⚡ Response within 1–2 hours
+              </p>
+              <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", marginTop: "-0.25rem" }}>
+                ★★★★★ <span style={{ color: "#a8a8a8" }}>on Google</span>
+              </p>
+              <div style={{ width: "100%", display: "flex", gap: "0.75rem" }}>
+                <a href="tel:+17816325193" className="btn-ghost" style={{ flex: 1, height: "52px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(201,168,76,0.35)", color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }} aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  (781) 632-5193
+                </a>
+                <Link href="/gallery" className="btn-ghost" style={{ flex: 1, height: "52px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid #282828", color: "#a8a8a8", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+                  Our Work
+                </Link>
+              </div>
             </div>
-          </div>
+
+            {/* Right: video card with gold border + clipped corners */}
+            <div className="hero-video-card-wrap anim-up d4" style={{ flex: "0 0 auto", width: "11rem", alignSelf: "stretch", filter: "drop-shadow(0 0 16px rgba(201,168,76,0.18))" }}>
+              {/* Gold border layer */}
+              <div style={{ height: "100%", minHeight: "12rem", padding: "1.5px", background: "linear-gradient(145deg, rgba(201,168,76,0.55) 0%, rgba(201,168,76,0.08) 50%, rgba(201,168,76,0.4) 100%)", clipPath: "polygon(12px 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%, 0% 12px)" }}>
+                {/* Video */}
+                <div style={{ height: "100%", overflow: "hidden", position: "relative", clipPath: "polygon(12px 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%, 0% 12px)" }}>
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    poster="/Working Outside.jpg"
+                    aria-label="Matt detailing a car"
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
+                  >
+                    <source src="/washing.mp4" type="video/mp4" />
+                  </video>
+                </div>
+              </div>
+            </div>
+
           </div>
 
           {/* Trust badges */}
