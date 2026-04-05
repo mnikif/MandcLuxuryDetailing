@@ -203,11 +203,14 @@ body {
   .hero-video-card-wrap {
     width: 100% !important;
     align-self: auto !important;
+    aspect-ratio: 16 / 9;
   }
   .hero-video-card-wrap > div {
+    height: 100% !important;
     min-height: unset !important;
-    aspect-ratio: 16 / 9;
-    height: auto !important;
+  }
+  .hero-video-card-wrap > div > div {
+    height: 100% !important;
   }
 }
 
