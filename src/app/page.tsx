@@ -294,7 +294,7 @@ export default function Home() {
                     playsInline
                     poster="/Working Outside.jpg"
                     aria-label="Matt detailing a car"
-                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center" }}
+                    style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 35%" }}
                   >
                     <source src="/washing.mp4" type="video/mp4" />
                   </video>
