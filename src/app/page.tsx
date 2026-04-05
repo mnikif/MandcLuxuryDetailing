@@ -217,61 +217,32 @@ export default function Home() {
       />
 
       {/* ── HERO ── */}
-      <section className="hero-section" style={{ position: "relative", overflow: "hidden" }}>
+      <section className="hero-section">
 
-        {/* Video — fills full section, visible on right side through the diagonal cut */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="/Working Outside.jpg"
-          aria-label="Matt detailing a car"
-          className="hero-video-bg"
-        >
-          <source src="/washing.mp4" type="video/mp4" />
-        </video>
-
-        {/* Solid black panel — diagonal right edge via clip-path */}
-        <div aria-hidden="true" className="hero-diagonal-bg" />
-
-        {/* Gold accent line along the diagonal */}
-        <svg aria-hidden="true" className="hero-diagonal-svg">
-          <defs>
-            <linearGradient id="goldLine" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#c9a84c" stopOpacity="0" />
-              <stop offset="25%" stopColor="#c9a84c" stopOpacity="0.6" />
-              <stop offset="75%" stopColor="#c9a84c" stopOpacity="0.6" />
-              <stop offset="100%" stopColor="#c9a84c" stopOpacity="0" />
-            </linearGradient>
-          </defs>
-          <line x1="57%" y1="0" x2="46%" y2="100%" stroke="url(#goldLine)" strokeWidth="1.5" />
-        </svg>
-
-        {/* Text content — sits above the black panel */}
-        <div className="hero-content" style={{ position: "relative", zIndex: 3, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+        {/* ── Left: text column ── */}
+        <div className="hero-text-col" style={{ position: "relative" }}>
 
           {/* Ghost watermark */}
-          <div aria-hidden="true" style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "flex-start", pointerEvents: "none", overflow: "hidden" }}>
-            <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(14rem,26vw,36rem)", color: "#c9a84c", opacity: 0.025, lineHeight: 1, letterSpacing: "-0.05em", userSelect: "none" }}>MC</span>
+          <div aria-hidden="true" style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", pointerEvents: "none", overflow: "hidden" }}>
+            <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(10rem,22vw,30rem)", color: "#c9a84c", opacity: 0.025, lineHeight: 1, letterSpacing: "-0.05em", userSelect: "none" }}>MC</span>
           </div>
 
           {/* Badge */}
-          <div className="anim-up d0" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", border: "1px solid rgba(201,168,76,0.3)", padding: "0.375rem 1rem", marginBottom: "2rem", fontFamily: "var(--font-mono)", fontSize: "0.75rem", letterSpacing: "0.22em", color: "#c9a84c", textTransform: "uppercase", width: "fit-content" }}>
+          <div className="anim-up d0" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", border: "1px solid rgba(201,168,76,0.3)", padding: "0.375rem 1rem", marginBottom: "2rem", fontFamily: "var(--font-mono)", fontSize: "0.75rem", letterSpacing: "0.22em", color: "#c9a84c", textTransform: "uppercase" }}>
             <span style={{ display: "inline-block", width: "0.25rem", height: "0.25rem", borderRadius: "9999px", background: "#c9a84c", animation: "pulse 2s infinite" }} />
             Northshore Massachusetts &nbsp;·&nbsp; Mobile Service
           </div>
 
           {/* Headline */}
-          <h1 className="anim-up d1 font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(3rem,7.5vw,6.5rem)", lineHeight: 0.92, color: "#f2ede4", marginBottom: "0.1em" }}>
+          <h1 className="anim-up d1 font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(3rem,7vw,6rem)", lineHeight: 0.92, color: "#f2ede4", marginBottom: "0.1em" }}>
             Your Car
           </h1>
-          <h1 className="anim-up d2 font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(3rem,7.5vw,6.5rem)", lineHeight: 0.92, color: "#c9a84c", marginBottom: "1.2rem" }}>
+          <h1 className="anim-up d2 font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(3rem,7vw,6rem)", lineHeight: 0.92, color: "#c9a84c", marginBottom: "1.2rem" }}>
             Deserves More.
           </h1>
 
           {/* Subtext */}
-          <p className="anim-up d3" style={{ color: "#c8c2b8", fontSize: "clamp(0.9rem,1.3vw,1.05rem)", lineHeight: 1.7, marginBottom: "2.5rem", maxWidth: "26rem" }}>
+          <p className="anim-up d3" style={{ color: "#c8c2b8", fontSize: "clamp(0.9rem,1.2vw,1rem)", lineHeight: 1.7, marginBottom: "2.5rem", maxWidth: "26rem" }}>
             Premium mobile detailing that comes to you — showroom-quality results right in your driveway.
           </p>
 
@@ -283,7 +254,7 @@ export default function Home() {
                 Slots Fill Fast — Book Early
               </span>
             </div>
-            <Link href="/contact" className="btn-gold" style={{ width: "100%", maxWidth: "22rem", height: "58px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em" }}>
+            <Link href="/contact" className="btn-gold" style={{ width: "100%", height: "58px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em" }}>
               Book Now — It&apos;s Free to Quote
             </Link>
             <p style={{ color: "#a8a8a8", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", marginTop: "-0.35rem" }}>
@@ -292,7 +263,7 @@ export default function Home() {
             <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", marginTop: "-0.25rem" }}>
               ★★★★★ <span style={{ color: "#a8a8a8" }}>on Google</span>
             </p>
-            <div style={{ display: "flex", gap: "0.75rem", maxWidth: "22rem" }}>
+            <div style={{ display: "flex", gap: "0.75rem" }}>
               <a href="tel:+17816325193" className="btn-ghost" style={{ flex: 1, height: "52px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(201,168,76,0.35)", color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }} aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 (781) 632-5193
@@ -323,10 +294,31 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Mobile-only image — shown below text on small screens */}
-        <div className="hero-mobile-visual" aria-hidden="true">
-          <Image src="/Working Outside.jpg" alt="" fill style={{ objectFit: "cover", objectPosition: "center" }} />
+        {/* ── Right: floating video card ── */}
+        <div className="hero-video-col">
+          {/* Gold glow wrapper */}
+          <div style={{ filter: "drop-shadow(0 0 32px rgba(201,168,76,0.14)) drop-shadow(0 4px 24px rgba(0,0,0,0.6))" }}>
+            {/* Chamfered card */}
+            <div className="hero-video-card" style={{ position: "relative", overflow: "hidden", clipPath: "polygon(18px 0%, 100% 0%, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0% 100%, 0% 18px)" }}>
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                poster="/Working Outside.jpg"
+                aria-label="Matt detailing a car"
+                style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
+              >
+                <source src="/washing.mp4" type="video/mp4" />
+              </video>
+              {/* Top/bottom vignette */}
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.08) 0%, transparent 25%, transparent 75%, rgba(0,0,0,0.2) 100%)", pointerEvents: "none" }} />
+            </div>
+            {/* Thin gold border line — top-left chamfered outline */}
+            <div aria-hidden="true" style={{ position: "absolute", inset: 0, clipPath: "polygon(18px 0%, 100% 0%, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0% 100%, 0% 18px)", outline: "1px solid rgba(201,168,76,0.22)", pointerEvents: "none" }} />
+          </div>
         </div>
+
       </section>
 
       {/* ── MARQUEE ── */}
