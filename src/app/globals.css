@@ -191,9 +191,24 @@ body {
   .md-border-l { border-left: 1px solid #1c1c1c; }
 }
 
-/* ─── Hero video card — hide on mobile ─── */
+/* ─── Hero video card — stack below CTAs on mobile ─── */
 @media (max-width: 767px) {
-  .hero-video-card-wrap { display: none; }
+  .hero-cta-row {
+    flex-direction: column !important;
+    padding-left: 0 !important;
+  }
+  .hero-cta-row > div:first-child {
+    width: 100% !important;
+  }
+  .hero-video-card-wrap {
+    width: 100% !important;
+    align-self: auto !important;
+  }
+  .hero-video-card-wrap > div {
+    min-height: unset !important;
+    aspect-ratio: 16 / 9;
+    height: auto !important;
+  }
 }
 
 

@@ -253,7 +253,7 @@ export default function Home() {
           </p>
 
           {/* CTAs + video row */}
-          <div style={{ width: "100%", display: "flex", alignItems: "flex-start", gap: "1.5rem", paddingLeft: "max(0px, calc(50% - 16rem))" }}>
+          <div className="hero-cta-row" style={{ width: "100%", display: "flex", alignItems: "flex-start", gap: "1.5rem", paddingLeft: "max(0px, calc(50% - 16rem))" }}>
 
             {/* Left: CTAs */}
             <div className="anim-up d4" style={{ flex: "0 0 auto", width: "22rem", display: "flex", flexDirection: "column", gap: "0.75rem", alignItems: "flex-start" }}>
