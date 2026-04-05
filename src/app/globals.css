@@ -191,57 +191,6 @@ body {
   .md-border-l { border-left: 1px solid #1c1c1c; }
 }
 
-/* ─── Hero layout ─── */
-.hero-section {
-  background: #000;
-  min-height: 100svh;
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-  padding: 0 3.5rem;
-  overflow: hidden;
-}
-
-.hero-text-col {
-  flex: 1 1 0;
-  min-width: 0;
-  padding: 7rem 0 5rem;
-}
-
-.hero-video-col {
-  flex-shrink: 0;
-  width: 34%;
-  align-self: center;
-  position: relative;
-}
-
-.hero-video-card {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-}
-
-@media (max-width: 767px) {
-  .hero-section {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0 1.5rem;
-    gap: 2rem;
-    min-height: auto;
-    padding-top: 5.5rem;
-    padding-bottom: 3rem;
-  }
-  .hero-text-col {
-    padding: 0;
-    width: 100%;
-  }
-  .hero-video-col {
-    width: 100%;
-    align-self: stretch;
-  }
-  .hero-video-card {
-    aspect-ratio: 16 / 9;
-  }
-}
 
 /* ─── Scroll reveal ─── */
 .sr {
