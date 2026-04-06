@@ -1,7 +1,8 @@
 import { getSupabaseAdmin } from "@/lib/supabase";
 import { Resend } from "resend";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { google } from "googleapis";
+import { getBookingRateLimit } from "@/lib/rateLimit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -9,7 +10,10 @@ export const dynamic = "force-dynamic";
 const WEEKDAY_SLOTS = ["2:30 PM"];
 const WEEKEND_SLOTS = ["10:00 AM"];
 
-export async function GET(req: Request) {
+// Accepts common US phone formats: (781) 632-5193, 781-632-5193, +17816325193, etc.
+const US_PHONE_RE = /^\+?1?\s*\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/;
+
+export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const date = searchParams.get("date");
   if (!date) return NextResponse.json({ error: "Date required" }, { status: 400 });
@@ -32,7 +36,17 @@ export async function GET(req: Request) {
   return NextResponse.json({ slots: available });
 }
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
+  // Rate limit by IP
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "anonymous";
+  const { success } = await getBookingRateLimit().limit(ip);
+  if (!success) {
+    return NextResponse.json(
+      { error: "Too many booking attempts. Please wait and try again." },
+      { status: 429 }
+    );
+  }
+
   const body = await req.json();
   const { name, phone, email, service, vehicle, location, date, timeSlot, notes } = body;
 
@@ -40,7 +54,38 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
   }
 
+  // Phone format validation
+  if (!US_PHONE_RE.test(phone.trim())) {
+    return NextResponse.json(
+      { error: "Please enter a valid US phone number." },
+      { status: 400 }
+    );
+  }
+
+  // Date must be today or future
+  const bookingDate = new Date(date + "T00:00:00");
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  if (bookingDate < today) {
+    return NextResponse.json({ error: "Booking date must be in the future." }, { status: 400 });
+  }
+
   const supabase = getSupabaseAdmin();
+
+  // Max 1 booking per phone number per day
+  const { count: phoneCount } = await supabase
+    .from("bookings")
+    .select("*", { count: "exact", head: true })
+    .eq("date", date)
+    .eq("phone", phone.trim())
+    .eq("status", "confirmed");
+
+  if ((phoneCount ?? 0) > 0) {
+    return NextResponse.json(
+      { error: "A booking for this phone number already exists on that date." },
+      { status: 409 }
+    );
+  }
 
   // Race-condition guard: check slot is still open
   const { count } = await supabase
@@ -62,7 +107,7 @@ export async function POST(req: Request) {
     time_slot: timeSlot,
     service: service || null,
     name,
-    phone,
+    phone: phone.trim(),
     email: email || null,
     vehicle: vehicle || null,
     location: location || null,
@@ -136,7 +181,6 @@ export async function POST(req: Request) {
   // Add to Google Calendar
   try {
     const rawKey = process.env.GOOGLE_PRIVATE_KEY ?? "";
-    // Handle both literal \n and actual newlines from Vercel env vars
     const privateKey = rawKey.includes("\\n") ? rawKey.replace(/\\n/g, "\n") : rawKey;
     const auth = new google.auth.GoogleAuth({
       credentials: {
@@ -148,7 +192,6 @@ export async function POST(req: Request) {
     });
     const calendar = google.calendar({ version: "v3", auth });
 
-    // Parse date + time slot into start/end datetimes
     const [time, period] = timeSlot.split(" ");
     const [rawHour, rawMin] = time.split(":").map(Number);
     let hour = rawHour;

@@ -1,12 +1,38 @@
 import { Resend } from "resend";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
+import { getContactRateLimit } from "@/lib/rateLimit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-export async function POST(req: Request) {
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+export async function POST(req: NextRequest) {
+  // Rate limit by IP
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "anonymous";
+  const { success } = await getContactRateLimit().limit(ip);
+  if (!success) {
+    return NextResponse.json(
+      { error: "Too many requests. Please wait and try again." },
+      { status: 429 }
+    );
+  }
+
   const resend = new Resend(process.env.RESEND_API_KEY);
-  const { name, email, phone, service, vehicle, location, preferredDate, message } = await req.json();
+  const { name, email, phone, service, vehicle, location, preferredDate, message } =
+    await req.json();
+
+  if (!name || !email) {
+    return NextResponse.json({ error: "Name and email are required." }, { status: 400 });
+  }
+
+  if (!EMAIL_RE.test(email)) {
+    return NextResponse.json({ error: "Invalid email address." }, { status: 400 });
+  }
+
+  if (message && message.length > 2000) {
+    return NextResponse.json({ error: "Message is too long." }, { status: 400 });
+  }
 
   const { error } = await resend.emails.send({
     from: "M&C Luxury Detailing <onboarding@resend.dev>",

@@ -116,7 +116,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <StickyMobileCTA />
         </PostHogProvider>
         <Analytics />
-        <Script src="https://skypo-chatbot.vercel.app/chatbot.js?client=mandc" strategy="afterInteractive" />
+        <Script src="https://skypo-chatbot.vercel.app/chatbot.js?client=mandc&token=69b17992456ef5afd538536199208abb00c9574f857f914be668a12d1390071d" strategy="afterInteractive" />
       </body>
     </html>
   );
