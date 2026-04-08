@@ -126,9 +126,14 @@ export default function Footer() {
         <p style={{ color: "#222", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
           © {new Date().getFullYear()} M&amp;C Luxury Detailing. All rights reserved.
         </p>
-        <p style={{ color: "#222", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
-          Danvers, MA · North Shore · Mobile Service
-        </p>
+        <div style={{ display: "flex", gap: "1.5rem", alignItems: "center", justifyContent: "center" }}>
+          <p style={{ color: "#222", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
+            Danvers, MA · North Shore · Mobile Service
+          </p>
+          <Link href="/privacy-policy" className="hover:text-[#c9a84c] transition-colors" style={{ color: "#222", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", whiteSpace: "nowrap" }}>
+            Privacy Policy
+          </Link>
+        </div>
       </div>
     </footer>
   );
