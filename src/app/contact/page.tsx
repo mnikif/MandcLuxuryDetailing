@@ -1,10 +1,8 @@
 "use client";
-import { useState, useEffect } from "react";
-import BookingCalendar from "@/components/BookingCalendar";
+import { useState } from "react";
 
 const SERVICES = ["Interior Detail", "Exterior Detail", "Full Detail"];
 const LEVELS = ["Bronze", "Silver", "Gold"];
-const ADDONS = ["Pet Hair Removal"];
 
 const wrap: React.CSSProperties = {
   width: "100%",
@@ -43,38 +41,11 @@ const labelStyle: React.CSSProperties = {
 export default function Contact() {
   const [selectedService, setSelectedService] = useState("");
   const [selectedLevel, setSelectedLevel] = useState("");
-  const [selectedAddons, setSelectedAddons] = useState<string[]>([]);
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    vehicle: "",
-    location: "",
-    notes: "",
-  });
-  const [selectedDate, setSelectedDate] = useState("");
-  const [selectedSlot, setSelectedSlot] = useState("");
-  const [availableSlots, setAvailableSlots] = useState<string[]>([]);
-  const [loadingSlots, setLoadingSlots] = useState(false);
+  const [formData, setFormData] = useState({ name: "", phone: "", notes: "" });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [focused, setFocused] = useState<string | null>(null);
-
-  // Fetch time slots when a date is chosen
-  useEffect(() => {
-    if (!selectedDate) {
-      setAvailableSlots([]);
-      setSelectedSlot("");
-      return;
-    }
-    setLoadingSlots(true);
-    setSelectedSlot("");
-    fetch(`/api/book?date=${selectedDate}`)
-      .then((r) => r.json())
-      .then((data) => setAvailableSlots(data.slots ?? []))
-      .catch(() => setAvailableSlots([]))
-      .finally(() => setLoadingSlots(false));
-  }, [selectedDate]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -84,34 +55,18 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!selectedService) {
-      setError("Please select a service.");
-      return;
-    }
-    if (!selectedLevel) {
-      setError("Please select a service level.");
-      return;
-    }
-    if (!selectedDate) {
-      setError("Please select a date.");
-      return;
-    }
-    if (!selectedSlot) {
-      setError("Please select a time slot.");
-      return;
-    }
+    if (!selectedService) { setError("Please select a service."); return; }
+    if (!selectedLevel) { setError("Please select a service level."); return; }
     setLoading(true);
     setError(null);
-
-    const serviceString = [
-      `${selectedService} — ${selectedLevel}`,
-      ...(selectedAddons.length ? [`Add-ons: ${selectedAddons.join(", ")}`] : []),
-    ].join(" | ");
 
     const res = await fetch("/api/book", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...formData, service: serviceString, date: selectedDate, timeSlot: selectedSlot }),
+      body: JSON.stringify({
+        ...formData,
+        service: `${selectedService} — ${selectedLevel}`,
+      }),
     });
 
     setLoading(false);
@@ -200,7 +155,7 @@ export default function Contact() {
               textAlign: "center",
             }}
           >
-            or book instantly below — we&apos;ll confirm within 1–2 hours
+            or send a request below — we&apos;ll reach out to confirm details
           </p>
         </div>
       </section>
@@ -259,10 +214,10 @@ export default function Contact() {
                     className="font-[family-name:var(--font-cormorant)] italic font-bold"
                     style={{ fontSize: "2rem", color: "#f2ede4", marginBottom: "0.75rem", textAlign: "center" }}
                   >
-                    You&apos;re Booked!
+                    Request Sent!
                   </h3>
                   <p style={{ color: "#5a5a5a", fontSize: "0.88rem", lineHeight: 1.7, maxWidth: "24rem", textAlign: "center" }}>
-                    Your appointment is confirmed. Check your email for details — we&apos;ll reach out before arrival to confirm your location.
+                    We&apos;ve received your booking request and will call or text you within a few hours to confirm details.
                   </p>
                 </div>
               ) : (
@@ -300,10 +255,10 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* Service / Level / Add-ons dropdowns */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3" style={{ gap: "1rem" }}>
+                  {/* Service / Level dropdowns */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "1rem" }}>
                     <div>
-                      <label style={labelStyle}>Service</label>
+                      <label style={labelStyle}>Service Type <span style={{ color: "#c9a84c" }}>*</span></label>
                       <select
                         value={selectedService}
                         onChange={(e) => setSelectedService(e.target.value)}
@@ -318,7 +273,7 @@ export default function Contact() {
                       </select>
                     </div>
                     <div>
-                      <label style={labelStyle}>Level</label>
+                      <label style={labelStyle}>Service Level <span style={{ color: "#c9a84c" }}>*</span></label>
                       <select
                         value={selectedLevel}
                         onChange={(e) => setSelectedLevel(e.target.value)}
@@ -332,117 +287,15 @@ export default function Contact() {
                         ))}
                       </select>
                     </div>
-                    <div>
-                      <label style={labelStyle}>Add-ons</label>
-                      <select
-                        value={selectedAddons[0] ?? ""}
-                        onChange={(e) => setSelectedAddons(e.target.value ? [e.target.value] : [])}
-                        onFocus={() => setFocused("addons")}
-                        onBlur={() => setFocused(null)}
-                        style={{ ...fieldStyle("addons"), cursor: "pointer" }}
-                      >
-                        <option value="" style={{ background: "#0a0a0a" }}>None</option>
-                        {ADDONS.map((a) => (
-                          <option key={a} value={a} style={{ background: "#0a0a0a" }}>{a}</option>
-                        ))}
-                      </select>
-                    </div>
                   </div>
 
-                  {/* Vehicle */}
+                  {/* Additional Comments */}
                   <div>
-                    <label style={labelStyle}>Vehicle (Year, Make, Model)</label>
-                    <input
-                      type="text"
-                      name="vehicle"
-                      placeholder="2022 BMW M3"
-                      value={formData.vehicle}
-                      onChange={handleChange}
-                      onFocus={() => setFocused("vehicle")}
-                      onBlur={() => setFocused(null)}
-                      style={fieldStyle("vehicle")}
-                    />
-                  </div>
-
-                  {/* Service Location */}
-                  <div>
-                    <label style={labelStyle}>Service Location <span style={{ color: "#3a3a3a", fontFamily: "var(--font-mono)", fontSize: "0.75rem", letterSpacing: "0.1em" }}>(address or city)</span></label>
-                    <input
-                      type="text"
-                      name="location"
-                      placeholder="123 Main St, Beverly, MA"
-                      value={formData.location}
-                      onChange={handleChange}
-                      onFocus={() => setFocused("location")}
-                      onBlur={() => setFocused(null)}
-                      style={fieldStyle("location")}
-                    />
-                  </div>
-
-                  {/* Date picker */}
-                  <div>
-                    <label style={labelStyle}>Book a Date <span style={{ color: "#c9a84c" }}>*</span></label>
-                    <BookingCalendar value={selectedDate} onChange={setSelectedDate} />
-                  </div>
-
-                  {/* Time slot picker */}
-                  {selectedDate && (
-                    <div>
-                      <label style={labelStyle}>Time Slot <span style={{ color: "#c9a84c" }}>*</span></label>
-                      {loadingSlots ? (
-                        <p style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", padding: "0.875rem 0" }}>
-                          Checking availability...
-                        </p>
-                      ) : availableSlots.length === 0 ? (
-                        <p style={{ color: "#5a5a5a", fontSize: "0.8rem", fontFamily: "var(--font-mono)", padding: "0.875rem 0" }}>
-                          No slots available on this date. Please choose another day.
-                        </p>
-                      ) : (
-                        <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-                          {availableSlots.map((slot) => (
-                            <button
-                              key={slot}
-                              type="button"
-                              onClick={() => setSelectedSlot(slot)}
-                              style={{
-                                padding: "0.75rem 1.5rem",
-                                background: selectedSlot === slot ? "#c9a84c" : "#0a0a0a",
-                                border: `1px solid ${selectedSlot === slot ? "#c9a84c" : "#1c1c1c"}`,
-                                color: selectedSlot === slot ? "#060606" : "#f2ede4",
-                                fontSize: "0.78rem",
-                                fontFamily: "var(--font-mono)",
-                                letterSpacing: "0.1em",
-                                cursor: "pointer",
-                                transition: "all 0.2s",
-                              }}
-                              onMouseEnter={(e) => {
-                                if (selectedSlot !== slot) {
-                                  e.currentTarget.style.borderColor = "#c9a84c";
-                                  e.currentTarget.style.color = "#c9a84c";
-                                }
-                              }}
-                              onMouseLeave={(e) => {
-                                if (selectedSlot !== slot) {
-                                  e.currentTarget.style.borderColor = "#1c1c1c";
-                                  e.currentTarget.style.color = "#f2ede4";
-                                }
-                              }}
-                            >
-                              {slot}
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
-
-                  {/* Notes */}
-                  <div>
-                    <label style={labelStyle}>Additional Notes</label>
+                    <label style={labelStyle}>Additional Comments</label>
                     <textarea
                       name="notes"
-                      rows={4}
-                      placeholder="Any additional details, special requests, or concerns about your vehicle..."
+                      rows={5}
+                      placeholder="Tell us about your vehicle, preferred dates/times, or any other details..."
                       value={formData.notes}
                       onChange={handleChange}
                       onFocus={() => setFocused("notes")}
@@ -467,11 +320,11 @@ export default function Contact() {
                       cursor: loading ? "not-allowed" : "pointer",
                     }}
                   >
-                    {loading ? "Booking..." : "Confirm Booking"}
+                    {loading ? "Sending..." : "Send Booking Request"}
                   </button>
 
                   <p style={{ color: "#5a5a5a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
-                    ⚡ We confirm within 1–2 hours — your slot is held instantly.
+                    We&apos;ll call or text you within a few hours to confirm.
                   </p>
 
                   {error && (

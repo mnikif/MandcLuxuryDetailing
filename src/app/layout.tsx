@@ -7,7 +7,6 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { Analytics } from "@vercel/analytics/react";
 import PostHogProvider from "@/components/PostHogProvider";
 import ScrollReveal from "@/components/ScrollReveal";
-import Script from "next/script";
 
 const cormorant = Cormorant({
   variable: "--font-cormorant",
@@ -116,7 +115,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <StickyMobileCTA />
         </PostHogProvider>
         <Analytics />
-        <Script src="https://skypo-chatbot.vercel.app/chatbot.js?client=mandc&token=69b17992456ef5afd538536199208abb00c9574f857f914be668a12d1390071d" strategy="afterInteractive" />
       </body>
     </html>
   );
