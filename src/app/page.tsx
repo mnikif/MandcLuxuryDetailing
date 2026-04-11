@@ -233,19 +233,19 @@ export default function Home() {
             <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(14rem,45vw,52rem)", color: "#c9a84c", opacity: 0.022, lineHeight: 1, letterSpacing: "-0.05em", userSelect: "none", display: "block", textAlign: "center" }}>MC</span>
           </div>
 
-          {/* Badge */}
-          <div className="anim-up d0" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", border: "1px solid rgba(201,168,76,0.3)", padding: "0.375rem 1rem", marginBottom: "2rem", fontFamily: "var(--font-mono)", fontSize: "0.75rem", letterSpacing: "0.22em", color: "#c9a84c", textTransform: "uppercase" }}>
+          {/* Badge / H1 */}
+          <h1 className="anim-up d0" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", border: "1px solid rgba(201,168,76,0.3)", padding: "0.375rem 1rem", marginBottom: "2rem", fontFamily: "var(--font-mono)", fontSize: "0.75rem", letterSpacing: "0.22em", color: "#c9a84c", textTransform: "uppercase" }}>
             <span style={{ display: "inline-block", width: "0.25rem", height: "0.25rem", borderRadius: "9999px", background: "#c9a84c", animation: "pulse 2s infinite" }} />
-            Northshore Massachusetts &nbsp;·&nbsp; Mobile Service
-          </div>
+            Mobile Car Detailing &nbsp;·&nbsp; North Shore, MA
+          </h1>
 
-          {/* Headline */}
-          <h1 className="anim-up d1 font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(3.5rem,14vw,9rem)", lineHeight: 0.92, color: "#f2ede4", marginBottom: "0.1em", textAlign: "center", width: "100%" }}>
+          {/* Tagline */}
+          <h2 className="anim-up d1 font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(3.5rem,14vw,9rem)", lineHeight: 0.92, color: "#f2ede4", marginBottom: "0.1em", textAlign: "center", width: "100%" }}>
             Your Car
-          </h1>
-          <h1 className="anim-up d2 font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(3.5rem,14vw,9rem)", lineHeight: 0.92, color: "#c9a84c", marginBottom: "1.2rem", textAlign: "center", width: "100%" }}>
+          </h2>
+          <h2 className="anim-up d2 font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(3.5rem,14vw,9rem)", lineHeight: 0.92, color: "#c9a84c", marginBottom: "1.2rem", textAlign: "center", width: "100%" }}>
             Deserves More.
-          </h1>
+          </h2>
 
           {/* Subtext */}
           <p className="anim-up d3" style={{ color: "#c8c2b8", fontSize: "clamp(0.95rem,2.2vw,1.1rem)", lineHeight: 1.7, marginBottom: "2.5rem", maxWidth: "32rem", textAlign: "center" }}>
