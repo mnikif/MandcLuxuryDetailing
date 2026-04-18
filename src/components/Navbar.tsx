@@ -82,12 +82,12 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav links — absolutely centered */}
-          <ul className="hidden md:flex" style={{ position: "absolute", left: "50%", transform: "translateX(-50%)", alignItems: "center", gap: "1.75rem", listStyle: "none", margin: 0, padding: 0 }}>
+          <ul className="hidden md:flex" style={{ position: "absolute", left: "50%", transform: "translateX(-50%)", alignItems: "center", gap: "1.1rem", listStyle: "none", margin: 0, padding: 0 }}>
             {links.filter(l => l.label !== "Book Now").map(({ href, label }) => {
               const active = pathname === href;
               return (
                 <li key={href}>
-                  <Link href={href} className="hover:text-[#f2ede4]" style={{ fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", color: active ? "#c9a84c" : "#5a5a5a", transition: "color 0.2s", textDecoration: "none" }}>
+                  <Link href={href} className="hover:text-[#f2ede4]" style={{ fontSize: "0.7rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", color: active ? "#c9a84c" : "#5a5a5a", transition: "color 0.2s", textDecoration: "none" }}>
                     {label}
                   </Link>
                 </li>
