@@ -177,20 +177,32 @@ const services = [
   {
     num: "01",
     title: "Interior Detail",
-    desc: "Full vacuum, steam clean, leather conditioning, and odor elimination — three tiers to match your needs.",
-    from: "$129",
+    desc: "Full vacuum, steam clean, leather conditioning, and odor elimination.",
+    tiers: [
+      { label: "Bronze", price: "$129" },
+      { label: "Silver", price: "$169" },
+      { label: "Gold",   price: "$219" },
+    ],
   },
   {
     num: "02",
     title: "Exterior Detail",
-    desc: "Hand wash, clay bar, trim restoration, tire dressing, and wax protection. Bronze, Silver, or Gold.",
-    from: "$89",
+    desc: "Hand wash, clay bar, trim restoration, tire dressing, and wax protection.",
+    tiers: [
+      { label: "Bronze", price: "$89"  },
+      { label: "Silver", price: "$129" },
+      { label: "Gold",   price: "$169" },
+    ],
   },
   {
     num: "03",
     title: "Full Detail",
-    desc: "Our complete inside-and-out transformation. Three tiers — Bronze, Silver, and Gold — starting at $189.",
-    from: "$189",
+    desc: "Our complete inside-and-out transformation — interior and exterior combined.",
+    tiers: [
+      { label: "Bronze", price: "$189" },
+      { label: "Silver", price: "$269" },
+      { label: "Gold",   price: "$359" },
+    ],
   },
 ];
 
@@ -289,11 +301,16 @@ export default async function CityPage(props: { params: Promise<{ city: string }
                 <h3 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.35rem", color: "#f2ede4", marginBottom: "0.5rem" }}>
                   {s.title}
                 </h3>
-                <p style={{ color: "#5a5a5a", fontSize: "0.8rem", lineHeight: 1.65, marginBottom: "1.25rem", flex: 1 }}>
+                <p style={{ color: "#5a5a5a", fontSize: "0.8rem", lineHeight: 1.65, marginBottom: "1.5rem", flex: 1 }}>
                   {s.desc}
                 </p>
-                <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.3rem", color: "#c9a84c" }}>
-                  From {s.from}
+                <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                  {s.tiers.map((t, i) => (
+                    <div key={t.label} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.4rem 0.75rem", background: i === 2 ? "rgba(201,168,76,0.06)" : "transparent", border: "1px solid #1c1c1c" }}>
+                      <span style={{ color: i === 2 ? "#c9a84c" : i === 1 ? "rgba(201,168,76,0.65)" : "rgba(201,168,76,0.4)", fontSize: "0.7rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase" }}>{t.label}</span>
+                      <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.1rem", color: "#f2ede4" }}>{t.price}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             ))}
