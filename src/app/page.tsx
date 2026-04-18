@@ -35,6 +35,13 @@ const packageCategories = [
   },
   {
     num: "04",
+    title: "Monthly Membership",
+    desc: "We come to you every month — full inside-and-out quick detail on a set schedule. Essential at $90/mo or Premium at $120/mo.",
+    tiers: "Essential · Premium",
+    href: "/maintenance",
+  },
+  {
+    num: "05",
     title: "Add-Ons",
     desc: "Targeted enhancements to pair with any interior or full detail package.",
     tiers: "Pet Hair Removal",
