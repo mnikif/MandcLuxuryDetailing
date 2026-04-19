@@ -167,7 +167,7 @@ export default function Home() {
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": "5",
-              "reviewCount": 7,
+              "reviewCount": 12,
               "bestRating": "5",
               "worstRating": "1"
             },
@@ -278,7 +278,7 @@ export default function Home() {
                 Book Now
               </Link>
               <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", marginTop: "-0.35rem", alignSelf: "center" }}>
-                ★★★★★ <span style={{ color: "#a8a8a8" }}>on Google</span>
+                ★★★★★ <span style={{ color: "#a8a8a8" }}>· 12 Google Reviews</span>
               </p>
               <div style={{ width: "100%", display: "flex", gap: "0.75rem" }}>
                 <a href="tel:+17816325193" className="btn-ghost" style={{ flex: 1, height: "52px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(201,168,76,0.35)", color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>

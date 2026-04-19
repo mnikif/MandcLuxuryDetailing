@@ -321,7 +321,7 @@ function TierGrid({ tiers }: { tiers: PackageTier[] }) {
 
             {pkg.popular && (
               <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textAlign: "center", marginTop: "0.625rem" }}>
-                ★★★★★ <span style={{ color: "#565656" }}>on Google</span>
+                ★★★★★ <span style={{ color: "#565656" }}>· 12 Google Reviews</span>
               </p>
             )}
           </div>
@@ -365,7 +365,7 @@ export default function Services() {
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": "5",
-              "reviewCount": 7,
+              "reviewCount": 12,
               "bestRating": "5",
               "worstRating": "1",
             },

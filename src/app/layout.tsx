@@ -91,7 +91,7 @@ const localBusinessSchema = {
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5",
-    "reviewCount": "7"
+    "reviewCount": "12"
   }
 };
 

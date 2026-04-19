@@ -411,7 +411,7 @@ export default async function CityPage(props: { params: Promise<{ city: string }
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": "5",
-              "reviewCount": 7,
+              "reviewCount": 12,
               "bestRating": "5",
               "worstRating": "1",
             },

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: { absolute: 'Customer Reviews — Mobile Car Detailing North Shore MA | M&C' },
-  description: '7 five-star reviews from real North Shore MA car owners. See why Danvers, Beverly & Salem drivers trust M&C Luxury Detailing with their vehicles.',
+  description: '12 five-star reviews from real North Shore MA car owners. See why Danvers, Beverly & Salem drivers trust M&C Luxury Detailing with their vehicles.',
   alternates: {
     canonical: 'https://www.mandcluxurydetailing.com/reviews',
   },
@@ -70,7 +70,7 @@ export default function Reviews() {
               "@type": "AggregateRating",
               "ratingValue": "5",
               "bestRating": "5",
-              "reviewCount": 7
+              "reviewCount": 12
             },
             "review": [
               {
@@ -135,16 +135,9 @@ export default function Reviews() {
           </p>
 
           {/* Star rating summary */}
-          <div style={{ marginTop: "2rem", display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem" }}>
-            <div style={{ display: "flex", gap: "0.375rem" }}>
-              {[...Array(5)].map((_, i) => (
-                <span key={i} style={{ color: "#c9a84c", fontSize: "1.5rem" }}>★</span>
-              ))}
-            </div>
-            <span style={{ color: "#7a7a7a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase" }}>
-              5.0 · Google Reviews
-            </span>
-          </div>
+          <p style={{ marginTop: "2rem", color: "#c9a84c", fontSize: "0.85rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em", textAlign: "center" }}>
+            ★★★★★ <span style={{ color: "#7a7a7a" }}>· 12 Google Reviews</span>
+          </p>
         </div>
       </section>
 
