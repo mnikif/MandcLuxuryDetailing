@@ -242,15 +242,20 @@ function TierGrid({ tiers }: { tiers: PackageTier[] }) {
 
             {/* Price */}
             {pkg.salePrice ? (
-              <>
-                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginTop: "-5px", marginBottom: "0.15rem", justifyContent: "center" }}>
-                  <span style={{ fontSize: "0.95rem", color: "#565656", fontFamily: "var(--font-mono)", textDecoration: "line-through" }}>{pkg.price}</span>
-                  <span style={{ background: "#c9a84c", color: "#000", fontSize: "0.65rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", fontWeight: 700, padding: "0.15rem 0.4rem", textTransform: "uppercase" }}>15% OFF</span>
+              <div style={{ marginTop: "-5px", marginBottom: "0.1rem", width: "100%" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.6rem", marginBottom: "0.55rem" }}>
+                  <div style={{ height: "1px", flex: 1, background: "rgba(201,168,76,0.2)" }} />
+                  <span style={{ color: "#c9a84c", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.28em", textTransform: "uppercase" }}>this week only</span>
+                  <div style={{ height: "1px", flex: 1, background: "rgba(201,168,76,0.2)" }} />
                 </div>
-                <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "2.2rem", color: "#c9a84c", lineHeight: 1, marginBottom: "0.3rem" }}>
+                <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "2.6rem", color: "#c9a84c", lineHeight: 1, marginBottom: "0.3rem" }}>
                   {pkg.salePrice}
                 </div>
-              </>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.4rem" }}>
+                  <span style={{ color: "#565656", fontSize: "0.78rem", fontFamily: "var(--font-mono)", textDecoration: "line-through", textDecorationColor: "#565656" }}>{pkg.price}</span>
+                  <span style={{ color: "#565656", fontSize: "0.68rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em" }}>reg.</span>
+                </div>
+              </div>
             ) : (
               <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "2.2rem", color: "#f2ede4", lineHeight: 1, marginBottom: "0.3rem", marginTop: "-5px" }}>
                 {pkg.price}
@@ -568,39 +573,58 @@ export default function Services() {
         left: 0,
         right: 0,
         zIndex: 50,
-        background: "#0a0a0a",
-        borderTop: "1px solid #c9a84c",
-        padding: "0.75rem 1.25rem",
+        background: "#07070a",
+        borderTop: "1px solid rgba(201,168,76,0.45)",
+        boxShadow: "0 -12px 48px rgba(0,0,0,0.75)",
+        padding: "0.9rem 1.75rem",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        gap: "1.25rem",
+        gap: "2rem",
         flexWrap: "wrap",
       }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", flexWrap: "wrap", justifyContent: "center" }}>
-          <span style={{ background: "#c9a84c", color: "#000", fontSize: "0.65rem", fontFamily: "var(--font-mono)", fontWeight: 700, letterSpacing: "0.15em", padding: "0.2rem 0.5rem", textTransform: "uppercase", flexShrink: 0 }}>
-            15% OFF
-          </span>
-          <span style={{ color: "#f2ede4", fontSize: "0.8rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em" }}>
-            All Silver details — expires <strong style={{ color: "#c9a84c" }}>Sunday, Apr 27</strong>
-          </span>
+        {/* Left group */}
+        <div style={{ display: "flex", alignItems: "center", gap: "1.1rem" }}>
+          {/* Vertical accent */}
+          <div style={{ width: "1px", height: "2.75rem", background: "linear-gradient(to bottom, transparent, #c9a84c 30%, #c9a84c 70%, transparent)", flexShrink: 0 }} />
+          <div style={{ textAlign: "left" }}>
+            <p style={{ color: "#c9a84c", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.2rem" }}>
+              ✦ &nbsp; limited offer — ends sunday
+            </p>
+            <p style={{ color: "#f2ede4", fontSize: "0.82rem", fontFamily: "var(--font-mono)", letterSpacing: "0.06em", lineHeight: 1.3 }}>
+              Silver packages &mdash;{" "}
+              <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.15rem", color: "#c9a84c" }}>
+                15% off
+              </span>{" "}
+              through Apr 27
+            </p>
+            <p style={{ color: "#7a7a7a", fontSize: "0.62rem", fontFamily: "var(--font-mono)", letterSpacing: "0.14em", textTransform: "uppercase", marginTop: "0.18rem" }}>
+              Interior · Exterior · Full Detail
+            </p>
+          </div>
         </div>
+
+        {/* CTA */}
         <Link
           href="/contact"
+          className="btn-ghost"
           style={{
-            background: "#c9a84c",
-            color: "#000",
-            fontSize: "0.7rem",
+            height: "40px",
+            padding: "0 1.4rem",
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "0.68rem",
             fontFamily: "var(--font-mono)",
-            fontWeight: 700,
-            letterSpacing: "0.18em",
+            letterSpacing: "0.22em",
             textTransform: "uppercase",
-            padding: "0.45rem 1.1rem",
+            border: "1px solid rgba(201,168,76,0.6)",
+            color: "#c9a84c",
             flexShrink: 0,
             whiteSpace: "nowrap",
           }}
         >
-          Claim Deal →
+          Book Silver Now
         </Link>
       </div>
     </>
