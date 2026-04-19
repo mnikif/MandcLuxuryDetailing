@@ -4,7 +4,7 @@ import Image from "next/image";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 
 export const metadata: Metadata = {
-  title: 'Mobile Car Detailing in Danvers, MA',
+  title: 'Mobile Car Detailing Danvers MA | Full Detail from $169 | M&C',
   description: "Mobile car detailing in Danvers, MA — we come to you. Packages from $89. Serving Beverly, Salem, Peabody & all of North Shore Massachusetts. Free quotes.",
   alternates: {
     canonical: 'https://www.mandcluxurydetailing.com',
