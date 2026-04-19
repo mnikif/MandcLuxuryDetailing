@@ -157,8 +157,8 @@ export async function generateMetadata(props: { params: Promise<{ city: string }
   const city = cities.find((c) => c.slug === slug);
   if (!city) return {};
   return {
-    title: `Mobile Car Detailing in ${city.name}, MA`,
-    description: `Professional mobile car detailing in ${city.name}, MA. We come to your driveway — interior, exterior & full detail packages from $89. Book online, free quote.`,
+    title: `${city.name} Mobile Car Detailing | Same-Day Booking | M&C`,
+    description: `Mobile car detailing in ${city.name}, MA — we come to your driveway. Interior from $169, full detail from $229. Same-day slots available. Book online in 60 seconds.`,
     alternates: {
       canonical: `https://www.mandcluxurydetailing.com/locations/${city.slug}`,
     },
