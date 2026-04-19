@@ -21,6 +21,9 @@ const pairs = [
   { label: "Honda Civic full detail — before and after mobile detailing in Beverly, MA", before: "/civic before.jpg", after: "/civic after.jpg" },
   { label: "Honda Pilot interior and exterior detail — North Shore Massachusetts", before: "/honda before.jpg", after: "/honda after.jpg" },
   { label: "Toyota RAV4 full detail — mobile car detailing in Danvers, MA", before: "/rav4 before.jpg",  after: "/rav4 after.jpg"  },
+  { label: "Full detail before and after — mobile car detailing North Shore MA", before: "/Before1.jpg", after: "/After1.jpg" },
+  { label: "Full detail before and after — mobile car detailing North Shore MA", before: "/before2.jpg", after: "/after2.jpg" },
+  { label: "Full detail before and after — mobile car detailing North Shore MA", before: "/before3.jpg", after: "/after3.jpg" },
 ];
 
 const singles: { src: string; label: string; video?: boolean; objectPosition?: string }[] = [
@@ -57,6 +60,9 @@ export default function Gallery() {
               "https://www.mandcluxurydetailing.com/civic%20after.jpg",
               "https://www.mandcluxurydetailing.com/honda%20after.jpg",
               "https://www.mandcluxurydetailing.com/rav4%20after.jpg",
+              "https://www.mandcluxurydetailing.com/After1.jpg",
+              "https://www.mandcluxurydetailing.com/after2.jpg",
+              "https://www.mandcluxurydetailing.com/after3.jpg",
               "https://www.mandcluxurydetailing.com/red%20car%20shine.jpg",
             ],
             "description": "Before and after gallery of professional mobile car detailing results by M&C Luxury Detailing — serving Danvers, Beverly, Salem, and all of North Shore Massachusetts.",
