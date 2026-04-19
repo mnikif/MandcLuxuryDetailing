@@ -45,12 +45,12 @@ export default function BeforeAfterSlider({ before, after, label }: Props) {
       >
         {/* Before image — full width underneath */}
         <div style={{ position: "absolute", inset: 0 }}>
-          <Image src={before} alt={label ? `Before — ${label}` : "Car before professional detailing — M&C Luxury Detailing North Shore MA"} fill sizes="(max-width:768px) 100vw, 50vw" style={{ objectFit: "cover", pointerEvents: "none" }} draggable={false} />
+          <Image src={before} alt={label ? `Before — ${label}` : "Car before professional detailing — M&C Luxury Detailing North Shore MA"} fill sizes="(max-width:768px) 100vw, (max-width:1920px) 50vw, 960px" style={{ objectFit: "cover", pointerEvents: "none" }} draggable={false} />
         </div>
 
         {/* After image — clipped to right of handle */}
         <div style={{ position: "absolute", inset: 0, clipPath: `inset(0 0 0 ${pos}%)` }}>
-          <Image src={after} alt={label ? `After — ${label}` : "Car after professional detailing — M&C Luxury Detailing North Shore MA"} fill sizes="(max-width:768px) 100vw, 50vw" style={{ objectFit: "cover", pointerEvents: "none" }} draggable={false} />
+          <Image src={after} alt={label ? `After — ${label}` : "Car after professional detailing — M&C Luxury Detailing North Shore MA"} fill sizes="(max-width:768px) 100vw, (max-width:1920px) 50vw, 960px" style={{ objectFit: "cover", pointerEvents: "none" }} draggable={false} />
         </div>
 
         {/* Divider line */}

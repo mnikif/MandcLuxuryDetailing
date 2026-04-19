@@ -95,11 +95,11 @@ export default function Gallery() {
                 <div className="grid grid-cols-2" style={{ gap: "1px", background: "#1c1c1c" }}>
                   <div style={{ position: "relative", aspectRatio: "4/3", background: "#080808" }}>
                     <span style={{ position: "absolute", top: "0.5rem", left: "0.5rem", zIndex: 10, color: "#f2ede4", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", background: "rgba(0,0,0,0.6)", padding: "2px 6px" }}>Before</span>
-                    <Image src={pair.before} alt={`${pair.label} before`} fill quality={100} style={{ objectFit: "cover" }} />
+                    <Image src={pair.before} alt={`${pair.label} before`} fill quality={85} sizes="(max-width:640px) 50vw, (max-width:1024px) 25vw, 150px" style={{ objectFit: "cover" }} />
                   </div>
                   <div style={{ position: "relative", aspectRatio: "4/3", background: "#0a0a0a" }}>
                     <span style={{ position: "absolute", top: "0.5rem", right: "0.5rem", zIndex: 10, color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", background: "rgba(0,0,0,0.6)", padding: "2px 6px" }}>After</span>
-                    <Image src={pair.after} alt={`${pair.label} after`} fill quality={100} style={{ objectFit: "cover" }} />
+                    <Image src={pair.after} alt={`${pair.label} after`} fill quality={85} sizes="(max-width:640px) 50vw, (max-width:1024px) 25vw, 150px" style={{ objectFit: "cover" }} />
                   </div>
                 </div>
                 <div style={{ padding: "0.75rem 1rem", borderTop: "1px solid #1c1c1c" }}>
@@ -123,7 +123,7 @@ export default function Gallery() {
                       <source src={photo.src} type="video/mp4" />
                     </video>
                   ) : (
-                    <Image src={photo.src} alt={photo.label} fill quality={100} style={{ objectFit: "cover", objectPosition: photo.objectPosition ?? "center" }} />
+                    <Image src={photo.src} alt={photo.label} fill quality={85} sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 300px" style={{ objectFit: "cover", objectPosition: photo.objectPosition ?? "center" }} />
                   )}
                 </div>
                 <div style={{ padding: "0.75rem 1rem", borderTop: "1px solid #1c1c1c" }}>

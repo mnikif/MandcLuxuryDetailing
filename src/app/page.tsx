@@ -646,7 +646,7 @@ export default function Home() {
             ].map(({ src, label }) => (
               <div key={src} style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                 <div style={{ position: "relative", width: "100%", aspectRatio: "4/3", overflow: "hidden" }}>
-                  <Image src={src} alt={label} fill sizes="(max-width:768px) 100vw, 33vw" style={{ objectFit: "cover", objectPosition: "center 20%" }} />
+                  <Image src={src} alt={label} fill sizes="(max-width:768px) 100vw, (max-width:1280px) 33vw, 300px" style={{ objectFit: "cover", objectPosition: "center 20%" }} />
                 </div>
                 <p style={{ color: "#565656", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", textAlign: "center" }}>
                   {label}

@@ -117,7 +117,8 @@ export default function About() {
               src="/Matt.PNG"
               alt="Matt, founder of M&C Luxury Detailing, mobile car detailing professional serving Danvers and North Shore Massachusetts"
               fill
-              quality={100}
+              quality={90}
+              sizes="(max-width:768px) 100vw, 672px"
               style={{ objectFit: "cover", objectPosition: "top" }}
             />
             {/* Gradient overlay */}
