@@ -339,10 +339,13 @@ export default function Services() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "LocalBusiness",
+            "@type": "AutomotiveBusiness",
+            "@id": "https://www.mandcluxurydetailing.com",
             "name": "M&C Luxury Detailing",
             "url": "https://www.mandcluxurydetailing.com/services",
             "telephone": "+17816325193",
+            "email": "mandcluxurydetailing@gmail.com",
+            "priceRange": "$$",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Danvers",
@@ -350,7 +353,35 @@ export default function Services() {
               "postalCode": "01923",
               "addressCountry": "US",
             },
-            "areaServed": ["Beverly", "Danvers", "Salem", "Peabody", "Gloucester", "Marblehead", "Manchester-by-the-Sea", "Swampscott", "Hamilton", "Wenham", "Lynn"],
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 42.5751,
+              "longitude": -70.9495,
+            },
+            "openingHoursSpecification": [
+              { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "10:00", "closes": "18:00" },
+              { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "10:00", "closes": "17:00" },
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "reviewCount": 7,
+              "bestRating": "5",
+              "worstRating": "1",
+            },
+            "areaServed": [
+              {"@type": "City", "name": "Beverly"},
+              {"@type": "City", "name": "Danvers"},
+              {"@type": "City", "name": "Salem"},
+              {"@type": "City", "name": "Peabody"},
+              {"@type": "City", "name": "Gloucester"},
+              {"@type": "City", "name": "Marblehead"},
+              {"@type": "City", "name": "Manchester-by-the-Sea"},
+              {"@type": "City", "name": "Swampscott"},
+              {"@type": "City", "name": "Hamilton"},
+              {"@type": "City", "name": "Wenham"},
+              {"@type": "City", "name": "Lynn"},
+            ],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
               "name": "Mobile Car Detailing Packages",
