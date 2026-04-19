@@ -225,6 +225,33 @@ function TierGrid({ tiers }: { tiers: PackageTier[] }) {
             </div>
           )}
 
+          {/* 15% OFF diagonal stamp */}
+          {pkg.salePrice && (
+            <div style={{
+              position: "absolute",
+              top: "1.4rem",
+              left: "0.9rem",
+              color: "#c9a84c",
+              fontSize: "0.6rem",
+              fontFamily: "var(--font-mono)",
+              fontWeight: 700,
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              lineHeight: 1.25,
+              textAlign: "center",
+              padding: "0.3rem 0.38rem",
+              border: "1.5px solid rgba(201,168,76,0.7)",
+              outline: "1px solid rgba(201,168,76,0.18)",
+              outlineOffset: "3px",
+              transform: "rotate(-22deg)",
+              transformOrigin: "center center",
+              pointerEvents: "none",
+              zIndex: 2,
+            }}>
+              15%<br />off
+            </div>
+          )}
+
           {/* Content */}
           <div style={{ padding: "2rem 1.75rem 2rem", display: "flex", flexDirection: "column", flex: 1, alignItems: "center", textAlign: "center" }}>
 
@@ -243,11 +270,6 @@ function TierGrid({ tiers }: { tiers: PackageTier[] }) {
             {/* Price */}
             {pkg.salePrice ? (
               <div style={{ marginTop: "-5px", marginBottom: "0.1rem", width: "100%" }}>
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.6rem", marginBottom: "0.55rem" }}>
-                  <div style={{ height: "1px", flex: 1, background: "rgba(201,168,76,0.2)" }} />
-                  <span style={{ color: "#c9a84c", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.28em", textTransform: "uppercase" }}>this week only</span>
-                  <div style={{ height: "1px", flex: 1, background: "rgba(201,168,76,0.2)" }} />
-                </div>
                 <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "2.6rem", color: "#c9a84c", lineHeight: 1, marginBottom: "0.3rem" }}>
                   {pkg.salePrice}
                 </div>
