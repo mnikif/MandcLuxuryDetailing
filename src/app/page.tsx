@@ -257,6 +257,11 @@ export default function Home() {
             Premium Mobile Car Detailing in Danvers &amp; the North Shore
           </p>
 
+          {/* Subtext */}
+          <p className="anim-up d3" style={{ color: "#c8c2b8", fontSize: "clamp(0.95rem,2.2vw,1.1rem)", lineHeight: 1.7, marginBottom: "2.5rem", maxWidth: "32rem", textAlign: "center" }}>
+            Premium mobile detailing that comes to you —<br />showroom-quality results right in your driveway.
+          </p>
+
           {/* CTAs + video row */}
           <div className="hero-cta-row" style={{ width: "100%", display: "flex", alignItems: "flex-start", gap: "1.5rem", paddingLeft: "max(0px, calc(50% - 16rem))" }}>
 
@@ -309,23 +314,18 @@ export default function Home() {
 
           </div>
 
-          {/* Trust badges + showroom subtext */}
-          <div className="anim-up d5" style={{ marginTop: "1.75rem", display: "flex", flexDirection: "column", alignItems: "center", gap: "0.85rem" }}>
-            <div style={{ display: "flex", justifyContent: "center", gap: "1.5rem", flexWrap: "wrap" }}>
-              {[
-                { icon: "✓", label: "Satisfaction Guaranteed" },
-                { icon: "✓", label: "We'll Come Back & Fix It" },
-                { icon: "✓", label: "No Drop-Off Needed" },
-              ].map((b) => (
-                <div key={b.label} style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
-                  <span style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)" }}>{b.icon}</span>
-                  <span style={{ color: "#a8a8a8", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textTransform: "uppercase" }}>{b.label}</span>
-                </div>
-              ))}
-            </div>
-            <p style={{ color: "#c8c2b8", fontSize: "clamp(0.9rem,2vw,1rem)", lineHeight: 1.7, maxWidth: "32rem", textAlign: "center" }}>
-              Premium mobile detailing that comes to you — showroom-quality results right in your driveway.
-            </p>
+          {/* Trust badges */}
+          <div className="anim-up d5" style={{ marginTop: "1.75rem", display: "flex", justifyContent: "center", gap: "1.5rem", flexWrap: "wrap" }}>
+            {[
+              { icon: "✓", label: "Satisfaction Guaranteed" },
+              { icon: "✓", label: "We'll Come Back & Fix It" },
+              { icon: "✓", label: "No Drop-Off Needed" },
+            ].map((b) => (
+              <div key={b.label} style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}>
+                <span style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)" }}>{b.icon}</span>
+                <span style={{ color: "#a8a8a8", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textTransform: "uppercase" }}>{b.label}</span>
+              </div>
+            ))}
           </div>
 
           {/* Areas */}
