@@ -29,7 +29,7 @@ const inputStyle: React.CSSProperties = {
 
 const labelStyle: React.CSSProperties = {
   display: "block",
-  color: "#3a3a3a",
+  color: "#565656",
   fontSize: "0.75rem",
   fontFamily: "var(--font-mono)",
   letterSpacing: "0.22em",
@@ -147,7 +147,7 @@ export default function Contact() {
           </div>
           <p
             style={{
-              color: "#3a3a3a",
+              color: "#565656",
               fontSize: "0.75rem",
               fontFamily: "var(--font-mono)",
               letterSpacing: "0.1em",
@@ -182,7 +182,7 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[#c9a84c] transition-colors"
-              style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase" }}
+              style={{ color: "#565656", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase" }}
             >
               View on Google Maps →
             </a>
@@ -216,7 +216,7 @@ export default function Contact() {
                   >
                     Request Sent!
                   </h3>
-                  <p style={{ color: "#5a5a5a", fontSize: "0.88rem", lineHeight: 1.7, maxWidth: "24rem", textAlign: "center" }}>
+                  <p style={{ color: "#7a7a7a", fontSize: "0.88rem", lineHeight: 1.7, maxWidth: "24rem", textAlign: "center" }}>
                     We&apos;ve received your booking request and will call or text you within a few hours to confirm details.
                   </p>
                 </div>
@@ -323,7 +323,7 @@ export default function Contact() {
                     {loading ? "Sending..." : "Send Booking Request"}
                   </button>
 
-                  <p style={{ color: "#5a5a5a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
+                  <p style={{ color: "#7a7a7a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
                     We&apos;ll call or text you within a few hours to confirm.
                   </p>
 
@@ -344,7 +344,7 @@ export default function Contact() {
                 </h3>
                 <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                   <div style={{ textAlign: "center" }}>
-                    <div style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "0.35rem" }}>Phone</div>
+                    <div style={{ color: "#565656", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "0.35rem" }}>Phone</div>
                     <a
                       href="tel:+17816325193"
                       className="font-[family-name:var(--font-cormorant)] italic font-bold hover:text-[#c9a84c] transition-colors"
@@ -354,18 +354,18 @@ export default function Contact() {
                     </a>
                   </div>
                   <div style={{ textAlign: "center" }}>
-                    <div style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "0.35rem" }}>Email</div>
+                    <div style={{ color: "#565656", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "0.35rem" }}>Email</div>
                     <a
                       href="mailto:mandcluxurydetailing@gmail.com"
                       className="hover:text-[#c9a84c] transition-colors"
-                      style={{ color: "#5a5a5a", fontSize: "0.82rem", display: "block" }}
+                      style={{ color: "#7a7a7a", fontSize: "0.82rem", display: "block" }}
                     >
                       mandcluxurydetailing@gmail.com
                     </a>
                   </div>
                   <div style={{ textAlign: "center" }}>
-                    <div style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "0.35rem" }}>Based In</div>
-                    <div style={{ color: "#5a5a5a", fontSize: "0.82rem" }}>Danvers, MA</div>
+                    <div style={{ color: "#565656", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "0.35rem" }}>Based In</div>
+                    <div style={{ color: "#7a7a7a", fontSize: "0.82rem" }}>Danvers, MA</div>
                   </div>
                 </div>
               </div>
@@ -381,8 +381,8 @@ export default function Contact() {
                     { day: "Sunday",    hours: "Closed" },
                   ].map((h) => (
                     <div key={h.day} style={{ display: "flex", justifyContent: "center", gap: "1rem", borderBottom: "1px solid #111", paddingBottom: "0.5rem" }}>
-                      <span style={{ color: "#3a3a3a", fontSize: "0.78rem" }}>{h.day}</span>
-                      <span style={{ color: "#5a5a5a", fontSize: "0.78rem" }}>{h.hours}</span>
+                      <span style={{ color: "#565656", fontSize: "0.78rem" }}>{h.day}</span>
+                      <span style={{ color: "#7a7a7a", fontSize: "0.78rem" }}>{h.hours}</span>
                     </div>
                   ))}
                 </div>
@@ -392,7 +392,7 @@ export default function Contact() {
                 <h3 style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1rem", textAlign: "center" }}>
                   Area
                 </h3>
-                <p style={{ color: "#3a3a3a", fontSize: "0.8rem", lineHeight: 1.7, textAlign: "center" }}>
+                <p style={{ color: "#565656", fontSize: "0.8rem", lineHeight: 1.7, textAlign: "center" }}>
                   Beverly, Danvers, Salem, Peabody, Manchester, Gloucester, Marblehead, and surrounding North Shore communities.
                 </p>
               </div>
@@ -403,7 +403,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#c9a84c] transition-colors"
-                  style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid #1c1c1c", padding: "0.5rem 0.875rem" }}
+                  style={{ color: "#565656", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid #1c1c1c", padding: "0.5rem 0.875rem" }}
                 >
                   Instagram
                 </a>
@@ -412,7 +412,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#c9a84c] transition-colors"
-                  style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid #1c1c1c", padding: "0.5rem 0.875rem" }}
+                  style={{ color: "#565656", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em", textTransform: "uppercase", border: "1px solid #1c1c1c", padding: "0.5rem 0.875rem" }}
                 >
                   Facebook
                 </a>

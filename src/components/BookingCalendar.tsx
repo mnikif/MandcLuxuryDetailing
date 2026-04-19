@@ -87,7 +87,7 @@ export default function BookingCalendar({ value, onChange }: BookingCalendarProp
           width: "100%",
           background: "#0a0a0a",
           border: `1px solid ${open ? "#c9a84c" : "#1c1c1c"}`,
-          color: value ? "#f2ede4" : "#3a3a3a",
+          color: value ? "#f2ede4" : "#565656",
           fontSize: "0.875rem",
           padding: "0.875rem 1rem",
           textAlign: "left",
@@ -157,7 +157,7 @@ export default function BookingCalendar({ value, onChange }: BookingCalendarProp
                   fontSize: "0.75rem",
                   fontFamily: "var(--font-mono)",
                   letterSpacing: "0.12em",
-                  color: "#3a3a3a",
+                  color: "#565656",
                   padding: "0.375rem 0",
                   textTransform: "uppercase",
                 }}
@@ -288,7 +288,7 @@ export default function BookingCalendar({ value, onChange }: BookingCalendarProp
                 />
                 <span
                   style={{
-                    color: "#3a3a3a",
+                    color: "#565656",
                     fontSize: "0.75rem",
                     fontFamily: "var(--font-mono)",
                     letterSpacing: "0.1em",

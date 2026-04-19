@@ -130,7 +130,7 @@ export default function Reviews() {
             What Clients Say
           </h1>
           <div className="gold-rule" style={{ width: "4rem", margin: "0 auto 1.5rem" }} />
-          <p style={{ color: "#5a5a5a", fontSize: "0.95rem", lineHeight: 1.7, maxWidth: "32rem", margin: "0 auto", textAlign: "center" }}>
+          <p style={{ color: "#7a7a7a", fontSize: "0.95rem", lineHeight: 1.7, maxWidth: "32rem", margin: "0 auto", textAlign: "center" }}>
             Real reviews from real customers on the North Shore. See why people keep coming back.
           </p>
 
@@ -141,7 +141,7 @@ export default function Reviews() {
                 <span key={i} style={{ color: "#c9a84c", fontSize: "1.5rem" }}>★</span>
               ))}
             </div>
-            <span style={{ color: "#5a5a5a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase" }}>
+            <span style={{ color: "#7a7a7a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase" }}>
               5.0 · Google Reviews
             </span>
           </div>
@@ -184,7 +184,7 @@ export default function Reviews() {
                 </p>
                 <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
                   <div style={{ width: "1.25rem", height: "1px", background: "rgba(201,168,76,0.4)" }} />
-                  <span style={{ color: "#5a5a5a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em" }}>
+                  <span style={{ color: "#7a7a7a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em" }}>
                     {t.name}
                   </span>
                 </div>
@@ -203,7 +203,7 @@ export default function Reviews() {
           <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(1.8rem,5vw,3rem)", color: "#f2ede4", lineHeight: 1, marginBottom: "1rem" }}>
             Leave Us a Review
           </h2>
-          <p style={{ color: "#5a5a5a", fontSize: "0.9rem", lineHeight: 1.7, maxWidth: "28rem", margin: "0 auto 2rem" }}>
+          <p style={{ color: "#7a7a7a", fontSize: "0.9rem", lineHeight: 1.7, maxWidth: "28rem", margin: "0 auto 2rem" }}>
             Your feedback helps us grow and helps other customers find us. We appreciate every review.
           </p>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1rem" }}>

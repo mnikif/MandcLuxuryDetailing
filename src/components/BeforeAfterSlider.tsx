@@ -82,7 +82,7 @@ export default function BeforeAfterSlider({ before, after, label }: Props) {
       </div>
 
       {label && (
-        <p style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", textAlign: "center" }}>
+        <p style={{ color: "#565656", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", textAlign: "center" }}>
           {label}
         </p>
       )}

@@ -272,7 +272,7 @@ export default function Home() {
                 </span>
               </div>
               <Link href="/contact" className="btn-gold" style={{ width: "100%", height: "58px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em" }}>
-                Book Now — It&apos;s Free to Quote
+                Book Now
               </Link>
               <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", marginTop: "-0.35rem", alignSelf: "center" }}>
                 ★★★★★ <span style={{ color: "#a8a8a8" }}>on Google</span>
@@ -333,7 +333,7 @@ export default function Home() {
 
         {/* Scroll cue */}
         <div style={{ position: "absolute", bottom: "2rem", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: "0.375rem", zIndex: 10 }}>
-          <span style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase" }}>scroll</span>
+          <span style={{ color: "#565656", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase" }}>scroll</span>
           <div style={{ width: "1px", height: "2rem", background: "linear-gradient(to bottom, rgba(201,168,76,0.6), transparent)" }} />
         </div>
       </section>
@@ -397,7 +397,7 @@ export default function Home() {
                 <h3 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.4rem", color: "#f2ede4", marginBottom: "0.5rem", textAlign: "center" }}>
                   {s.title}
                 </h3>
-                <p style={{ color: "#5a5a5a", fontSize: "0.82rem", lineHeight: 1.65, marginBottom: "1.25rem", textAlign: "center" }}>
+                <p style={{ color: "#7a7a7a", fontSize: "0.82rem", lineHeight: 1.65, marginBottom: "1.25rem", textAlign: "center" }}>
                   {s.desc}
                 </p>
                 <div style={{ marginTop: "auto", textAlign: "center" }}>
@@ -508,7 +508,7 @@ export default function Home() {
                 <h3 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(1.1rem,3vw,1.4rem)", color: "#c9a84c", lineHeight: 1.3, textAlign: "left" }}>
                   {item.q}
                 </h3>
-                <p style={{ color: "#5a5a5a", fontSize: "0.88rem", lineHeight: 1.8, textAlign: "left" }}>
+                <p style={{ color: "#7a7a7a", fontSize: "0.88rem", lineHeight: 1.8, textAlign: "left" }}>
                   {item.a}
                 </p>
               </div>
@@ -545,7 +545,7 @@ export default function Home() {
                 <h3 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.4rem", color: "#f2ede4", marginBottom: "0.75rem", textAlign: "center" }}>
                   {item.title}
                 </h3>
-                <p style={{ color: "#5a5a5a", fontSize: "0.875rem", lineHeight: 1.7, textAlign: "center" }}>
+                <p style={{ color: "#7a7a7a", fontSize: "0.875rem", lineHeight: 1.7, textAlign: "center" }}>
                   {item.desc}
                 </p>
               </div>
@@ -565,7 +565,7 @@ export default function Home() {
               Mobile Car Detailing Near You
             </h2>
             <div className="gold-rule" style={{ width: "4rem", margin: "0 auto 1.5rem" }} />
-            <p style={{ color: "#5a5a5a", fontSize: "0.9rem", lineHeight: 1.75, maxWidth: "34rem", margin: "0 auto" }}>
+            <p style={{ color: "#7a7a7a", fontSize: "0.9rem", lineHeight: 1.75, maxWidth: "34rem", margin: "0 auto" }}>
               Looking for mobile detailing near you on the North Shore of Massachusetts? We serve Beverly, Salem, Danvers, Peabody, Gloucester, Manchester-by-the-Sea, Marblehead, Swampscott, Hamilton, Wenham, and Lynn — fully equipped, arriving at your driveway.
             </p>
           </div>
@@ -586,7 +586,7 @@ export default function Home() {
               <Link
                 key={city.slug}
                 href={`/locations/${city.slug}`}
-                style={{ background: "#060606", display: "flex", alignItems: "center", justifyContent: "center", padding: "1.25rem 1rem", color: "#5a5a5a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", transition: "color 0.2s, background 0.2s", textAlign: "center" }}
+                style={{ background: "#060606", display: "flex", alignItems: "center", justifyContent: "center", padding: "1.25rem 1rem", color: "#7a7a7a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", transition: "color 0.2s, background 0.2s", textAlign: "center" }}
                 className="hover:text-[#c9a84c] hover:bg-[#0a0a0a]"
               >
                 {city.name}
@@ -639,7 +639,7 @@ export default function Home() {
                 <div style={{ position: "relative", width: "100%", aspectRatio: "4/3", overflow: "hidden" }}>
                   <Image src={src} alt={label} fill sizes="(max-width:768px) 100vw, 33vw" style={{ objectFit: "cover", objectPosition: "center 20%" }} />
                 </div>
-                <p style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", textAlign: "center" }}>
+                <p style={{ color: "#565656", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", textAlign: "center" }}>
                   {label}
                 </p>
               </div>
@@ -695,7 +695,7 @@ export default function Home() {
                 <p className="font-[family-name:var(--font-cormorant)] italic" style={{ color: "#a8a8a8", fontSize: "1rem", lineHeight: 1.55, marginBottom: "1rem", textAlign: "center" }}>
                   &ldquo;{t.short}&rdquo;
                 </p>
-                <div style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
+                <div style={{ color: "#565656", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
                   — {t.name}
                 </div>
               </div>
@@ -719,7 +719,7 @@ export default function Home() {
             Showroom Finish?
           </h2>
 
-          <p style={{ color: "#5a5a5a", fontSize: "0.9rem", lineHeight: 1.7, maxWidth: "32rem", margin: "0 auto 2.5rem", textAlign: "center" }}>
+          <p style={{ color: "#7a7a7a", fontSize: "0.9rem", lineHeight: 1.7, maxWidth: "32rem", margin: "0 auto 2.5rem", textAlign: "center" }}>
             Serving Beverly, Danvers, Salem, Peabody, Manchester, Gloucester, and the entire North Shore, MA.
           </p>
 

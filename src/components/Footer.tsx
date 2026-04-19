@@ -41,17 +41,17 @@ export default function Footer() {
                 Luxury Detailing
               </div>
             </div>
-            <p style={{ color: "#3a3a3a", fontSize: "0.8rem", lineHeight: 1.7, textAlign: "center" }}>
+            <p style={{ color: "#565656", fontSize: "0.8rem", lineHeight: 1.7, textAlign: "center" }}>
               Premium mobile detailing. We come to you — Danvers, MA and the entire North Shore.
             </p>
             <div style={{ display: "flex", justifyContent: "center", gap: "1.25rem", marginTop: "1.5rem", flexWrap: "wrap" }}>
-              <a href="https://instagram.com/mcluxurydetailing" target="_blank" rel="noopener noreferrer" className="hover:text-[#c9a84c]" style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", transition: "color 0.2s" }}>
+              <a href="https://instagram.com/mcluxurydetailing" target="_blank" rel="noopener noreferrer" className="hover:text-[#c9a84c]" style={{ color: "#565656", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", transition: "color 0.2s" }}>
                 Instagram
               </a>
-              <a href="https://www.facebook.com/profile.php?id=61577181187495" target="_blank" rel="noopener noreferrer" className="hover:text-[#c9a84c]" style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", transition: "color 0.2s" }}>
+              <a href="https://www.facebook.com/profile.php?id=61577181187495" target="_blank" rel="noopener noreferrer" className="hover:text-[#c9a84c]" style={{ color: "#565656", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", transition: "color 0.2s" }}>
                 Facebook
               </a>
-              <a href="https://www.google.com/maps/place/M%26C+Luxury+Detailing/@42.4614735,-70.8795505,15z" target="_blank" rel="noopener noreferrer" className="hover:text-[#c9a84c]" style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", transition: "color 0.2s" }}>
+              <a href="https://www.google.com/maps/place/M%26C+Luxury+Detailing/@42.4614735,-70.8795505,15z" target="_blank" rel="noopener noreferrer" className="hover:text-[#c9a84c]" style={{ color: "#565656", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", transition: "color 0.2s" }}>
                 Google
               </a>
             </div>
@@ -65,7 +65,7 @@ export default function Footer() {
             <ul style={{ display: "flex", flexDirection: "column", gap: "0.75rem", alignItems: "center" }}>
               {navLinks.map(({ href, label }) => (
                 <li key={href}>
-                  <Link href={href} className="hover:text-[#c9a84c] transition-colors" style={{ color: "#3a3a3a", fontSize: "0.82rem", display: "block", textAlign: "center" }}>
+                  <Link href={href} className="hover:text-[#c9a84c] transition-colors" style={{ color: "#565656", fontSize: "0.82rem", display: "block", textAlign: "center" }}>
                     {label}
                   </Link>
                 </li>
@@ -81,7 +81,7 @@ export default function Footer() {
             <ul style={{ display: "flex", flexDirection: "column", gap: "0.6rem", alignItems: "center" }}>
               {cityLinks.map(({ slug, name }) => (
                 <li key={slug}>
-                  <Link href={`/locations/${slug}`} className="hover:text-[#c9a84c] transition-colors" style={{ color: "#3a3a3a", fontSize: "0.78rem", display: "block", textAlign: "center" }}>
+                  <Link href={`/locations/${slug}`} className="hover:text-[#c9a84c] transition-colors" style={{ color: "#565656", fontSize: "0.78rem", display: "block", textAlign: "center" }}>
                     {name}
                   </Link>
                 </li>
@@ -101,11 +101,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:mandcluxurydetailing@gmail.com" className="hover:text-[#c9a84c] transition-colors break-all" style={{ color: "#3a3a3a", fontSize: "0.78rem", textAlign: "center" }}>
+                <a href="mailto:mandcluxurydetailing@gmail.com" className="hover:text-[#c9a84c] transition-colors break-all" style={{ color: "#565656", fontSize: "0.78rem", textAlign: "center" }}>
                   mandcluxurydetailing@gmail.com
                 </a>
               </li>
-              <li style={{ color: "#3a3a3a", fontSize: "0.78rem", textAlign: "center" }}>Danvers, MA — North Shore</li>
+              <li style={{ color: "#565656", fontSize: "0.78rem", textAlign: "center" }}>Danvers, MA — North Shore</li>
             </ul>
             <Link href="/contact" className="btn-gold" style={{ height: "40px", padding: "0 1.5rem", display: "inline-flex", alignItems: "center", justifyContent: "center", marginTop: "1.5rem", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
               Book a Detail

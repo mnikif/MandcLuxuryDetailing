@@ -95,7 +95,7 @@ export default function About() {
               Matt —<br />
               <span style={{ color: "#c9a84c" }}>Built for the North Shore</span>
             </h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: "1rem", color: "#5a5a5a", fontSize: "0.9rem", lineHeight: 1.8, maxWidth: "36rem", margin: "0 auto", textAlign: "center" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "1rem", color: "#7a7a7a", fontSize: "0.9rem", lineHeight: 1.8, maxWidth: "36rem", margin: "0 auto", textAlign: "center" }}>
               <p>
                 M&amp;C Luxury Detailing started the way most good things do — A high school student from Danvers who cared too much about clean cars and figured he could do it better than anyone else.
               </p>
@@ -158,7 +158,7 @@ export default function About() {
                 <h3 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.3rem", color: "#f2ede4", marginBottom: "0.6rem", textAlign: "center" }}>
                   {v.title}
                 </h3>
-                <p style={{ color: "#5a5a5a", fontSize: "0.84rem", lineHeight: 1.7, textAlign: "center" }}>{v.desc}</p>
+                <p style={{ color: "#7a7a7a", fontSize: "0.84rem", lineHeight: 1.7, textAlign: "center" }}>{v.desc}</p>
               </div>
             ))}
           </div>
@@ -176,12 +176,12 @@ export default function About() {
           </h2>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.625rem" }}>
             {cities.map((city) => (
-              <Link key={city.slug} href={`/locations/${city.slug}`} className="hover:border-[#c9a84c]/40 hover:text-[#c9a84c]" style={{ border: "1px solid #1c1c1c", color: "#5a5a5a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.5rem 0.875rem", transition: "all 0.2s", textAlign: "center" }}>
+              <Link key={city.slug} href={`/locations/${city.slug}`} className="hover:border-[#c9a84c]/40 hover:text-[#c9a84c]" style={{ border: "1px solid #1c1c1c", color: "#7a7a7a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.5rem 0.875rem", transition: "all 0.2s", textAlign: "center" }}>
                 {city.name}
               </Link>
             ))}
           </div>
-          <p style={{ color: "#3a3a3a", fontSize: "0.8rem", marginTop: "1.75rem", textAlign: "center" }}>
+          <p style={{ color: "#565656", fontSize: "0.8rem", marginTop: "1.75rem", textAlign: "center" }}>
             Don&apos;t see your city?{" "}
             <Link href="/contact" style={{ color: "#c9a84c", textDecoration: "underline", textUnderlineOffset: "3px" }}>
               Contact us

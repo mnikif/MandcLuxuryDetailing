@@ -25,7 +25,7 @@ const heading: React.CSSProperties = {
 };
 
 const body: React.CSSProperties = {
-  color: "#5a5a5a",
+  color: "#7a7a7a",
   fontSize: "0.9rem",
   lineHeight: 1.9,
   marginBottom: "1.5rem",
@@ -102,7 +102,7 @@ export default function PrivacyPolicy() {
             Privacy Policy
           </h1>
           <div className="gold-rule" style={{ width: "4rem", margin: "0 auto" }} />
-          <p style={{ color: "#3a3a3a", fontSize: "0.78rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", marginTop: "1.5rem" }}>
+          <p style={{ color: "#565656", fontSize: "0.78rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", marginTop: "1.5rem" }}>
             Last updated: April 2026
           </p>
         </div>
@@ -161,14 +161,14 @@ export default function PrivacyPolicy() {
               <a
                 href="mailto:mandcluxurydetailing@gmail.com"
                 className="hover:text-[#c9a84c] transition-colors"
-                style={{ color: "#5a5a5a", fontSize: "0.85rem" }}
+                style={{ color: "#7a7a7a", fontSize: "0.85rem" }}
               >
                 mandcluxurydetailing@gmail.com
               </a>
               <a
                 href="tel:+17816325193"
                 className="hover:text-[#c9a84c] transition-colors"
-                style={{ color: "#5a5a5a", fontSize: "0.85rem" }}
+                style={{ color: "#7a7a7a", fontSize: "0.85rem" }}
               >
                 (781) 632-5193
               </a>

@@ -20,6 +20,7 @@ const wrap: React.CSSProperties = {
 type PackageTier = {
   tier: "Bronze" | "Silver" | "Gold";
   price: string;
+  salePrice?: string;
   duration: string;
   popular: boolean;
   features: string[];
@@ -60,6 +61,7 @@ const interiorTiers: PackageTier[] = [
   {
     tier: "Silver",
     price: "$169",
+    salePrice: "$144",
     duration: "2–3 hrs",
     popular: true,
     features: [
@@ -101,6 +103,7 @@ const exteriorTiers: PackageTier[] = [
   {
     tier: "Silver",
     price: "$129",
+    salePrice: "$110",
     duration: "1.5–2 hrs",
     popular: true,
     features: [
@@ -141,6 +144,7 @@ const fullTiers: PackageTier[] = [
   {
     tier: "Silver",
     price: "$269",
+    salePrice: "$229",
     duration: "3.5–5 hrs",
     popular: true,
     features: [
@@ -177,7 +181,7 @@ function SectionHeader({ eyebrow, heading, desc }: { eyebrow: string; heading: s
       </h2>
       <div className="gold-rule" style={{ width: "4rem", margin: "0 auto" }} />
       {desc && (
-        <p style={{ color: "#5a5a5a", fontSize: "0.85rem", lineHeight: 1.7, maxWidth: "32rem", margin: "1.25rem auto 0" }}>
+        <p style={{ color: "#7a7a7a", fontSize: "0.85rem", lineHeight: 1.7, maxWidth: "32rem", margin: "1.25rem auto 0" }}>
           {desc}
         </p>
       )}
@@ -237,10 +241,22 @@ function TierGrid({ tiers }: { tiers: PackageTier[] }) {
             </p>
 
             {/* Price */}
-            <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "2.2rem", color: "#f2ede4", lineHeight: 1, marginBottom: "0.3rem", marginTop: "-5px" }}>
-              {pkg.price}
-            </div>
-            <div style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "1.5rem" }}>
+            {pkg.salePrice ? (
+              <>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginTop: "-5px", marginBottom: "0.15rem", justifyContent: "center" }}>
+                  <span style={{ fontSize: "0.95rem", color: "#565656", fontFamily: "var(--font-mono)", textDecoration: "line-through" }}>{pkg.price}</span>
+                  <span style={{ background: "#c9a84c", color: "#000", fontSize: "0.65rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", fontWeight: 700, padding: "0.15rem 0.4rem", textTransform: "uppercase" }}>15% OFF</span>
+                </div>
+                <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "2.2rem", color: "#c9a84c", lineHeight: 1, marginBottom: "0.3rem" }}>
+                  {pkg.salePrice}
+                </div>
+              </>
+            ) : (
+              <div className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "2.2rem", color: "#f2ede4", lineHeight: 1, marginBottom: "0.3rem", marginTop: "-5px" }}>
+                {pkg.price}
+              </div>
+            )}
+            <div style={{ color: "#565656", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "1.5rem" }}>
               {pkg.duration}
             </div>
 
@@ -249,7 +265,7 @@ function TierGrid({ tiers }: { tiers: PackageTier[] }) {
             {/* Features */}
             <ul style={{ flex: 1, width: "100%", marginBottom: "1.75rem", display: "flex", flexDirection: "column", gap: "0.65rem" }}>
               {pkg.features.map((f) => (
-                <li key={f} style={{ display: "flex", alignItems: "flex-start", justifyContent: "center", gap: "0.625rem", color: "#5a5a5a", fontSize: "0.8rem", lineHeight: 1.5, textAlign: "center" }}>
+                <li key={f} style={{ display: "flex", alignItems: "flex-start", justifyContent: "center", gap: "0.625rem", color: "#7a7a7a", fontSize: "0.8rem", lineHeight: 1.5, textAlign: "center" }}>
                   <span style={{ color: tierBulletColor[pkg.tier], flexShrink: 0, marginTop: "2px", fontSize: "0.75rem" }}>✦</span>
                   {f}
                 </li>
@@ -278,7 +294,7 @@ function TierGrid({ tiers }: { tiers: PackageTier[] }) {
 
             {pkg.popular && (
               <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textAlign: "center", marginTop: "0.625rem" }}>
-                ★★★★★ <span style={{ color: "#3a3a3a" }}>on Google</span>
+                ★★★★★ <span style={{ color: "#565656" }}>on Google</span>
               </p>
             )}
           </div>
@@ -378,7 +394,7 @@ export default function Services() {
             Services &amp; Packages
           </h1>
           <div className="gold-rule" style={{ width: "4rem", margin: "0 auto 1.5rem" }} />
-          <p style={{ color: "#5a5a5a", fontSize: "0.95rem", lineHeight: 1.7, maxWidth: "36rem", margin: "0 auto 2rem", textAlign: "center" }}>
+          <p style={{ color: "#7a7a7a", fontSize: "0.95rem", lineHeight: 1.7, maxWidth: "36rem", margin: "0 auto 2rem", textAlign: "center" }}>
             Every detail, three tiers. Choose the level of care that fits your vehicle and budget — Bronze, Silver, or Gold.
           </p>
 
@@ -486,7 +502,7 @@ export default function Services() {
 
                 <div style={{ display: "flex", alignItems: "baseline", justifyContent: "center", gap: "0.75rem", marginBottom: "1.5rem" }}>
                   <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.5rem", color: "#c9a84c" }}>+$50</span>
-                  <span style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase" }}>30–60 min</span>
+                  <span style={{ color: "#565656", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase" }}>30–60 min</span>
                 </div>
 
                 <div style={{ height: "1px", background: "#1c1c1c", width: "100%", marginBottom: "1.5rem" }} />
@@ -498,7 +514,7 @@ export default function Services() {
                     "Seats, carpets & trunk area",
                     "Pairs with any interior or full package",
                   ].map((f) => (
-                    <li key={f} style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.625rem", color: "#5a5a5a", fontSize: "0.82rem", lineHeight: 1.5 }}>
+                    <li key={f} style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.625rem", color: "#7a7a7a", fontSize: "0.82rem", lineHeight: 1.5 }}>
                       <span style={{ color: "#c9a84c", fontSize: "0.75rem", flexShrink: 0 }}>✦</span>
                       {f}
                     </li>
@@ -521,7 +537,7 @@ export default function Services() {
       {/* ── Pricing note ── */}
       <section className="section-grid" style={{ borderTop: "1px solid #1c1c1c", padding: "2.5rem 0" }}>
         <div style={wrap}>
-          <p style={{ color: "#5a5a5a", fontSize: "0.84rem", lineHeight: 1.7, textAlign: "center" }}>
+          <p style={{ color: "#7a7a7a", fontSize: "0.84rem", lineHeight: 1.7, textAlign: "center" }}>
             <span style={{ color: "#c9a84c" }}>Pricing note:</span> All prices are starting rates for standard sedans. Final pricing depends on vehicle size and condition. SUVs, trucks, and heavily soiled vehicles may incur additional charges.{" "}
             <Link href="/contact" style={{ color: "#c9a84c", textDecoration: "underline", textUnderlineOffset: "3px" }}>Contact us</Link> for a custom quote.
           </p>
@@ -529,12 +545,12 @@ export default function Services() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ background: "#060606", borderTop: "1px solid #1c1c1c", padding: "4rem 0" }}>
+      <section style={{ background: "#060606", borderTop: "1px solid #1c1c1c", padding: "4rem 0 6rem" }}>
         <div style={wrap}>
           <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(1.8rem,5vw,3rem)", color: "#f2ede4", lineHeight: 1, marginBottom: "1rem", textAlign: "center" }}>
             Not Sure Which Package?
           </h2>
-          <p style={{ color: "#5a5a5a", fontSize: "0.9rem", lineHeight: 1.7, marginBottom: "2rem", textAlign: "center" }}>
+          <p style={{ color: "#7a7a7a", fontSize: "0.9rem", lineHeight: 1.7, marginBottom: "2rem", textAlign: "center" }}>
             Reach out and we&apos;ll recommend the right service for your vehicle and budget.
           </p>
           <div style={{ display: "flex", justifyContent: "center" }}>
@@ -544,6 +560,49 @@ export default function Services() {
           </div>
         </div>
       </section>
+
+      {/* ── Floating Silver Deal Banner ── */}
+      <div style={{
+        position: "fixed",
+        bottom: 0,
+        left: 0,
+        right: 0,
+        zIndex: 50,
+        background: "#0a0a0a",
+        borderTop: "1px solid #c9a84c",
+        padding: "0.75rem 1.25rem",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "1.25rem",
+        flexWrap: "wrap",
+      }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", flexWrap: "wrap", justifyContent: "center" }}>
+          <span style={{ background: "#c9a84c", color: "#000", fontSize: "0.65rem", fontFamily: "var(--font-mono)", fontWeight: 700, letterSpacing: "0.15em", padding: "0.2rem 0.5rem", textTransform: "uppercase", flexShrink: 0 }}>
+            15% OFF
+          </span>
+          <span style={{ color: "#f2ede4", fontSize: "0.8rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em" }}>
+            All Silver details — expires <strong style={{ color: "#c9a84c" }}>Sunday, Apr 27</strong>
+          </span>
+        </div>
+        <Link
+          href="/contact"
+          style={{
+            background: "#c9a84c",
+            color: "#000",
+            fontSize: "0.7rem",
+            fontFamily: "var(--font-mono)",
+            fontWeight: 700,
+            letterSpacing: "0.18em",
+            textTransform: "uppercase",
+            padding: "0.45rem 1.1rem",
+            flexShrink: 0,
+            whiteSpace: "nowrap",
+          }}
+        >
+          Claim Deal →
+        </Link>
+      </div>
     </>
   );
 }

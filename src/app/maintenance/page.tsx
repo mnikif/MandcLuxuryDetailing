@@ -150,7 +150,7 @@ export default function Maintenance() {
           <div className="gold-rule" style={{ width: "4rem", margin: "0 auto 1.5rem" }} />
           <p
             style={{
-              color: "#5a5a5a",
+              color: "#7a7a7a",
               fontSize: "0.95rem",
               lineHeight: 1.75,
               maxWidth: "34rem",
@@ -315,7 +315,7 @@ export default function Maintenance() {
                     </span>
                     <span
                       style={{
-                        color: "#3a3a3a",
+                        color: "#565656",
                         fontSize: "0.75rem",
                         fontFamily: "var(--font-mono)",
                         letterSpacing: "0.1em",
@@ -327,7 +327,7 @@ export default function Maintenance() {
 
                   <div
                     style={{
-                      color: "#3a3a3a",
+                      color: "#565656",
                       fontSize: "0.75rem",
                       fontFamily: "var(--font-mono)",
                       letterSpacing: "0.12em",
@@ -340,7 +340,7 @@ export default function Maintenance() {
 
                   <p
                     style={{
-                      color: "#5a5a5a",
+                      color: "#7a7a7a",
                       fontSize: "0.8rem",
                       lineHeight: 1.55,
                       marginBottom: "1.5rem",
@@ -378,7 +378,7 @@ export default function Maintenance() {
                           alignItems: "flex-start",
                           justifyContent: "center",
                           gap: "0.6rem",
-                          color: "#5a5a5a",
+                          color: "#7a7a7a",
                           fontSize: "0.8rem",
                           lineHeight: 1.5,
                           textAlign: "center",
@@ -429,7 +429,7 @@ export default function Maintenance() {
                         marginTop: "0.625rem",
                       }}
                     >
-                      ★★★★★ <span style={{ color: "#3a3a3a" }}>on Google</span>
+                      ★★★★★ <span style={{ color: "#565656" }}>on Google</span>
                     </p>
                   )}
                 </div>
@@ -439,7 +439,7 @@ export default function Maintenance() {
 
           <p
             style={{
-              color: "#3a3a3a",
+              color: "#565656",
               fontSize: "0.8rem",
               fontFamily: "var(--font-mono)",
               letterSpacing: "0.1em",
@@ -525,7 +525,7 @@ export default function Maintenance() {
                 >
                   {item.title}
                 </h3>
-                <p style={{ color: "#5a5a5a", fontSize: "0.875rem", lineHeight: 1.7 }}>
+                <p style={{ color: "#7a7a7a", fontSize: "0.875rem", lineHeight: 1.7 }}>
                   {item.desc}
                 </p>
               </div>
@@ -604,7 +604,7 @@ export default function Maintenance() {
                 >
                   {item.q}
                 </h3>
-                <p style={{ color: "#5a5a5a", fontSize: "0.88rem", lineHeight: 1.8 }}>
+                <p style={{ color: "#7a7a7a", fontSize: "0.88rem", lineHeight: 1.8 }}>
                   {item.a}
                 </p>
               </div>
@@ -653,7 +653,7 @@ export default function Maintenance() {
           </h2>
           <p
             style={{
-              color: "#5a5a5a",
+              color: "#7a7a7a",
               fontSize: "0.9rem",
               lineHeight: 1.7,
               maxWidth: "28rem",

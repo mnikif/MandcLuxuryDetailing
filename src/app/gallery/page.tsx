@@ -74,7 +74,7 @@ export default function Gallery() {
             Before &amp; After
           </h1>
           <div className="gold-rule" style={{ width: "4rem", margin: "0 auto 1.5rem" }} />
-          <p style={{ color: "#5a5a5a", fontSize: "0.95rem", lineHeight: 1.7, maxWidth: "28rem", margin: "0 auto", textAlign: "center" }}>
+          <p style={{ color: "#7a7a7a", fontSize: "0.95rem", lineHeight: 1.7, maxWidth: "28rem", margin: "0 auto", textAlign: "center" }}>
             Every vehicle transformed. Results speak louder than words.
           </p>
         </div>
@@ -138,7 +138,7 @@ export default function Gallery() {
           <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(1.8rem,5vw,3rem)", color: "#f2ede4", lineHeight: 1, marginBottom: "1rem", textAlign: "center" }}>
             See More on Instagram
           </h2>
-          <p style={{ color: "#5a5a5a", fontSize: "0.85rem", marginBottom: "2rem", textAlign: "center" }}>
+          <p style={{ color: "#7a7a7a", fontSize: "0.85rem", marginBottom: "2rem", textAlign: "center" }}>
             Daily work, before &amp; afters, and behind the scenes.
           </p>
           <div style={{ display: "flex", justifyContent: "center" }}>

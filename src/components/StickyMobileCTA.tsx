@@ -1,32 +1,148 @@
 "use client";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+
+const PROMO_END = new Date("2026-04-25T23:59:59");
+
+function useCountdown(end: Date) {
+  const [t, setT] = useState({ d: 0, h: 0, m: 0, s: 0, expired: false });
+  useEffect(() => {
+    function calc() {
+      const diff = end.getTime() - Date.now();
+      if (diff <= 0) { setT({ d: 0, h: 0, m: 0, s: 0, expired: true }); return; }
+      setT({
+        d: Math.floor(diff / 86400000),
+        h: Math.floor((diff % 86400000) / 3600000),
+        m: Math.floor((diff % 3600000) / 60000),
+        s: Math.floor((diff % 60000) / 1000),
+        expired: false,
+      });
+    }
+    calc();
+    const id = setInterval(calc, 1000);
+    return () => clearInterval(id);
+  }, [end]);
+  return t;
+}
+
+const Pad = (n: number) => String(n).padStart(2, "0");
 
 export default function StickyMobileCTA() {
+  const { d, h, m, s, expired } = useCountdown(PROMO_END);
+  if (expired) return null;
+
   return (
     <div
-      className="sticky-cta-bar md:hidden fixed bottom-0 left-0 right-0 z-50"
-      style={{ background: "#060606", borderTop: "1px solid #1c1c1c" }}
+      className="md:hidden fixed bottom-0 left-0 right-0 z-50"
+      style={{ background: "#060606", borderTop: "1px solid rgba(201,168,76,0.35)" }}
     >
-      <div className="flex h-[60px]">
+      {/* Promo strip */}
+      <div
+        style={{
+          background: "rgba(201,168,76,0.07)",
+          borderBottom: "1px solid rgba(201,168,76,0.15)",
+          padding: "0.5rem 1rem",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        {/* Label */}
+        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+          <span
+            style={{
+              display: "inline-block",
+              width: "7px",
+              height: "7px",
+              borderRadius: "50%",
+              background: "#dc2626",
+              flexShrink: 0,
+              animation: "pulse 1.5s infinite",
+            }}
+          />
+          <span
+            style={{
+              color: "#c9a84c",
+              fontSize: "0.65rem",
+              fontFamily: "var(--font-mono)",
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              fontWeight: 600,
+            }}
+          >
+            15% Off Any Detail
+          </span>
+        </div>
+
+        {/* Countdown */}
+        <div style={{ display: "flex", alignItems: "center", gap: "0.15rem" }}>
+          {[
+            { v: d, l: "d" },
+            { v: h, l: "h" },
+            { v: m, l: "m" },
+            { v: s, l: "s" },
+          ].map(({ v, l }, i) => (
+            <div key={l} style={{ display: "flex", alignItems: "baseline" }}>
+              {i > 0 && (
+                <span style={{ color: "#565656", fontSize: "0.65rem", fontFamily: "var(--font-mono)", margin: "0 1px" }}>:</span>
+              )}
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", minWidth: "22px" }}>
+                <span
+                  style={{
+                    color: "#f2ede4",
+                    fontSize: "0.7rem",
+                    fontFamily: "var(--font-mono)",
+                    fontWeight: 600,
+                    lineHeight: 1,
+                  }}
+                >
+                  {Pad(v)}
+                </span>
+                <span
+                  style={{
+                    color: "#565656",
+                    fontSize: "0.45rem",
+                    fontFamily: "var(--font-mono)",
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    lineHeight: 1.3,
+                  }}
+                >
+                  {l}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Action row */}
+      <div className="flex" style={{ height: "56px" }}>
         <a
           href="tel:+17816325193"
-          className="flex-1 flex items-center justify-center gap-2 transition-opacity active:opacity-70"
-          style={{ color: "#c9a84c", fontFamily: "var(--font-mono)", fontSize: "0.75rem", letterSpacing: "0.2em", textTransform: "uppercase", borderRight: "1px solid #1c1c1c" }}
+          className="flex-1 flex items-center justify-center active:opacity-70"
+          style={{
+            color: "#7a7a7a",
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.68rem",
+            letterSpacing: "0.15em",
+            textTransform: "uppercase",
+            borderRight: "1px solid #1c1c1c",
+          }}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
-            <path fillRule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clipRule="evenodd" />
-          </svg>
-          Call Now
+          Call
         </a>
         <Link
           href="/contact"
-          className="btn-gold flex-1 flex items-center justify-center gap-2"
-          style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", letterSpacing: "0.2em" }}
+          className="flex-[2] flex items-center justify-center btn-gold"
+          style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.68rem",
+            letterSpacing: "0.16em",
+            textTransform: "uppercase",
+          }}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
-            <path fillRule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-2.083 3.218-4.417 3.218-7.327a6.75 6.75 0 00-13.5 0c0 2.91 1.274 5.244 3.218 7.327a19.579 19.579 0 002.682 2.282 16.975 16.975 0 001.144.742z" clipRule="evenodd" />
-          </svg>
-          Book Now
+          Claim 15% Off — Ends Soon
         </Link>
       </div>
     </div>

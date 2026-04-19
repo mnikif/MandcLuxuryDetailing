@@ -266,7 +266,7 @@ export default async function CityPage(props: { params: Promise<{ city: string }
             Mobile Car Detailing
           </h2>
           <div className="gold-rule" style={{ width: "4rem", margin: "0 auto 1.5rem" }} />
-          <p style={{ color: "#5a5a5a", fontSize: "0.95rem", lineHeight: 1.75, maxWidth: "34rem", margin: "0 auto 2.5rem" }}>
+          <p style={{ color: "#7a7a7a", fontSize: "0.95rem", lineHeight: 1.75, maxWidth: "34rem", margin: "0 auto 2.5rem" }}>
             {city.blurb}
           </p>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.75rem", maxWidth: "22rem", margin: "0 auto" }}>
@@ -301,7 +301,7 @@ export default async function CityPage(props: { params: Promise<{ city: string }
                 <h3 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.35rem", color: "#f2ede4", marginBottom: "0.5rem" }}>
                   {s.title}
                 </h3>
-                <p style={{ color: "#5a5a5a", fontSize: "0.8rem", lineHeight: 1.65, marginBottom: "1.5rem", flex: 1 }}>
+                <p style={{ color: "#7a7a7a", fontSize: "0.8rem", lineHeight: 1.65, marginBottom: "1.5rem", flex: 1 }}>
                   {s.desc}
                 </p>
                 <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
@@ -346,7 +346,7 @@ export default async function CityPage(props: { params: Promise<{ city: string }
                 <h3 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.35rem", color: "#f2ede4", marginBottom: "0.75rem" }}>
                   {item.title}
                 </h3>
-                <p style={{ color: "#5a5a5a", fontSize: "0.875rem", lineHeight: 1.7 }}>
+                <p style={{ color: "#7a7a7a", fontSize: "0.875rem", lineHeight: 1.7 }}>
                   {item.desc}
                 </p>
               </div>
@@ -374,16 +374,16 @@ export default async function CityPage(props: { params: Promise<{ city: string }
       {/* Nearby */}
       <section style={{ background: "#0a0a0a", borderTop: "1px solid #1c1c1c", padding: "3rem 0" }}>
         <div style={wrap}>
-          <p style={{ color: "#3a3a3a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
+          <p style={{ color: "#565656", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
             Also Serving
           </p>
           <div style={{ display: "flex", justifyContent: "center", gap: "1.5rem", flexWrap: "wrap" }}>
             {nearbyData.map((c) => (
-              <Link key={c.slug} href={`/locations/${c.slug}`} className="hover:text-[#c9a84c]" style={{ color: "#5a5a5a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", paddingBottom: "2px", borderBottom: "1px solid #1c1c1c", transition: "color 0.2s, border-color 0.2s" }}>
+              <Link key={c.slug} href={`/locations/${c.slug}`} className="hover:text-[#c9a84c]" style={{ color: "#7a7a7a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", paddingBottom: "2px", borderBottom: "1px solid #1c1c1c", transition: "color 0.2s, border-color 0.2s" }}>
                 {c.name}
               </Link>
             ))}
-            <Link href="/contact" className="hover:text-[#c9a84c]" style={{ color: "#5a5a5a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", paddingBottom: "2px", borderBottom: "1px solid #1c1c1c" }}>
+            <Link href="/contact" className="hover:text-[#c9a84c]" style={{ color: "#7a7a7a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", textTransform: "uppercase", paddingBottom: "2px", borderBottom: "1px solid #1c1c1c" }}>
               + More Areas
             </Link>
           </div>
@@ -402,7 +402,7 @@ export default async function CityPage(props: { params: Promise<{ city: string }
           <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(2rem,7vw,4.5rem)", color: "#c9a84c", lineHeight: 0.95, marginBottom: "2rem" }}>
             Showroom Finish?
           </h2>
-          <p style={{ color: "#5a5a5a", fontSize: "0.9rem", lineHeight: 1.7, maxWidth: "28rem", margin: "0 auto 2.5rem" }}>
+          <p style={{ color: "#7a7a7a", fontSize: "0.9rem", lineHeight: 1.7, maxWidth: "28rem", margin: "0 auto 2.5rem" }}>
             Serving {city.name} and all of North Shore Massachusetts. Book online — free quote, fast response.
           </p>
           <div className="flex flex-col sm:flex-row gap-3" style={{ alignItems: "center", justifyContent: "center", maxWidth: "22rem", margin: "0 auto" }}>
