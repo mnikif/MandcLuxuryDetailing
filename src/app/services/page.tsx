@@ -421,8 +421,11 @@ export default function Services() {
             Services &amp; Packages
           </h1>
           <div className="gold-rule" style={{ width: "4rem", margin: "0 auto 1.5rem" }} />
-          <p style={{ color: "#7a7a7a", fontSize: "0.95rem", lineHeight: 1.7, maxWidth: "36rem", margin: "0 auto 2rem", textAlign: "center" }}>
+          <p style={{ color: "#7a7a7a", fontSize: "0.95rem", lineHeight: 1.7, maxWidth: "36rem", margin: "0 auto 0.75rem", textAlign: "center" }}>
             Every detail, three tiers. Choose the level of care that fits your vehicle and budget — Bronze, Silver, or Gold.
+          </p>
+          <p style={{ color: "#565656", fontSize: "0.72rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em", textTransform: "uppercase", textAlign: "center", marginBottom: "2rem" }}>
+            Serving Danvers · Beverly · Salem · Peabody · Gloucester · Manchester · Marblehead · Swampscott · Hamilton · Wenham · Lynn
           </p>
 
           {/* Quick nav */}
@@ -568,6 +571,46 @@ export default function Services() {
             <span style={{ color: "#c9a84c" }}>Pricing note:</span> All prices are starting rates for standard sedans. Final pricing depends on vehicle size and condition. SUVs, trucks, and heavily soiled vehicles may incur additional charges.{" "}
             <Link href="/contact" style={{ color: "#c9a84c", textDecoration: "underline", textUnderlineOffset: "3px" }}>Contact us</Link> for a custom quote.
           </p>
+        </div>
+      </section>
+
+      {/* ── Service Area ── */}
+      <section style={{ background: "#0a0a0a", borderTop: "1px solid #1c1c1c", padding: "4rem 0" }}>
+        <div style={wrap}>
+          <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem", textAlign: "center" }}>
+            Where We Work
+          </p>
+          <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(1.6rem,4vw,2.5rem)", color: "#f2ede4", lineHeight: 1, marginBottom: "1rem", textAlign: "center" }}>
+            Mobile Service Across the North Shore
+          </h2>
+          <div className="gold-rule" style={{ width: "4rem", margin: "0 auto 1rem" }} />
+          <p style={{ color: "#7a7a7a", fontSize: "0.85rem", lineHeight: 1.7, maxWidth: "32rem", margin: "0 auto 2rem", textAlign: "center" }}>
+            We come to your driveway — no shop, no drop-off. Fully equipped and serving all of North Shore Massachusetts.
+          </p>
+          <div style={{ display: "flex", justifyContent: "center", gap: "0.75rem 1.5rem", flexWrap: "wrap" }}>
+            {[
+              { name: "Danvers", slug: "danvers" },
+              { name: "Beverly", slug: "beverly" },
+              { name: "Salem", slug: "salem" },
+              { name: "Peabody", slug: "peabody" },
+              { name: "Gloucester", slug: "gloucester" },
+              { name: "Manchester-by-the-Sea", slug: "manchester" },
+              { name: "Marblehead", slug: "marblehead" },
+              { name: "Swampscott", slug: "swampscott" },
+              { name: "Hamilton", slug: "hamilton" },
+              { name: "Wenham", slug: "wenham" },
+              { name: "Lynn", slug: "lynn" },
+            ].map((city) => (
+              <Link
+                key={city.slug}
+                href={`/locations/${city.slug}`}
+                style={{ color: "#7a7a7a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textTransform: "uppercase", paddingBottom: "2px", borderBottom: "1px solid #1c1c1c" }}
+                className="hover:text-[#c9a84c]"
+              >
+                {city.name}
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
