@@ -1,9 +1,6 @@
 "use client";
 import { useState } from "react";
 
-const SERVICES = ["Interior Detail", "Exterior Detail", "Full Detail"];
-const LEVELS = ["Bronze", "Silver", "Gold"];
-
 const wrap: React.CSSProperties = {
   width: "100%",
   maxWidth: "56rem",
@@ -39,34 +36,25 @@ const labelStyle: React.CSSProperties = {
 };
 
 export default function Contact() {
-  const [selectedService, setSelectedService] = useState("");
-  const [selectedLevel, setSelectedLevel] = useState("");
-  const [formData, setFormData] = useState({ name: "", phone: "", notes: "" });
+  const [formData, setFormData] = useState({ name: "", phone: "", city: "" });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [focused, setFocused] = useState<string | null>(null);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!selectedService) { setError("Please select a service."); return; }
-    if (!selectedLevel) { setError("Please select a service level."); return; }
     setLoading(true);
     setError(null);
 
     const res = await fetch("/api/book", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        ...formData,
-        service: `${selectedService} — ${selectedLevel}`,
-      }),
+      body: JSON.stringify(formData),
     });
 
     setLoading(false);
@@ -217,13 +205,12 @@ export default function Contact() {
                     Request Sent!
                   </h3>
                   <p style={{ color: "#7a7a7a", fontSize: "0.88rem", lineHeight: 1.7, maxWidth: "24rem", textAlign: "center" }}>
-                    We&apos;ve received your booking request and will call or text you within a few hours to confirm details.
+                    We&apos;ll call or text you within a few hours to lock in the details and get you scheduled.
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
 
-                  {/* Name + Phone */}
                   <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "1rem" }}>
                     <div>
                       <label style={labelStyle}>Name <span style={{ color: "#c9a84c" }}>*</span></label>
@@ -255,52 +242,18 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* Service / Level dropdowns */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "1rem" }}>
-                    <div>
-                      <label style={labelStyle}>Service Type <span style={{ color: "#c9a84c" }}>*</span></label>
-                      <select
-                        value={selectedService}
-                        onChange={(e) => setSelectedService(e.target.value)}
-                        onFocus={() => setFocused("service")}
-                        onBlur={() => setFocused(null)}
-                        style={{ ...fieldStyle("service"), cursor: "pointer" }}
-                      >
-                        <option value="" style={{ background: "#0a0a0a" }}>Select a service...</option>
-                        {SERVICES.map((s) => (
-                          <option key={s} value={s} style={{ background: "#0a0a0a" }}>{s}</option>
-                        ))}
-                      </select>
-                    </div>
-                    <div>
-                      <label style={labelStyle}>Service Level <span style={{ color: "#c9a84c" }}>*</span></label>
-                      <select
-                        value={selectedLevel}
-                        onChange={(e) => setSelectedLevel(e.target.value)}
-                        onFocus={() => setFocused("level")}
-                        onBlur={() => setFocused(null)}
-                        style={{ ...fieldStyle("level"), cursor: "pointer" }}
-                      >
-                        <option value="" style={{ background: "#0a0a0a" }}>Select a level...</option>
-                        {LEVELS.map((l) => (
-                          <option key={l} value={l} style={{ background: "#0a0a0a" }}>{l}</option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-
-                  {/* Additional Comments */}
                   <div>
-                    <label style={labelStyle}>Additional Comments</label>
-                    <textarea
-                      name="notes"
-                      rows={5}
-                      placeholder="Tell us about your vehicle, preferred dates/times, or any other details..."
-                      value={formData.notes}
+                    <label style={labelStyle}>City <span style={{ color: "#c9a84c" }}>*</span></label>
+                    <input
+                      type="text"
+                      name="city"
+                      required
+                      placeholder="Beverly, Danvers, Salem..."
+                      value={formData.city}
                       onChange={handleChange}
-                      onFocus={() => setFocused("notes")}
+                      onFocus={() => setFocused("city")}
                       onBlur={() => setFocused(null)}
-                      style={{ ...fieldStyle("notes"), resize: "none" }}
+                      style={fieldStyle("city")}
                     />
                   </div>
 

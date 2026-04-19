@@ -18,9 +18,9 @@ export async function POST(req: NextRequest) {
   }
 
   const body = await req.json();
-  const { name, phone, service, notes } = body;
+  const { name, phone, city } = body;
 
-  if (!name || !phone || !service) {
+  if (!name || !phone || !city) {
     return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
   }
 
@@ -44,9 +44,8 @@ export async function POST(req: NextRequest) {
           <table style="width:100%;border-collapse:collapse;">
             <tr><td style="padding:0.6rem 0;border-bottom:1px solid #f0f0f0;color:#888;width:40%;font-size:0.85rem;">Name</td><td style="padding:0.6rem 0;border-bottom:1px solid #f0f0f0;font-weight:600;">${name}</td></tr>
             <tr><td style="padding:0.6rem 0;border-bottom:1px solid #f0f0f0;color:#888;font-size:0.85rem;">Phone</td><td style="padding:0.6rem 0;border-bottom:1px solid #f0f0f0;font-weight:600;">${phone}</td></tr>
-            <tr><td style="padding:0.6rem 0;border-bottom:1px solid #f0f0f0;color:#888;font-size:0.85rem;">Service</td><td style="padding:0.6rem 0;border-bottom:1px solid #f0f0f0;">${service}</td></tr>
+            <tr><td style="padding:0.6rem 0;border-bottom:1px solid #f0f0f0;color:#888;font-size:0.85rem;">City</td><td style="padding:0.6rem 0;border-bottom:1px solid #f0f0f0;">${city}</td></tr>
           </table>
-          ${notes ? `<div style="margin-top:1.5rem;"><div style="color:#888;font-size:0.85rem;margin-bottom:0.5rem;">Comments</div><div style="background:#f9f9f9;padding:1rem;border-left:3px solid #c9a84c;">${notes}</div></div>` : ""}
         </div>
       </div>
     `,
