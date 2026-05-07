@@ -1,12 +1,13 @@
 import Link from "next/link";
 
 const navLinks = [
-  { href: "/",           label: "Home" },
-  { href: "/services",   label: "Services" },
-  { href: "/locations",  label: "Locations" },
-  { href: "/gallery",    label: "Gallery" },
-  { href: "/about",      label: "About" },
-  { href: "/contact",    label: "Get Quote" },
+  { href: "/",            label: "Home" },
+  { href: "/services",    label: "Services" },
+  { href: "/maintenance", label: "Membership" },
+  { href: "/gallery",     label: "Gallery" },
+  { href: "/reviews",     label: "Reviews" },
+  { href: "/about",       label: "About" },
+  { href: "/contact",     label: "Get Quote" },
 ];
 
 const cityLinks = [
