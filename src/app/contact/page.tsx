@@ -205,7 +205,7 @@ export default function Contact() {
                     Request Sent!
                   </h3>
                   <p style={{ color: "#7a7a7a", fontSize: "0.88rem", lineHeight: 1.7, maxWidth: "24rem", textAlign: "center" }}>
-                    We&apos;ll call or text you within a few hours to lock in the details and get you scheduled.
+                    We&apos;ll call or text you as soon as possible to lock in the details and get you scheduled.
                   </p>
                 </div>
               ) : (
@@ -277,7 +277,7 @@ export default function Contact() {
                   </button>
 
                   <p style={{ color: "#7a7a7a", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.1em", textAlign: "center" }}>
-                    We&apos;ll call or text you within a few hours to confirm.
+                    We&apos;ll call or text you as soon as possible to confirm.
                   </p>
 
                   {error && (
