@@ -35,7 +35,7 @@ const cities: City[] = [
       "Beverly Farms is the neighborhood we get the most requests from on this side of town. The homes along Hale Street and the side roads off West Street tend to have garages full of vehicles that haven't seen a proper detail in two seasons. Salt air from the water and tree sap from overhanging oaks make a full exterior with clay bar and wax the smart move out here.",
       "The areas around Montserrat station and the Endicott College campus see heavy parking exposure and commuter grime. If your car sits outside every day, the paint is collecting brake dust, rail dust from the MBTA, and road spray — all of it acidic, all of it accelerating oxidation. A proper exterior detail twice a year is the minimum that actually makes a difference.",
       "Pride's Crossing — tucked between Beverly Farms and Hamilton — is quiet residential country. Clients here tend to care about the details. We've done full Gold packages and set up monthly maintenance plans for a handful of regulars in that area.",
-      "We've worked out of driveways on Cabot Street, parking lots near the Beverly Depot, and residential streets all across Centerville and Bass River. Whatever your address in Beverly, we show up with our own water and power — no hookup required from you.",
+      "We've worked out of driveways on Cabot Street, parking lots near the Beverly Depot, and residential streets all across Centerville and Bass River. Whatever your address in Beverly, we show up ready to work.",
     ],
     recentJobs: [
       { vehicle: "2021 Toyota 4Runner", service: "Full Detail — Silver", location: "Beverly Farms", note: "Winter salt and sand removal, clay bar and wax on the full exterior, steam clean inside." },
@@ -577,7 +577,7 @@ export default async function CityPage(props: { params: Promise<{ city: string }
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3">
             {[
-              { n: "I", title: "Fully Mobile", desc: `No drop-offs, no driving across town. We arrive in ${city.name} with water, power, and professional-grade equipment — ready to work wherever your car is parked.` },
+              { n: "I", title: "Fully Mobile", desc: `No drop-offs, no driving across town. We come to you in ${city.name} with professional-grade equipment — ready to work wherever your car is parked.` },
               { n: "II", title: "Professional Grade", desc: "We use industry-leading products — not store-shelf shortcuts. Every detail is done with the same care we'd give our own vehicle." },
               { n: "III", title: "Satisfaction Guaranteed", desc: "Not happy with the result? We come back and make it right. Your satisfaction isn't a courtesy — it's the standard." },
             ].map((item, i) => (
