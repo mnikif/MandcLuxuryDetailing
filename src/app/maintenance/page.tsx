@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Monthly Car Detailing Membership — North Shore MA | M&C",
   description:
-    "Keep your car looking its best year-round. M&C monthly maintenance plans starting at $90/month — we come to you every month, fully equipped. North Shore MA.",
+    "Keep your car looking its best year-round. M&C monthly maintenance plans starting at $130/month — we come to you every month, fully equipped. North Shore MA.",
   alternates: {
     canonical: "https://www.mandcluxurydetailing.com/maintenance",
   },
@@ -21,7 +21,7 @@ const wrap: React.CSSProperties = {
 const plans = [
   {
     name: "Premium Monthly",
-    price: "$90",
+    price: "$130",
     period: "/month",
     duration: "1–1.5 hrs",
     tagline: "Clean car, every month — no effort required.",
@@ -56,7 +56,7 @@ export default function Maintenance() {
               "telephone": "+17816325193",
             },
             "description":
-              "Monthly mobile car detailing membership. We come to your driveway every month — full inside-and-out quick detail. Premium Monthly plan at $90/month.",
+              "Monthly mobile car detailing membership. We come to your driveway every month — full inside-and-out quick detail. Premium Monthly plan at $130/month.",
             "areaServed": "North Shore, Massachusetts",
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
@@ -67,7 +67,7 @@ export default function Maintenance() {
                   "name": "Premium Monthly Plan",
                   "priceSpecification": {
                     "@type": "UnitPriceSpecification",
-                    "price": "90",
+                    "price": "130",
                     "priceCurrency": "USD",
                     "unitText": "month",
                   },
@@ -436,7 +436,7 @@ export default function Maintenance() {
               {
                 n: "I",
                 title: "Pick Your Plan",
-                desc: "Sign up for our Premium Monthly plan at $90. Reach out and we'll lock in a recurring monthly slot that works for you.",
+                desc: "Sign up for our Premium Monthly plan at $130. Reach out and we'll lock in a recurring monthly slot that works for you.",
               },
               {
                 n: "II",
@@ -530,7 +530,7 @@ export default function Maintenance() {
               },
               {
                 q: "Is this cheaper than booking one-off details?",
-                a: "Yes. A one-off full detail starts at $189. A monthly membership at $90 keeps your car at that level consistently, for less per visit — and we prioritize members when scheduling.",
+                a: "Yes. A one-off full detail starts at $189. A monthly membership at $130 keeps your car at that level consistently, for less per visit — and we prioritize members when scheduling.",
               },
               {
                 q: "What if I need to skip a month?",
