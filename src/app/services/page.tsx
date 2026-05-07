@@ -197,10 +197,10 @@ function TierGrid({ tiers }: { tiers: PackageTier[] }) {
           key={pkg.tier}
           style={{
             position: "relative",
-            background: pkg.tier === "Gold" ? "#090909" : "#060606",
+            background: pkg.popular ? "#090909" : "#060606",
             display: "flex",
             flexDirection: "column",
-            ...(pkg.tier === "Gold" ? { boxShadow: "inset 0 0 80px rgba(201,168,76,0.03)" } : {}),
+            ...(pkg.popular ? { boxShadow: "inset 0 0 80px rgba(201,168,76,0.03)" } : {}),
           }}
         >
           {/* Top accent bar */}
@@ -302,7 +302,7 @@ function TierGrid({ tiers }: { tiers: PackageTier[] }) {
             {/* Book button */}
             <Link
               href="/contact"
-              className={pkg.tier === "Gold" ? "btn-gold" : "btn-ghost"}
+              className={pkg.popular ? "btn-gold" : "btn-ghost"}
               style={{
                 width: "100%",
                 height: "44px",
@@ -313,7 +313,7 @@ function TierGrid({ tiers }: { tiers: PackageTier[] }) {
                 fontFamily: "var(--font-mono)",
                 letterSpacing: "0.18em",
                 textTransform: "uppercase",
-                ...(pkg.tier !== "Gold" ? { border: "1px solid #282828", color: "#a8a8a8" } : {}),
+                ...(!pkg.popular ? { border: "1px solid #282828", color: "#a8a8a8" } : {}),
               }}
             >
               Get Quote
