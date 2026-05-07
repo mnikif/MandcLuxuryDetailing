@@ -523,7 +523,7 @@ export default async function CityPage(props: { params: Promise<{ city: string }
           src={`https://maps.google.com/maps?q=${city.lat},${city.lng}&z=13&output=embed`}
           width="100%"
           height="320"
-          style={{ border: 0, display: "block", filter: "grayscale(1) invert(0.9) contrast(0.85)" }}
+          style={{ border: 0, display: "block" }}
           allowFullScreen
           loading="lazy"
           title={`Map of ${city.name}, MA`}
