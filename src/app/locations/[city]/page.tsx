@@ -13,7 +13,6 @@ type City = {
   testimonial: { quote: string; author: string };
   neighborhoods: string[];
   cityContext: string[];
-  recentJobs: { vehicle: string; service: string; location: string; note: string }[];
 };
 
 const cities: City[] = [
@@ -26,8 +25,8 @@ const cities: City[] = [
     lng: -70.8800,
     nearby: ["salem", "danvers", "manchester", "hamilton"],
     testimonial: {
-      quote: "Honestly the best money I've spent on my truck. They came right to my driveway in Beverly Farms and the interior looked brand new.",
-      author: "Kyle R., Beverly",
+      quote: "Matt did an amazing job. I've had my car detailed by many companies and he was by far the best. Very professional and on time. Definitely will use him again!",
+      author: "Debbie Provo",
     },
     neighborhoods: ["Beverly Farms", "Montserrat", "Pride's Crossing", "Ryal Side", "Centerville", "Bass River"],
     cityContext: [
@@ -36,11 +35,6 @@ const cities: City[] = [
       "The areas around Montserrat station and the Endicott College campus see heavy parking exposure and commuter grime. If your car sits outside every day, the paint is collecting brake dust, rail dust from the MBTA, and road spray — all of it acidic, all of it accelerating oxidation. A proper exterior detail twice a year is the minimum that actually makes a difference.",
       "Pride's Crossing — tucked between Beverly Farms and Hamilton — is quiet residential country. Clients here tend to care about the details. We've done full Gold packages and set up monthly maintenance plans for a handful of regulars in that area.",
       "We've worked out of driveways on Cabot Street, parking lots near the Beverly Depot, and residential streets all across Centerville and Bass River. Whatever your address in Beverly, we show up ready to work.",
-    ],
-    recentJobs: [
-      { vehicle: "2021 Toyota 4Runner", service: "Full Detail — Silver", location: "Beverly Farms", note: "Winter salt and sand removal, clay bar and wax on the full exterior, steam clean inside." },
-      { vehicle: "2019 BMW X5", service: "Interior Detail — Gold", location: "Montserrat", note: "Pet hair extraction, carpet shampoo, full leather conditioning. Client had two dogs." },
-      { vehicle: "2023 Ford F-150", service: "Exterior Detail — Bronze", location: "Ryal Side", note: "Hand wash, tire dressing, exterior window clean. Monthly maintenance client." },
     ],
   },
   {
@@ -52,8 +46,8 @@ const cities: City[] = [
     lng: -70.8967,
     nearby: ["beverly", "danvers", "marblehead", "swampscott"],
     testimonial: {
-      quote: "I've tried a few detailers on the North Shore and M&C is on another level. My car hasn't looked this good since I bought it.",
-      author: "Jess M., Salem",
+      quote: "Not only very professional but an exceptional job done. Incredible attention to detail and every nook and cranny was cleaned. Will be a repeat customer.",
+      author: "Stephanie Hueter",
     },
     neighborhoods: ["Witchcraft Heights", "South Salem", "The Point", "Bridge Street Neck", "Derby Wharf", "North Salem"],
     cityContext: [
@@ -62,11 +56,6 @@ const cities: City[] = [
       "The Point neighborhood and Bridge Street Neck sit close to Salem Harbor and the South River. Coastal proximity accelerates paint degradation — salt particles in the air etch clear coat over time. A clay bar treatment and carnauba wax application twice a year is genuinely protective here, not just cosmetic.",
       "North Salem and the areas around Salem State University see a lot of parking-lot wear on vehicles that sit outside daily. We've done full details in the parking structure off Jefferson Avenue and in driveways throughout the quieter residential blocks north of downtown.",
       "Salem's historic cobblestone and brick streets are harder on tires and wheel wells than standard asphalt. Clients who regularly drive near downtown notice brake dust and road grime accumulating faster than expected. Our wheel and tire scrub plus tire dressing addresses that specifically.",
-    ],
-    recentJobs: [
-      { vehicle: "2020 Honda CR-V", service: "Full Detail — Bronze", location: "Witchcraft Heights", note: "Full interior vacuum, dashboard wipe-down, exterior hand wash and tire dressing." },
-      { vehicle: "2018 Jeep Wrangler", service: "Exterior Detail — Gold", location: "The Point", note: "Clay bar, engine bay wipe-down, wheel well cleaning, wax. Daily driver with heavy salt exposure." },
-      { vehicle: "2022 Volvo XC60", service: "Interior Detail — Silver", location: "South Salem", note: "Steam clean on high-touch surfaces, leather conditioning, center console deep clean." },
     ],
   },
   {
@@ -78,8 +67,8 @@ const cities: City[] = [
     lng: -70.9495,
     nearby: ["beverly", "peabody", "hamilton", "wenham"],
     testimonial: {
-      quote: "These guys are local and it shows — on time, professional, and my Audi looked perfect. Booking again next month.",
-      author: "Dan S., Danvers",
+      quote: "Matt and his assistant provided detailing for both our cars and they did a fantastic job! They came right to our house.",
+      author: "Adrienne McGuire",
     },
     neighborhoods: ["Endicott", "Putnam Circle", "Tapleyville", "Pope's Landing", "Liberty Tree", "Burley"],
     cityContext: [
@@ -88,11 +77,6 @@ const cities: City[] = [
       "Putnam Circle and the surrounding area sit in the middle of town with easy access for us and plenty of driveway space for a full setup. We've completed more details in this part of Danvers than anywhere else — it's the most convenient for both sides.",
       "Pope's Landing near the Danvers River is a small but specific pocket worth mentioning — the moisture from the river contributes to mold and mildew growth inside vehicles that sit outside in that area. Interior steam cleaning and an odor treatment make a big difference for cars parked near the waterway.",
       "The Tapleyville area and neighborhoods near Danvers Square are dense enough that not everyone has driveway space. We've set up on the street, in condo parking lots, and in commercial lots throughout town. As long as the car is accessible, we work around the space you have.",
-    ],
-    recentJobs: [
-      { vehicle: "2021 Audi Q5", service: "Full Detail — Gold", location: "Endicott", note: "Carpet shampoo, seat shampoo, clay bar, engine bay wipe-down, exterior wax. Regular client." },
-      { vehicle: "2020 Chevy Silverado", service: "Exterior Detail — Silver", location: "Putnam Circle", note: "Clay bar, trim dressing, door jamb wipe, exterior wax. Work truck used daily on Route 1." },
-      { vehicle: "2023 Toyota Camry", service: "Interior Detail — Bronze", location: "Tapleyville", note: "Full vacuum, dashboard and console wipe-down, interior windows." },
     ],
   },
   {
@@ -104,8 +88,8 @@ const cities: City[] = [
     lng: -70.9287,
     nearby: ["danvers", "salem", "lynn", "swampscott"],
     testimonial: {
-      quote: "Super convenient — they came right to my apartment parking lot. Zero hassle, incredible result. Couldn't ask for more.",
-      author: "Maria T., Peabody",
+      quote: "Matthew did such a great job on my car! I have two dogs so there was a lot of dog fur in my car and he got it all — it is spotless now! Great detail for a great price, I'd highly recommend using M&C Luxury Detailing!!",
+      author: "Lauren Covello",
     },
     neighborhoods: ["West Peabody", "South Peabody", "North Peabody", "Bartholomew District", "Centennial Park area"],
     cityContext: [
@@ -114,11 +98,6 @@ const cities: City[] = [
       "South Peabody near the Northshore Mall area is high-traffic and high-pollution — one of the heavier commercial corridors on the North Shore. Cars parked near retail and restaurant zones collect grease, exhaust particulate, and the general grime of high-footfall areas. Full exterior details with clay bar make a visible difference here.",
       "The Bartholomew district and Centennial Park areas are quieter residential pockets where we can set up without street-space issues. These neighborhoods tend to be family-oriented — which means dog hair, kids' crumbs, and sports equipment residue in interiors. Our interior packages are built for exactly this.",
       "Peabody's industrial history left some neighborhoods with soil and air conditions that can be rougher on paint than average. If you're in a neighborhood close to any industrial corridor, regular wax and paint protection makes a measurable difference in how long your clear coat lasts.",
-    ],
-    recentJobs: [
-      { vehicle: "2019 Honda Pilot", service: "Interior Detail — Gold", location: "West Peabody", note: "Three-row vacuum, carpet shampoo, seat shampoo, headliner wipe. Family SUV with two kids." },
-      { vehicle: "2022 Subaru Outback", service: "Full Detail — Bronze", location: "South Peabody", note: "Full interior and exterior package. Dog hair removal required extra time on rear seats." },
-      { vehicle: "2017 Toyota Corolla", service: "Exterior Detail — Silver", location: "Bartholomew District", note: "Clay bar, trim restoration, door jamb wipe, wax. Daily commuter with visible oxidation starting." },
     ],
   },
   {
@@ -130,8 +109,8 @@ const cities: City[] = [
     lng: -70.6609,
     nearby: ["manchester", "beverly", "hamilton", "wenham"],
     testimonial: {
-      quote: "Living near the water, salt build-up is a real problem. M&C took care of everything and actually explained how to protect my paint going forward.",
-      author: "Tom H., Gloucester",
+      quote: "For a young kid to come out on one of the hottest days of the week being 80+ degrees and do the phenomenal job that he did is remarkable.",
+      author: "Michael Blankenship",
     },
     neighborhoods: ["Annisquam", "East Gloucester", "Rocky Neck", "Lanesville", "Magnolia", "West Gloucester"],
     cityContext: [
@@ -140,11 +119,6 @@ const cities: City[] = [
       "Rocky Neck in East Gloucester is the heart of the city's art colony, and the neighborhood's narrow streets and working waterfront mean vehicles here face a combination of salt spray, fishing boat exhaust, and the general grime of an active maritime area. We've done exterior protection packages for clients in Rocky Neck who want their vehicles to hold up against the environment.",
       "Magnolia — technically part of Gloucester but with a distinct residential feel — is one of the quieter areas we serve. The estates and larger properties along Shore Road have space for full setups, and several clients there have standing appointments with us on a seasonal schedule.",
       "West Gloucester and Lanesville are inland enough to get some buffer from the direct ocean exposure, but the regional salt air still reaches them. Clients in Lanesville tend to be working vehicles — trucks and SUVs — where the exterior needs aren't always the priority but the interiors take a real beating. We do a lot of interior-focused work out there.",
-    ],
-    recentJobs: [
-      { vehicle: "2018 Chevy Tahoe", service: "Exterior Detail — Gold", location: "Annisquam", note: "Full clay bar, wheel well cleaning, engine bay wipe-down, carnauba wax. Heavy salt oxidation on lower panels." },
-      { vehicle: "2021 Toyota Tacoma", service: "Interior Detail — Silver", location: "East Gloucester", note: "Steam clean, leather conditioning, center console deep clean. Work truck, heavy use." },
-      { vehicle: "2020 Jeep Grand Cherokee", service: "Full Detail — Silver", location: "Magnolia", note: "Complete inside and out, clay bar and wax, steam clean interior. Pre-summer detail." },
     ],
   },
   {
@@ -156,8 +130,8 @@ const cities: City[] = [
     lng: -70.7684,
     nearby: ["beverly", "gloucester", "hamilton", "wenham"],
     testimonial: {
-      quote: "Exactly what you'd want for a proper luxury detail — they matched the standard we expect out here. Will absolutely be a regular customer.",
-      author: "Caroline B., Manchester-by-the-Sea",
+      quote: "Highly recommend! Matt and Calvin do great work and have an excellent attention to detail, and they are very professional to work with.",
+      author: "Kristin Long",
     },
     neighborhoods: ["Downtown Manchester", "Singing Beach area", "Black Beach", "Pine Street corridor", "Summer Street"],
     cityContext: [
@@ -166,11 +140,6 @@ const cities: City[] = [
       "The downtown area along Central Street has a mix of seasonal and year-round residents, and the homes along Pine Street and Summer Street have long driveways with the kind of space that makes our setup easy. We've done back-to-back full details for neighbors in this part of town on the same day.",
       "The waterfront homes near Black Beach and along the harbor face direct ocean conditions. Several clients in Manchester have us on a strict quarterly schedule because they've seen what happens to paint and trim when you skip a season out here — chrome pitting, clear coat haze, rubber trim drying and cracking.",
       "Manchester clients are generally precise about what they want. If you want a specific product used, a specific area focused on, or a result matched to your exact spec, that's how we work. Detail-oriented clients are the ones we do our best work for.",
-    ],
-    recentJobs: [
-      { vehicle: "2022 Land Rover Defender", service: "Full Detail — Gold", location: "Singing Beach area", note: "Sand extraction from all interior surfaces, carpet shampoo, full clay bar and wax exterior. Post-summer job." },
-      { vehicle: "2020 Mercedes GLE", service: "Interior Detail — Gold", location: "Summer Street", note: "Leather conditioning, headliner wipe-down, trunk detail, steam clean throughout." },
-      { vehicle: "2019 Porsche Cayenne", service: "Exterior Detail — Gold", location: "Downtown Manchester", note: "Clay bar, wheel well cleaning, engine bay wipe-down, hand wax. Seasonal detail before winter storage." },
     ],
   },
   {
@@ -182,8 +151,8 @@ const cities: City[] = [
     lng: -70.8578,
     nearby: ["salem", "swampscott", "lynn", "peabody"],
     testimonial: {
-      quote: "Came out to my place in Old Town and did an impeccable job. Great communication, showed up on time, and the results were exactly what I was looking for.",
-      author: "Ryan L., Marblehead",
+      quote: "Amazing job done right! Highly recommend! Thorough to the last detail! Job well done Matt!!",
+      author: "Danny Neary",
     },
     neighborhoods: ["Old Town", "Clifton", "The Neck", "Village", "Marblehead Harbor area"],
     cityContext: [
@@ -192,11 +161,6 @@ const cities: City[] = [
       "The Neck — Marblehead's narrow peninsula that juts into the harbor — has some of the most exposed conditions of any residential area we serve. Homes there face the ocean on both sides in places, and vehicles parked outside pick up salt spray regularly. We recommend clay bar and wax as a minimum for anything kept on The Neck, not as an upgrade.",
       "Clifton sits between Marblehead and Swampscott and has a mix of year-round commuters and seasonal residents. The properties in Clifton tend to have more space than Old Town, which makes our setup easier. We've handled everything from single-car detailing to doing multiple vehicles on the same property in one visit.",
       "Marblehead's yacht club and sailing community also means clients who understand quality and have a specific sense of what finished work looks like. We hold our standard to that. Every detail we complete in Marblehead is inspected before we call it done.",
-    ],
-    recentJobs: [
-      { vehicle: "2021 Volvo XC90", service: "Full Detail — Silver", location: "Old Town", note: "Interior steam clean, leather conditioning, clay bar and wax exterior. Year-round Old Town resident." },
-      { vehicle: "2019 Range Rover Sport", service: "Exterior Detail — Gold", location: "The Neck", note: "Clay bar, wheel well clean, engine bay wipe-down, carnauba wax. Heavy salt exposure on lower body." },
-      { vehicle: "2023 Audi A6", service: "Interior Detail — Silver", location: "Clifton", note: "Steam clean, center console deep clean, leather conditioning throughout. Weekly commuter." },
     ],
   },
   {
@@ -208,8 +172,8 @@ const cities: City[] = [
     lng: -70.9148,
     nearby: ["lynn", "salem", "marblehead", "peabody"],
     testimonial: {
-      quote: "Booked online in two minutes, they showed up the next afternoon. My car has never looked better. Straightforward and worth every penny.",
-      author: "Liz A., Swampscott",
+      quote: "Quick to respond, very personable, appointment booked amazingly fast. The work was great, the price was fair. Won't hesitate to have them come back.",
+      author: "John Stalker",
     },
     neighborhoods: ["Phillips Beach", "Fisherman's Beach area", "Olmsted Historic District", "Humphrey Street corridor"],
     cityContext: [
@@ -218,11 +182,6 @@ const cities: City[] = [
       "The Olmsted Historic District in the center of Swampscott has tree cover and older homes with driveways that often don't get much direct sun — which helps with interior fading but contributes to mold and mildew in humid months. A steam clean and deodorize treatment is something we recommend for any vehicle stored in a shaded or partially enclosed space in this area.",
       "Humphrey Street is the main commercial corridor, and clients from the surrounding residential blocks are some of our most regular customers. The area is dense enough that parking is shared and vehicles sit in open lots — all contributing to the general grime accumulation that a proper bi-annual detail addresses.",
       "Swampscott is small enough that we cover the entire town in any given booking window. There's no 'too far' or 'out of the way' here — we come to whatever address you give us.",
-    ],
-    recentJobs: [
-      { vehicle: "2022 Toyota RAV4", service: "Full Detail — Bronze", location: "Phillips Beach", note: "Full interior and exterior. Salt spray residue on lower body, hand wash and tire dressing." },
-      { vehicle: "2020 Subaru Forester", service: "Interior Detail — Silver", location: "Olmsted District", note: "Steam clean, leather conditioning, center console and vent deep clean. Dog residue in rear." },
-      { vehicle: "2021 Honda Accord", service: "Exterior Detail — Silver", location: "Humphrey Street area", note: "Clay bar, trim dressing, exterior wax. Daily commuter, first detail in two years." },
     ],
   },
   {
@@ -234,8 +193,8 @@ const cities: City[] = [
     lng: -70.8645,
     nearby: ["danvers", "wenham", "beverly", "manchester"],
     testimonial: {
-      quote: "Great service — they came all the way out to Hamilton without any issue. Professional, thorough, and the truck looked showroom-ready when they were done.",
-      author: "Steve K., Hamilton",
+      quote: "Was on time and did an amazing job. My car is spotless and probably the cleanest I have ever seen it. Highly recommend!",
+      author: "Vic P.",
     },
     neighborhoods: ["South Hamilton", "Asbury Street corridor", "Essex Street area", "Myopia area"],
     cityContext: [
@@ -244,11 +203,6 @@ const cities: City[] = [
       "South Hamilton along the Route 1A corridor is a commuter route, and vehicles that log daily highway miles are accumulating brake dust and exhaust particulate on the exterior faster than most people realize. Our exterior packages specifically address brake dust removal from wheels and wheel arches — it's one of the most visible improvements we make.",
       "The Essex Street area running between Hamilton and Wenham is mostly residential with larger lot sizes and easy driveway access. This is where we do some of our fastest full setups — there's space to work properly without the constraints of tighter neighborhoods.",
       "Hamilton clients tend to have trucks, SUVs, and working vehicles that get used hard. We're not here to tell you to baby your car — we're here to clean it properly so that it holds up longer regardless of how it's used.",
-    ],
-    recentJobs: [
-      { vehicle: "2020 Ford F-250", service: "Interior Detail — Gold", location: "Myopia area", note: "Cargo area shampoo, full vacuum, steam clean. Horse equipment residue throughout rear cab and bed." },
-      { vehicle: "2022 Ram 1500", service: "Full Detail — Bronze", location: "South Hamilton", note: "Interior clean and full exterior hand wash. Work truck used on Route 1A daily." },
-      { vehicle: "2019 Chevy Suburban", service: "Interior Detail — Silver", location: "Essex Street area", note: "Three-row vacuum, steam clean, leather conditioning. Family vehicle with dog." },
     ],
   },
   {
@@ -260,8 +214,8 @@ const cities: City[] = [
     lng: -70.8787,
     nearby: ["hamilton", "danvers", "beverly", "manchester"],
     testimonial: {
-      quote: "Small town but they absolutely showed up. Professional, thorough, and the results were excellent. Exactly the kind of service I was hoping for.",
-      author: "Pat D., Wenham",
+      quote: "Thank you so much for your hard work, Matt. My son was thrilled with how clean his car looked after your outstanding detailing job.",
+      author: "Janet Gargan",
     },
     neighborhoods: ["Wenham Lake area", "Gordon College area", "Main Street corridor", "Cherry Street"],
     cityContext: [
@@ -270,11 +224,6 @@ const cities: City[] = [
       "Wenham Lake and the residential streets near it are among the quietest areas we serve on the North Shore. The homes along Main Street and Cherry Street have standard New England driveway setups with enough space for us to work properly. Several clients in this area have us on a two-visits-per-year schedule — spring and fall.",
       "The wooded character of Wenham means tree sap and leaf tannin staining is a recurring issue for vehicles parked in driveways under tree cover. Both of these bond with the clear coat if they're left to sit — especially in hot weather. Our clay bar treatment is the correct solution for removing them without damaging the paint.",
       "Because Wenham is so small, any booking in town gives us room to serve the whole area in a single visit. If you're a neighbor of an existing client and want us to come by on the same day, we can frequently make that work.",
-    ],
-    recentJobs: [
-      { vehicle: "2021 Honda CR-V", service: "Full Detail — Silver", location: "Wenham Lake area", note: "Clay bar and wax to remove tree sap and tannin staining. Interior steam clean. Spring detail." },
-      { vehicle: "2018 Subaru Outback", service: "Interior Detail — Bronze", location: "Gordon College area", note: "Full vacuum, dashboard wipe-down, interior windows. Daily-use campus vehicle." },
-      { vehicle: "2020 Chevy Equinox", service: "Exterior Detail — Silver", location: "Main Street", note: "Clay bar, trim dressing, exterior wax. Sat under oak tree all winter — significant sap staining." },
     ],
   },
   {
@@ -286,8 +235,8 @@ const cities: City[] = [
     lng: -70.9495,
     nearby: ["swampscott", "salem", "peabody", "marblehead"],
     testimonial: {
-      quote: "Affordable, professional, and they came right to me. No drop-off, no waiting around — just showed up and did a great job. Already booked again.",
-      author: "Marcus B., Lynn",
+      quote: "Very good quality and excellent cleaning, everything is spotless.",
+      author: "Ryle Pener",
     },
     neighborhoods: ["Diamond District", "Lynn Shore", "Highlands", "Wyoma", "Marian Gardens", "West Lynn"],
     cityContext: [
@@ -296,11 +245,6 @@ const cities: City[] = [
       "Lynn's downtown and West Lynn areas have a large apartment-dwelling population — people without garages, without private driveways, and without the option of a shop drop-off during the workday. This is exactly who mobile detailing is built for. We come to your street, your condo lot, your employer's parking area. Wherever the car is, that's where we work.",
       "Wyoma and Marian Gardens are residential neighborhoods with more conventional single-family setups. Clients in these areas tend to be family vehicles — minivans, SUVs, trucks — that collect the full range of life's interior mess. We see it all and we handle it.",
       "Lynn's proximity to Nahant and the wider coastline means that even vehicles parked inland pick up salt air to some degree during storm seasons. Our exterior protection packages add a meaningful layer of defense that slows oxidation and clear coat degradation for vehicles kept outdoors year-round.",
-    ],
-    recentJobs: [
-      { vehicle: "2021 Honda Odyssey", service: "Interior Detail — Gold", location: "Wyoma", note: "Three-row carpet shampoo, seat shampoo, headliner wipe, trunk detail. Family van with three kids." },
-      { vehicle: "2019 BMW 5 Series", service: "Full Detail — Silver", location: "Diamond District", note: "Interior steam clean and leather conditioning, clay bar and wax exterior. Pre-sale detail." },
-      { vehicle: "2020 Toyota Highlander", service: "Exterior Detail — Bronze", location: "West Lynn", note: "Hand wash, wheel scrub, tire dressing, exterior windows. Monthly maintenance client." },
     ],
   },
 ];
@@ -528,39 +472,6 @@ export default async function CityPage(props: { params: Promise<{ city: string }
           loading="lazy"
           title={`Map of ${city.name}, MA`}
         />
-      </section>
-
-      {/* Recent Jobs */}
-      <section style={{ background: "#060606", borderTop: "1px solid #1c1c1c", padding: "5rem 0" }}>
-        <div style={wrap}>
-          <div style={{ marginBottom: "3rem" }}>
-            <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.6rem" }}>
-              Recent Work
-            </p>
-            <h2 className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "clamp(1.8rem,5vw,3rem)", color: "#f2ede4", lineHeight: 1, marginBottom: "1rem" }}>
-              Recent Jobs in {city.name}
-            </h2>
-            <div className="gold-rule" style={{ width: "4rem", margin: "0 auto" }} />
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3" style={{ gap: "1px", background: "#1c1c1c" }}>
-            {city.recentJobs.map((job, i) => (
-              <div key={i} style={{ background: "#060606", padding: "2rem 1.5rem", display: "flex", flexDirection: "column", textAlign: "left" }}>
-                <p style={{ color: "#c9a84c", fontSize: "0.65rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "0.5rem" }}>
-                  {job.location}
-                </p>
-                <p className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.15rem", color: "#f2ede4", lineHeight: 1.2, marginBottom: "0.4rem" }}>
-                  {job.vehicle}
-                </p>
-                <p style={{ color: "rgba(201,168,76,0.65)", fontSize: "0.7rem", fontFamily: "var(--font-mono)", letterSpacing: "0.12em", marginBottom: "1rem" }}>
-                  {job.service}
-                </p>
-                <p style={{ color: "#7a7a7a", fontSize: "0.8rem", lineHeight: 1.65, flex: 1 }}>
-                  {job.note}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* Why Us */}

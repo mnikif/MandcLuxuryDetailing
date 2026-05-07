@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: { absolute: 'Customer Reviews — Mobile Car Detailing North Shore MA | M&C' },
-  description: '12 five-star reviews from real North Shore MA car owners. See why Danvers, Beverly & Salem drivers trust M&C Luxury Detailing with their vehicles.',
+  description: '13 five-star reviews from real North Shore MA car owners. See why Danvers, Beverly & Salem drivers trust M&C Luxury Detailing with their vehicles.',
   alternates: {
     canonical: 'https://www.mandcluxurydetailing.com/reviews',
   },
@@ -45,6 +45,36 @@ const testimonials = [
     short: "Incredible attention to detail.",
     text: "Not only very professional but an exceptional job done. Incredible attention to detail and every nook and cranny was cleaned. Will be a repeat customer.",
   },
+  {
+    name: "Cristina Urquhart",
+    short: "Serious effort and attention to detail.",
+    text: "Thrilled with this detailing job! Matt's work ethic really shows, he put in serious effort and attention to detail.",
+  },
+  {
+    name: "Debbie Provo",
+    short: "By far the best I've had.",
+    text: "Matt did an amazing job. I've had my car detailed by many companies and he was by far the best. Very professional and on time. Definitely will use him again!",
+  },
+  {
+    name: "Adrienne McGuire",
+    short: "Fantastic job on both our cars.",
+    text: "Matt and his assistant provided detailing for both our cars and they did a fantastic job! They came right to our house.",
+  },
+  {
+    name: "Danny Neary",
+    short: "Thorough to the last detail.",
+    text: "Amazing job done right! Highly recommend! Thorough to the last detail! Job well done Matt!!",
+  },
+  {
+    name: "Kristin Long",
+    short: "Excellent attention to detail.",
+    text: "Highly recommend! Matt and Calvin do great work and have an excellent attention to detail, and they are very professional to work with.",
+  },
+  {
+    name: "Ryle Pener",
+    short: "Everything is spotless.",
+    text: "Very good quality and excellent cleaning, everything is spotless.",
+  },
 ];
 
 const wrap: React.CSSProperties = {
@@ -70,7 +100,7 @@ export default function Reviews() {
               "@type": "AggregateRating",
               "ratingValue": "5",
               "bestRating": "5",
-              "reviewCount": 12
+              "reviewCount": 13
             },
             "review": [
               {
@@ -136,7 +166,7 @@ export default function Reviews() {
 
           {/* Star rating summary */}
           <p style={{ marginTop: "2rem", color: "#c9a84c", fontSize: "0.85rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em", textAlign: "center" }}>
-            ★★★★★ <span style={{ color: "#7a7a7a" }}>· 12 Google Reviews</span>
+            ★★★★★ <span style={{ color: "#7a7a7a" }}>· 13 Google Reviews</span>
           </p>
         </div>
       </section>
