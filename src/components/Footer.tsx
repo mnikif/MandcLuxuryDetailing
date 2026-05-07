@@ -6,7 +6,7 @@ const navLinks = [
   { href: "/locations",  label: "Locations" },
   { href: "/gallery",    label: "Gallery" },
   { href: "/about",      label: "About" },
-  { href: "/contact",    label: "Book Now" },
+  { href: "/contact",    label: "Get Quote" },
 ];
 
 const cityLinks = [

@@ -10,7 +10,7 @@ const links = [
   { href: "/gallery",      label: "Gallery" },
   { href: "/reviews",      label: "Reviews" },
   { href: "/about",        label: "About" },
-  { href: "/contact",      label: "Book Now" },
+  { href: "/contact",      label: "Get Quote" },
 ];
 
 const IG_URL = "https://instagram.com/mcluxurydetailing";
@@ -83,7 +83,7 @@ export default function Navbar() {
 
           {/* Desktop nav links — absolutely centered */}
           <ul className="hidden md:flex" style={{ position: "absolute", left: "50%", transform: "translateX(-50%)", alignItems: "center", gap: "1.1rem", listStyle: "none", margin: 0, padding: 0 }}>
-            {links.filter(l => l.label !== "Book Now").map(({ href, label }) => {
+            {links.filter(l => l.label !== "Get Quote").map(({ href, label }) => {
               const active = pathname === href;
               return (
                 <li key={href}>
@@ -102,7 +102,7 @@ export default function Navbar() {
           <div style={{ display: "flex", alignItems: "center", gap: "0.875rem", marginLeft: "auto" }}>
             {/* Desktop only */}
             <Link href="/contact" className="btn-gold hidden md:inline-flex" style={{ height: "36px", padding: "0 1.25rem", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em" }}>
-              Book Now
+              Get Quote
             </Link>
             <a href={IG_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hidden md:flex" style={{ color: "#c9a84c", opacity: 0.7, transition: "opacity 0.2s", alignItems: "center" }} onMouseEnter={e => (e.currentTarget.style.opacity = "1")} onMouseLeave={e => (e.currentTarget.style.opacity = "0.7")}>
               <InstagramIcon size={18} />
@@ -141,7 +141,7 @@ export default function Navbar() {
         <nav style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 2rem" }}>
           {links.map(({ href, label }) => {
             const active = pathname === href;
-            const isBook = label === "Book Now";
+            const isBook = label === "Get Quote";
             return (
               <Link
                 key={href}

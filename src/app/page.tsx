@@ -275,7 +275,7 @@ export default function Home() {
                 </span>
               </div>
               <Link href="/contact" className="btn-gold" style={{ width: "100%", height: "58px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.2em" }}>
-                Book Now
+                Get Quote
               </Link>
               <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", marginTop: "-0.35rem", alignSelf: "center" }}>
                 ★★★★★ <span style={{ color: "#a8a8a8" }}>· 12 Google Reviews</span>

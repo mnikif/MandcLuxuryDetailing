@@ -437,7 +437,7 @@ export default async function CityPage(props: { params: Promise<{ city: string }
           </p>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.75rem", maxWidth: "22rem", margin: "0 auto" }}>
             <Link href="/contact" className="btn-gold" style={{ width: "100%", height: "54px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em" }}>
-              Book Now — Free Quote
+              Get a Free Quote
             </Link>
             <a href="tel:+17816325193" className="btn-ghost" style={{ width: "100%", height: "48px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(201,168,76,0.3)", color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em" }}>
               (781) 632-5193

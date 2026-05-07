@@ -316,7 +316,7 @@ function TierGrid({ tiers }: { tiers: PackageTier[] }) {
                 ...(pkg.tier !== "Gold" ? { border: "1px solid #282828", color: "#a8a8a8" } : {}),
               }}
             >
-              Book Now
+              Get Quote
             </Link>
 
             {pkg.popular && (
@@ -587,7 +587,7 @@ export default function Services() {
                   className="btn-gold"
                   style={{ width: "100%", height: "44px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.18em", textTransform: "uppercase" }}
                 >
-                  Book Now
+                  Get Quote
                 </Link>
               </div>
             </div>
