@@ -20,7 +20,7 @@ const wrap: React.CSSProperties = {
 
 const plans = [
   {
-    name: "Essential",
+    name: "Premium Monthly",
     price: "$90",
     period: "/month",
     duration: "1–1.5 hrs",
@@ -34,22 +34,6 @@ const plans = [
       "Door panel wipe",
       "Interior window cleaning",
       "Air freshener",
-    ],
-    popular: false,
-  },
-  {
-    name: "Premium",
-    price: "$120",
-    period: "/month",
-    duration: "1.5–2 hrs",
-    tagline: "The full treatment, on a schedule.",
-    features: [
-      "Everything in Essential",
-      "Steam clean — high-touch surfaces",
-      "Leather & vinyl conditioning",
-      "Cup holder & vent detail",
-      "Exterior wax protectant",
-      "Tire dressing & trim wipe",
     ],
     popular: true,
   },
@@ -72,7 +56,7 @@ export default function Maintenance() {
               "telephone": "+17816325193",
             },
             "description":
-              "Monthly mobile car detailing membership. We come to your driveway every month — full inside-and-out quick detail. Two tiers starting at $90/month.",
+              "Monthly mobile car detailing membership. We come to your driveway every month — full inside-and-out quick detail. Premium Monthly plan at $90/month.",
             "areaServed": "North Shore, Massachusetts",
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
@@ -80,20 +64,10 @@ export default function Maintenance() {
               "itemListElement": [
                 {
                   "@type": "Offer",
-                  "name": "Essential Monthly Plan",
-                  "priceSpecification": {
-                    "@type": "UnitPriceSpecification",
-                    "price": "90",
-                    "priceCurrency": "USD",
-                    "unitText": "month",
-                  },
-                },
-                {
-                  "@type": "Offer",
                   "name": "Premium Monthly Plan",
                   "priceSpecification": {
                     "@type": "UnitPriceSpecification",
-                    "price": "120",
+                    "price": "90",
                     "priceCurrency": "USD",
                     "unitText": "month",
                   },
@@ -235,8 +209,8 @@ export default function Maintenance() {
           </div>
 
           <div
-            className="grid grid-cols-1 sm:grid-cols-2"
-            style={{ gap: "1px", background: "#1c1c1c", maxWidth: "40rem", margin: "0 auto" }}
+            className="grid grid-cols-1"
+            style={{ gap: "1px", background: "#1c1c1c", maxWidth: "22rem", margin: "0 auto" }}
           >
             {plans.map((plan) => (
               <div
@@ -260,26 +234,6 @@ export default function Maintenance() {
                   }}
                 />
 
-                {/* Popular badge */}
-                {plan.popular && (
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "3px",
-                      right: 0,
-                      background: "#c9a84c",
-                      color: "#000",
-                      fontSize: "0.75rem",
-                      fontFamily: "var(--font-mono)",
-                      letterSpacing: "0.2em",
-                      textTransform: "uppercase",
-                      padding: "0.25rem 0.7rem",
-                      fontWeight: 700,
-                    }}
-                  >
-                    Most Popular
-                  </div>
-                )}
 
                 <div
                   style={{
@@ -482,7 +436,7 @@ export default function Maintenance() {
               {
                 n: "I",
                 title: "Pick Your Plan",
-                desc: "Choose Essential at $90 or Premium at $120. Reach out and we'll lock in a recurring monthly slot that works for you.",
+                desc: "Sign up for our Premium Monthly plan at $90. Reach out and we'll lock in a recurring monthly slot that works for you.",
               },
               {
                 n: "II",
@@ -576,7 +530,7 @@ export default function Maintenance() {
               },
               {
                 q: "Is this cheaper than booking one-off details?",
-                a: "Yes. A one-off full detail starts at $189. A monthly membership at $90–$120 keeps your car at that level consistently, for less per visit — and we prioritize members when scheduling.",
+                a: "Yes. A one-off full detail starts at $189. A monthly membership at $90 keeps your car at that level consistently, for less per visit — and we prioritize members when scheduling.",
               },
               {
                 q: "What if I need to skip a month?",
