@@ -66,7 +66,6 @@ const interiorTiers: PackageTier[] = [
     popular: true,
     features: [
       "Everything in Bronze",
-      "Steam clean — high-touch surfaces",
       "Leather & vinyl conditioning",
       "Center console deep clean",
       "Cup holder & vent cleaning",
@@ -108,10 +107,8 @@ const exteriorTiers: PackageTier[] = [
     popular: true,
     features: [
       "Everything in Bronze",
-      "Clay bar treatment",
       "Trim dressing & restoration",
       "Door jamb wipe",
-      "Exterior wax protectant",
     ],
   },
   {
@@ -150,9 +147,6 @@ const fullTiers: PackageTier[] = [
     features: [
       "Interior Silver package included",
       "Exterior Silver package included",
-      "Steam clean & leather conditioning",
-      "Clay bar & trim restoration",
-      "Exterior wax protectant",
     ],
   },
   {
