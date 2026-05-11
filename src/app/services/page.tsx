@@ -81,7 +81,6 @@ const interiorTiers: PackageTier[] = [
       "Carpet & floor mat shampoo",
       "Seat shampoo or deep leather clean",
       "Headliner wipe-down",
-      "Trunk detail & deodorize",
     ],
   },
 ];
