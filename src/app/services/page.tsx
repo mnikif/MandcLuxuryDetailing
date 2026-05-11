@@ -77,6 +77,7 @@ const interiorTiers: PackageTier[] = [
     popular: false,
     features: [
       "Everything in Silver",
+      "Steam clean — high-touch surfaces",
       "Carpet & floor mat shampoo",
       "Seat shampoo or deep leather clean",
       "Headliner wipe-down",
@@ -144,6 +145,7 @@ const fullTiers: PackageTier[] = [
     features: [
       "Interior Silver package included",
       "Exterior Silver package included",
+      "Steam clean & leather conditioning",
     ],
   },
   {
