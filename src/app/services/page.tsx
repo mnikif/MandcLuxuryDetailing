@@ -61,7 +61,6 @@ const interiorTiers: PackageTier[] = [
   {
     tier: "Silver",
     price: "$169",
-    salePrice: "$144",
     duration: "2–3 hrs",
     popular: true,
     features: [
@@ -102,7 +101,6 @@ const exteriorTiers: PackageTier[] = [
   {
     tier: "Silver",
     price: "$129",
-    salePrice: "$110",
     duration: "1.5–2 hrs",
     popular: true,
     features: [
@@ -141,7 +139,6 @@ const fullTiers: PackageTier[] = [
   {
     tier: "Silver",
     price: "$269",
-    salePrice: "$229",
     duration: "3.5–5 hrs",
     popular: true,
     features: [
@@ -315,7 +312,7 @@ function TierGrid({ tiers }: { tiers: PackageTier[] }) {
 
             {pkg.popular && (
               <p style={{ color: "#c9a84c", fontSize: "0.75rem", fontFamily: "var(--font-mono)", letterSpacing: "0.15em", textAlign: "center", marginTop: "0.625rem" }}>
-                ★★★★★ <span style={{ color: "#565656" }}>· 12 Google Reviews</span>
+                ★★★★★ <span style={{ color: "#565656" }}>· 13 Google Reviews</span>
               </p>
             )}
           </div>
@@ -359,7 +356,7 @@ export default function Services() {
             "aggregateRating": {
               "@type": "AggregateRating",
               "ratingValue": "5",
-              "reviewCount": 12,
+              "reviewCount": 13,
               "bestRating": "5",
               "worstRating": "1",
             },
@@ -656,67 +653,6 @@ export default function Services() {
         </div>
       </section>
 
-      {/* ── Floating Silver Deal Banner ── */}
-      <div style={{
-        position: "fixed",
-        bottom: 0,
-        left: 0,
-        right: 0,
-        zIndex: 50,
-        background: "#07070a",
-        borderTop: "1px solid rgba(201,168,76,0.45)",
-        boxShadow: "0 -12px 48px rgba(0,0,0,0.75)",
-        padding: "0.9rem 1.75rem",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "2rem",
-        flexWrap: "wrap",
-      }}>
-        {/* Left group */}
-        <div style={{ display: "flex", alignItems: "center", gap: "1.1rem" }}>
-          {/* Vertical accent */}
-          <div style={{ width: "1px", height: "2.75rem", background: "linear-gradient(to bottom, transparent, #c9a84c 30%, #c9a84c 70%, transparent)", flexShrink: 0 }} />
-          <div style={{ textAlign: "left" }}>
-            <p style={{ color: "#c9a84c", fontSize: "0.58rem", fontFamily: "var(--font-mono)", letterSpacing: "0.3em", textTransform: "uppercase", marginBottom: "0.2rem" }}>
-              ✦ &nbsp; limited offer — ends sunday
-            </p>
-            <p style={{ color: "#f2ede4", fontSize: "0.82rem", fontFamily: "var(--font-mono)", letterSpacing: "0.06em", lineHeight: 1.3 }}>
-              Silver packages &mdash;{" "}
-              <span className="font-[family-name:var(--font-cormorant)] italic font-bold" style={{ fontSize: "1.15rem", color: "#c9a84c" }}>
-                15% off
-              </span>{" "}
-              through Apr 27
-            </p>
-            <p style={{ color: "#7a7a7a", fontSize: "0.62rem", fontFamily: "var(--font-mono)", letterSpacing: "0.14em", textTransform: "uppercase", marginTop: "0.18rem" }}>
-              Interior · Exterior · Full Detail
-            </p>
-          </div>
-        </div>
-
-        {/* CTA */}
-        <Link
-          href="/contact"
-          className="btn-ghost"
-          style={{
-            height: "40px",
-            padding: "0 1.4rem",
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: "0.68rem",
-            fontFamily: "var(--font-mono)",
-            letterSpacing: "0.22em",
-            textTransform: "uppercase",
-            border: "1px solid rgba(201,168,76,0.6)",
-            color: "#c9a84c",
-            flexShrink: 0,
-            whiteSpace: "nowrap",
-          }}
-        >
-          Book Silver Now
-        </Link>
-      </div>
     </>
   );
 }

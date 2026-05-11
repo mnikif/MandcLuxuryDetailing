@@ -383,7 +383,7 @@ export default function Maintenance() {
                         marginTop: "0.625rem",
                       }}
                     >
-                      ★★★★★ <span style={{ color: "#565656" }}>· 12 Google Reviews</span>
+                      ★★★★★ <span style={{ color: "#565656" }}>· 13 Google Reviews</span>
                     </p>
                   )}
                 </div>
